@@ -32,8 +32,9 @@ try:
     acct = client.get_account()
     clock = client.get_clock()
 except Exception as e:  # never echo the keys; exception text from Alpaca does not contain them
-    fail(f"Alpaca rejected the connection: {type(e).__name__}: {str(e)[:200]} "
-         f"(key length {len(key)}, secret length {len(secret)})")
+    detail = " ".join(str(e).split())[:200]
+    fail(f"(key starts {key[:2]}, key length {len(key)}, secret length {len(secret)}, "
+         f"key==secret {key == secret}) Alpaca rejected the connection: {type(e).__name__}: {detail}")
 
 summary = (f"Connected to Alpaca PAPER. Status {acct.status}; paper cash ${float(acct.cash):,.2f}; "
            f"options level {getattr(acct, 'options_trading_level', 'unknown')}; "
