@@ -1,0 +1,19 @@
+name: Paper connection check (read-only)
+on:
+  workflow_dispatch:   # runs only when Haley clicks "Run workflow"
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install alpaca-py
+      - name: Check Alpaca paper account (places no orders)
+        env:
+          ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
+          ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
+        run: python scripts/check_paper_connection.py

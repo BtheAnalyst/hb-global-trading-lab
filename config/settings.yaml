@@ -1,0 +1,52 @@
+# HB Global Trading Lab — paper-trading configuration
+# Live trading is OFF and cannot be turned on from this file alone.
+# Going live requires a separate live config + explicit owner sign-off (see risk.assert_paper_or_approved).
+
+mode: paper            # paper | live  (live is rejected unless HBGTL_LIVE_APPROVED=yes is also set)
+
+# Owner's monthly investing budget is $250. ONLY the trading line below belongs to this system.
+# Roth IRA ($100) and buy-and-hold ($50) are tracked elsewhere and are never touched by the bot.
+owner_budget:
+  monthly_total: 250
+  trading_lab: 100
+  roth_ira: 100          # provisional, outside this system
+  buy_and_hold: 50       # outside this system
+
+portfolios:
+  A:
+    name: Engineering account
+    purpose: Test that the software works. Its buying power says nothing about Portfolio B.
+    starting_capital: 10000
+    monthly_deposit: 0
+  B:
+    name: Owner funding model
+    purpose: Mirrors Haley's real plan. This is the feasibility account.
+    starting_capital: 100
+    monthly_deposit: 100   # first $100 is month one; $1,200 contributed over 12 months
+    deposit_day: 1
+
+risk:
+  max_risk_per_trade_pct: 1.0       # % of trading equity a single trade may lose (full premium + fees)
+  daily_loss_limit_pct: 3.0         # stop opening new trades for the day at this drawdown
+  max_consecutive_losses: 3         # circuit breaker: pause until owner review
+  max_open_positions: 1
+  max_quote_age_seconds: 60         # stale-data guard
+  max_spread_pct_of_mid: 10.0
+  min_open_interest: 500
+  min_days_to_expiration: 7
+  allowed_strategies: [long_call, long_put]
+
+costs:
+  fee_per_contract: 0.05            # ESTIMATE of regulatory fees per contract per side; confirm in Alpaca fee schedule
+
+vault:
+  reinvest_pct: 70
+  vault_pct: 30
+
+alerts:
+  # Reconciled with the 1% per-trade cap: a 2% single-trade alert could never fire.
+  single_trade_loss_pct: 1.0        # alert when a trade loses its full approved risk
+  daily_loss_pct: 3.0
+  alert_on_loss_above_approved_max: true
+
+milestones: [250, 500, 1000, 2500, 5000, 10000, 15000, 25000]
