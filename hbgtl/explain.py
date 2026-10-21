@@ -69,7 +69,8 @@ def _exit_plain(reason: str) -> str:
 def explain_trade(t: dict) -> str:
     """One closed trade (from state['trades']) or an open position (with entry_price)."""
     und = t.get("underlying", "")
-    parts = [f"Bought a {und} {_dir_word(t.get('strategy', 'long_call'))} because {_signal_plain(t.get('signal', ''))}."]
+    article = "an" if und[:1] in "AEFHILMNORSX" else "a"
+    parts = [f"Bought {article} {und} {_dir_word(t.get('strategy', 'long_call'))} because {_signal_plain(t.get('signal', ''))}."]
     det = []
     if t.get("strike"):
         det.append(f"${t['strike']:g} strike")
@@ -92,9 +93,9 @@ def market_read(d: dict) -> list[str]:
     m = d.get("market")
     if m:
         if m.get("calm"):
-            out.append(f"Market conditions passed the volatility check ({m['vol_note']}).")
+            out.append(f"Market conditions passed the volatility check: {m['vol_note']}.")
         else:
-            out.append(f"Markets were too turbulent for new trades today ({m['vol_note']}), so the bot only managed what it held.")
+            out.append(f"Markets were too turbulent for new trades today: {m['vol_note']}. The bot only managed what it already held.")
     sigs = d.get("signals", {})
     if sigs:
         for sym, s in sigs.items():
