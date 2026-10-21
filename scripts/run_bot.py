@@ -26,6 +26,11 @@ state = st.load(cfg, now.date())
 if mode == "letter":
     Path("letter.md").write_text(daily_letter(cfg, state, now.date()))
     print(Path("letter.md").read_text())
+    from hbgtl.email_letter import daily_email
+    subject, html = daily_email(cfg, state, now.date())
+    Path("dashboard").mkdir(exist_ok=True)
+    Path("dashboard/letter_email.html").write_text(html)
+    Path("dashboard/letter_subject.txt").write_text(subject)
 else:
     from hbgtl.gateway import AlpacaPaperGateway
     from hbgtl.runner import run

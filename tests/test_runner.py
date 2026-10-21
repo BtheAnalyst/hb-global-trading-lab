@@ -199,3 +199,15 @@ def test_no_trade_letter_is_honest(cfg):
     run(gw, cfg, s, NOW)
     txt = daily_letter(cfg, s, NOW.date())
     assert "stayed in cash on purpose" in txt and "not a gain" in txt and "Paper mode" in txt
+
+
+def test_email_letter_matches_numbers_and_shows_losses(cfg):
+    from hbgtl.email_letter import daily_email
+    s, gw = st.new_state(cfg, NOW.date()), FakeGW()
+    run(gw, cfg, s, NOW); run(gw, cfg, s, NOW + timedelta(minutes=30))
+    gw.bid, gw.ask = 0.25, 0.27
+    run(gw, cfg, s, NOW + timedelta(minutes=60)); run(gw, cfg, s, NOW + timedelta(minutes=90))
+    subject, html = daily_email(cfg, s, NOW.date())
+    loss = s["trades"][0]["net_pnl"]
+    assert f"-${abs(loss):,.2f}" in html and "a loss, kept within its limits" in html
+    assert "The Daily Letter" in subject and "Paper" in html
