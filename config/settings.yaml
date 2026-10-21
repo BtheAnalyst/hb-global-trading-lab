@@ -50,3 +50,28 @@ alerts:
   alert_on_loss_above_approved_max: true
 
 milestones: [250, 500, 1000, 2500, 5000, 10000, 15000, 25000]
+
+# ---------- Paper-trading engine (Portfolio A only) ----------
+trading:
+  enabled: true                     # set to false to stop all NEW trades (exits still run)
+  universe: [XLF, EEM, SLV, KRE, GDX, XLE, HYG, SPY, QQQ]
+  entry_start: "10:00"              # ET
+  entry_end: "15:30"                # ET
+  max_spy_realized_vol: 0.30        # free stand-in for "skip when VIX > 30"
+  cancel_unfilled_after_runs: 2
+  signal:
+    lookback_days: 3
+    rsi_low: 35
+    rsi_high: 50
+  contracts:
+    dte_min: 30
+    dte_max: 45
+    delta_min: 0.35
+    delta_max: 0.55
+    delta_target: 0.45
+    max_checked: 6
+  exits:
+    take_profit_pct: 50
+    stop_loss_pct: 40
+    max_trading_days: 10
+    close_at_dte: 7

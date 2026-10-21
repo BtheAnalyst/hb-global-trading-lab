@@ -1,0 +1,37 @@
+name: Atelier Daily Letter
+on:
+  schedule:
+    - cron: "15 21 * * 1-5"        # 5:15 PM EDT / 4:15 PM EST, after the close
+  workflow_dispatch:
+concurrency:
+  group: atelier-state
+  cancel-in-progress: false
+permissions:
+  contents: write
+  issues: write                    # the letter is posted as an issue, which GitHub sends to Haley
+jobs:
+  letter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python scripts/run_bot.py letter
+      - name: Post the Daily Letter
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create daily-letter --color 4A5A32 --description "HB Global Daily Letter" 2>/dev/null || true
+          gh issue create --title "The Daily Letter · $(TZ=America/New_York date +'%a %b %-d, %Y')" \
+            --body-file letter.md --label daily-letter --assignee "${{ github.repository_owner }}"
+      - name: Save state
+        run: |
+          git config user.name "HB Atelier Bot"
+          git config user.email "atelier-bot@users.noreply.github.com"
+          git add state/ || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Atelier letter state $(date -u +%F)"
+          git pull --rebase && git push

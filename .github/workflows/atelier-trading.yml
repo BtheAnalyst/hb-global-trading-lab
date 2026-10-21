@@ -1,0 +1,40 @@
+name: Atelier paper trading
+on:
+  schedule:
+    - cron: "*/30 13-21 * * 1-5"   # every 30 min, weekdays; the bot itself checks Alpaca's market clock
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "trade (normal) or scan (dry run, never sends orders)"
+        default: scan
+        type: choice
+        options: [scan, trade]
+concurrency:
+  group: atelier-state       # never two runs at once
+  cancel-in-progress: false
+permissions:
+  contents: write            # to save the bot's state file
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt alpaca-py
+      - name: Run the Atelier (paper only)
+        env:
+          ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
+          ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
+        run: python scripts/run_bot.py ${{ inputs.mode || 'trade' }}
+      - name: Save state
+        if: always()
+        run: |
+          git config user.name "HB Atelier Bot"
+          git config user.email "atelier-bot@users.noreply.github.com"
+          git add state/ || true
+          git diff --cached --quiet && exit 0
+          git commit -m "Atelier state $(date -u +%FT%H:%MZ)"
+          git pull --rebase && git push
