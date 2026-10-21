@@ -21,8 +21,10 @@ if not key:
 if not secret:
     fail("ALPACA_PAPER_SECRET secret is missing or empty (check the exact name).")
 if not key.startswith("PK"):
-    fail(f"ALPACA_PAPER_KEY does not start with 'PK' (starts with '{key[:2]}', length {len(key)}). "
-         "Paper keys start with PK. Possibly the Secret was pasted into the Key slot, or a live key was used.")
+    # Not fatal: the client below is hard-wired to the PAPER endpoint, which rejects live keys,
+    # so a successful login there proves these are paper credentials.
+    print(f"::warning title=Unusual key prefix::Key starts with '{key[:2]}' (length {len(key)}), "
+          "not the usual 'PK'. Verifying against the paper-only endpoint.")
 
 try:
     from alpaca.trading.client import TradingClient
