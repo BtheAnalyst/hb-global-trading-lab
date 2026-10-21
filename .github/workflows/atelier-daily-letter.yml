@@ -27,11 +27,13 @@ jobs:
           gh label create daily-letter --color 4A5A32 --description "HB Global Daily Letter" 2>/dev/null || true
           gh issue create --title "The Daily Letter · $(TZ=America/New_York date +'%a %b %-d, %Y')" \
             --body-file letter.md --label daily-letter --assignee "${{ github.repository_owner }}"
+      - name: Export numbers for the Atelier dashboard
+        run: python scripts/export_dashboard.py
       - name: Save state
         run: |
           git config user.name "HB Atelier Bot"
           git config user.email "atelier-bot@users.noreply.github.com"
-          git add state/ || true
+          git add state/ dashboard/*.json || true
           git diff --cached --quiet && exit 0
           git commit -m "Atelier letter state $(date -u +%F)"
           git pull --rebase && git push
