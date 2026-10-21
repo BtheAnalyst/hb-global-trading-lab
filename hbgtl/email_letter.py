@@ -154,3 +154,75 @@ def daily_email(cfg: dict, state: dict, today: date) -> tuple[str, str]:
 </table></td></tr></table></body></html>"""
     subject = f"The Daily Letter · {today:%a %b %-d} · {headline.rstrip('.')}"
     return subject, html
+
+
+def midday_email(cfg: dict, state: dict, now) -> tuple[str, str] | None:
+    """A short Midday Check-in from the bot's saved state. Returns None when the bot
+    has not run during market hours today (weekend, holiday), so nothing is sent."""
+    today = now.date()
+    stamp = today.isoformat()
+    runs = [e for e in state.get("log", []) if e.startswith(stamp)]
+    active = [e for e in runs if "market closed" not in e]
+    if not active:
+        return None
+    vp = cfg["vault"]["vault_pct"]
+    d = st.day(state, today)
+    a = st.ledger(state, "A", vp)
+    pos = state.get("position")
+    unreal = round((pos.get("last_mid", pos["entry_price"]) - pos["entry_price"]) * 100 * pos["qty"], 2) if pos else 0.0
+    day_trades = [t for t in state["trades"] if t["date"] == stamp]
+    realized = round(sum(t["net_pnl"] for t in day_trades), 2)
+    pend = state.get("pending")
+
+    if pos and unreal >= 0:
+        headline = "A position is open and working."
+    elif pos:
+        headline = "A position is open, inside its limits."
+    elif day_trades:
+        headline = "A trade has already closed today."
+    else:
+        headline = "Watching patiently: no trade has met every rule yet."
+
+    items = []
+    if pos:
+        items.append(f"Holding {pos['qty']} × {pos['symbol']} bought at ${pos['entry_price']:.2f}; "
+                     f"last mark ${pos.get('last_mid', pos['entry_price']):.2f} ({_s(unreal)} unrealized).")
+    for t in day_trades:
+        items.append(f"Closed {t['symbol']}: {_s(t['net_pnl'])} ({t['reason']}).")
+    if pend:
+        items.append(f"An order is working: {pend['side']} {pend['symbol']}.")
+    if d["rejected"]:
+        items.append(f"The risk engine declined {d['rejected']} setup{'s' if d['rejected'] > 1 else ''} so far.")
+    if not items:
+        items.append("No setup has met every rule so far today. The Atelier keeps scanning until 3:30 PM.")
+    items_html = "".join(f'<li style="margin:0 0 6px">{escape(x)}</li>' for x in items)
+    alerts = d.get("alerts", [])
+    alert_html = "".join(f'<div style="font:13px {SANS};color:{OXBLOOD};margin:8px 0 0">⚠ {escape(x)}</div>' for x in alerts)
+    last_run = active[-1][11:16]
+    ucol = MOSS if unreal > 0 else OXBLOOD if unreal < 0 else INK
+    rcol = MOSS if realized > 0 else OXBLOOD if realized < 0 else INK
+
+    html = f"""<!doctype html><html><body style="margin:0;padding:0;background:{IVORY}">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:{IVORY}"><tr><td align="center" style="padding:20px 12px">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px;background:{PANEL};border:1px solid {LINE};border-radius:20px;overflow:hidden">
+<tr><td style="background:{MOSS};padding:22px 26px;color:{CREAM}">
+  <div style="font:600 10px {SANS};letter-spacing:3px;text-transform:uppercase;color:{GOLD}">HB Global · The Trading Atelier</div>
+  <div style="font:400 26px {SERIF};color:{CREAM};margin:12px 0 2px">Midday Check-in</div>
+  <div style="font:13px {SANS};color:{SAGE}">{today:%A, %B %-d} · as of {last_run} ET · paper</div>
+  <div style="font:italic 18px {SERIF};color:{CREAM};margin:14px 0 0">{escape(headline)}</div>
+</td></tr>
+<tr><td style="padding:16px 20px 4px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
+  {_tile("Open position", _s(unreal) if pos else "None", "unrealized" if pos else "in cash", ucol)}
+  {_tile("Realized today", _s(realized), f"{d['wins']} won · {d['losses']} lost", rcol)}
+</tr><tr>
+  {_tile("Combined wealth", _m(a.total_project_wealth + unreal), "Atelier A, vault included")}
+  {_tile("Profit Vault", _m(a.vault_balance), "protected", MOSS)}
+</tr></table></td></tr>
+<tr><td style="padding:12px 26px 22px">
+  {_label("So far today", MOSS)}
+  <ul style="margin:0;padding-left:18px;font:14px/1.55 {SANS};color:{INK}">{items_html}</ul>
+  {alert_html}
+  <div style="font:11px {SANS};color:{MUTED};margin-top:16px;border-top:1px solid {LINE};padding-top:12px">The full Daily Letter follows after the close. Paper trading only; not financial advice.</div>
+</td></tr>
+</table></td></tr></table></body></html>"""
+    return f"Midday Check-in · {today:%a %b %-d} · {headline.rstrip('.')}", html

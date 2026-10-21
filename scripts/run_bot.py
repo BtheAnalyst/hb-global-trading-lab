@@ -31,6 +31,16 @@ if mode == "letter":
     Path("dashboard").mkdir(exist_ok=True)
     Path("dashboard/letter_email.html").write_text(html)
     Path("dashboard/letter_subject.txt").write_text(subject)
+elif mode == "midday":
+    from hbgtl.email_letter import midday_email
+    res = midday_email(cfg, state, now)
+    Path("dashboard").mkdir(exist_ok=True)
+    if res is None:
+        print("SKIP: the bot has not run during market hours today; no midday email.")
+    else:
+        Path("dashboard/midday_email.html").write_text(res[1])
+        Path("dashboard/midday_subject.txt").write_text(res[0])
+        print("Midday email built:", res[0])
 else:
     from hbgtl.gateway import AlpacaPaperGateway
     from hbgtl.runner import run
@@ -40,5 +50,5 @@ else:
         print(ln)
         print(f"::notice title=Atelier {mode}::{ln}")
 
-if mode != "scan":
+if mode not in ("scan", "midday"):
     st.save(state)

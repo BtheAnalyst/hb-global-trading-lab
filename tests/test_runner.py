@@ -211,3 +211,17 @@ def test_email_letter_matches_numbers_and_shows_losses(cfg):
     loss = s["trades"][0]["net_pnl"]
     assert f"-${abs(loss):,.2f}" in html and "a loss, kept within its limits" in html
     assert "The Daily Letter" in subject and "Paper" in html
+
+
+def test_midday_email_shows_open_position_and_skips_idle_days(cfg):
+    from hbgtl.email_letter import midday_email
+    s, gw = st.new_state(cfg, NOW.date()), FakeGW()
+    assert midday_email(cfg, s, NOW) is None                      # no runs today: nothing sent
+    run(gw, cfg, s, NOW); run(gw, cfg, s, NOW + timedelta(minutes=30))
+    gw.bid, gw.ask = 0.40, 0.42                                     # position down, inside limits
+    run(gw, cfg, s, NOW + timedelta(minutes=60))
+    subject, html = midday_email(cfg, s, NOW + timedelta(minutes=60))
+    assert "Midday Check-in" in subject and "inside its limits" in html and "-$" in html
+    closed = st.new_state(cfg, NOW.date())
+    run(FakeGW(open_=False), cfg, closed, NOW)
+    assert midday_email(cfg, closed, NOW) is None                  # market-closed day: nothing sent
