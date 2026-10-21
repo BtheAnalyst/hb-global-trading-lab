@@ -225,3 +225,27 @@ def test_midday_email_shows_open_position_and_skips_idle_days(cfg):
     closed = st.new_state(cfg, NOW.date())
     run(FakeGW(open_=False), cfg, closed, NOW)
     assert midday_email(cfg, closed, NOW) is None                  # market-closed day: nothing sent
+
+
+def test_letters_explain_why_and_teach_terms(cfg):
+    from hbgtl.email_letter import daily_email, midday_email
+    s, gw = st.new_state(cfg, NOW.date()), FakeGW()
+    run(gw, cfg, s, NOW); run(gw, cfg, s, NOW + timedelta(minutes=30))
+    sub, mid = midday_email(cfg, s, NOW + timedelta(minutes=30))
+    assert "Why it&#x27;s held" in mid and "pullback" in mid and "Speak the language" in mid
+    gw.bid, gw.ask = 0.80, 0.82
+    run(gw, cfg, s, NOW + timedelta(minutes=60)); run(gw, cfg, s, NOW + timedelta(minutes=90))
+    t = s["trades"][0]
+    assert t["signal"] and t["strike"] == 62.0 and t["delta"] == 0.45
+    _, html = daily_email(cfg, s, NOW.date())
+    assert "Why the bot did what it did" in html and "take-profit" in html and "Take profit" in html
+    md = daily_letter(cfg, s, NOW.date())
+    assert "## Why the bot did what it did" in md and "## Speak the language" in md
+
+
+def test_declined_setup_counted_once_per_day(cfg):
+    s, gw = st.new_state(cfg, NOW.date()), FakeGW(ask=3.00, bid=2.95)
+    for i in range(4):
+        run(gw, cfg, s, NOW + timedelta(minutes=30 * i))
+    d = st.day(s, NOW.date())
+    assert d["rejected"] == 1 and "declined" in d["signals"]["XLF"]["outcome"]

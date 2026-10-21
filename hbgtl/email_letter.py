@@ -9,6 +9,7 @@ from datetime import date
 from html import escape
 
 from . import state as st
+from .explain import explain_trade, market_read, terms_for_today
 
 MOSS_DEEP, MOSS, SAGE, SAGE_TINT = "#2F3A22", "#4A5A32", "#B9C8A4", "#E8ECDD"
 IVORY, PANEL, LINE, INK, MUTED = "#FAF6EE", "#FFFDF8", "#D5DCC6", "#2B1D17", "#6B5646"
@@ -40,6 +41,17 @@ def _row(k: str, v: str, color: str = INK, last: bool = False) -> str:
     b = "" if last else f"border-bottom:1px solid {SAGE_TINT};"
     return (f'<tr><td style="padding:9px 0;{b}font:13px {SANS};color:{INK}">{escape(k)}</td>'
             f'<td align="right" style="padding:9px 0;{b}font:13px {SANS};color:{color};white-space:nowrap">{escape(v)}</td></tr>')
+
+
+def _why_block(paras: list[str]) -> str:
+    return "".join(f'<p style="margin:0 0 10px;font:14px/1.6 {SANS};color:{INK}">{escape(x)}</p>' for x in paras)
+
+
+def _terms_block(terms) -> str:
+    rows = "".join(f'<div style="margin:0 0 10px"><div style="font:400 16px {SERIF};color:{MOSS}">{escape(k)}</div>'
+                   f'<div style="font:13px/1.5 {SANS};color:{INK}">{escape(v)}</div></div>' for k, v in terms)
+    return (f'<div style="background:{SAGE_TINT};border-radius:14px;padding:14px 16px">'
+            f'{_label("Speak the language", MOSS)}{rows}</div>')
 
 
 def daily_email(cfg: dict, state: dict, today: date) -> tuple[str, str]:
@@ -90,6 +102,13 @@ def daily_email(cfg: dict, state: dict, today: date) -> tuple[str, str]:
               f'<span style="color:{MUTED}">({escape(t["reason"])})</span></div>' for t in day_trades]
     if not notes:
         notes = [f'<div style="font:13px {SANS};color:{MUTED}">No alerts. No rule violations.</div>']
+    why = [explain_trade(t) for t in day_trades]
+    if pos:
+        why.append("Still holding: " + explain_trade(pos))
+    why += market_read(d)
+    if not why:
+        why = ["The bot hasn't scanned yet today."]
+    terms = terms_for_today(d, day_trades, bool(pos), today)
     tomorrow = ("Kill switch is ON: no new trades until you approve a restart." if state.get("kill_switch")
                 else "Ready. The Atelier scans every 30 minutes from 10:00 AM to 3:30 PM ET.")
 
@@ -123,6 +142,10 @@ def daily_email(cfg: dict, state: dict, today: date) -> tuple[str, str]:
   <div style="height:6px;background:{SAGE_TINT};border-radius:6px"><div style="height:6px;width:{pct:.1f}%;background:{MOSS};border-radius:6px"></div></div>
 </td></tr>
 <tr><td style="padding:20px 26px 4px">
+  {_label("Why the bot did what it did", MOSS)}
+  {_why_block(why)}
+</td></tr>
+<tr><td style="padding:14px 26px 4px">
   {_label("Financial snapshot")}
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
     {_row("Trading account (realized)", f"{_m(start_eq)} → {_m(a.trading_equity)}")}
@@ -144,6 +167,7 @@ def daily_email(cfg: dict, state: dict, today: date) -> tuple[str, str]:
     <div style="font:12px {SANS};color:{MUTED};margin-top:6px">Contributed {_m(b.total_contributions)} · trading gain {_s(b.cumulative_net_gain)}</div>
   </div>
 </td></tr>
+<tr><td style="padding:18px 26px 4px">{_terms_block(terms)}</td></tr>
 <tr><td style="padding:20px 26px 26px">
   <div style="border-top:1px solid {GOLD};padding-top:14px;text-align:center">
     <div style="font:400 17px {SERIF};color:{INK}">Tomorrow</div>
@@ -196,6 +220,8 @@ def midday_email(cfg: dict, state: dict, now) -> tuple[str, str] | None:
     if not items:
         items.append("No setup has met every rule so far today. The Atelier keeps scanning until 3:30 PM.")
     items_html = "".join(f'<li style="margin:0 0 6px">{escape(x)}</li>' for x in items)
+    why = ([("Why it's held: " + explain_trade(pos))] if pos else []) + market_read(d)
+    terms = terms_for_today(d, day_trades, bool(pos), today, n=1)
     alerts = d.get("alerts", [])
     alert_html = "".join(f'<div style="font:13px {SANS};color:{OXBLOOD};margin:8px 0 0">⚠ {escape(x)}</div>' for x in alerts)
     last_run = active[-1][11:16]
@@ -222,6 +248,11 @@ def midday_email(cfg: dict, state: dict, now) -> tuple[str, str] | None:
   {_label("So far today", MOSS)}
   <ul style="margin:0;padding-left:18px;font:14px/1.55 {SANS};color:{INK}">{items_html}</ul>
   {alert_html}
+</td></tr>
+<tr><td style="padding:0 26px 8px">
+  {_label("Why", MOSS)}
+  {_why_block(why)}
+  {_terms_block(terms)}
   <div style="font:11px {SANS};color:{MUTED};margin-top:16px;border-top:1px solid {LINE};padding-top:12px">The full Daily Letter follows after the close. Paper trading only; not financial advice.</div>
 </td></tr>
 </table></td></tr></table></body></html>"""

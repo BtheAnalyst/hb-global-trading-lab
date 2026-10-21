@@ -7,6 +7,7 @@ from __future__ import annotations
 from datetime import date
 
 from . import state as st
+from .explain import explain_trade, market_read, terms_for_today
 
 
 def _m(x: float) -> str:
@@ -67,6 +68,9 @@ def daily_letter(cfg: dict, state: dict, today: date) -> str:
         f"Trades to date: {len(all_pnls)}" + (f" · {100 * wins_all / len(all_pnls):.0f}% won" if all_pnls else "")
         + " · too few to judge an edge (needs 30+ by day 90).",
         "",
+        "## Why the bot did what it did",
+        *[f"- {x}" for x in ([explain_trade(t) for t in day_trades] + (["Still holding: " + explain_trade(pos)] if pos else []) + market_read(d))],
+        "",
         "## Financial snapshot (Atelier A, $10,000 engineering account)",
         "| | |", "|---|---|",
         f"| Trading account (realized) | {_m(start_eq)} → {_m(a.trading_equity)} |",
@@ -86,6 +90,9 @@ def daily_letter(cfg: dict, state: dict, today: date) -> str:
         "## Founder's Account (Portfolio B)",
         d.get("b_note", f"{_m(b.total_project_wealth)}, holding cash by design."),
         f"Contributed {_m(b.total_contributions)} · trading gain {_s(b.cumulative_net_gain)}.",
+        "",
+        "## Speak the language",
+        *[f"- **{k}:** {v}" for k, v in terms_for_today(d, day_trades, bool(pos), today)],
         "",
         "## Tomorrow",
         "Kill switch is **ON**: no new trades until you approve a restart." if state.get("kill_switch")

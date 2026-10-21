@@ -83,7 +83,10 @@ def run(gw, cfg: dict, state: dict, now: datetime, mode: str = "trade", persist=
                 state["trades"].append({"date": today.isoformat(), "symbol": pos["symbol"], "underlying": pos["underlying"],
                                         "strategy": pos["strategy"], "qty": pos["qty"], "entry": pos["entry_price"],
                                         "exit": px, "net_pnl": net, "reason": pend["meta"].get("reason", ""),
-                                        "opened": pos["opened"]})
+                                        "opened": pos["opened"], "signal": pos.get("signal", ""),
+                                        "strike": pos.get("strike"), "delta": pos.get("delta"),
+                                        "expiration": pos.get("expiration"), "dte_at_entry": pos.get("dte"),
+                                        "approved_max_loss": pos.get("approved_max_loss")})
                 if net > 0:
                     d["wins"] += 1
                     state["consecutive_losses"] = 0
@@ -169,6 +172,8 @@ def _find_entry(gw, cfg, state, d, now, mode, persist) -> list[str]:
     bars = gw.daily_bars(sorted(set(universe + ["SPY"])))
     calm, why = market_calm(bars["SPY"][0], tcfg["max_spy_realized_vol"])
     out.append(("Volatility filter OK: " if calm else "Volatility filter BLOCKS new trades: ") + why)
+    d["market"] = {"calm": calm, "vol_note": why}
+    signals = d.setdefault("signals", {})        # symbol -> {direction, reason, outcome}; once per symbol per day
     if not calm:
         return out
     a = st.ledger(state, "A", vp)
@@ -182,12 +187,16 @@ def _find_entry(gw, cfg, state, d, now, mode, persist) -> list[str]:
         if not sig.direction:
             continue
         out.append(f"Signal {sym}: {sig.direction} ({sig.reason})")
+        first_today = sym not in signals
+        signals.setdefault(sym, {"direction": sig.direction, "reason": sig.reason, "price": closes[-1], "outcome": "checking"})
         cands = rank(gw.option_candidates(sym, sig.direction, closes[-1], today,
                                           tcfg["contracts"]["dte_min"], tcfg["contracts"]["dte_max"]),
                      tcfg, closes[-1])[: tcfg["contracts"]["max_checked"]]
         if not cands:
-            d["rejected"] += 1
-            d["rejections"]["no contract in delta/expiry range"] = d["rejections"].get("no contract in delta/expiry range", 0) + 1
+            if first_today:          # count each declined setup once a day, not once per 30-minute run
+                d["rejected"] += 1
+                d["rejections"]["no contract in delta/expiry range"] = d["rejections"].get("no contract in delta/expiry range", 0) + 1
+            signals[sym]["outcome"] = "declined: no contract in the delta and expiration range"
             continue
         reasons = []
         for c in cands:
@@ -207,14 +216,18 @@ def _find_entry(gw, cfg, state, d, now, mode, persist) -> list[str]:
             limit = min(c.ask, round(c.mid + 0.01, 2))
             state["pending"] = {"client_order_id": cid, "side": "buy", "symbol": c.symbol, "meta": {
                 "symbol": c.symbol, "underlying": sym, "strategy": c.strategy, "expiration": c.expiration.isoformat(),
-                "approved_max_loss": dec.max_loss, "signal": sig.reason}}
+                "approved_max_loss": dec.max_loss, "signal": sig.reason, "strike": c.strike, "delta": c.delta,
+                "dte": c.dte, "underlying_price": closes[-1]}}
+            signals[sym]["outcome"] = f"bought {dec.contracts} × {c.symbol}"
             persist()
             gw.submit_limit(cid, c.symbol, "buy", dec.contracts, limit)
             out.append(f"Entry sent: buy {dec.contracts} x {c.symbol} limit ${limit:.2f} (max loss ${dec.max_loss:.2f})")
             return out
-        d["rejected"] += 1
         top = max(set(reasons), key=reasons.count) if reasons else "unknown"
-        d["rejections"][top] = d["rejections"].get(top, 0) + 1
+        if first_today:
+            d["rejected"] += 1
+            d["rejections"][top] = d["rejections"].get(top, 0) + 1
+        signals[sym]["outcome"] = f"declined by the risk engine: {top}"
         out.append(f"Risk engine declined all {len(cands)} {sym} contracts (mostly: {top}).")
     if len(out) == 1:
         out.append("No setups met the entry rules today: staying in cash.")
