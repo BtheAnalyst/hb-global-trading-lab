@@ -363,9 +363,10 @@
     body.replaceChildren();
     const empty = document.getElementById(emptyId);
     if (d.status !== 'ok') { empty.hidden = true; return; }
-    empty.hidden = d.data.length > 0;
-    document.getElementById(id).hidden = d.data.length === 0;
-    d.data.forEach((r) => {
+    const real = d.data.filter((r) => !(r.placeholder === true || r.placeholder === 'true'));
+    empty.hidden = real.length > 0;
+    document.getElementById(id).hidden = real.length === 0;
+    real.forEach((r) => {
       const tr = document.createElement('tr');
       tr.dataset.key = keyCols.map((k) => encodeURIComponent(String(r[k]))).join(',');
       cells.forEach(([f, fmt, num, tone]) => {

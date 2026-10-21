@@ -84,6 +84,15 @@ for e in state["portfolios"]["A"]["events"]:
     if ev.to_vault > 0:
         vault_rows.append({"date": e["date"], "added": ev.to_vault, "balance": ev.vault_balance})
 
+# The dashboard can't read an empty file, so an empty table carries one marker row
+# (placeholder: true) that the page hides. It holds no invented numbers.
+as_of = dates[-1]
+if not trades:
+    trades = [{"date": as_of, "contract": "none yet", "type": "", "qty": 0, "entry": 0, "exit": 0,
+               "net_pnl": 0, "reason": "No closed trades yet", "placeholder": True}]
+if not vault_rows:
+    vault_rows = [{"date": as_of, "added": 0, "balance": 0, "placeholder": True}]
+
 for name, rows in {"summary": summary, "daily": daily, "trades": trades, "vault": vault_rows}.items():
     (out / f"{name}.json").write_text(json.dumps(rows, indent=1))
     print(f"dashboard/{name}.json: {len(rows)} rows")
