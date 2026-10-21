@@ -1,0 +1,39 @@
+{
+ "version": 1,
+ "start_date": "2026-10-21",
+ "portfolios": {
+  "A": {
+   "starting_capital": 10000,
+   "events": [],
+   "deposits_made": [
+    "2026-10-21"
+   ]
+  },
+  "B": {
+   "starting_capital": 100,
+   "events": [],
+   "deposits_made": [
+    "2026-10-21"
+   ]
+  }
+ },
+ "position": null,
+ "pending": null,
+ "consecutive_losses": 0,
+ "days": {
+  "2026-10-21": {
+   "wins": 0,
+   "losses": 0,
+   "rejected": 0,
+   "rejections": {},
+   "notes": [],
+   "start_equity": null,
+   "deposits": 0.0,
+   "vault_added": 0.0,
+   "violations": 0
+  }
+ },
+ "trades": [],
+ "log": [],
+ "kill_switch": false
+}
