@@ -174,12 +174,15 @@ def _find_entry(gw, cfg, state, d, now, mode, persist) -> list[str]:
     out.append(("Volatility filter OK: " if calm else "Volatility filter BLOCKS new trades: ") + why)
     d["market"] = {"calm": calm, "vol_note": why}
     signals = d.setdefault("signals", {})        # symbol -> {direction, reason, outcome}; once per symbol per day
-    if not calm:
-        return out
     a = st.ledger(state, "A", vp)
     acct = AccountState(equity=a.trading_equity, start_of_day_equity=d["start_equity"]["A"],
                         open_positions=1 if state.get("position") else 0,
                         consecutive_losses=state["consecutive_losses"], kill_switch=state.get("kill_switch", False))
+    if mode == "scan":                           # read-only breakdown of every symbol and contract
+        from .diagnostics import scan_report
+        out += scan_report(gw, cfg, bars, acct, now)
+    if not calm:
+        return out
     engine = RiskEngine(cfg, cfg["mode"])
     for sym in universe:
         closes, vols = bars.get(sym, ([], []))
@@ -229,6 +232,6 @@ def _find_entry(gw, cfg, state, d, now, mode, persist) -> list[str]:
             d["rejections"][top] = d["rejections"].get(top, 0) + 1
         signals[sym]["outcome"] = f"declined by the risk engine: {top}"
         out.append(f"Risk engine declined all {len(cands)} {sym} contracts (mostly: {top}).")
-    if len(out) == 1:
+    if not any(ln.startswith("Signal ") for ln in out):
         out.append("No setups met the entry rules today: staying in cash.")
     return out

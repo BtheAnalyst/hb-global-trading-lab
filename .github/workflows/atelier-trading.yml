@@ -1,7 +1,11 @@
 name: Atelier paper trading
 on:
   schedule:
-    - cron: "*/30 13-21 * * 1-5"   # every 30 min, weekdays; the bot itself checks Alpaca's market clock
+    # Every 30 min on weekdays at :04 and :34 past the hour, 13:04-21:34 UTC
+    # = 9:04 AM-5:34 PM EDT (8:04 AM-4:34 PM EST after Nov 1), covering the 9:30-4:00 ET session.
+    # Off the top of the hour on purpose: GitHub delays or drops scheduled runs most at :00/:30.
+    # The bot itself checks Alpaca's market clock, so off-hours runs and holidays place no orders.
+    - cron: "4,34 13-21 * * 1-5"
   workflow_dispatch:
     inputs:
       mode:
@@ -30,11 +34,5 @@ jobs:
           ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
         run: python scripts/run_bot.py ${{ inputs.mode || 'trade' }}
       - name: Save state
-        if: always()
-        run: |
-          git config user.name "HB Atelier Bot"
-          git config user.email "atelier-bot@users.noreply.github.com"
-          git add state/ || true
-          git diff --cached --quiet && exit 0
-          git commit -m "Atelier state $(date -u +%FT%H:%MZ)"
-          git pull --rebase && git push
+        if: always()          # also after a failed run, so a sent order is never forgotten
+        run: scripts/save_state.sh "${{ inputs.mode || 'trade' }}" state/

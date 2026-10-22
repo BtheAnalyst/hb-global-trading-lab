@@ -30,10 +30,4 @@ jobs:
       - name: Export numbers for the Atelier dashboard
         run: python scripts/export_dashboard.py
       - name: Save state
-        run: |
-          git config user.name "HB Atelier Bot"
-          git config user.email "atelier-bot@users.noreply.github.com"
-          git add state/ dashboard/*.json dashboard/letter_email.html dashboard/letter_subject.txt || true
-          git diff --cached --quiet && exit 0
-          git commit -m "Atelier letter state $(date -u +%F)"
-          git pull --rebase && git push
+        run: scripts/save_state.sh letter state/ dashboard/*.json dashboard/letter_email.html dashboard/letter_subject.txt
