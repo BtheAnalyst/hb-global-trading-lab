@@ -66,7 +66,8 @@
  "trades": [],
  "log": [
   "2026-10-22 12:56 Volatility filter OK: SPY 20-day realized volatility 9% (limit 30%); Signal KRE: long_put (downtrend; RSI bounced to 50-65 and turned down on volume (RSI 50)); Risk engine declined all 6 KRE contracts (mostly: spread too wide).",
-  "2026-10-22 14:34 Volatility filter OK: SPY 20-day realized volatility 9% (limit 30%); Signal KRE: long_put (downtrend; RSI bounced to 50-65 and turned down on volume (RSI 50)); Risk engine declined all 6 KRE contracts (mostly: spread too wide)."
+  "2026-10-22 14:34 Volatility filter OK: SPY 20-day realized volatility 9% (limit 30%); Signal KRE: long_put (downtrend; RSI bounced to 50-65 and turned down on volume (RSI 50)); Risk engine declined all 6 KRE contracts (mostly: spread too wide).",
+  "2026-10-22 14:35 Volatility filter OK: SPY 20-day realized volatility 9% (limit 30%); Signal KRE: long_put (downtrend; RSI bounced to 50-65 and turned down on volume (RSI 50)); Risk engine declined all 6 KRE contracts (mostly: spread too wide)."
  ],
  "kill_switch": false
 }
