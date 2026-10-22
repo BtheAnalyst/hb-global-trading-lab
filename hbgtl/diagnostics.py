@@ -51,6 +51,15 @@ def affordability(cands: list[Candidate], cfg: dict, engine: RiskEngine, acct: A
              f"{len(in_band)} in delta band", f"{len(liquid)} also liquid (OI>={r['min_open_interest']}, "
              f"spread<={r['max_spread_pct_of_mid']:g}%)", f"{len(fits)} also affordable (ask <= ${cap:.2f})"]
     line = ", ".join(parts)
+    if in_band:
+        c0 = min(in_band, key=lambda c: c.ask)
+        line += f"; cheapest in-band ask ${c0.ask:.2f} ({c0.symbol}, ${c0.ask * 100:,.0f}/contract)"
+    missing = sum(1 for c in cands if getattr(c, "oi_missing", False))
+    zero = sum(1 for c in cands if c.open_interest == 0)
+    if zero:
+        dates = sorted({str(getattr(c, "oi_date", None)) for c in cands})
+        line += (f"; open interest is 0 on {zero}/{len(cands)} contracts ({missing} reported as missing by "
+                 f"the data feed; OI dates {', '.join(dates[:3])})")
     if liquid:
         cheapest = min(liquid, key=lambda c: c.ask)
         line += f"; cheapest liquid in-band ask ${cheapest.ask:.2f} ({cheapest.symbol})"

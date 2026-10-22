@@ -82,6 +82,8 @@ class AlpacaPaperGateway:  # pragma: no cover - network
                              int(float(c.open_interest or 0)), float(q.bid_price or 0), float(q.ask_price or 0),
                              float(g.delta) if g is not None and g.delta is not None else None)
             cand.quote_time = q.timestamp  # type: ignore[attr-defined]
+            cand.oi_missing = c.open_interest is None  # type: ignore[attr-defined]  # diagnostics only
+            cand.oi_date = getattr(c, "open_interest_date", None)  # type: ignore[attr-defined]
             out.append(cand)
         return out
 
