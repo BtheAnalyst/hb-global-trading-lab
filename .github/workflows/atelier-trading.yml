@@ -18,12 +18,16 @@ concurrency:
   cancel-in-progress: false
 permissions:
   contents: write            # to save the bot's state file
+  actions: write             # to start the Daily Letter after the close
+  issues: read               # to see whether today's Letter is already posted
 jobs:
   run:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # latest saved state, not the commit this run was queued on (runs queue behind each other)
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -36,3 +40,8 @@ jobs:
       - name: Save state
         if: always()          # also after a failed run, so a sent order is never forgotten
         run: scripts/save_state.sh "${{ inputs.mode || 'trade' }}" state/
+      - name: Start the Daily Letter after the close (once a day)
+        if: success() && (inputs.mode || 'trade') == 'trade'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: scripts/start_letter.sh

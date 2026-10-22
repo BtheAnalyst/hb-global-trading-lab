@@ -15,6 +15,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # latest saved state, not the commit this run was queued on (runs queue behind each other)
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -25,6 +27,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh label create daily-letter --color 4A5A32 --description "HB Global Daily Letter" 2>/dev/null || true
+          title="The Daily Letter · $(TZ=America/New_York date +'%a %b %-d, %Y')"
+          if gh issue list --label daily-letter --state all --limit 30 --json title -q '.[].title' | grep -qxF "$title"; then
+            echo "Today's Letter is already posted; not posting twice."; exit 0
+          fi
           gh issue create --title "The Daily Letter · $(TZ=America/New_York date +'%a %b %-d, %Y')" \
             --body-file letter.md --label daily-letter --assignee "${{ github.repository_owner }}"
       - name: Export numbers for the Atelier dashboard

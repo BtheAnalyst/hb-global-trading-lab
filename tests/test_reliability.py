@@ -118,3 +118,37 @@ def test_scan_saves_nothing_and_says_so(repo):
     work, _ = repo
     r = _save(work, "scan", "state/")
     assert r.returncode == 0 and "nothing is saved" in r.stdout
+
+
+# ---------- scripts/start_letter.sh (after-close Daily Letter starter) ----------
+
+def _start_letter(tmp_path, hm, dow, posted_titles):
+    bin_ = tmp_path / "bin"; bin_.mkdir(exist_ok=True)
+    (bin_ / "date").write_text(f"""#!/bin/sh
+case "$1" in +%H%M) echo {hm};; +%u) echo {dow};; *) echo 'Thu Oct 22, 2026';; esac
+""")
+    titles = "\\n".join(posted_titles)
+    (bin_ / "gh").write_text(f"""#!/bin/sh
+if [ "$1" = issue ]; then printf '{titles}\\n'; else echo "$@" >> {tmp_path}/gh_calls; fi
+""")
+    for f in bin_.iterdir():
+        f.chmod(0o755)
+    env = {**os.environ, "PATH": f"{bin_}:{os.environ['PATH']}"}
+    r = subprocess.run(["bash", str(ROOT / "scripts/start_letter.sh")], env=env, capture_output=True, text=True)
+    calls = (tmp_path / "gh_calls").read_text() if (tmp_path / "gh_calls").exists() else ""
+    return r, calls
+
+
+def test_letter_started_once_after_close(tmp_path):
+    r, calls = _start_letter(tmp_path, "1634", "4", [])
+    assert r.returncode == 0 and "workflow run atelier-daily-letter.yml" in calls
+
+
+def test_letter_not_started_twice(tmp_path):
+    r, calls = _start_letter(tmp_path, "1704", "4", ["The Daily Letter · Thu Oct 22, 2026"])
+    assert r.returncode == 0 and calls == ""
+
+
+def test_letter_not_started_during_market_or_weekend(tmp_path):
+    assert _start_letter(tmp_path, "1404", "4", [])[1] == ""
+    assert _start_letter(tmp_path, "1634", "6", [])[1] == ""
