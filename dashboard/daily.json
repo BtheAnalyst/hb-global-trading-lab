@@ -8,7 +8,23 @@
   "contributed": 10000.0
  },
  {
+  "date": "2026-10-22",
+  "portfolio": "A",
+  "trading": 10000.0,
+  "vault": 0.0,
+  "wealth": 10000.0,
+  "contributed": 10000.0
+ },
+ {
   "date": "2026-10-21",
+  "portfolio": "B",
+  "trading": 100.0,
+  "vault": 0.0,
+  "wealth": 100.0,
+  "contributed": 100.0
+ },
+ {
+  "date": "2026-10-22",
   "portfolio": "B",
   "trading": 100.0,
   "vault": 0.0,

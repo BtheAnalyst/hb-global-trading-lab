@@ -20,8 +20,8 @@
   "risk_per_trade": 100.0,
   "open_position": "",
   "kill_switch": false,
-  "declined_today": 0,
-  "as_of": "2026-10-21"
+  "declined_today": 1,
+  "as_of": "2026-10-22"
  },
  {
   "portfolio": "B",
@@ -45,6 +45,6 @@
   "open_position": "",
   "kill_switch": false,
   "declined_today": 0,
-  "as_of": "2026-10-21"
+  "as_of": "2026-10-22"
  }
 ]
