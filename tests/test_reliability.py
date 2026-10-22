@@ -152,3 +152,32 @@ def test_letter_not_started_twice(tmp_path):
 def test_letter_not_started_during_market_or_weekend(tmp_path):
     assert _start_letter(tmp_path, "1404", "4", [])[1] == ""
     assert _start_letter(tmp_path, "1634", "6", [])[1] == ""
+
+
+# ---------- scripts/relay.py (replacement scheduler) ----------
+
+def _relay():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("relay", ROOT / "scripts/relay.py")
+    m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+    return m
+
+
+def test_relay_slots_cover_the_session():
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    r = _relay()
+    day = datetime(2026, 10, 22, 8, 0, tzinfo=ZoneInfo("America/New_York"))
+    s = [f"{x:%H:%M}" for x in r.slots(day)]
+    assert s[0] == "09:34" and s[-1] == "16:34" and len(s) == 15
+
+
+def test_relay_next_slot():
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    r, ET = _relay(), ZoneInfo("America/New_York")
+    assert f"{r.next_slot(datetime(2026, 10, 22, 9, 0, tzinfo=ET)):%H:%M}" == "09:34"
+    assert f"{r.next_slot(datetime(2026, 10, 22, 14, 6, tzinfo=ET)):%H:%M}" == "14:04"   # within grace
+    assert f"{r.next_slot(datetime(2026, 10, 22, 14, 10, tzinfo=ET)):%H:%M}" == "14:34"
+    assert r.next_slot(datetime(2026, 10, 22, 16, 40, tzinfo=ET)) is None
+    assert r.next_slot(datetime(2026, 10, 24, 11, 0, tzinfo=ET)) is None                 # Saturday

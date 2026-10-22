@@ -1,0 +1,26 @@
+name: Atelier scheduler relay
+# Starts "Atelier paper trading" (trade mode) at :04 and :34, 9:34 AM-4:34 PM ET, weekdays.
+# Replaces GitHub's cron, which never fired for this repo. Started each weekday morning
+# by a Claude scheduled task; the cron below is only a backup starter.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 13 * * 1-5"        # backup starter, 9:17 AM EDT / 8:17 AM EST
+concurrency:
+  group: atelier-relay             # exactly one relay alive; a newer start replaces an older one
+  cancel-in-progress: true
+permissions:
+  actions: write                   # to start the trading workflow (and hand off to the next relay)
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Start the bot every 30 minutes until after the close
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: python scripts/relay.py
