@@ -31,9 +31,41 @@
    "deposits": 0.0,
    "vault_added": 0.0,
    "violations": 0
+  },
+  "2026-10-22": {
+   "wins": 0,
+   "losses": 0,
+   "rejected": 1,
+   "rejections": {
+    "spread too wide": 1
+   },
+   "notes": [],
+   "start_equity": {
+    "A": 10000.0,
+    "B": 100.0
+   },
+   "deposits": 0.0,
+   "vault_added": 0.0,
+   "violations": 0,
+   "alerts": [],
+   "market": {
+    "calm": true,
+    "vol_note": "SPY 20-day realized volatility 9% (limit 30%)"
+   },
+   "signals": {
+    "KRE": {
+     "direction": "long_put",
+     "reason": "downtrend; RSI bounced to 50-65 and turned down on volume (RSI 50)",
+     "price": 70.605,
+     "outcome": "declined by the risk engine: spread too wide"
+    }
+   },
+   "b_note": "Founder's Account $100.00: the 1% rule allows $1.00 of risk per trade, below any qualifying contract, so it holds cash by design."
   }
  },
  "trades": [],
- "log": [],
+ "log": [
+  "2026-10-22 12:56 Volatility filter OK: SPY 20-day realized volatility 9% (limit 30%); Signal KRE: long_put (downtrend; RSI bounced to 50-65 and turned down on volume (RSI 50)); Risk engine declined all 6 KRE contracts (mostly: spread too wide)."
+ ],
  "kill_switch": false
 }
