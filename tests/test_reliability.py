@@ -181,3 +181,12 @@ def test_relay_next_slot():
     assert f"{r.next_slot(datetime(2026, 10, 22, 14, 10, tzinfo=ET)):%H:%M}" == "14:34"
     assert r.next_slot(datetime(2026, 10, 22, 16, 40, tzinfo=ET)) is None
     assert r.next_slot(datetime(2026, 10, 24, 11, 0, tzinfo=ET)) is None                 # Saturday
+
+
+def test_relay_never_fires_a_slot_twice():
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    r, ET = _relay(), ZoneInfo("America/New_York")
+    fired = datetime(2026, 10, 22, 14, 34, tzinfo=ET)
+    nxt = r.next_slot(datetime(2026, 10, 22, 14, 35, tzinfo=ET), last_fired=fired)
+    assert f"{nxt:%H:%M}" == "15:04"

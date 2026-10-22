@@ -39,11 +39,15 @@ def slots(day: datetime) -> list[datetime]:
     return out
 
 
-def next_slot(now: datetime, grace: timedelta = timedelta(minutes=3)) -> datetime | None:
-    """The next slot to fire. A slot that passed less than `grace` ago still counts."""
+def next_slot(now: datetime, grace: timedelta = timedelta(minutes=3),
+              last_fired: datetime | None = None) -> datetime | None:
+    """The next slot to fire. A slot that passed less than `grace` ago still counts,
+    but a slot this relay already fired never fires again."""
     if now.weekday() >= 5:
         return None
     for s in slots(now):
+        if last_fired is not None and s <= last_fired:
+            continue
         if s >= now - grace:
             return s
     return None
@@ -62,10 +66,11 @@ def gh(*args: str) -> bool:
 def main() -> int:
     started = datetime.now(ET)
     failures = 0
+    last_fired: datetime | None = None
     print(f"Relay started {started:%a %Y-%m-%d %H:%M:%S} ET", flush=True)
     while True:
         now = datetime.now(ET)
-        s = next_slot(now)
+        s = next_slot(now, last_fired=last_fired)
         if s is None:
             print("No more slots today: relay done.", flush=True)
             break
@@ -81,13 +86,13 @@ def main() -> int:
             print(f"Next start at {s:%H:%M} ET (sleeping {wait / 60:.1f} min)", flush=True)
             time.sleep(wait)
         ok = gh("workflow", "run", "atelier-trading.yml", "--ref", "main", "-f", "mode=trade")
+        last_fired = s
         stamp = datetime.now(ET)
         if ok:
             print(f"{stamp:%H:%M:%S} ET: started trading run for the {s:%H:%M} slot", flush=True)
         else:
             failures += 1
             print(f"::error title=Trading run not started::{s:%H:%M} ET slot", flush=True)
-        time.sleep(60)   # never fire the same slot twice
     return 1 if failures else 0
 
 
