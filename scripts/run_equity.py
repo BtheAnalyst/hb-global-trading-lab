@@ -36,7 +36,24 @@ STATE = ROOT / "state" / "equity_state.json"
 JOURNAL = ROOT / "state" / "equity_journal.jsonl"
 
 
+RUN_LOG: list[dict] = []
+LAST_RUN = ROOT / "state" / "last_run.json"
+
+
+def write_last_run(mode: str, code: int) -> None:
+    """Machine-readable result of this run, committed with the books, read by the alert task."""
+    try:
+        LAST_RUN.parent.mkdir(exist_ok=True)
+        LAST_RUN.write_text(json.dumps({"at": datetime.now(ET).isoformat(timespec="seconds"), "mode": mode,
+                                        "exit_code": code, "problem": code != 0 or any(
+                                            n["level"] in ("warning", "error") for n in RUN_LOG),
+                                        "notes": RUN_LOG}, indent=1, default=str))
+    except Exception:  # noqa: BLE001
+        pass
+
+
 def note(title: str, msg: str, level: str = "notice") -> None:
+    RUN_LOG.append({"level": level, "title": title, "message": msg})
     print(f"::{level} title={title}::{msg}")
 
 
@@ -171,6 +188,11 @@ def main() -> int:
     note("Engine pass" + (" (dry: nothing saved)" if a.mode == "check" else ""), " || ".join(lines)[:3800])
     if summ["alerts"]:
         note("Alerts", " || ".join(summ["alerts"])[:3800], "warning")
+    for pid, r in summ["portfolios"].items():
+        spec = next((sp for sp in specs if sp.pid == pid), None)
+        if spec is not None and spec.mode == "broker" and r["refused"] and a.mode == "paper":
+            note("Founder order refused", "; ".join(f"{x['side']} {x['symbol']}: {x['reason']}" for x in r["refused"]),
+                 "warning")
     if "reconciliation" in summ:
         bspec = next((sp for sp in specs if sp.mode == "broker"), None)
         fb = work.get("portfolios", {}).get(bspec.pid, {}) if bspec else {}
@@ -213,8 +235,12 @@ def mark(alp, specs) -> int:
 
 
 if __name__ == "__main__":
+    _mode = next((sys.argv[i + 1] for i, x in enumerate(sys.argv) if x == "--mode" and i + 1 < len(sys.argv)), "check")
     try:
-        sys.exit(main())
+        _code = main() or 0
+        if _mode in ("paper", "shadow"):
+            write_last_run(_mode, _code)
+        sys.exit(_code)
     except SystemExit:
         raise
     except Exception as e:  # noqa: BLE001 - logs are not visible from here; surface the error as an annotation
@@ -222,4 +248,6 @@ if __name__ == "__main__":
         tb = traceback.format_exc().strip().splitlines()
         note("Run failed", f"{type(e).__name__}: {' '.join(str(e).split())[:300]} | at {' / '.join(tb[-4:-1])[:600]}",
              "error")
+        if _mode in ("paper", "shadow"):
+            write_last_run(_mode, 1)
         sys.exit(1)

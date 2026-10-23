@@ -1,7 +1,8 @@
 # Stock & ETF engine (Gate 2). STOCKS AND ETFs ONLY: no options, futures, leverage, margin or short selling.
 # Scheduled execution is DISABLED until Gate 5 approval. Nothing here moves real money; contributions are
 # credited on the books only (no automated deposits or transfers).
-execution_enabled: false        # master switch for any scheduled run; stays false until Gate 5
+execution_enabled: true         # Founder decision Oct 23, 2026: Gate 3 runs AUTOMATED, SCHEDULED PAPER trading
+live_trading: false             # LIVE TRADING BLOCKED: the code only has a paper client; this flag is never read as permission
 # Gate 3 (approved Oct 23, 2026 for controlled MANUAL paper testing): exactly one portfolio may send orders
 # to the Alpaca PAPER account. Selected for order-mechanics testing because it exercises every order type
 # (core, sleeve entries/exits, T-bills, vault). Not an endorsement of 80/20: it remains a research candidate.

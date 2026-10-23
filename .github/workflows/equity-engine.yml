@@ -1,14 +1,22 @@
-name: Stock & ETF engine (manual only)
-# No schedule on purpose: unattended scheduled orders stay disabled until a separate Gate 5 approval.
+name: Stock & ETF engine (automated paper trading)
+# Gate 3 (founder decision Oct 23, 2026): automated PAPER trading on U.S. trading days.
+# Primary start: a Claude scheduled task dispatches mode=paper at 9:52 AM ET each weekday.
+# Backup starts: GitHub cron below (it has been unreliable for this repo). Duplicate starts are harmless:
+# one decision pass per portfolio per day, unique order ids, and the run refuses before 9:45 ET or when the
+# market is closed (holidays and weekends are skipped via Alpaca's market calendar).
+# Alpaca PAPER only; live trading is blocked in code.
 on:
+  schedule:
+    - cron: "25 14 * * 1-5"        # backup: 10:25 EDT / 9:25 EST (refused as too early in EST; harmless)
+    - cron: "25 15 * * 1-5"        # backup: 11:25 EDT / 10:25 EST
   workflow_dispatch:
     inputs:
       mode:
-        description: "check = read-only dry run | shadow = research portfolios only | paper = research + Founder's Account paper orders | harden = paper-account backstops | resume = owner restart"
+        description: "paper = research + Founder's Account paper orders | check = read-only dry run | shadow = research only | harden = paper-account backstops | resume = owner restart"
         required: true
-        default: check
+        default: paper
         type: choice
-        options: [check, shadow, paper, harden, resume]
+        options: [paper, check, shadow, harden, resume]
       pid:
         description: "resume only: portfolio id (e.g. FOUNDER) or GLOBAL"
         required: false
@@ -25,8 +33,13 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      MODE: ${{ inputs.mode || 'paper' }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main                # latest saved books, not the commit this run was queued on
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -37,10 +50,15 @@ jobs:
           ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
           PID: ${{ inputs.pid }}
           REASON: ${{ inputs.reason }}
-        run: python scripts/run_equity.py --mode "${{ inputs.mode }}" --manual --pid "$PID" --reason "$REASON"
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            python scripts/run_equity.py --mode paper
+          else
+            python scripts/run_equity.py --mode "$MODE" --manual --pid "$PID" --reason "$REASON"
+          fi
       - name: Save books (always, so a failed run's partial books are kept for recovery)
-        if: always() && inputs.mode != 'check' && inputs.mode != 'harden'
+        if: always() && env.MODE != 'check' && env.MODE != 'harden'
         run: |
           git config user.name "hb-atelier-bot"; git config user.email "bot@users.noreply.github.com"
-          git add state/equity_state.json state/equity_journal.jsonl 2>/dev/null || true
-          git diff --cached --quiet || (git commit -m "Equity engine ${{ inputs.mode }} pass" && git pull --rebase && git push)
+          git add state/equity_state.json state/equity_journal.jsonl state/last_run.json 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "Equity engine $MODE pass" && git pull --rebase && git push)

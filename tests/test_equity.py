@@ -23,7 +23,7 @@ R80 = AllocationRule(core_w=0.8)
 
 # ---------------- config / mandate ----------------
 def test_execution_disabled_and_exactly_one_selected_broker_portfolio():
-    assert CFG["execution_enabled"] is False
+    assert CFG["execution_enabled"] is True and CFG["live_trading"] is False
     brokers = [p for p in specs_from_cfg(CFG) if p.mode == "broker"]
     assert [p.pid for p in brokers] == [CFG["broker_portfolio"]] == ["FOUNDER"]
     shadows = [p for p in specs_from_cfg(CFG) if p.mode == "shadow"]
@@ -46,9 +46,14 @@ def test_allocation_is_configurable_not_hardcoded():
     assert {s.vault_pct for s in specs_from_cfg(CFG)} == {0.0, 0.30}
 
 
-def test_scheduled_workflow_has_no_schedule():
+def test_scheduled_workflow_is_paper_only_and_options_scheduler_retired():
     wf = (ROOT / ".github" / "workflows" / "equity-engine.yml").read_text()
-    assert "schedule" not in yaml.safe_load(wf)[True]   # 'on:' parses as True in YAML 1.1
+    on = yaml.safe_load(wf)[True]                        # 'on:' parses as True in YAML 1.1
+    assert "schedule" in on and "--mode paper" in wf     # automated paper runs (founder decision Oct 23)
+    assert "live" not in wf.lower().replace("live trading is blocked", "")
+    assert CFG.get("live_trading") is False
+    relay = (ROOT / "scripts" / "relay.py").read_text()
+    assert "equity-engine" not in relay                  # the old options relay never starts the new engine
 
 
 # ---------------- allocator ----------------
