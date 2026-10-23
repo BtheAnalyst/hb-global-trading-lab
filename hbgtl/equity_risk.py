@@ -58,7 +58,7 @@ def asset_allowed(sym: str, allowlist: set, asset: dict | None) -> str | None:
     return None
 
 
-def quote_problem(sym: str, bid: float, ask: float, last_close: float, age_s: float | None, rc: RiskConfig,
+def quote_problem(sym: str, bid: float, ask: float, age_s: float | None, last_close: float, rc: RiskConfig,
                   check_age: bool) -> str | None:
     if not (bid and ask) or bid <= 0 or ask <= 0 or ask < bid:
         return f"{sym}: no valid quote"

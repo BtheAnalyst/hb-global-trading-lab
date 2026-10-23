@@ -1,0 +1,311 @@
+{
+ "look_ahead": {
+  "days_tested": 150,
+  "mismatches": 0,
+  "timing": "decide on the close of day t using closes through t; fill at the open of t+1"
+ },
+ "data_completeness": {
+  "calendar_days": 2716,
+  "per_etf": {
+   "BIL": {
+    "rows": 2716,
+    "first": "2016-01-04",
+    "last": "2026-10-21",
+    "missing_vs_calendar": 0,
+    "duplicate_dates": 0,
+    "non_positive": 0,
+    "open_outside_high_low": 0,
+    "days_moving_over_15pct": []
+   },
+   "EEM": {
+    "rows": 2716,
+    "first": "2016-01-04",
+    "last": "2026-10-21",
+    "missing_vs_calendar": 0,
+    "duplicate_dates": 0,
+    "non_positive": 0,
+    "open_outside_high_low": 0,
+    "days_moving_over_15pct": []
+   },
+   "EFA": {
+    "rows": 2716,
+    "first": "2016-01-04",
+    "last": "2026-10-21",
+    "missing_vs_calendar": 0,
+    "duplicate_dates": 0,
+    "non_positive": 0,
+    "open_outside_high_low": 0,
+    "days_moving_over_15pct": []
+   },
+   "GLD": {
+    "rows": 2716,
+    "first": "2016-01-04",
+    "last": "2026-10-21",
+    "missing_vs_calendar": 0,
+    "duplicate_dates": 0,
+    "non_positive": 0,
+    "open_outside_high_low": 0,
+    "days_moving_over_15pct": []
+   },
+   "IWM": {
+    "rows": 2716,
+    "first": "2016-01-04",
+    "last": "2026-10-21",
+    "missing_vs_calendar": 0,
+    "duplicate_dates": 0,
+    "non_positive": 0,
+    "open_outside_high_low": 0,
+    "days_moving_over_15pct": []
+   },
+   "QQQ": {
+    "rows": 2716,
+    "first": "2016-01-04",
+    "last": "2026-10-21",
+    "missing_vs_calendar": 0,
+    "duplicate_dates": 0,
+    "non_positive": 0,
+    "open_outside_high_low": 0,
+    "days_moving_over_15pct": []
+   },
+   "SPY": {
+    "rows": 2716,
+    "first": "2016-01-04",
+    "last": "2026-10-21",
+    "missing_vs_calendar": 0,
+    "duplicate_dates": 0,
+    "non_positive": 0,
+    "open_outside_high_low": 0,
+    "days_moving_over_15pct": []
+   },
+   "TLT": {
+    "rows": 2716,
+    "first": "2016-01-04",
+    "last": "2026-10-21",
+    "missing_vs_calendar": 0,
+    "duplicate_dates": 0,
+    "non_positive": 0,
+    "open_outside_high_low": 0,
+    "days_moving_over_15pct": []
+   },
+   "VNQ": {
+    "rows": 2716,
+    "first": "2016-01-04",
+    "last": "2026-10-21",
+    "missing_vs_calendar": 0,
+    "duplicate_dates": 0,
+    "non_positive": 0,
+    "open_outside_high_low": 0,
+    "days_moving_over_15pct": []
+   },
+   "VTI": {
+    "rows": 2716,
+    "first": "2016-01-04",
+    "last": "2026-10-21",
+    "missing_vs_calendar": 0,
+    "duplicate_dates": 0,
+    "non_positive": 0,
+    "open_outside_high_low": 0,
+    "days_moving_over_15pct": []
+   }
+  }
+ },
+ "calendar_year_total_returns": {
+  "VTI": {
+   "2017": 0.2121,
+   "2018": -0.0524,
+   "2019": 0.3067,
+   "2020": 0.2107,
+   "2021": 0.2568,
+   "2022": -0.1952,
+   "2023": 0.2605,
+   "2024": 0.2381,
+   "2025": 0.171
+  },
+  "SPY": {
+   "2017": 0.2175,
+   "2018": -0.0496,
+   "2019": 0.3114,
+   "2020": 0.1845,
+   "2021": 0.286,
+   "2022": -0.1818,
+   "2023": 0.2618,
+   "2024": 0.2489,
+   "2025": 0.1772
+  },
+  "BIL": {
+   "2017": 0.0069,
+   "2018": 0.0175,
+   "2019": 0.0204,
+   "2020": 0.0039,
+   "2021": -0.001,
+   "2022": 0.0139,
+   "2023": 0.0495,
+   "2024": 0.0519,
+   "2025": 0.0414
+  },
+  "TLT": {
+   "2017": 0.0918,
+   "2018": -0.0162,
+   "2019": 0.1412,
+   "2020": 0.1815,
+   "2021": -0.046,
+   "2022": -0.3124,
+   "2023": 0.0277,
+   "2024": -0.0806,
+   "2025": 0.0425
+  }
+ },
+ "availability": {
+  "BIL": "2016-01-04",
+  "EEM": "2016-01-04",
+  "EFA": "2016-01-04",
+  "GLD": "2016-01-04",
+  "IWM": "2016-01-04",
+  "QQQ": "2016-01-04",
+  "SPY": "2016-01-04",
+  "TLT": "2016-01-04",
+  "VNQ": "2016-01-04",
+  "VTI": "2016-01-04",
+  "first_decision_date": "2017-01-03",
+  "lookback_needed_days": 252
+ },
+ "path_sensitivity": {
+  "runs": [
+   {
+    "start": "2017-01-01",
+    "contributed": 11800.0,
+    "vti": 25658.04,
+    "c_80_20": 25321.52,
+    "gap_pct": -0.0131
+   },
+   {
+    "start": "2017-02-01",
+    "contributed": 11700.0,
+    "vti": 25278.89,
+    "c_80_20": 24951.29,
+    "gap_pct": -0.013
+   },
+   {
+    "start": "2017-03-01",
+    "contributed": 11600.0,
+    "vti": 24902.15,
+    "c_80_20": 24582.97,
+    "gap_pct": -0.0128
+   },
+   {
+    "start": "2017-04-01",
+    "contributed": 11500.0,
+    "vti": 24544.37,
+    "c_80_20": 24232.39,
+    "gap_pct": -0.0127
+   },
+   {
+    "start": "2017-05-01",
+    "contributed": 11400.0,
+    "vti": 24180.72,
+    "c_80_20": 23872.84,
+    "gap_pct": -0.0127
+   },
+   {
+    "start": "2017-06-01",
+    "contributed": 11300.0,
+    "vti": 23823.58,
+    "c_80_20": 23524.28,
+    "gap_pct": -0.0126
+   },
+   {
+    "start": "2017-07-01",
+    "contributed": 11200.0,
+    "vti": 23472.14,
+    "c_80_20": 23181.27,
+    "gap_pct": -0.0124
+   },
+   {
+    "start": "2017-08-01",
+    "contributed": 11100.0,
+    "vti": 23122.03,
+    "c_80_20": 22837.85,
+    "gap_pct": -0.0123
+   },
+   {
+    "start": "2017-09-01",
+    "contributed": 11000.0,
+    "vti": 22777.86,
+    "c_80_20": 22502.83,
+    "gap_pct": -0.0121
+   },
+   {
+    "start": "2017-10-01",
+    "contributed": 10900.0,
+    "vti": 22433.1,
+    "c_80_20": 22168.33,
+    "gap_pct": -0.0118
+   },
+   {
+    "start": "2017-11-01",
+    "contributed": 10800.0,
+    "vti": 22098.74,
+    "c_80_20": 21841.92,
+    "gap_pct": -0.0116
+   },
+   {
+    "start": "2017-12-01",
+    "contributed": 10700.0,
+    "vti": 21769.5,
+    "c_80_20": 21521.84,
+    "gap_pct": -0.0114
+   },
+   {
+    "start": "2018-01-01",
+    "contributed": 10600.0,
+    "vti": 21451.55,
+    "c_80_20": 21211.03,
+    "gap_pct": -0.0112
+   },
+   {
+    "start": "2018-02-01",
+    "contributed": 10500.0,
+    "vti": 21138.26,
+    "c_80_20": 20906.3,
+    "gap_pct": -0.011
+   },
+   {
+    "start": "2018-03-01",
+    "contributed": 10400.0,
+    "vti": 20836.13,
+    "c_80_20": 20613.23,
+    "gap_pct": -0.0107
+   },
+   {
+    "start": "2018-04-01",
+    "contributed": 10300.0,
+    "vti": 20517.97,
+    "c_80_20": 20304.69,
+    "gap_pct": -0.0104
+   },
+   {
+    "start": "2018-05-01",
+    "contributed": 10200.0,
+    "vti": 20194.13,
+    "c_80_20": 19994.31,
+    "gap_pct": -0.0099
+   },
+   {
+    "start": "2018-06-01",
+    "contributed": 10100.0,
+    "vti": 19877.67,
+    "c_80_20": 19683.64,
+    "gap_pct": -0.0098
+   }
+  ],
+  "gap_min": -0.0131,
+  "gap_median": -0.011949999999999999,
+  "gap_max": -0.0098,
+  "share_c_beats_vti": 0.0,
+  "c_80_20_final_by_cost": {
+   "0.04%": 25355.57,
+   "0.05%": 25321.52,
+   "0.06%": 25287.67
+  }
+ }
+}

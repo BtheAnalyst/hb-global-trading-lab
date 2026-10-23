@@ -117,10 +117,22 @@ def test_leveraged_detected_even_if_allowlisted():
 
 def test_quote_checks():
     rc = RiskConfig()
-    assert "spread" in quote_problem("SPY", 99, 101.5, 100, 1, rc, True)
-    assert "bad data" in quote_problem("SPY", 139.9, 140, 100, 1, rc, True)
-    assert "old" in quote_problem("SPY", 99.99, 100.01, 100, 120, rc, True)
-    assert quote_problem("SPY", 99.99, 100.01, 100, 120, rc, False) is None
+    assert "spread" in quote_problem("SPY", 99, 101.5, 1, 100, rc, True)
+    assert "bad data" in quote_problem("SPY", 139.9, 140, 1, 100, rc, True)
+    assert "old" in quote_problem("SPY", 99.99, 100.01, 120, 100, rc, True)
+    assert quote_problem("SPY", 99.99, 100.01, 120, 100, rc, False) is None
+
+
+def test_runner_refuses_order_at_abnormal_price():
+    C = _toy_closes(); eng = Engine([_spec(rule=AllocationRule(core_w=1.0))], RiskConfig()); state = {}
+    gw = SimGateway(); gw.set_prices({s: p * 1.4 for s, p in C.iloc[120].to_dict().items()})   # 40% jump
+    r = eng.run_day(state, C, 119, str(C.index[120].date()), {"shadow": gw})
+    p = r["portfolios"]["T"]
+    assert p["orders"] == [] and "bad data" in p["refused"][0]["reason"]
+    gw.set_prices(C.iloc[120].to_dict())                                    # normal price: accepted
+    state = {}
+    r = eng.run_day(state, C, 119, str(C.index[120].date()), {"shadow": gw})
+    assert r["portfolios"]["T"]["orders"]
 
 
 def test_caps_scale_with_strategy():
