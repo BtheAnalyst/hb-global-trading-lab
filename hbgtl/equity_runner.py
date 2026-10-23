@@ -54,8 +54,10 @@ class PortfolioSpec:
 
 
 def specs_from_cfg(cfg: dict) -> list[PortfolioSpec]:
+    """Build portfolio specs. Only the ONE portfolio named in `broker_portfolio` may use mode: broker."""
     d = cfg.get("defaults", {})
     out = []
+    selected = cfg.get("broker_portfolio")
     for pid, p in cfg["portfolios"].items():
         q = {**d, **(p or {})}
         mom = MomentumParams(universe=tuple(q.get("universe", MomentumParams().universe)),
@@ -69,6 +71,10 @@ def specs_from_cfg(cfg: dict) -> list[PortfolioSpec]:
                                  tuple((str(i["from"]), float(i["monthly"])) for i in q.get("increases", []) or []),
                                  q.get("mode", "shadow"), bool(q.get("enabled", True)),
                                  float(q.get("tax_rate", 0.24)), q.get("label", pid)))
+        if out[-1].mode == "broker" and pid != selected:
+            raise ValueError(f"{pid} is set to broker mode but broker_portfolio is {selected!r}: refusing to start")
+    if sum(s.mode == "broker" for s in out) > 1:
+        raise ValueError("more than one broker-mode portfolio configured: only one may send paper orders")
     return out
 
 
@@ -77,6 +83,8 @@ class Engine:
 
     def __init__(self, specs: list[PortfolioSpec], rc: RiskConfig, journal: Callable[[dict], None] | None = None,
                  save: Callable[[], None] | None = None):
+        if sum(s.mode == "broker" and s.enabled for s in specs) > 1:
+            raise ValueError("only one portfolio may send orders to the paper broker")
         self.specs = specs
         self.rc = rc
         self.journal = journal or (lambda e: None)
@@ -99,8 +107,16 @@ class Engine:
         summary = {"date": today, "portfolios": {}, "alerts": []}
         kill = bool(state.get("kill_switch")) or KILL_FILE.exists()
         broker = gateways.get("broker")
-        if broker is not None and any(s.mode == "broker" and s.enabled for s in self.specs):
-            kill = self._reconcile(state, broker, closes.iloc[i].to_dict(), summary) or kill
+        bspec = next((s for s in self.specs if s.mode == "broker" and s.enabled), None)
+        if broker is not None and bspec is not None:
+            led = Ledger.from_dict(books[bspec.pid]) if bspec.pid in books else Ledger(bspec.pid)
+            pxc = {s: float(v) for s, v in closes.iloc[i].items() if not np.isnan(v)}
+            rec = {"orders": [], "notes": [], "alerts": [], "refused": []}
+            self._recover(led, broker, bspec, pxc, rec, today)        # adopt fills from any earlier/failed run
+            books[bspec.pid] = led.to_dict()
+            summary["recovery"] = rec
+            summary["alerts"] += [f"{bspec.label}: {a}" for a in rec["alerts"]]
+            kill = self._reconcile(state, broker, pxc, summary) or kill
         for spec in self.specs:
             if not spec.enabled:
                 continue
@@ -108,7 +124,11 @@ class Engine:
             gw = broker if spec.mode == "broker" else gateways["shadow"]
             if spec.mode == "broker" and broker is None:
                 continue
-            res = self._run_portfolio(spec, led, closes, i, today, gw, kill, parity, safeguards)
+
+            def persist(led=led, pid=spec.pid):
+                books[pid] = led.to_dict()
+                self.save()
+            res = self._run_portfolio(spec, led, closes, i, today, gw, kill, parity, safeguards, persist)
             books[spec.pid] = led.to_dict()
             summary["portfolios"][spec.pid] = res
             summary["alerts"] += [f"{spec.label}: {a}" for a in res["alerts"]]
@@ -117,7 +137,9 @@ class Engine:
         return summary
 
     # ------------------------------------------------------------------
-    def _run_portfolio(self, spec, led: Ledger, closes, i, today, gw, kill, parity, safeguards) -> dict:
+    def _run_portfolio(self, spec, led: Ledger, closes, i, today, gw, kill, parity, safeguards,
+                       persist=None) -> dict:
+        persist = persist or self.save
         out = {"orders": [], "refused": [], "alerts": [], "notes": []}
         if led.last_pass == today:
             out["notes"].append("already ran today: no second decision pass")
@@ -125,9 +147,6 @@ class Engine:
         px = {s: float(v) for s, v in closes.iloc[i].items() if not np.isnan(v)}
         sleeve_syms = set(spec.mom.universe) | {spec.rule.defensive}
         rule, rc = spec.rule, self.rc
-
-        if gw.is_broker:
-            self._finish_pending(led, gw, today, spec, px, sleeve_syms, out)
 
         def snapshot():
             hv = {s: v for s, v in led.values(px).items()}
@@ -219,6 +238,9 @@ class Engine:
         allow = set(spec.mom.universe) | {rule.core, rule.defensive}
         assets = gw.assets(sorted({o.symbol for o in orders}))
         eq_now = led.equity(px)
+        budget = led.free_cash()          # Founder/portfolio capital limit: the books, never the broker's buying power
+        spent = 0.0
+        broker_qty = gw.positions() if gw.is_broker else None
         for o in sorted(orders, key=lambda o: o.side != "sell"):
             reason = asset_allowed(o.symbol, allow, assets.get(o.symbol))
             q = None if reason else gw.quote(o.symbol)
@@ -230,6 +252,8 @@ class Engine:
                 reason = "duplicate order for today refused"
             if not reason and o.side == "sell":
                 held_q = led.qty(o.symbol)
+                if broker_qty is not None:
+                    held_q = min(held_q, broker_qty.get(o.symbol, 0.0))   # never sell more than truly held
                 want_q = min(held_q, o.dollars / q[0]) if q[0] > 0 else 0
                 if o.dollars >= hold_val.get(o.symbol, 0) - 0.01:
                     want_q = held_q                                   # full exit: sell every share
@@ -237,10 +261,12 @@ class Engine:
                 if qty <= 0 or qty * q[0] < rc.min_order:
                     reason = f"sell below the ${rc.min_order:.0f} minimum"
             elif not reason:
-                amt = min(o.dollars, led.settled)
+                amt = min(o.dollars, led.settled, budget - spent)
                 fractionable = assets.get(o.symbol, {}).get("fractionable", True)
                 qty, limit = gw.buy_terms(amt, q[0], q[1], fractionable)
-                if amt < rc.min_order or qty <= 0:
+                if qty > 0 and qty * limit > budget - spent + 0.005:
+                    reason = "capital limit: order would exceed this portfolio's own settled cash"
+                elif amt < rc.min_order or qty <= 0:
                     reason = ("not enough settled cash" if amt < rc.min_order
                               else f"{o.symbol} is not fractionable and ${amt:.2f} is less than one share")
                 else:
@@ -255,7 +281,7 @@ class Engine:
             led.pending.append({"cid": cid, "symbol": o.symbol, "side": o.side, "qty": qty, "limit": limit,
                                 "sleeve": o.sleeve, "reason": o.reason, "day": today, "status": "submitting",
                                 "ref_px": q[1] if o.side == "buy" else q[0], "exit": o.reason.startswith("left")})
-            self.save()                                               # persist BEFORE sending
+            persist()                                                 # persist BEFORE sending
             try:
                 r = gw.submit(cid, o.symbol, o.side, qty, limit)
             except Exception as e:  # noqa: BLE001
@@ -265,7 +291,16 @@ class Engine:
                 if led.flags["order_errors"] >= 2:
                     led.flags["kill"] = today
                 continue
+            if o.side == "buy":
+                spent += float(r.get("filled_qty") or 0) * float(r.get("filled_avg_price") or 0)
             self._apply_result(led, led.pending[-1], r, spec, px, sleeve_syms, out, today)
+            if r["status"] in ("rejected", "canceled", "expired") and float(r.get("filled_qty") or 0) == 0:
+                out["alerts"].append(f"order {o.side} {o.symbol} was {r['status']} by the broker")
+                led.flags["order_errors"] = led.flags.get("order_errors", 0) + 1
+                if led.flags["order_errors"] >= 2:
+                    led.flags["kill"] = today
+                    out["alerts"].append("two order failures: this portfolio's kill switch is ON")
+            persist()
         led.pending = [p for p in led.pending if p["status"] in ("submitting", "new", "accepted",
                                                                  "partially_filled", "pending_new")]
         led.last_pass = today
@@ -275,9 +310,14 @@ class Engine:
 
     def _apply_result(self, led, pend, r, spec, px, sleeve_syms, out, today):
         pend["status"] = r["status"]
-        fq, fp = float(r.get("filled_qty") or 0), r.get("filled_avg_price")
-        if fq <= 0 or not fp:
+        total_q, avg = float(r.get("filled_qty") or 0), r.get("filled_avg_price")
+        done_q, done_cash = pend.get("applied_qty", 0.0), pend.get("applied_cash", 0.0)
+        fq = total_q - done_q                         # only the part not yet booked (partial fills)
+        if fq <= 1e-12 or not avg:
             return
+        fp = (total_q * float(avg) - done_cash) / fq   # price of the newly filled part
+        pend["applied_qty"], pend["applied_cash"] = total_q, total_q * float(avg)
+        led.flags.pop("order_errors", None)           # a successful fill resets the failure count
         cost_est = abs(fp - pend["ref_px"]) * fq          # slippage/spread vs the quote used to size the order
         if pend["side"] == "buy":
             led.apply_buy(today, pend["symbol"], fq * fp, fq, cost_est, pend["sleeve"])
@@ -291,17 +331,31 @@ class Engine:
         self.journal({"t": today, "pid": spec.pid, "event": "fill", "symbol": pend["symbol"], "side": pend["side"],
                       "qty": fq, "price": fp, "reason": pend["reason"], "pnl": pend.get("pnl")})
 
-    def _finish_pending(self, led, gw, today, spec, px, sleeve_syms, out):
-        """Orders from an earlier pass: apply fills that completed; drop ones never sent or cancelled."""
+    def _recover(self, led, gw, spec, px, out, today):
+        """Before deciding: finish orders from earlier passes and adopt any order the broker has under this
+        portfolio's id prefix that the books never recorded (e.g. the run died after sending)."""
+        sleeve_syms = set(spec.mom.universe) | {spec.rule.defensive}
         for p in list(led.pending):
             r = gw.get_order(p["cid"])
             if r is None:
                 p["status"] = "never_sent"
-                out["notes"].append(f"order {p['cid']} was never received by the broker; dropped")
-            elif r["status"] == "filled":
-                self._apply_result(led, p, r, spec, px, sleeve_syms, out, p["day"])
+                out["notes"].append(f"order {p['cid']} never reached the broker; dropped")
             else:
-                p["status"] = r["status"]
+                self._apply_result(led, p, r, spec, px, sleeve_syms, out, p["day"])
+        known = set(led.order_ids)
+        for r in gw.orders_since(f"hb-{spec.pid}-"):
+            if r["cid"] in known:
+                continue
+            day = r["cid"].split("-")[-5:-2]
+            p = {"cid": r["cid"], "symbol": r["symbol"], "side": r["side"], "qty": r.get("qty"), "limit": None,
+                 "sleeve": r["symbol"] != spec.rule.core, "reason": "recovered after a failed run",
+                 "day": "-".join(day) if len(day) == 3 else today, "status": r["status"],
+                 "ref_px": r.get("filled_avg_price") or 0.0,
+                 "exit": r["side"] == "sell" and r["symbol"] in spec.mom.universe}
+            led.order_ids.append(r["cid"])
+            led.pending.append(p)
+            out["alerts"].append(f"recovered order {r['cid']} ({r['status']}) that the books had not recorded")
+            self._apply_result(led, p, r, spec, px, sleeve_syms, out, p["day"])
         led.pending = [p for p in led.pending if p["status"] in ("new", "accepted", "partially_filled", "pending_new")]
 
     def _reconcile(self, state, broker, px, summary) -> bool:

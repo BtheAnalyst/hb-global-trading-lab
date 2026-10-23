@@ -2,6 +2,10 @@
 # Scheduled execution is DISABLED until Gate 5 approval. Nothing here moves real money; contributions are
 # credited on the books only (no automated deposits or transfers).
 execution_enabled: false        # master switch for any scheduled run; stays false until Gate 5
+# Gate 3 (approved Oct 23, 2026 for controlled MANUAL paper testing): exactly one portfolio may send orders
+# to the Alpaca PAPER account. Selected for order-mechanics testing because it exercises every order type
+# (core, sleeve entries/exits, T-bills, vault). Not an endorsement of 80/20: it remains a research candidate.
+broker_portfolio: FOUNDER
 defaults:
   core: VTI
   defensive: BIL
@@ -28,8 +32,9 @@ portfolios:
   B_90_10_vault: {label: "B · 90/10 · Vault 70/30",  core_weight: 0.9, vault_pct: 0.30}
   C_80_20_vault: {label: "C · 80/20 · Vault 70/30",  core_weight: 0.8, vault_pct: 0.30}
   D_70_30_vault: {label: "D · 70/30 · Vault 70/30",  core_weight: 0.7, vault_pct: 0.30}
-  # Engineering portfolio for Gate 3: real paper orders on the Alpaca PAPER account. Off until Gate 3 approval.
-  ENG_broker:   {label: "Engineering · paper orders", core_weight: 0.8, vault_pct: 0.30, mode: broker, enabled: false}
+  # Founder's Account: its OWN $100 start + $100/month on its own books (never the broker's buying power).
+  # Sends real orders to the Alpaca PAPER account only on a manual "paper" run. Separate from C_80_20_vault.
+  FOUNDER:      {label: "Founder's Account · 80/20 · Vault 70/30 (paper orders)", core_weight: 0.8, vault_pct: 0.30, mode: broker, enabled: true}
 risk:                            # evidence and reasoning: docs/RISK_THRESHOLDS.md
   core_cap_margin: 0.05
   etf_cap_mult: 1.5

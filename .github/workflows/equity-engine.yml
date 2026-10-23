@@ -1,14 +1,22 @@
 name: Stock & ETF engine (manual only)
-# No schedule on purpose: scheduled execution stays disabled until Gate 5 approval.
+# No schedule on purpose: unattended scheduled orders stay disabled until a separate Gate 5 approval.
 on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "check = read-only dry run; shadow = simulated fills, saves the books"
+        description: "check = read-only dry run | shadow = research portfolios only | paper = research + Founder's Account paper orders | harden = paper-account backstops | resume = owner restart"
         required: true
         default: check
         type: choice
-        options: [check, shadow]
+        options: [check, shadow, paper, harden, resume]
+      pid:
+        description: "resume only: portfolio id (e.g. FOUNDER) or GLOBAL"
+        required: false
+        default: ""
+      reason:
+        description: "resume only: why it is safe to restart"
+        required: false
+        default: ""
 permissions:
   contents: write
 concurrency:
@@ -23,14 +31,16 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Engine (paper only, places no broker orders)
+      - name: Engine (Alpaca PAPER only; no real money)
         env:
           ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
           ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
-        run: python scripts/run_equity.py --mode ${{ inputs.mode }} --manual
-      - name: Save books (shadow mode only)
-        if: inputs.mode == 'shadow'
+          PID: ${{ inputs.pid }}
+          REASON: ${{ inputs.reason }}
+        run: python scripts/run_equity.py --mode "${{ inputs.mode }}" --manual --pid "$PID" --reason "$REASON"
+      - name: Save books (always, so a failed run's partial books are kept for recovery)
+        if: always() && inputs.mode != 'check' && inputs.mode != 'harden'
         run: |
           git config user.name "hb-atelier-bot"; git config user.email "bot@users.noreply.github.com"
-          git add state/equity_state.json state/equity_journal.jsonl || true
-          git diff --cached --quiet || (git commit -m "Equity engine shadow pass" && git pull --rebase && git push)
+          git add state/equity_state.json state/equity_journal.jsonl 2>/dev/null || true
+          git diff --cached --quiet || (git commit -m "Equity engine ${{ inputs.mode }} pass" && git pull --rebase && git push)
