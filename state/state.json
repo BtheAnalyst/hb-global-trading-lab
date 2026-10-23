@@ -61,6 +61,22 @@
     }
    },
    "b_note": "Founder's Account $100.00: the 1% rule allows $1.00 of risk per trade, below any qualifying contract, so it holds cash by design."
+  },
+  "2026-10-23": {
+   "wins": 0,
+   "losses": 0,
+   "rejected": 0,
+   "rejections": {},
+   "notes": [],
+   "start_equity": {
+    "A": 10000.0,
+    "B": 100.0
+   },
+   "deposits": 0.0,
+   "vault_added": 0.0,
+   "violations": 0,
+   "alerts": [],
+   "b_note": "Founder's Account $100.00: the 1% rule allows $1.00 of risk per trade, below any qualifying contract, so it holds cash by design."
   }
  },
  "trades": [],
@@ -75,7 +91,8 @@
   "2026-10-22 16:04 market closed",
   "2026-10-22 16:34 market closed",
   "2026-10-22 16:45 market closed",
-  "2026-10-22 19:57 market closed"
+  "2026-10-22 19:57 market closed",
+  "2026-10-23 09:34 no action"
  ],
  "kill_switch": false
 }
