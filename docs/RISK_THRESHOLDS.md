@@ -137,5 +137,5 @@ The emergency kill switch file (`KILL_SWITCH`) works the same way.
 | Sleeve ETF cap | 1.5 × slot target | 0 | Refuse order, flag | Same |
 | Sleeve breaker | 25% sleeve drawdown | 0 | Sleeve to BIL | Owner resume |
 | Losing exits | 6 in a row | 0 (backtest), 1 streak (live timing) | Alert only | — |
-| Wealth alert | 20% below high | 2 | Alert only | — |
+| Account drawdown | 20% below contribution-adjusted high | 2 | **Pause all new purchases** (Council, Oct 23); no forced sales | Founder approval |
 | Kill switch | Reconciliation, data or order errors | — | Stop everything | Clean reconciliation plus owner resume |
