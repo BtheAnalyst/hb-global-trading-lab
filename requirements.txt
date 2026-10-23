@@ -1,3 +1,5 @@
 pyyaml
 numpy
+pandas
 pytest
+alpaca-py

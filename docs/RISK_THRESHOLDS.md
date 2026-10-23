@@ -5,6 +5,8 @@ Written **before** the thresholds were implemented, as the Council directed. The
 corrected v2 engine, dividend-adjusted daily prices. One history covering about ten years and one full bear market is a small sample.
 Every number below is a configurable setting in `config/equity.yaml`, not a hard-coded rule.
 
+*Revised Oct 23, 2026:* the figures were recomputed after the exit-fragment fix to the backtest (see `docs/AUDIT.md`, finding 2). The proposals did not change; two pieces of evidence did, and both are noted below.
+
 ## What a safeguard can and cannot do
 
 The bot makes one decision pass a day on completed closes, and orders fill at the next session's prices.
@@ -17,7 +19,7 @@ The bot makes one decision pass a day on completed closes, and orders fill at th
 
 | Evidence (portfolio C 80/20) | Value |
 |---|---|
-| Days down 3% or more | 22 in 2,463 |
+| Days down 3% or more | 21 in 2,463 |
 | Days down 5% or more | 6 in 2,463 |
 | Average next-day return after a 5%+ drop | **+2.7%** |
 | Average next-day return, all days | +0.06% |
@@ -38,13 +40,16 @@ Restart: clears automatically after one session. It is logged and reported in th
 
 | Highest weight reached on its own | B 90/10 | C 80/20 | D 70/30 |
 |---|---|---|---|
-| VTI (core) | 91.0% | 82.0% | 72.9% |
-| Largest single sleeve ETF | 7.0% | 13.7% | 20.0% |
+| VTI (core) | 91.2% | 82.2% | 72.9% |
+| Largest single sleeve ETF | 7.8% | 15.2% | 21.9% |
 
 Fixed caps such as "VTI 90%, ETF 15%" would block portfolio B's normal holding and portfolio D's normal slot size. So the caps scale with each strategy's own targets:
 
-- **Core hard cap = core target + 5 points** (at most 100%): 95% for B, 85% for C, 75% for D. None was breached in history.
-- **Single sleeve ETF hard cap = 1.5 × slot target**: 7.5% for B, 15% for C, 22.5% for D. None was breached.
+- **Core hard cap = core target + 5 points** (at most 100%): 95% for B, 85% for C, 75% for D.
+- **Single sleeve ETF hard cap = 1.5 × slot target**: 7.5% for B, 15% for C, 22.5% for D.
+- **The caps apply to buys only.** A holding can still drift above its cap when its price rises; the bot does not sell for that reason, and it reports the drift.
+  - In C, one ETF drifted to 15.2% on 2 days. In B, one reached 7.8%.
+  - No buy would ever have been refused.
 - **Universe allowlist only:**
   - No options, leveraged ETFs, inverse ETFs, margin or shorts.
   - Each asset must be tradable and fractionable (otherwise whole shares only).
@@ -56,9 +61,9 @@ These caps never bind when the strategy behaves as designed. If an order would b
 
 | Evidence (sleeve alone, time-weighted) | Value |
 |---|---|
-| Worst sleeve drawdown | 20.7% (Dec 2022) |
+| Worst sleeve drawdown | 19.7% (Dec 2022) |
 | Episodes deeper than 15% | 2 |
-| Episodes deeper than 20% | 1 |
+| Episodes deeper than 20% | 0 (two came within half a point: 19.6% and 19.7%) |
 | Episodes deeper than 25% | **0** |
 
 Rule:
@@ -70,25 +75,28 @@ Why 25%:
 - It sits beyond anything in this history, so it does not interfere with the strategy's normal ups and downs.
 - When it does trip, conditions are outside what was tested, which is exactly when a human should look.
 - To be clear, it would **not** have acted in 2022.
-- A 20% level would have tripped once, near the 2022 low, which is historically about the worst moment to sell.
+- A 20% level sits right at the edge of the history: the two 2022 drawdowns reached 19.6% and 19.7%. With slightly different timing it would have tripped near the 2022 low, which is historically about the worst moment to sell.
 
 Restart: requires (a) an owner resume command, logged with a reason, and (b) a fresh signal pass. The sleeve's high-water mark resets to its value at restart, so it cannot re-trip immediately.
 
 ## 4. Losing-exit streaks: proposed as an alert, not a pause (changed from the draft plan)
 
-| Evidence (80/20, 101 sleeve exits) | Value |
+| Evidence (80/20, corrected backtest) | Value |
 |---|---|
-| Win rate | 50.5% |
-| Average winning exit / average losing exit | +$65.82 / −$22.80 |
-| Longest losing streak | 11 exits |
-| Streaks of 4+ / 6+ losses | 4 / 3 |
+| Sleeve exits | 85 |
+| Win rate | 55.3% |
+| Average winning exit / average losing exit | +$78.81 / −$27.94 |
+| Longest losing streak | 5 exits |
+| Streaks of 4+ losses | 4 |
+| Same strategy, live-engine timing (cash invested one day sooner) | longest streak **13** (2022) |
 
 The draft plan paused the sleeve after 4 losing exits in a row. The evidence argues against it:
 - Momentum makes its money from a few large winners after runs of small losers.
 - A 4-loss pause would have tripped 4 times and would likely have cut off the recoveries.
+- Streak length is not stable. Moving the timing by one day turned a longest streak of 5 into one of 13, so any fixed pause point is close to arbitrary.
 
 Proposal:
-- After **6 consecutive losing exits**, send an owner review alert. There is no automatic pause.
+- After **6 consecutive losing exits**, send an owner review alert, repeated at each further loss. There is no automatic pause.
 - The drawdown breaker in section 3 remains the hard stop.
 - The Council may still choose a pause. The setting exists, and it is off by default.
 
@@ -128,6 +136,6 @@ The emergency kill switch file (`KILL_SWITCH`) works the same way.
 | Core cap | target + 5 pts | 0 | Refuse order, flag | Automatic, after the issue is reviewed |
 | Sleeve ETF cap | 1.5 × slot target | 0 | Refuse order, flag | Same |
 | Sleeve breaker | 25% sleeve drawdown | 0 | Sleeve to BIL | Owner resume |
-| Losing exits | 6 in a row | 3 | Alert only | — |
+| Losing exits | 6 in a row | 0 (backtest), 1 streak (live timing) | Alert only | — |
 | Wealth alert | 20% below high | 2 | Alert only | — |
 | Kill switch | Reconciliation, data or order errors | — | Stop everything | Clean reconciliation plus owner resume |

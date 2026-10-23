@@ -1,0 +1,46 @@
+# Stock & ETF engine (Gate 2). STOCKS AND ETFs ONLY: no options, futures, leverage, margin or short selling.
+# Scheduled execution is DISABLED until Gate 5 approval. Nothing here moves real money; contributions are
+# credited on the books only (no automated deposits or transfers).
+execution_enabled: false        # master switch for any scheduled run; stays false until Gate 5
+defaults:
+  core: VTI
+  defensive: BIL
+  universe: [SPY, QQQ, IWM, EFA, EEM, TLT, GLD, VNQ]   # predeclared, unleveraged
+  lookbacks: [63, 126, 252]
+  sma: 200
+  exit_rank: 3
+  slots: 2
+  drift_band: 0.10
+  min_order: 1.0
+  start: 100
+  monthly: 100
+  increases: []                 # e.g. [{from: "2027-06", monthly: 150}] when income rises
+  tax_rate: 0.24                # estimate for reporting only
+  mode: shadow
+  enabled: true
+# Four research candidates x two vault policies. core_weight is a setting, not a hard-coded winner.
+portfolios:
+  A_vti:        {label: "A · 100% VTI (benchmark)", core_weight: 1.0, vault_pct: 0.0}
+  B_90_10:      {label: "B · 90/10",                core_weight: 0.9, vault_pct: 0.0}
+  C_80_20:      {label: "C · 80/20",                core_weight: 0.8, vault_pct: 0.0}
+  D_70_30:      {label: "D · 70/30",                core_weight: 0.7, vault_pct: 0.0}
+  A_vti_vault:  {label: "A · 100% VTI · Vault 70/30", core_weight: 1.0, vault_pct: 0.30}
+  B_90_10_vault: {label: "B · 90/10 · Vault 70/30",  core_weight: 0.9, vault_pct: 0.30}
+  C_80_20_vault: {label: "C · 80/20 · Vault 70/30",  core_weight: 0.8, vault_pct: 0.30}
+  D_70_30_vault: {label: "D · 70/30 · Vault 70/30",  core_weight: 0.7, vault_pct: 0.30}
+  # Engineering portfolio for Gate 3: real paper orders on the Alpaca PAPER account. Off until Gate 3 approval.
+  ENG_broker:   {label: "Engineering · paper orders", core_weight: 0.8, vault_pct: 0.30, mode: broker, enabled: false}
+risk:                            # evidence and reasoning: docs/RISK_THRESHOLDS.md
+  core_cap_margin: 0.05
+  etf_cap_mult: 1.5
+  defensive_cap_margin: 0.05
+  daily_loss_pct: 0.05
+  sleeve_breaker_dd: 0.25
+  losing_exit_alert: 6
+  losing_exit_pause: 0
+  wealth_alert_dd: 0.20
+  max_spread_pct: 0.01
+  max_quote_age_s: 60
+  max_move_pct: 0.25
+  recon_tolerance: 0.50
+  min_order: 1.0

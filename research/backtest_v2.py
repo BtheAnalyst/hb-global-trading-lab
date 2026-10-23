@@ -59,6 +59,7 @@ class Params:
     extra_deposit_from: str | None = None  # e.g. "2019-01": optional raise scenario
     extra_deposit: float = 0.0
     trace: bool = False                   # record daily weights (diagnostics only)
+    full_exit: bool = True                # Gate 2 audit fix: an exit sells every share (original v2 left fragments)
 
 
 @dataclass
@@ -126,6 +127,8 @@ def run(O: pd.DataFrame, C: pd.DataFrame, p: Params, start: str = "2017-01-01", 
             px = px_o[s]
             if side == "sell":
                 amt = min(amt, sh[s] * px)
+                if p.full_exit and tag == "sleeve" and s in UNIVERSE and s not in sleeve_held:
+                    amt = sh[s] * px                       # exit: sell all shares at the open price
                 if amt < p.min_order:
                     continue
                 frac = amt / (sh[s] * px)

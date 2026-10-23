@@ -1,0 +1,582 @@
+{
+ "parity_timing": {
+  "A_vti": {
+   "backtest_final": 25658.04,
+   "engine_final": 25658.04,
+   "diff_pct": 0.0,
+   "backtest_trades": 118,
+   "engine_trades": 118,
+   "backtest_vault": 0.0,
+   "engine_vault": 0.0,
+   "contributed": 11800.0
+  },
+  "B_90_10": {
+   "backtest_final": 25497.16,
+   "engine_final": 25497.19,
+   "diff_pct": 0.0,
+   "backtest_trades": 486,
+   "engine_trades": 486,
+   "backtest_vault": 0.0,
+   "engine_vault": 0.0,
+   "contributed": 11800.0
+  },
+  "C_80_20": {
+   "backtest_final": 25321.52,
+   "engine_final": 25321.6,
+   "diff_pct": 0.0,
+   "backtest_trades": 489,
+   "engine_trades": 489,
+   "backtest_vault": 0.0,
+   "engine_vault": 0.0,
+   "contributed": 11800.0
+  },
+  "D_70_30": {
+   "backtest_final": 25113.39,
+   "engine_final": 25113.49,
+   "diff_pct": 0.0,
+   "backtest_trades": 484,
+   "engine_trades": 484,
+   "backtest_vault": 0.0,
+   "engine_vault": 0.0,
+   "contributed": 11800.0
+  },
+  "A_vti_vault": {
+   "backtest_final": 25658.04,
+   "engine_final": 25658.04,
+   "diff_pct": 0.0,
+   "backtest_trades": 118,
+   "engine_trades": 118,
+   "backtest_vault": 0.0,
+   "engine_vault": 0.0,
+   "contributed": 11800.0
+  },
+  "B_90_10_vault": {
+   "backtest_final": 25367.41,
+   "engine_final": 25367.44,
+   "diff_pct": 0.0,
+   "backtest_trades": 486,
+   "engine_trades": 486,
+   "backtest_vault": 411.84,
+   "engine_vault": 411.83,
+   "contributed": 11800.0
+  },
+  "C_80_20_vault": {
+   "backtest_final": 25060.95,
+   "engine_final": 25068.93,
+   "diff_pct": 0.00032,
+   "backtest_trades": 481,
+   "engine_trades": 481,
+   "backtest_vault": 807.01,
+   "engine_vault": 807.26,
+   "contributed": 11800.0
+  },
+  "D_70_30_vault": {
+   "backtest_final": 24732.35,
+   "engine_final": 24732.45,
+   "diff_pct": 0.0,
+   "backtest_trades": 477,
+   "engine_trades": 477,
+   "backtest_vault": 1181.03,
+   "engine_vault": 1181.03,
+   "contributed": 11800.0
+  }
+ },
+ "live_timing": {
+  "A_vti": {
+   "backtest_final": 25658.04,
+   "engine_final": 25662.25,
+   "diff_pct": 0.00016,
+   "backtest_trades": 118,
+   "engine_trades": 118,
+   "backtest_vault": 0.0,
+   "engine_vault": 0.0,
+   "contributed": 11800.0
+  },
+  "B_90_10": {
+   "backtest_final": 25497.16,
+   "engine_final": 25161.97,
+   "diff_pct": -0.01315,
+   "backtest_trades": 486,
+   "engine_trades": 532,
+   "backtest_vault": 0.0,
+   "engine_vault": 0.0,
+   "contributed": 11800.0
+  },
+  "C_80_20": {
+   "backtest_final": 25321.52,
+   "engine_final": 24637.45,
+   "diff_pct": -0.02702,
+   "backtest_trades": 489,
+   "engine_trades": 541,
+   "backtest_vault": 0.0,
+   "engine_vault": 0.0,
+   "contributed": 11800.0
+  },
+  "D_70_30": {
+   "backtest_final": 25113.39,
+   "engine_final": 24116.43,
+   "diff_pct": -0.0397,
+   "backtest_trades": 484,
+   "engine_trades": 536,
+   "backtest_vault": 0.0,
+   "engine_vault": 0.0,
+   "contributed": 11800.0
+  },
+  "A_vti_vault": {
+   "backtest_final": 25658.04,
+   "engine_final": 25662.25,
+   "diff_pct": 0.00016,
+   "backtest_trades": 118,
+   "engine_trades": 118,
+   "backtest_vault": 0.0,
+   "engine_vault": 0.0,
+   "contributed": 11800.0
+  },
+  "B_90_10_vault": {
+   "backtest_final": 25367.41,
+   "engine_final": 25046.06,
+   "diff_pct": -0.01267,
+   "backtest_trades": 486,
+   "engine_trades": 531,
+   "backtest_vault": 411.84,
+   "engine_vault": 330.83,
+   "contributed": 11800.0
+  },
+  "C_80_20_vault": {
+   "backtest_final": 25060.95,
+   "engine_final": 24419.19,
+   "diff_pct": -0.02561,
+   "backtest_trades": 481,
+   "engine_trades": 534,
+   "backtest_vault": 807.01,
+   "engine_vault": 643.52,
+   "contributed": 11800.0
+  },
+  "D_70_30_vault": {
+   "backtest_final": 24732.35,
+   "engine_final": 23806.56,
+   "diff_pct": -0.03743,
+   "backtest_trades": 477,
+   "engine_trades": 525,
+   "backtest_vault": 1181.03,
+   "engine_vault": 942.28,
+   "contributed": 11800.0
+  }
+ },
+ "live_timing_with_safeguards": {
+  "A_vti": 25662.25,
+  "B_90_10": 25161.97,
+  "C_80_20": 24637.45,
+  "D_70_30": 24116.43,
+  "A_vti_vault": 25662.25,
+  "B_90_10_vault": 25046.06,
+  "C_80_20_vault": 24419.19,
+  "D_70_30_vault": 23806.56
+ },
+ "safeguard_alerts": [
+  [
+   "2018-12-26",
+   "A \u00b7 100% VTI (benchmark): total wealth is 20% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2018-12-26",
+   "A \u00b7 100% VTI \u00b7 Vault 70/30: total wealth is 20% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2020-03-10",
+   "B \u00b7 90/10: daily safeguard: down -7.4% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-10",
+   "C \u00b7 80/20: daily safeguard: down -6.7% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-10",
+   "D \u00b7 70/30: daily safeguard: down -6.1% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-10",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: daily safeguard: down -7.3% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-10",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: daily safeguard: down -6.7% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-10",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: daily safeguard: down -6.0% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-13",
+   "A \u00b7 100% VTI (benchmark): total wealth is 28% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2020-03-13",
+   "B \u00b7 90/10: daily safeguard: down -8.7% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-13",
+   "B \u00b7 90/10: total wealth is 26% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2020-03-13",
+   "C \u00b7 80/20: daily safeguard: down -7.8% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-13",
+   "C \u00b7 80/20: total wealth is 24% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2020-03-13",
+   "D \u00b7 70/30: daily safeguard: down -6.8% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-13",
+   "D \u00b7 70/30: total wealth is 22% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2020-03-13",
+   "A \u00b7 100% VTI \u00b7 Vault 70/30: total wealth is 28% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2020-03-13",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: daily safeguard: down -8.7% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-13",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: total wealth is 26% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2020-03-13",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: daily safeguard: down -7.7% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-13",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: total wealth is 24% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2020-03-13",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: daily safeguard: down -6.8% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-13",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: total wealth is 22% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2020-03-17",
+   "B \u00b7 90/10: daily safeguard: down -9.6% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-17",
+   "C \u00b7 80/20: daily safeguard: down -8.2% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-17",
+   "D \u00b7 70/30: daily safeguard: down -7.0% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-17",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: daily safeguard: down -9.5% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-17",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: daily safeguard: down -8.2% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-17",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: daily safeguard: down -6.9% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-19",
+   "B \u00b7 90/10: daily safeguard: down -7.2% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-19",
+   "C \u00b7 80/20: daily safeguard: down -6.8% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-19",
+   "D \u00b7 70/30: daily safeguard: down -6.3% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-19",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: daily safeguard: down -7.2% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-19",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: daily safeguard: down -6.7% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-03-19",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: daily safeguard: down -6.3% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-06-12",
+   "B \u00b7 90/10: daily safeguard: down -5.6% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-06-12",
+   "C \u00b7 80/20: daily safeguard: down -5.3% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-06-12",
+   "D \u00b7 70/30: daily safeguard: down -5.0% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-06-12",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: daily safeguard: down -5.6% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2020-06-12",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: daily safeguard: down -5.3% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2022-05-03",
+   "B \u00b7 90/10: 6 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-03",
+   "C \u00b7 80/20: 6 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-03",
+   "D \u00b7 70/30: 6 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-03",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: 6 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-03",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: 6 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-03",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: 6 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-12",
+   "B \u00b7 90/10: 7 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-12",
+   "C \u00b7 80/20: 7 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-12",
+   "D \u00b7 70/30: 7 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-12",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: 7 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-12",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: 7 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-12",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: 7 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-16",
+   "B \u00b7 90/10: 8 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-16",
+   "C \u00b7 80/20: 8 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-16",
+   "D \u00b7 70/30: 8 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-16",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: 8 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-16",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: 8 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-05-16",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: 8 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-02",
+   "B \u00b7 90/10: 9 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-02",
+   "C \u00b7 80/20: 9 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-02",
+   "D \u00b7 70/30: 9 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-02",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: 9 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-02",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: 9 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-02",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: 9 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-08",
+   "B \u00b7 90/10: 10 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-08",
+   "C \u00b7 80/20: 10 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-08",
+   "D \u00b7 70/30: 10 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-08",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: 10 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-08",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: 10 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-08",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: 10 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-14",
+   "A \u00b7 100% VTI (benchmark): total wealth is 23% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2022-06-14",
+   "B \u00b7 90/10: total wealth is 22% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2022-06-14",
+   "C \u00b7 80/20: total wealth is 22% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2022-06-14",
+   "D \u00b7 70/30: total wealth is 21% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2022-06-14",
+   "A \u00b7 100% VTI \u00b7 Vault 70/30: total wealth is 23% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2022-06-14",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: total wealth is 22% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2022-06-14",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: total wealth is 21% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2022-06-14",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: total wealth is 21% below its contribution-adjusted high (alert only)"
+  ],
+  [
+   "2022-06-15",
+   "B \u00b7 90/10: 11 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-15",
+   "C \u00b7 80/20: 11 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-15",
+   "D \u00b7 70/30: 11 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-15",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: 11 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-15",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: 11 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-06-15",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: 11 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-08-19",
+   "B \u00b7 90/10: 12 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-08-19",
+   "C \u00b7 80/20: 12 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-08-19",
+   "D \u00b7 70/30: 12 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-08-19",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: 12 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-08-19",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: 12 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-08-19",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: 12 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-08-23",
+   "B \u00b7 90/10: 13 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-08-23",
+   "C \u00b7 80/20: 13 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-08-23",
+   "D \u00b7 70/30: 13 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-08-23",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: 13 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-08-23",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: 13 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2022-08-23",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: 13 losing sleeve exits in a row: owner review suggested"
+  ],
+  [
+   "2025-04-07",
+   "B \u00b7 90/10: daily safeguard: down -5.7% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2025-04-07",
+   "C \u00b7 80/20: daily safeguard: down -5.5% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2025-04-07",
+   "D \u00b7 70/30: daily safeguard: down -5.4% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2025-04-07",
+   "B \u00b7 90/10 \u00b7 Vault 70/30: daily safeguard: down -5.7% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2025-04-07",
+   "C \u00b7 80/20 \u00b7 Vault 70/30: daily safeguard: down -5.4% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ],
+  [
+   "2025-04-07",
+   "D \u00b7 70/30 \u00b7 Vault 70/30: daily safeguard: down -5.2% at the last close, so no new sleeve entries today (nothing sold because of it)"
+  ]
+ ]
+}

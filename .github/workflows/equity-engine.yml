@@ -1,0 +1,36 @@
+name: Stock & ETF engine (manual only)
+# No schedule on purpose: scheduled execution stays disabled until Gate 5 approval.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "check = read-only dry run; shadow = simulated fills, saves the books"
+        required: true
+        default: check
+        type: choice
+        options: [check, shadow]
+permissions:
+  contents: write
+concurrency:
+  group: equity-engine
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Engine (paper only, places no broker orders)
+        env:
+          ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
+          ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
+        run: python scripts/run_equity.py --mode ${{ inputs.mode }} --manual
+      - name: Save books (shadow mode only)
+        if: inputs.mode == 'shadow'
+        run: |
+          git config user.name "hb-atelier-bot"; git config user.email "bot@users.noreply.github.com"
+          git add state/equity_state.json state/equity_journal.jsonl || true
+          git diff --cached --quiet || (git commit -m "Equity engine shadow pass" && git pull --rebase && git push)
