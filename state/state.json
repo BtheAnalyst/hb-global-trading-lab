@@ -76,7 +76,12 @@
    "vault_added": 0.0,
    "violations": 0,
    "alerts": [],
-   "b_note": "Founder's Account $100.00: the 1% rule allows $1.00 of risk per trade, below any qualifying contract, so it holds cash by design."
+   "b_note": "Founder's Account $100.00: the 1% rule allows $1.00 of risk per trade, below any qualifying contract, so it holds cash by design.",
+   "market": {
+    "calm": true,
+    "vol_note": "SPY 20-day realized volatility 10% (limit 30%)"
+   },
+   "signals": {}
   }
  },
  "trades": [],
@@ -92,7 +97,8 @@
   "2026-10-22 16:34 market closed",
   "2026-10-22 16:45 market closed",
   "2026-10-22 19:57 market closed",
-  "2026-10-23 09:34 no action"
+  "2026-10-23 09:34 no action",
+  "2026-10-23 10:04 Volatility filter OK: SPY 20-day realized volatility 10% (limit 30%); No setups met the entry rules today: staying in cash."
  ],
  "kill_switch": false
 }
