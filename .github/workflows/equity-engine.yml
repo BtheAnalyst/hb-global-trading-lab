@@ -60,5 +60,7 @@ jobs:
         if: always() && env.MODE != 'check' && env.MODE != 'harden'
         run: |
           git config user.name "hb-atelier-bot"; git config user.email "bot@users.noreply.github.com"
-          git add state/equity_state.json state/equity_journal.jsonl state/last_run.json 2>/dev/null || true
+          for f in state/equity_state.json state/equity_journal.jsonl state/last_run.json; do
+            [ -f "$f" ] && git add "$f"
+          done
           git diff --cached --quiet || (git commit -m "Equity engine $MODE pass" && git pull --rebase && git push)
