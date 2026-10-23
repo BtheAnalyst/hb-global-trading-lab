@@ -58,6 +58,7 @@ class Params:
     deposit: float = 100.0
     extra_deposit_from: str | None = None  # e.g. "2019-01": optional raise scenario
     extra_deposit: float = 0.0
+    trace: bool = False                   # record daily weights (diagnostics only)
 
 
 @dataclass
@@ -79,6 +80,8 @@ class Result:
     sleeve_trades: int
     accessible_cash: float
     flows: list = field(default_factory=list)
+    fills: list = field(default_factory=list)       # (date, side, symbol, dollars, pnl, tag)
+    weights: list = field(default_factory=list)     # daily {symbol: weight of trading equity} when trace=True
 
 
 def _momentum(C: pd.DataFrame, p: Params) -> Momentum:
@@ -104,6 +107,7 @@ def run(O: pd.DataFrame, C: pd.DataFrame, p: Params, start: str = "2017-01-01", 
     sleeve_held: list[str] = []
     orders: list[tuple] = []                    # decided at close, filled next open
     last_month = None
+    fills, weights = [], []
     for i in range(i0, i1):
         d = idx[i]
         px_o = O.iloc[i]
@@ -133,6 +137,7 @@ def run(O: pd.DataFrame, C: pd.DataFrame, p: Params, start: str = "2017-01-01", 
                 if sh[s] * px < 0.01:
                     sh[s] = 0.0; basis[s] = 0.0
                 unsettled += proceeds; costs += amt * p.cost; traded += amt; trades += 1
+                fills.append((d, 'sell', s, amt, pnl, tag))
                 sleeve_trades += tag == "sleeve"
                 if realized > hwm_r:                       # qualifying realized gain above prior high
                     gain = realized - hwm_r; hwm_r = realized
@@ -143,6 +148,7 @@ def run(O: pd.DataFrame, C: pd.DataFrame, p: Params, start: str = "2017-01-01", 
                     continue
                 sh[s] += amt * (1 - p.cost) / px; basis[s] += amt
                 settled -= amt; costs += amt * p.cost; traded += amt; trades += 1
+                fills.append((d, 'buy', s, amt, 0.0, tag))
                 sleeve_trades += tag == "sleeve"
         orders = []
         # ---- mark at close ----
@@ -151,6 +157,8 @@ def run(O: pd.DataFrame, C: pd.DataFrame, p: Params, start: str = "2017-01-01", 
         equity = sum(hold_val.values()) + settled + unsettled          # trading capital (vault excluded)
         total = equity + vault + owed_vault * 0                         # owed vault is still inside equity
         navs.append(total / units if units else 1.0); vals.append(total)
+        if p.trace and equity > 0:
+            weights.append((d, {s: v / equity for s, v in hold_val.items() if v > 0.01}))
         if i + 1 >= i1:
             break
         # ---- decide for tomorrow's open ----
@@ -168,7 +176,7 @@ def run(O: pd.DataFrame, C: pd.DataFrame, p: Params, start: str = "2017-01-01", 
     final_equity = value.iloc[-1] - vault
     return Result(p, nav, value, contributed, final_equity, vault, tax_reserve, realized, trades, traded, costs,
                   xirr(flows, value.iloc[-1], nav.index[-1]), (nav.iloc[-1] / nav.iloc[0]) ** (1 / yrs) - 1 if yrs > 0 else 0.0,
-                  float(((peak - nav) / peak).max()), sleeve_trades, settled + unsettled, flows)
+                  float(((peak - nav) / peak).max()), sleeve_trades, settled + unsettled, flows, fills, weights)
 
 
 def xirr(flows, final, end_date):

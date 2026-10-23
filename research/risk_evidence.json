@@ -1,0 +1,122 @@
+{
+ "daily_loss": {
+  "A 100% VTI": {
+   "days": 2463,
+   "worst_day": -0.1092,
+   "days_down_2pct_or_more": 90,
+   "after_2pct_drop_next_day_avg": 0.004,
+   "after_2pct_drop_next_5d_avg": 0.0052,
+   "days_down_3pct_or_more": 34,
+   "after_3pct_drop_next_day_avg": 0.0025,
+   "after_3pct_drop_next_5d_avg": -0.0054,
+   "days_down_4pct_or_more": 15,
+   "after_4pct_drop_next_day_avg": 0.006,
+   "after_4pct_drop_next_5d_avg": -0.0023,
+   "days_down_5pct_or_more": 8,
+   "after_5pct_drop_next_day_avg": 0.0086,
+   "after_5pct_drop_next_5d_avg": -0.0323,
+   "all_days_next_day_avg": 0.0006
+  },
+  "C 80/20": {
+   "days": 2463,
+   "worst_day": -0.0851,
+   "days_down_2pct_or_more": 68,
+   "after_2pct_drop_next_day_avg": 0.0019,
+   "after_2pct_drop_next_5d_avg": -0.001,
+   "days_down_3pct_or_more": 22,
+   "after_3pct_drop_next_day_avg": 0.0021,
+   "after_3pct_drop_next_5d_avg": -0.0026,
+   "days_down_4pct_or_more": 9,
+   "after_4pct_drop_next_day_avg": 0.0016,
+   "after_4pct_drop_next_5d_avg": -0.024,
+   "days_down_5pct_or_more": 6,
+   "after_5pct_drop_next_day_avg": 0.0269,
+   "after_5pct_drop_next_5d_avg": -0.0102,
+   "all_days_next_day_avg": 0.0006
+  },
+  "VTI worst 10 days: share of loss already in the opening gap": 0.681
+ },
+ "position_weights": {
+  "B 90/10": {
+   "core_max": 0.9103,
+   "core_p99": 0.9056,
+   "core_days_over_90pct": 1059,
+   "single_sleeve_etf_max": 0.0696,
+   "single_sleeve_etf_p99": 0.0654,
+   "days_any_sleeve_etf_over_15pct": 0,
+   "days_any_sleeve_etf_over_20pct": 0,
+   "bil_max": 0.1101,
+   "days": 2425
+  },
+  "C 80/20": {
+   "core_max": 0.8198,
+   "core_p99": 0.8101,
+   "core_days_over_90pct": 0,
+   "single_sleeve_etf_max": 0.137,
+   "single_sleeve_etf_p99": 0.1292,
+   "days_any_sleeve_etf_over_15pct": 0,
+   "days_any_sleeve_etf_over_20pct": 0,
+   "bil_max": 0.2114,
+   "days": 2425
+  },
+  "D 70/30": {
+   "core_max": 0.7286,
+   "core_p99": 0.716,
+   "core_days_over_90pct": 0,
+   "single_sleeve_etf_max": 0.1999,
+   "single_sleeve_etf_p99": 0.1893,
+   "days_any_sleeve_etf_over_15pct": 1551,
+   "days_any_sleeve_etf_over_20pct": 0,
+   "bil_max": 0.3109,
+   "days": 2425
+  }
+ },
+ "sleeve_drawdown": {
+  "max_dd": 0.207,
+  "max_dd_date": "2022-12-19",
+  "episodes_deeper_than_10pct": 8,
+  "share_of_days_below_10pct": 0.2744,
+  "episodes_deeper_than_15pct": 2,
+  "share_of_days_below_15pct": 0.11,
+  "episodes_deeper_than_20pct": 1,
+  "share_of_days_below_20pct": 0.0041,
+  "episodes_deeper_than_25pct": 0,
+  "share_of_days_below_25pct": 0.0,
+  "episode_depths_over_10pct": [
+   0.1114,
+   0.1267,
+   0.1946,
+   0.1013,
+   0.207,
+   0.134,
+   0.1459,
+   0.116
+  ]
+ },
+ "exit_streaks": {
+  "exits": 101,
+  "win_rate": 0.505,
+  "avg_win": 65.82,
+  "avg_loss": -22.8,
+  "longest_losing_streak": 11,
+  "streaks_of_3_or_more": 6,
+  "streaks_of_4_or_more": 4,
+  "streaks_of_5_or_more": 4,
+  "streaks_of_6_or_more": 3,
+  "exits_per_year": 10.3
+ },
+ "wealth_drawdown": {
+  "A 100% VTI": {
+   "episodes_deeper_than_10pct": 4,
+   "episodes_deeper_than_15pct": 4,
+   "episodes_deeper_than_20pct": 3,
+   "episodes_deeper_than_30pct": 1
+  },
+  "C 80/20": {
+   "episodes_deeper_than_10pct": 5,
+   "episodes_deeper_than_15pct": 4,
+   "episodes_deeper_than_20pct": 2,
+   "episodes_deeper_than_30pct": 1
+  }
+ }
+}
