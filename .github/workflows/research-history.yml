@@ -1,0 +1,28 @@
+name: Research - download price history (read-only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write   # commits research/data/*.csv only
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install alpaca-py
+      - env:
+          ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
+          ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
+        run: python research/fetch_history.py
+      - run: |
+          git config user.name "HB Atelier Bot"
+          git config user.email "atelier-bot@users.noreply.github.com"
+          git add research/data/
+          git diff --cached --quiet && exit 0
+          git commit -m "Research: daily price history"
+          git pull --rebase && git push
