@@ -17,7 +17,11 @@ NOW = datetime(2026, 10, 22, 11, 0, tzinfo=ET)
 
 @pytest.fixture
 def cfg():
-    return yaml.safe_load(open("config/settings.yaml"))
+    # Legacy options-engine tests: run the old engine with trading switched on inside the test only.
+    # Live config keeps trading paused (see test_trading_paused_in_config).
+    c = yaml.safe_load(open("config/settings.yaml"))
+    c["trading"]["enabled"] = True
+    return c
 
 
 def uptrend_with_pullback(n=80):

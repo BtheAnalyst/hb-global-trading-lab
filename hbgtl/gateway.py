@@ -15,6 +15,12 @@ from .selection import Candidate
 ET = ZoneInfo("America/New_York")
 
 
+def is_option_symbol(symbol: str) -> bool:
+    """OCC option symbols look like XLF261218C00050000: root, 6-digit date, C/P, 8-digit strike."""
+    import re
+    return bool(re.fullmatch(r"[A-Z]{1,6}\d{6}[CP]\d{8}", symbol or ""))
+
+
 class AlpacaPaperGateway:  # pragma: no cover - network
     def __init__(self):
         assert_paper_or_approved("paper")
@@ -96,6 +102,9 @@ class AlpacaPaperGateway:  # pragma: no cover - network
 
     # ----- orders -----
     def submit_limit(self, client_order_id: str, symbol: str, side: str, qty: int, limit_price: float) -> dict:
+        # MANDATE (Oct 23, 2026): no options trading, ever. Refuse any OCC option symbol.
+        if is_option_symbol(symbol):
+            raise PermissionError(f"Options orders are disabled by mandate: refused {symbol}")
         from alpaca.trading.enums import OrderSide, TimeInForce
         from alpaca.trading.requests import LimitOrderRequest
         o = self.trading.submit_order(LimitOrderRequest(

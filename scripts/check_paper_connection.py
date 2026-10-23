@@ -36,6 +36,15 @@ except Exception as e:  # never echo the keys; exception text from Alpaca does n
     fail(f"(key starts {key[:2]}, key length {len(key)}, secret length {len(secret)}, "
          f"key==secret {key == secret}) Alpaca rejected the connection: {type(e).__name__}: {detail}")
 
+positions = client.get_all_positions()
+from alpaca.trading.enums import QueryOrderStatus
+from alpaca.trading.requests import GetOrdersRequest
+open_orders = client.get_orders(GetOrdersRequest(status=QueryOrderStatus.OPEN, limit=500))
+pos_txt = ", ".join(f"{p.symbol} x{p.qty}" for p in positions) or "none"
+ord_txt = ", ".join(f"{o.side.value} {o.symbol} {o.status.value}" for o in open_orders) or "none"
+print(f"::notice title=Open positions::{len(positions)} ({pos_txt})")
+print(f"::notice title=Open orders::{len(open_orders)} ({ord_txt})")
+
 summary = (f"Connected to Alpaca PAPER. Status {acct.status}; paper cash ${float(acct.cash):,.2f}; "
            f"options level {getattr(acct, 'options_trading_level', 'unknown')}; "
            f"market open now: {clock.is_open}; orders placed: 0")

@@ -255,3 +255,14 @@ def test_rule_violation_is_never_hidden():
 def test_no_trade_day_not_called_a_gain():
     txt = end_of_day_report(_day(end_equity=10_000, losses=0))
     assert "stayed in cash on purpose" in txt and "not a gain" in txt
+
+
+def test_options_orders_refused_by_mandate():
+    from hbgtl.gateway import is_option_symbol
+    assert is_option_symbol("XLF261218C00050000") and is_option_symbol("SPY261127P00480000")
+    assert not is_option_symbol("SPY") and not is_option_symbol("VTI") and not is_option_symbol("BRK.B")
+
+
+def test_trading_paused_in_config():
+    with open("config/settings.yaml") as f:
+        assert yaml.safe_load(f)["trading"]["enabled"] is False
