@@ -23,6 +23,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from hbgtl.allocator import AllocationRule, decide  # noqa: E402  (shared with the live bot)
+from hbgtl.signals import Momentum, MomentumParams  # noqa: E402
+
 DATA = Path(__file__).parent / "data"
 UNIVERSE = ["SPY", "QQQ", "IWM", "EFA", "EEM", "TLT", "GLD", "VNQ"]   # predeclared, unleveraged
 CORE, DEFENSIVE = "VTI", "BIL"
@@ -76,33 +81,18 @@ class Result:
     flows: list = field(default_factory=list)
 
 
-class Momentum:
-    def __init__(self, C: pd.DataFrame, p: Params):
-        self.p = p
-        self.sma = {s: C[s].rolling(p.sma).mean() for s in UNIVERSE}
-        lb = p.lookbacks
-        self.score = pd.DataFrame({s: sum(C[s] / C[s].shift(n) - 1 for n in lb) / len(lb) for s in UNIVERSE})
-        self.C = C
-
-    def picks(self, i: int, held: list[str]) -> list[str]:
-        p, C = self.p, self.C
-        row = self.score.iloc[i]
-        elig = [s for s in UNIVERSE if not np.isnan(row[s]) and C[s].iloc[i] > self.sma[s].iloc[i]]
-        ranked = sorted(elig, key=lambda s: row[s], reverse=True)
-        keep = [s for s in held if s in ranked[: p.exit_rank]]
-        for s in ranked:
-            if len(keep) >= p.slots:
-                break
-            if s not in keep and s in ranked[: p.slots]:
-                keep.append(s)
-        return keep[: p.slots]
+def _momentum(C: pd.DataFrame, p: Params) -> Momentum:
+    return Momentum(C, MomentumParams(universe=tuple(UNIVERSE), lookbacks=tuple(p.lookbacks), sma=p.sma,
+                                      exit_rank=p.exit_rank, slots=p.slots))
 
 
 def run(O: pd.DataFrame, C: pd.DataFrame, p: Params, start: str = "2017-01-01", end: str | None = None) -> Result:
     idx = C.index
     i0 = int(np.searchsorted(idx, pd.Timestamp(start)))
     i1 = len(idx) if end is None else int(np.searchsorted(idx, pd.Timestamp(end), side="right"))
-    mom = Momentum(C, p) if p.core_w < 1 else None
+    mom = _momentum(C, p) if p.core_w < 1 else None
+    rule = AllocationRule(core=CORE, core_w=p.core_w, defensive=DEFENSIVE, slots=p.slots,
+                          drift_band=p.drift_band, min_order=p.min_order)
     sh = {s: 0.0 for s in ALL}
     basis = {s: 0.0 for s in ALL}               # average-cost basis in dollars
     settled = unsettled = vault = owed_vault = 0.0
@@ -165,36 +155,11 @@ def run(O: pd.DataFrame, C: pd.DataFrame, p: Params, start: str = "2017-01-01", 
             break
         # ---- decide for tomorrow's open ----
         free_cash = max(0.0, settled - owed_vault)       # cash reserved for the vault isn't invested
+        prev = sleeve_held
         if mom is not None:
-            new_held = mom.picks(i, [s for s in sleeve_held if hold_val[s] > 0.01] or sleeve_held)
-            for s in sleeve_held:                         # exits: full sale of dropped ETFs
-                if s not in new_held and hold_val[s] > p.min_order:
-                    orders.append(("sell", s, hold_val[s], "sleeve"))
-            sleeve_held = new_held
-        sleeve_w = 1 - p.core_w
-        target = {CORE: p.core_w * equity}
-        if sleeve_w > 0:
-            per_slot = sleeve_w * equity / p.slots
-            for s in sleeve_held:
-                target[s] = target.get(s, 0) + per_slot
-            target[DEFENSIVE] = target.get(DEFENSIVE, 0) + per_slot * (p.slots - len(sleeve_held))
-            # defensive ETF no longer needed (a slot was filled): sell the excess BIL
-            if hold_val[DEFENSIVE] - target[DEFENSIVE] > max(5.0, 0.01 * equity):
-                orders.append(("sell", DEFENSIVE, hold_val[DEFENSIVE] - target[DEFENSIVE], "sleeve"))
-        # big drift between core and sleeve: trim the overweight side (rare)
-        core_dev = hold_val[CORE] / equity - p.core_w if equity > 0 else 0
-        if sleeve_w > 0 and core_dev > p.drift_band:
-            orders.append(("sell", CORE, core_dev * equity, "core"))
-        # buys: put free cash where holdings are below target, largest shortfall first
-        short = sorted(((target[s] - hold_val[s], s) for s in target if target[s] - hold_val[s] > p.min_order), reverse=True)
-        cash_left = free_cash
-        for gap, s in short:
-            if cash_left < p.min_order:
-                break
-            amt = min(gap, cash_left)
-            orders.append(("buy", s, amt, "core" if s == CORE else "sleeve")); cash_left -= amt
-        if cash_left >= p.min_order and short:            # leftover pennies: put into the core
-            orders.append(("buy", CORE, cash_left, "core"))
+            sleeve_held = mom.picks(i, [s for s in sleeve_held if hold_val[s] > 0.01] or sleeve_held)
+        orders = [(o.side, o.symbol, o.dollars, "sleeve" if o.sleeve else "core")
+                  for o in decide(rule, hold_val, equity, free_cash, prev, sleeve_held)]
     nav = pd.Series(navs, index=idx[i0:i0 + len(navs)])
     value = pd.Series(vals, index=nav.index)
     peak = nav.cummax()
