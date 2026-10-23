@@ -238,3 +238,22 @@ class BrokerSim(SimGateway):
 
     def positions(self):
         return dict(self.pos)
+
+
+class DryBroker:  # pragma: no cover - wraps the network gateway
+    """Read-only stand-in for the paper broker in a 'check' run: real positions, quotes, assets and order
+    history, but submit() only records what WOULD be sent."""
+    is_broker = True
+
+    def __init__(self, real):
+        self.real, self.would_send = real, []
+
+    def __getattr__(self, name):
+        return getattr(self.real, name)
+
+    def submit(self, cid, sym, side, qty, limit_price):
+        if is_option_symbol(sym):
+            raise PermissionError(f"Options orders are disabled by mandate: refused {sym}")
+        self.would_send.append({"cid": cid, "symbol": sym, "side": side, "qty": qty, "limit": limit_price,
+                                "dollars": round(qty * limit_price, 2)})
+        return {"status": "dry_run", "filled_qty": 0.0, "filled_avg_price": None}

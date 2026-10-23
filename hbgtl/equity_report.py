@@ -53,6 +53,7 @@ def portfolio_rows(state: dict, px: dict, as_of: str, tax_rate: float = 0.24) ->
             "holdings": ", ".join(f"{s} {h['qty']:.4f}" for s, h in r["holdings"].items()) or "cash only",
             "kill_switch": bool(state.get("kill_switch") or led.flags.get("kill")),
             "breaker": bool(led.flags.get("breaker")),
+            "purchases_paused": bool(led.flags.get("wealth_pause") or led.flags.get("kill") or state.get("kill_switch")),
             "simulated": True,
         })
     return out

@@ -27,7 +27,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
-from hbgtl.equity_gateway import AlpacaEquityGateway, SimGateway  # noqa: E402
+from hbgtl.equity_gateway import AlpacaEquityGateway, DryBroker, SimGateway  # noqa: E402
 from hbgtl.equity_risk import RiskConfig, asset_allowed  # noqa: E402
 from hbgtl.equity_runner import Engine, specs_from_cfg  # noqa: E402
 
@@ -67,7 +67,7 @@ def main() -> int:
         note("Blocked", "execution_enabled is false (Gate 5 not approved) and this was not a manual run", "warning")
         return 0
     specs = [s for s in specs_from_cfg(cfg) if s.enabled]           # refuses >1 or unselected broker portfolio
-    if a.mode in ("check", "shadow"):
+    if a.mode == "shadow":
         specs = [s for s in specs if s.mode == "shadow"]
     alp = AlpacaEquityGateway()
     if a.mode == "mark":
@@ -144,8 +144,9 @@ def main() -> int:
             STATE.write_text(json.dumps(work, indent=1, default=str))
     eng = Engine(specs, RiskConfig.from_cfg(cfg.get("risk")), journal=events.append, save=save)
     shadow = SimGateway(quotes=lambda s: quotes.get(s), cost=0.0, assets=assets)   # real quotes: spread is real cost
-    gws = {"shadow": shadow, "broker": alp if a.mode == "paper" else None}
-    if a.mode == "paper":
+    dry = DryBroker(alp) if a.mode == "check" else None
+    gws = {"shadow": shadow, "broker": alp if a.mode == "paper" else dry}
+    if a.mode in ("paper", "check"):
         acct = alp.account()
         note("Paper account (not the Founder's capital)", f"Alpaca paper cash ${acct['cash']:,.2f}, buying power "
              f"${acct['buying_power']:,.2f}, status {acct['status']}. The bot sizes orders only from the Founder's "
@@ -171,7 +172,15 @@ def main() -> int:
     if summ["alerts"]:
         note("Alerts", " || ".join(summ["alerts"])[:3800], "warning")
     if "reconciliation" in summ:
-        note("Reconciliation", str(summ["reconciliation"]))
+        bspec = next((sp for sp in specs if sp.mode == "broker"), None)
+        fb = work.get("portfolios", {}).get(bspec.pid, {}) if bspec else {}
+        note("Reconciliation", f"{summ['reconciliation']} | broker positions {alp.positions() or 'none'} | Founder books: "
+             f"positions {fb.get('positions') or 'none'}, settled cash ${fb.get('settled', 0):,.2f}, "
+             f"contributed ${fb.get('contributed', 0):,.2f}")
+    if dry is not None:
+        note("Founder orders that WOULD be sent (dry run, nothing sent)",
+             "; ".join(f"{o['side']} {o['symbol']} qty {o['qty']} limit ${o['limit']} (~${o['dollars']})"
+                       for o in dry.would_send) or "none")
     return 0
 
 

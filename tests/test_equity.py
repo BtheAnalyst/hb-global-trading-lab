@@ -428,3 +428,44 @@ def test_owner_resume_clears_portfolio_kill():
     owner_resume(state, "FOUNDER", "rejections reviewed", C.iloc[0].to_dict(), {"BIL"}, "2026-10-26")
     led = Ledger.from_dict(state["portfolios"]["FOUNDER"])
     assert "kill" not in led.flags and led.flags["resumes"][0]["reason"] == "rejections reviewed"
+
+
+# ---------------- Council Oct 23: 20% account drawdown pauses all new purchases ----------------
+def _crash(C, j0, drop):
+    C2 = C.copy()
+    C2.iloc[j0:] = C2.iloc[j0:] * (1 - drop)
+    return C2
+
+
+def test_drawdown_pause_blocks_all_buys_sells_nothing_and_needs_founder_restart():
+    C = _toy_closes(); spec = _founder(rule=AllocationRule(core_w=1.0))
+    eng = Engine([spec], RiskConfig()); state = {}; b = BrokerSim()
+    for j in range(100, 125):
+        _bday(eng, state, C, j, b)
+    held = dict(b.positions())
+    C2 = _crash(C, 124, 0.30)                                   # everything falls 30%
+    r = _bday(eng, state, C2, 126, b)
+    led = Ledger.from_dict(state["portfolios"]["FOUNDER"])
+    assert led.flags.get("wealth_pause") and any("purchases paused" in a for a in r["alerts"])
+    assert b.positions() == held                                # nothing liquidated
+    # next month's contribution arrives: still no buys, and it does not count as recovery
+    for j in range(127, 150):
+        r = _bday(eng, state, C2, j, b)
+        assert not [o for o in r["portfolios"]["FOUNDER"]["orders"] if o["side"] == "buy"]
+    led = Ledger.from_dict(state["portfolios"]["FOUNDER"])
+    assert led.contributed > 100 and led.flags.get("wealth_pause")
+    assert 1 - led.nav(C2.iloc[148].to_dict()) / led.nav_hwm >= 0.20     # deposits did not shrink the drawdown
+    owner_resume(state, "FOUNDER", "founder reviewed the drawdown", C2.iloc[149].to_dict(), {"BIL"}, "2025-06-01")
+    r = _bday(eng, state, C2, 150, b)
+    assert [o for o in r["portfolios"]["FOUNDER"]["orders"] if o["side"] == "buy"]   # buys resume after approval
+
+
+def test_deposit_alone_never_trips_or_clears_the_pause():
+    led = Ledger("t"); led.deposit("d1", 100, None)
+    px = {"VTI": 100.0}
+    led.apply_buy("d1", "VTI", 100, 1.0, 0, False)
+    led.nav_hwm = led.nav(px)
+    px2 = {"VTI": 75.0}                                         # 25% loss
+    dd_before = 1 - led.nav(px2) / led.nav_hwm
+    led.deposit("d2", 100, led.total(px2))
+    assert 1 - led.nav(px2) / led.nav_hwm == pytest.approx(dd_before)

@@ -201,12 +201,21 @@ class Engine:
                 led.flags.pop("streak_alerted", None)
             if rc.losing_exit_pause and led.losing_exits >= rc.losing_exit_pause:
                 block_entries = True
+            # Total-account drawdown on the unit NAV: contributions buy units at the prior value, so a deposit
+            # is never counted as a gain or as recovering a loss.
             dd = 1 - nav / led.nav_hwm if led.nav_hwm else 0
             if dd >= rc.wealth_alert_dd and not led.flags.get("wealth_alert"):
                 led.flags["wealth_alert"] = today
-                out["alerts"].append(f"total wealth is {dd:.0%} below its contribution-adjusted high (alert only)")
+                out["alerts"].append(f"total wealth is {dd:.0%} below its contribution-adjusted high")
             elif dd < rc.wealth_alert_dd / 2:
                 led.flags.pop("wealth_alert", None)
+            if (rc.wealth_pause_dd and dd >= rc.wealth_pause_dd and not led.flags.get("wealth_pause")
+                    and not led.flags.get("wealth_pause_resumed")):
+                led.flags["wealth_pause"] = {"since": today, "dd": round(dd, 4)}
+                out["alerts"].append(f"account drawdown {dd:.0%} reached the {rc.wealth_pause_dd:.0%} limit: ALL new "
+                                     "purchases paused until the founder approves a restart. Nothing is sold because of it")
+            if led.flags.get("wealth_pause_resumed") and dd < rc.wealth_pause_dd / 2:
+                led.flags.pop("wealth_pause_resumed", None)     # re-armed once the account recovers to within 10%
 
         # ---- signals ----
         prev = list(led.sleeve_held)
@@ -250,6 +259,8 @@ class Engine:
             cid = f"hb-{spec.pid}-{today}-{o.symbol}-{o.side}"
             if not reason and cid in led.order_ids:
                 reason = "duplicate order for today refused"
+            if not reason and o.side == "buy" and led.flags.get("wealth_pause"):
+                reason = "account drawdown pause: new purchases need the founder's approval to restart"
             if not reason and o.side == "sell":
                 held_q = led.qty(o.symbol)
                 if broker_qty is not None:
@@ -376,6 +387,8 @@ class Engine:
 def owner_resume(state: dict, pid: str, reason: str, px: dict, sleeve_syms: set, today: str) -> str:
     """Owner-approved restart after a breaker or kill switch. Resets the sleeve high so it can't re-trip at once."""
     led = Ledger.from_dict(state["portfolios"][pid])
+    if led.flags.pop("wealth_pause", None):
+        led.flags["wealth_pause_resumed"] = today   # no re-trip in this same episode; re-arms after recovery
     led.flags.pop("breaker", None); led.flags.pop("kill", None); led.flags.pop("order_errors", None)
     led.sleeve_hwm = led.sleeve_nav_v
     led.flags.setdefault("resumes", []).append({"date": today, "reason": reason})

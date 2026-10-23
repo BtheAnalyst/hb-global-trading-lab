@@ -44,6 +44,7 @@ risk:                            # evidence and reasoning: docs/RISK_THRESHOLDS.
   losing_exit_alert: 6
   losing_exit_pause: 0
   wealth_alert_dd: 0.20
+  wealth_pause_dd: 0.20          # Council Oct 23: 20% account drawdown pauses ALL new purchases; founder restart; no forced sales
   max_spread_pct: 0.01
   max_quote_age_s: 60
   max_move_pct: 0.25

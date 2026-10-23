@@ -27,7 +27,8 @@ class RiskConfig:
     sleeve_breaker_dd: float = 0.25      # sleeve to BIL, owner resume
     losing_exit_alert: int = 6           # alert only
     losing_exit_pause: int = 0           # 0 = off (Council may enable)
-    wealth_alert_dd: float = 0.20        # alert only
+    wealth_alert_dd: float = 0.20        # owner alert
+    wealth_pause_dd: float = 0.20        # Council Oct 23, 2026: pause ALL new purchases; owner restart; no selling
     max_spread_pct: float = 0.01
     max_quote_age_s: int = 60
     max_move_pct: float = 0.25           # vs last close: bad-data guard
