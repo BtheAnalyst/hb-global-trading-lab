@@ -1,0 +1,20 @@
+name: Atelier strictness check (read-only)
+on:
+  workflow_dispatch:   # manual only; places no orders and saves nothing
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt alpaca-py
+      - name: Check how strict the rules are
+        env:
+          ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
+          ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
+        run: python scripts/diagnose.py
