@@ -1,8 +1,8 @@
 [
  {
-  "date": "2026-10-22",
-  "added": 0,
-  "balance": 0,
-  "placeholder": true
+  "date": "2026-10-23",
+  "placeholder": true,
+  "portfolio": "none",
+  "balance": 0
  }
 ]

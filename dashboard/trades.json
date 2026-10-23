@@ -1,13 +1,8 @@
 [
  {
-  "date": "2026-10-22",
-  "contract": "none yet",
-  "type": "",
-  "qty": 0,
-  "entry": 0,
-  "exit": 0,
-  "net_pnl": 0,
-  "reason": "No closed trades yet",
-  "placeholder": true
+  "date": "2026-10-23",
+  "placeholder": true,
+  "symbol": "none yet",
+  "reason": "No fills yet"
  }
 ]

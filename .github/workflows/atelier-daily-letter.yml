@@ -4,7 +4,7 @@ on:
     - cron: "15 21 * * 1-5"        # 5:15 PM EDT / 4:15 PM EST, after the close
   workflow_dispatch:
 concurrency:
-  group: atelier-state
+  group: equity-engine             # same group as the stock/ETF engine, so books are never written twice at once
   cancel-in-progress: false
 permissions:
   contents: write
@@ -21,7 +21,11 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - run: python scripts/run_bot.py letter
+      - name: Mark the stock/ETF books at today's close and write the Letter (reporting only; no orders)
+        env:
+          ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
+          ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
+        run: python scripts/run_equity.py --mode mark
       - name: Post the Daily Letter
         env:
           GH_TOKEN: ${{ github.token }}
@@ -33,7 +37,5 @@ jobs:
           fi
           gh issue create --title "The Daily Letter · $(TZ=America/New_York date +'%a %b %-d, %Y')" \
             --body-file letter.md --label daily-letter --assignee "${{ github.repository_owner }}"
-      - name: Export numbers for the Atelier dashboard
-        run: python scripts/export_dashboard.py
-      - name: Save state
+      - name: Save books, dashboard tables and the Letter
         run: scripts/save_state.sh letter state/ dashboard/*.json dashboard/letter_email.html dashboard/letter_subject.txt
