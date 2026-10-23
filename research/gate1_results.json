@@ -1,0 +1,289 @@
+{
+ "data": "2016-01-04 to 2026-10-21",
+ "accounts_start": "2017-01-03",
+ "main": {
+  "A 100% VTI": {
+   "contributed": 11800.0,
+   "final_total": 25658.04,
+   "trading_equity": 25658.04,
+   "vault": 0.0,
+   "net_profit": 13858.04,
+   "xirr": 0.152,
+   "twr_cagr": 0.1446,
+   "max_dd": 0.3507,
+   "trades": 118,
+   "sleeve_trades": 0,
+   "turnover_per_yr": 0.127,
+   "costs": 5.9,
+   "realized": 0.0,
+   "tax_reserve_est": 0.0,
+   "accessible_cash": 0.0,
+   "regimes": {
+    "2018 Q4 sell-off": -0.2014,
+    "2020 COVID crash": -0.3507,
+    "2022 bear market": -0.2541,
+    "2025 spring drop": -0.1929
+   },
+   "vs_vti_final": 0.0
+  },
+  "B 90/10": {
+   "contributed": 11800.0,
+   "final_total": 25239.12,
+   "trading_equity": 25239.12,
+   "vault": 0.0,
+   "net_profit": 13439.12,
+   "xirr": 0.1489,
+   "twr_cagr": 0.142,
+   "max_dd": 0.3303,
+   "trades": 508,
+   "sleeve_trades": 372,
+   "turnover_per_yr": 1.19,
+   "costs": 54.79,
+   "realized": 1115.7,
+   "tax_reserve_est": 323.25,
+   "accessible_cash": 0.0,
+   "regimes": {
+    "2018 Q4 sell-off": -0.192,
+    "2020 COVID crash": -0.3303,
+    "2022 bear market": -0.2454,
+    "2025 spring drop": -0.1858
+   },
+   "vs_vti_final": -418.91
+  },
+  "C 80/20": {
+   "contributed": 11800.0,
+   "final_total": 24805.99,
+   "trading_equity": 24805.99,
+   "vault": 0.0,
+   "net_profit": 13005.99,
+   "xirr": 0.1456,
+   "twr_cagr": 0.1393,
+   "max_dd": 0.3097,
+   "trades": 514,
+   "sleeve_trades": 387,
+   "turnover_per_yr": 2.246,
+   "costs": 102.19,
+   "realized": 2222.12,
+   "tax_reserve_est": 640.88,
+   "accessible_cash": 0.0,
+   "regimes": {
+    "2018 Q4 sell-off": -0.1822,
+    "2020 COVID crash": -0.3097,
+    "2022 bear market": -0.2371,
+    "2025 spring drop": -0.1789
+   },
+   "vs_vti_final": -852.05
+  },
+  "D 70/30": {
+   "contributed": 11800.0,
+   "final_total": 24382.58,
+   "trading_equity": 24382.58,
+   "vault": 0.0,
+   "net_profit": 12582.58,
+   "xirr": 0.1423,
+   "twr_cagr": 0.1367,
+   "max_dd": 0.2892,
+   "trades": 504,
+   "sleeve_trades": 392,
+   "turnover_per_yr": 3.282,
+   "costs": 147.52,
+   "realized": 3278.43,
+   "tax_reserve_est": 945.33,
+   "accessible_cash": 0.0,
+   "regimes": {
+    "2018 Q4 sell-off": -0.1725,
+    "2020 COVID crash": -0.2892,
+    "2022 bear market": -0.2291,
+    "2025 spring drop": -0.1719
+   },
+   "vs_vti_final": -1275.46
+  }
+ },
+ "vault": {
+  "A 100% VTI": {
+   "contributed": 11800.0,
+   "final_total": 25658.04,
+   "trading_equity": 25658.04,
+   "vault": 0.0,
+   "net_profit": 13858.04,
+   "xirr": 0.152,
+   "twr_cagr": 0.1446,
+   "max_dd": 0.3507,
+   "trades": 118,
+   "sleeve_trades": 0,
+   "turnover_per_yr": 0.127,
+   "costs": 5.9,
+   "realized": 0.0,
+   "tax_reserve_est": 0.0,
+   "accessible_cash": 0.0,
+   "regimes": {
+    "2018 Q4 sell-off": -0.2014,
+    "2020 COVID crash": -0.3507,
+    "2022 bear market": -0.2541,
+    "2025 spring drop": -0.1929
+   }
+  },
+  "B 90/10": {
+   "contributed": 11800.0,
+   "final_total": 25119.53,
+   "trading_equity": 24773.77,
+   "vault": 345.76,
+   "net_profit": 13319.53,
+   "xirr": 0.148,
+   "twr_cagr": 0.1406,
+   "max_dd": 0.3296,
+   "trades": 505,
+   "sleeve_trades": 371,
+   "turnover_per_yr": 1.177,
+   "costs": 54.08,
+   "realized": 1104.38,
+   "tax_reserve_est": 320.0,
+   "accessible_cash": 0.0,
+   "regimes": {
+    "2018 Q4 sell-off": -0.1918,
+    "2020 COVID crash": -0.3296,
+    "2022 bear market": -0.2444,
+    "2025 spring drop": -0.1844
+   }
+  },
+  "C 80/20": {
+   "contributed": 11800.0,
+   "final_total": 24576.7,
+   "trading_equity": 23893.77,
+   "vault": 682.94,
+   "net_profit": 12776.7,
+   "xirr": 0.1438,
+   "twr_cagr": 0.1365,
+   "max_dd": 0.3084,
+   "trades": 509,
+   "sleeve_trades": 385,
+   "turnover_per_yr": 2.202,
+   "costs": 99.75,
+   "realized": 2184.34,
+   "tax_reserve_est": 629.52,
+   "accessible_cash": 0.0,
+   "regimes": {
+    "2018 Q4 sell-off": -0.1819,
+    "2020 COVID crash": -0.3084,
+    "2022 bear market": -0.235,
+    "2025 spring drop": -0.1761
+   }
+  },
+  "D 70/30": {
+   "contributed": 11800.0,
+   "final_total": 24052.11,
+   "trading_equity": 23054.43,
+   "vault": 997.68,
+   "net_profit": 12252.11,
+   "xirr": 0.1397,
+   "twr_cagr": 0.1325,
+   "max_dd": 0.2872,
+   "trades": 500,
+   "sleeve_trades": 392,
+   "turnover_per_yr": 3.198,
+   "costs": 142.88,
+   "realized": 3190.8,
+   "tax_reserve_est": 919.67,
+   "accessible_cash": 0.0,
+   "regimes": {
+    "2018 Q4 sell-off": -0.1721,
+    "2020 COVID crash": -0.2872,
+    "2022 bear market": -0.2262,
+    "2025 spring drop": -0.1678
+   }
+  }
+ },
+ "costs": {
+  "0.05%": {
+   "A 100% VTI": 25658.04,
+   "B 90/10": 25239.12,
+   "C 80/20": 24805.99,
+   "D 70/30": 24382.58
+  },
+  "0.10%": {
+   "A 100% VTI": 25645.2,
+   "B 90/10": 25147.68,
+   "C 80/20": 24633.19,
+   "D 70/30": 24138.4
+  },
+  "0.20%": {
+   "A 100% VTI": 25619.53,
+   "B 90/10": 24952.16,
+   "C 80/20": 24292.02,
+   "D 70/30": 23659.9
+  }
+ },
+ "sleeve_alone": {
+  "contributed": 11800.0,
+  "final_total": 21032.17,
+  "trading_equity": 21032.17,
+  "vault": 0.0,
+  "net_profit": 9232.17,
+  "xirr": 0.1139,
+  "twr_cagr": 0.112,
+  "max_dd": 0.207,
+  "trades": 423,
+  "sleeve_trades": 423,
+  "turnover_per_yr": 10.505,
+  "costs": 424.65,
+  "realized": 9498.34,
+  "tax_reserve_est": 2756.79,
+  "accessible_cash": 0.0,
+  "regimes": {
+   "2018 Q4 sell-off": -0.1042,
+   "2020 COVID crash": -0.1391,
+   "2022 bear market": -0.1769,
+   "2025 spring drop": -0.1235
+  }
+ },
+ "walk_forward": {
+  "in_sample": "2017-2021",
+  "out_of_sample": "2022-01 to 2026-10",
+  "best_in_sample": "lb=63+126+252 sma=250 exit_top3",
+  "best_in_sample_twr": 0.1469,
+  "best_oos_twr": 0.0746,
+  "default_in_sample_twr": 0.1415,
+  "default_oos_twr": 0.0824,
+  "vti_in_sample_twr": 0.1754,
+  "vti_oos_twr": 0.109,
+  "grid_oos_median": 0.0825,
+  "grid_oos_min": 0.0329,
+  "grid_oos_max": 0.1087,
+  "grid_share_beating_vti_oos": 0.0,
+  "grid_share_beating_vti_ins": 0.0
+ },
+ "one_year_windows": {
+  "A 100% VTI": {
+   "windows": 106,
+   "median": 1314.18,
+   "p10": 1174.6,
+   "worst": 1000.19,
+   "best": 1497.63,
+   "share_below_1200": 0.179
+  },
+  "B 90/10": {
+   "windows": 106,
+   "median": 1309.39,
+   "p10": 1175.1,
+   "worst": 1012.07,
+   "best": 1488.94,
+   "share_below_1200": 0.17
+  },
+  "C 80/20": {
+   "windows": 106,
+   "median": 1306.03,
+   "p10": 1170.03,
+   "worst": 1023.16,
+   "best": 1481.61,
+   "share_below_1200": 0.189
+  },
+  "D 70/30": {
+   "windows": 106,
+   "median": 1299.05,
+   "p10": 1164.51,
+   "worst": 1029.32,
+   "best": 1475.76,
+   "share_below_1200": 0.198
+  }
+ }
+}
