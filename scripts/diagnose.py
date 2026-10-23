@@ -58,6 +58,9 @@ variants = {
     "spread 15%": {"max_spread_pct_of_mid": 15.0},
     "risk 2%": {"max_risk_per_trade_pct": 2.0},
     "risk 2% + spread 15%": {"max_risk_per_trade_pct": 2.0, "max_spread_pct_of_mid": 15.0},
+    "OI ignored": {"min_open_interest": 0},
+    "OI ignored + risk 2%": {"min_open_interest": 0, "max_risk_per_trade_pct": 2.0},
+    "OI ignored + risk 2% + spread 15%": {"min_open_interest": 0, "max_risk_per_trade_pct": 2.0, "max_spread_pct_of_mid": 15.0},
 }
 engines = {}
 for name, over in variants.items():
@@ -66,6 +69,7 @@ for name, over in variants.items():
     engines[name] = RiskEngine(c2, "paper")
 acct = AccountState(equity=10_000, start_of_day_equity=10_000)
 blockers = Counter()
+oi_zero = 0
 passes = Counter()
 checked = 0
 for sym in t["universe"]:
@@ -84,6 +88,7 @@ for sym in t["universe"]:
         row = []
         for c in cands:
             checked += 1
+            oi_zero += c.open_interest == 0
             q = OptionQuote(c.symbol, c.bid, c.ask, c.open_interest, c.dte, getattr(c, "quote_time", now), c.strategy)
             for name, eng in engines.items():
                 dec = eng.check(q, acct, getattr(c, "quote_time", now))  # staleness judged vs quote time
@@ -96,4 +101,5 @@ for sym in t["universe"]:
 
 note("Best contract per ETF", " | ".join(con_lines))
 note("Blockers (current rules)", "; ".join(f"{k}: {n}" for k, n in blockers.most_common()) or "none")
+note("Open interest data", f"{oi_zero} of {checked} candidates report open interest 0")
 note("Would pass", f"of {checked} candidate contracts: " + "; ".join(f"{k}: {passes[k]}" for k in variants))
