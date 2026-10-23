@@ -6,6 +6,8 @@ Modes (every mode except check needs --manual until Gate 5 sets execution_enable
   shadow: the 8 research portfolios only (simulated fills at live quotes); saves the books.
   paper : shadow + the ONE selected broker portfolio (Founder's Account), whose orders go to the Alpaca
           PAPER account. Sized only from the Founder's own books, never the paper account's buying power.
+  mark  : after the close, marks every portfolio at today's closing prices, records history, writes the
+          dashboard tables and the Daily Letter. Reporting only: no orders, so it may run unattended.
   harden: sets broker-side backstops on the paper account (no shorting, margin multiplier 1, no options).
   resume: owner-approved restart of a portfolio after a breaker or kill switch (--pid, --reason).
 Keys come from GitHub Secrets and are never printed.
@@ -38,7 +40,7 @@ def note(title: str, msg: str, level: str = "notice") -> None:
     print(f"::{level} title={title}::{msg}")
 
 
-def fetch_closes(gw: AlpacaEquityGateway, symbols: list[str], days: int = 420) -> pd.DataFrame:
+def fetch_closes(gw: AlpacaEquityGateway, symbols: list[str], days: int = 420, include_today: bool = False) -> pd.DataFrame:
     from alpaca.data.enums import Adjustment, DataFeed
     from alpaca.data.requests import StockBarsRequest
     from alpaca.data.timeframe import TimeFrame
@@ -48,25 +50,28 @@ def fetch_closes(gw: AlpacaEquityGateway, symbols: list[str], days: int = 420) -
                                                    end=end, feed=DataFeed.SIP, adjustment=Adjustment.ALL)).data
     today = datetime.now(ET).date()
     cols = {s: pd.Series({pd.Timestamp(b.timestamp.astimezone(ET).date()): float(b.close)
-                          for b in bars.get(s, []) if b.timestamp.astimezone(ET).date() < today}) for s in symbols}
+                          for b in bars.get(s, []) if include_today or b.timestamp.astimezone(ET).date() < today})
+            for s in symbols}
     return pd.DataFrame(cols).sort_index()
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--mode", choices=["check", "shadow", "paper", "harden", "resume"], default="check")
+    ap.add_argument("--mode", choices=["check", "shadow", "paper", "mark", "harden", "resume"], default="check")
     ap.add_argument("--manual", action="store_true", help="set by the manual (workflow_dispatch) run")
     ap.add_argument("--pid", default="")
     ap.add_argument("--reason", default="")
     a = ap.parse_args()
     cfg = yaml.safe_load(open(ROOT / "config" / "equity.yaml"))
-    if a.mode != "check" and not (cfg.get("execution_enabled") or a.manual):
+    if a.mode not in ("check", "mark") and not (cfg.get("execution_enabled") or a.manual):
         note("Blocked", "execution_enabled is false (Gate 5 not approved) and this was not a manual run", "warning")
         return 0
     specs = [s for s in specs_from_cfg(cfg) if s.enabled]           # refuses >1 or unselected broker portfolio
     if a.mode in ("check", "shadow"):
         specs = [s for s in specs if s.mode == "shadow"]
     alp = AlpacaEquityGateway()
+    if a.mode == "mark":
+        return mark(alp, specs)
     if a.mode == "harden":
         note("Paper account backstops", str(alp.harden()))
         note("Paper account", str(alp.account()))
@@ -147,8 +152,10 @@ def main() -> int:
              "own books; this balance is never used.")
         if acct["trading_blocked"] or acct["account_blocked"]:
             note("Blocked", "the paper account reports trading blocked", "error"); return 1
+    work["marks"] = {"date": str(closes.index[-1].date()), "px": {k: float(v) for k, v in closes.iloc[-1].items()}}
     try:
         summ = eng.run_day(work, closes, len(closes) - 1, str(today), gws)
+        work["last_alerts"] = summ["alerts"]
     finally:
         save()
         if a.mode != "check":
@@ -168,5 +175,42 @@ def main() -> int:
     return 0
 
 
+def mark(alp, specs) -> int:
+    """Reporting only. Marks the books at the latest closes (today's once the session is over)."""
+    from hbgtl.equity_report import daily_letter, export_dashboard, record_history
+    now = datetime.now(ET)
+    syms = sorted({s for sp in specs for s in (sp.rule.core, sp.rule.defensive, *sp.mom.universe)})
+    after_close = (now.hour, now.minute) >= (16, 10)
+    try:
+        closes = fetch_closes(alp, syms, days=30, include_today=after_close)
+    except Exception as e:  # noqa: BLE001
+        note("Data outage", f"could not fetch closing prices ({type(e).__name__}); report not refreshed", "error")
+        return 1
+    state = json.loads(STATE.read_text()) if STATE.exists() else {}
+    as_of = str(closes.index[-1].date())
+    px = {k: float(v) for k, v in closes.iloc[-1].items() if v == v}
+    state["marks"] = {"date": as_of, "px": px}
+    if state.get("portfolios"):
+        record_history(state, px, as_of)
+    STATE.parent.mkdir(exist_ok=True)
+    STATE.write_text(json.dumps(state, indent=1, default=str))
+    export_dashboard(state, JOURNAL, ROOT / "dashboard")
+    subject, html, md = daily_letter({**state, "_journal": str(JOURNAL)}, str(now.date()), f"{now:%a %b} {now.day}")
+    (ROOT / "dashboard" / "letter_email.html").write_text(html)
+    (ROOT / "dashboard" / "letter_subject.txt").write_text(subject)
+    (ROOT / "letter.md").write_text(md)
+    note("Marked", f"{len(state.get('portfolios', {}))} portfolios at the {as_of} close; letter: {subject}")
+    return 0
+
+
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        sys.exit(main())
+    except SystemExit:
+        raise
+    except Exception as e:  # noqa: BLE001 - logs are not visible from here; surface the error as an annotation
+        import traceback
+        tb = traceback.format_exc().strip().splitlines()
+        note("Run failed", f"{type(e).__name__}: {' '.join(str(e).split())[:300]} | at {' / '.join(tb[-4:-1])[:600]}",
+             "error")
+        sys.exit(1)

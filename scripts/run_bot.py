@@ -23,7 +23,30 @@ assert_paper_or_approved(cfg["mode"])
 now = datetime.now(timezone.utc).astimezone(ZoneInfo("America/New_York"))
 state = st.load(cfg, now.date())
 
-if mode == "letter":
+if mode in ("letter", "midday"):
+    # Stocks & ETFs reporting (Oct 2026): built from the stock/ETF engine's saved books. Options letters retired.
+    import json as _json
+    from hbgtl.equity_report import daily_letter as eq_letter, midday_email as eq_midday
+    eq = _json.loads(Path("state/equity_state.json").read_text()) if Path("state/equity_state.json").exists() else {}
+    eq["_journal"] = "state/equity_journal.jsonl"
+    label = f"{now:%a %b} {now.day}"
+    Path("dashboard").mkdir(exist_ok=True)
+    if mode == "letter":
+        subject, html, md = eq_letter(eq, str(now.date()), label)
+        Path("letter.md").write_text(md); print(md)
+        Path("dashboard/letter_email.html").write_text(html)
+        Path("dashboard/letter_subject.txt").write_text(subject)
+    else:
+        res = eq_midday(eq, str(now.date()), label)
+        if res is None:
+            print("SKIP: no engine pass has run today; no midday email.")
+        else:
+            Path("dashboard/midday_email.html").write_text(res[1])
+            Path("dashboard/midday_subject.txt").write_text(res[0])
+            print("Midday email built:", res[0])
+    sys.exit(0)
+
+if mode == "letter_options_retired":
     Path("letter.md").write_text(daily_letter(cfg, state, now.date()))
     print(Path("letter.md").read_text())
     from hbgtl.email_letter import daily_email

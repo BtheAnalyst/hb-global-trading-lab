@@ -154,16 +154,23 @@ class AlpacaEquityGateway:  # pragma: no cover - network
 
     def harden(self) -> dict:
         """Broker-side backstops on the PAPER account: no shorting, no margin multiplier, no options."""
-        cfg = self.trading.get_account_configurations()
-        changes = {}
-        for field, want in (("no_shorting", True), ("max_margin_multiplier", "1"), ("max_options_trading_level", 0)):
-            if hasattr(cfg, field) and getattr(cfg, field) != want:
-                setattr(cfg, field, want); changes[field] = want
-        if changes:
-            self.trading.set_account_configurations(cfg)
-        cfg = self.trading.get_account_configurations()
-        return {f: getattr(cfg, f, None) for f in ("no_shorting", "max_margin_multiplier", "max_options_trading_level",
-                                                   "fractional_trading", "pdt_check", "suspend_trade")}
+        # Raw REST call (PATCH /v2/account/configurations) so it works whatever the SDK model supports.
+        before = self.trading.get("/account/configurations")
+        want = {"no_shorting": True, "max_margin_multiplier": "1", "max_options_trading_level": 0}
+        results = {}
+        for k, v in want.items():
+            if k in before and str(before[k]).lower() == str(v).lower():
+                results[k] = f"already {before[k]}"
+                continue
+            try:
+                self.trading.patch("/account/configurations", {k: v})
+                results[k] = f"set to {v}"
+            except Exception as e:  # noqa: BLE001 - one unsupported field must not block the others
+                results[k] = f"not changed ({' '.join(str(e).split())[:120]})"
+        after = self.trading.get("/account/configurations")
+        return {"changes": results, "now": {k: after.get(k) for k in
+                ("no_shorting", "max_margin_multiplier", "max_options_trading_level", "fractional_trading",
+                 "pdt_check", "suspend_trade")}}
 
     def get_order(self, cid: str):
         try:
