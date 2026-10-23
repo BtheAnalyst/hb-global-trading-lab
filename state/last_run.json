@@ -1,0 +1,13 @@
+{
+ "at": "2026-10-23T16:09:20-04:00",
+ "mode": "paper",
+ "exit_code": 0,
+ "problem": false,
+ "notes": [
+  {
+   "level": "notice",
+   "title": "Market closed",
+   "message": "the market is not open right now: no orders, nothing changed"
+  }
+ ]
+}
