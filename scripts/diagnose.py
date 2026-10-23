@@ -35,6 +35,7 @@ bars = gw.daily_bars(sorted(set(t["universe"] + ["SPY"])), days=420)
 
 # ---------- 1. signal frequency over the past year ----------
 tot_days, tot_sig = 0, 0
+sig_lines, con_lines = [], []
 for sym in t["universe"]:
     c, v = bars[sym]
     days = sigs = 0
@@ -45,8 +46,9 @@ for sym in t["universe"]:
     tot_days, tot_sig = tot_days + days, tot_sig + sigs
     s20, s50, r = sma(c, 20), sma(c, 50), rsi(c, 14)
     trend = "uptrend" if c[-1] > s50 and s20 > s50 else "downtrend" if c[-1] < s50 and s20 < s50 else "no trend"
-    note(f"Signal {sym}", f"{sigs} signal days in {days} trading days; today {trend}, RSI {r:.0f}, close {c[-1]:.2f}")
+    sig_lines.append(f"{sym}: {sigs} signal days in {days}; today {trend}, RSI {r:.0f}")
 yrs = tot_days / len(t["universe"]) / 252
+note("Signals by ETF", " | ".join(sig_lines))
 note("Signal total", f"{tot_sig} signal days across {len(t['universe'])} ETFs in ~{yrs:.1f} years "
      f"(about {tot_sig / max(yrs, 0.01) / 52:.1f} per week across the whole list)")
 
@@ -73,10 +75,10 @@ for sym in t["universe"]:
             cands = rank(gw.option_candidates(sym, strat, price, now.date(), t["contracts"]["dte_min"],
                                               t["contracts"]["dte_max"]), t, price)[: t["contracts"]["max_checked"]]
         except Exception as e:  # keep going; report the failure
-            note(f"Contracts {sym} {strat}", f"lookup failed: {type(e).__name__}")
+            con_lines.append(f"{sym} {strat}: lookup failed ({type(e).__name__})")
             continue
         if not cands:
-            note(f"Contracts {sym} {strat}", "no contract in the 30-45 day / delta 0.35-0.55 range")
+            con_lines.append(f"{sym} {strat}: no contract in range")
             continue
         best = cands[0]
         row = []
@@ -89,9 +91,9 @@ for sym in t["universe"]:
                     passes[name] += 1
                 elif name.startswith("current"):
                     blockers.update({r.split(":")[0].split("(")[0].strip() for r in dec.reasons})
-        note(f"Contracts {sym} {strat}",
-             f"best: ask ${best.ask:.2f} (${best.ask * 100:,.0f} per contract), spread {best.spread_pct:.0f}%, "
+        con_lines.append(f"{sym} {strat}: ask ${best.ask:.2f} (${best.ask * 100:,.0f} per contract), spread {best.spread_pct:.0f}%, "
              f"OI {best.open_interest}, delta {abs(best.delta) if best.delta is not None else float('nan'):.2f}")
 
+note("Best contract per ETF", " | ".join(con_lines))
 note("Blockers (current rules)", "; ".join(f"{k}: {n}" for k, n in blockers.most_common()) or "none")
 note("Would pass", f"of {checked} candidate contracts: " + "; ".join(f"{k}: {passes[k]}" for k in variants))
