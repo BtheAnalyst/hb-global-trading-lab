@@ -13,5 +13,496 @@
    "VNQ": 93.17,
    "VTI": 375.59
   }
- }
+ },
+ "portfolios": {
+  "FOUNDER": {
+   "pid": "FOUNDER",
+   "positions": {
+    "VTI": {
+     "qty": 0.211154221,
+     "basis": 79.838677885426
+    },
+    "SPY": {
+     "qty": 0.012957899,
+     "basis": 9.979759157032
+    },
+    "QQQ": {
+     "qty": 0.013831449,
+     "basis": 9.979888385664
+    }
+   },
+   "settled": 0.20167457187800686,
+   "unsettled": [],
+   "contributed": 100.0,
+   "deposits": [
+    [
+     "2026-10-27",
+     100.0
+    ]
+   ],
+   "realized": 0.0,
+   "hwm_realized": 0.0,
+   "vault": 0.0,
+   "owed_vault": 0.0,
+   "yr_realized": {},
+   "costs": 0.0013233309480062691,
+   "traded": 99.79832542812198,
+   "trades": 3,
+   "units": 100.0,
+   "nav_hwm": 1.0,
+   "sleeve_nav_v": 1.0,
+   "sleeve_hwm": 1.0,
+   "sleeve_last_value": 0,
+   "sleeve_flow": 19.959647542695997,
+   "sleeve_held": [
+    "QQQ",
+    "SPY"
+   ],
+   "losing_exits": 0,
+   "flags": {},
+   "order_ids": [
+    "hb-FOUNDER-2026-10-27-VTI-buy",
+    "hb-FOUNDER-2026-10-27-SPY-buy",
+    "hb-FOUNDER-2026-10-27-QQQ-buy"
+   ],
+   "pending": [],
+   "last_pass": "2026-10-27",
+   "last_close_nav": {
+    "2026-10-26": 1.0
+   },
+   "month_credited": "2026-10"
+  },
+  "A_vti": {
+   "pid": "A_vti",
+   "positions": {
+    "VTI": {
+     "qty": 0.26447330142022163,
+     "basis": 100.0
+    }
+   },
+   "settled": 0.0,
+   "unsettled": [],
+   "contributed": 100.0,
+   "deposits": [
+    [
+     "2026-10-27",
+     100.0
+    ]
+   ],
+   "realized": 0.0,
+   "hwm_realized": 0.0,
+   "vault": 0.0,
+   "owed_vault": 0.0,
+   "yr_realized": {},
+   "costs": 0.0,
+   "traded": 100.0,
+   "trades": 1,
+   "units": 100.0,
+   "nav_hwm": 1.0,
+   "sleeve_nav_v": 1.0,
+   "sleeve_hwm": 1.0,
+   "sleeve_last_value": 0,
+   "sleeve_flow": 0.0,
+   "sleeve_held": [],
+   "losing_exits": 0,
+   "flags": {},
+   "order_ids": [
+    "hb-A_vti-2026-10-27-VTI-buy"
+   ],
+   "pending": [],
+   "last_pass": "2026-10-27",
+   "last_close_nav": {
+    "2026-10-26": 1.0
+   },
+   "month_credited": "2026-10"
+  },
+  "B_90_10": {
+   "pid": "B_90_10",
+   "positions": {
+    "VTI": {
+     "qty": 0.23802597127819947,
+     "basis": 90.0
+    },
+    "SPY": {
+     "qty": 0.00649190459497007,
+     "basis": 4.999999999999999
+    },
+    "QQQ": {
+     "qty": 0.006929622751337417,
+     "basis": 4.999999999999999
+    }
+   },
+   "settled": 1.7763568394002505e-15,
+   "unsettled": [],
+   "contributed": 100.0,
+   "deposits": [
+    [
+     "2026-10-27",
+     100.0
+    ]
+   ],
+   "realized": 0.0,
+   "hwm_realized": 0.0,
+   "vault": 0.0,
+   "owed_vault": 0.0,
+   "yr_realized": {},
+   "costs": 0.0,
+   "traded": 100.0,
+   "trades": 3,
+   "units": 100.0,
+   "nav_hwm": 1.0,
+   "sleeve_nav_v": 1.0,
+   "sleeve_hwm": 1.0,
+   "sleeve_last_value": 0,
+   "sleeve_flow": 9.999999999999998,
+   "sleeve_held": [
+    "QQQ",
+    "SPY"
+   ],
+   "losing_exits": 0,
+   "flags": {},
+   "order_ids": [
+    "hb-B_90_10-2026-10-27-VTI-buy",
+    "hb-B_90_10-2026-10-27-SPY-buy",
+    "hb-B_90_10-2026-10-27-QQQ-buy"
+   ],
+   "pending": [],
+   "last_pass": "2026-10-27",
+   "last_close_nav": {
+    "2026-10-26": 1.0
+   },
+   "month_credited": "2026-10"
+  },
+  "C_80_20": {
+   "pid": "C_80_20",
+   "positions": {
+    "VTI": {
+     "qty": 0.2115786411361773,
+     "basis": 80.0
+    },
+    "SPY": {
+     "qty": 0.01298380918994014,
+     "basis": 9.999999999999998
+    },
+    "QQQ": {
+     "qty": 0.013859245502674833,
+     "basis": 9.999999999999998
+    }
+   },
+   "settled": 3.552713678800501e-15,
+   "unsettled": [],
+   "contributed": 100.0,
+   "deposits": [
+    [
+     "2026-10-27",
+     100.0
+    ]
+   ],
+   "realized": 0.0,
+   "hwm_realized": 0.0,
+   "vault": 0.0,
+   "owed_vault": 0.0,
+   "yr_realized": {},
+   "costs": 0.0,
+   "traded": 100.0,
+   "trades": 3,
+   "units": 100.0,
+   "nav_hwm": 1.0,
+   "sleeve_nav_v": 1.0,
+   "sleeve_hwm": 1.0,
+   "sleeve_last_value": 0,
+   "sleeve_flow": 19.999999999999996,
+   "sleeve_held": [
+    "QQQ",
+    "SPY"
+   ],
+   "losing_exits": 0,
+   "flags": {},
+   "order_ids": [
+    "hb-C_80_20-2026-10-27-VTI-buy",
+    "hb-C_80_20-2026-10-27-SPY-buy",
+    "hb-C_80_20-2026-10-27-QQQ-buy"
+   ],
+   "pending": [],
+   "last_pass": "2026-10-27",
+   "last_close_nav": {
+    "2026-10-26": 1.0
+   },
+   "month_credited": "2026-10"
+  },
+  "D_70_30": {
+   "pid": "D_70_30",
+   "positions": {
+    "VTI": {
+     "qty": 0.18513131099415514,
+     "basis": 70.0
+    },
+    "SPY": {
+     "qty": 0.01947571378491022,
+     "basis": 15.000000000000002
+    },
+    "QQQ": {
+     "qty": 0.02078886825401225,
+     "basis": 14.999999999999998
+    }
+   },
+   "settled": 0.0,
+   "unsettled": [],
+   "contributed": 100.0,
+   "deposits": [
+    [
+     "2026-10-27",
+     100.0
+    ]
+   ],
+   "realized": 0.0,
+   "hwm_realized": 0.0,
+   "vault": 0.0,
+   "owed_vault": 0.0,
+   "yr_realized": {},
+   "costs": 0.0,
+   "traded": 100.0,
+   "trades": 3,
+   "units": 100.0,
+   "nav_hwm": 1.0,
+   "sleeve_nav_v": 1.0,
+   "sleeve_hwm": 1.0,
+   "sleeve_last_value": 0,
+   "sleeve_flow": 30.0,
+   "sleeve_held": [
+    "QQQ",
+    "SPY"
+   ],
+   "losing_exits": 0,
+   "flags": {},
+   "order_ids": [
+    "hb-D_70_30-2026-10-27-VTI-buy",
+    "hb-D_70_30-2026-10-27-SPY-buy",
+    "hb-D_70_30-2026-10-27-QQQ-buy"
+   ],
+   "pending": [],
+   "last_pass": "2026-10-27",
+   "last_close_nav": {
+    "2026-10-26": 1.0
+   },
+   "month_credited": "2026-10"
+  },
+  "A_vti_vault": {
+   "pid": "A_vti_vault",
+   "positions": {
+    "VTI": {
+     "qty": 0.26447330142022163,
+     "basis": 100.0
+    }
+   },
+   "settled": 0.0,
+   "unsettled": [],
+   "contributed": 100.0,
+   "deposits": [
+    [
+     "2026-10-27",
+     100.0
+    ]
+   ],
+   "realized": 0.0,
+   "hwm_realized": 0.0,
+   "vault": 0.0,
+   "owed_vault": 0.0,
+   "yr_realized": {},
+   "costs": 0.0,
+   "traded": 100.0,
+   "trades": 1,
+   "units": 100.0,
+   "nav_hwm": 1.0,
+   "sleeve_nav_v": 1.0,
+   "sleeve_hwm": 1.0,
+   "sleeve_last_value": 0,
+   "sleeve_flow": 0.0,
+   "sleeve_held": [],
+   "losing_exits": 0,
+   "flags": {},
+   "order_ids": [
+    "hb-A_vti_vault-2026-10-27-VTI-buy"
+   ],
+   "pending": [],
+   "last_pass": "2026-10-27",
+   "last_close_nav": {
+    "2026-10-26": 1.0
+   },
+   "month_credited": "2026-10"
+  },
+  "B_90_10_vault": {
+   "pid": "B_90_10_vault",
+   "positions": {
+    "VTI": {
+     "qty": 0.23802597127819947,
+     "basis": 90.0
+    },
+    "SPY": {
+     "qty": 0.00649190459497007,
+     "basis": 4.999999999999999
+    },
+    "QQQ": {
+     "qty": 0.006929622751337417,
+     "basis": 4.999999999999999
+    }
+   },
+   "settled": 1.7763568394002505e-15,
+   "unsettled": [],
+   "contributed": 100.0,
+   "deposits": [
+    [
+     "2026-10-27",
+     100.0
+    ]
+   ],
+   "realized": 0.0,
+   "hwm_realized": 0.0,
+   "vault": 0.0,
+   "owed_vault": 0.0,
+   "yr_realized": {},
+   "costs": 0.0,
+   "traded": 100.0,
+   "trades": 3,
+   "units": 100.0,
+   "nav_hwm": 1.0,
+   "sleeve_nav_v": 1.0,
+   "sleeve_hwm": 1.0,
+   "sleeve_last_value": 0,
+   "sleeve_flow": 9.999999999999998,
+   "sleeve_held": [
+    "QQQ",
+    "SPY"
+   ],
+   "losing_exits": 0,
+   "flags": {},
+   "order_ids": [
+    "hb-B_90_10_vault-2026-10-27-VTI-buy",
+    "hb-B_90_10_vault-2026-10-27-SPY-buy",
+    "hb-B_90_10_vault-2026-10-27-QQQ-buy"
+   ],
+   "pending": [],
+   "last_pass": "2026-10-27",
+   "last_close_nav": {
+    "2026-10-26": 1.0
+   },
+   "month_credited": "2026-10"
+  },
+  "C_80_20_vault": {
+   "pid": "C_80_20_vault",
+   "positions": {
+    "VTI": {
+     "qty": 0.2115786411361773,
+     "basis": 80.0
+    },
+    "SPY": {
+     "qty": 0.01298380918994014,
+     "basis": 9.999999999999998
+    },
+    "QQQ": {
+     "qty": 0.013859245502674833,
+     "basis": 9.999999999999998
+    }
+   },
+   "settled": 3.552713678800501e-15,
+   "unsettled": [],
+   "contributed": 100.0,
+   "deposits": [
+    [
+     "2026-10-27",
+     100.0
+    ]
+   ],
+   "realized": 0.0,
+   "hwm_realized": 0.0,
+   "vault": 0.0,
+   "owed_vault": 0.0,
+   "yr_realized": {},
+   "costs": 0.0,
+   "traded": 100.0,
+   "trades": 3,
+   "units": 100.0,
+   "nav_hwm": 1.0,
+   "sleeve_nav_v": 1.0,
+   "sleeve_hwm": 1.0,
+   "sleeve_last_value": 0,
+   "sleeve_flow": 19.999999999999996,
+   "sleeve_held": [
+    "QQQ",
+    "SPY"
+   ],
+   "losing_exits": 0,
+   "flags": {},
+   "order_ids": [
+    "hb-C_80_20_vault-2026-10-27-VTI-buy",
+    "hb-C_80_20_vault-2026-10-27-SPY-buy",
+    "hb-C_80_20_vault-2026-10-27-QQQ-buy"
+   ],
+   "pending": [],
+   "last_pass": "2026-10-27",
+   "last_close_nav": {
+    "2026-10-26": 1.0
+   },
+   "month_credited": "2026-10"
+  },
+  "D_70_30_vault": {
+   "pid": "D_70_30_vault",
+   "positions": {
+    "VTI": {
+     "qty": 0.18513131099415514,
+     "basis": 70.0
+    },
+    "SPY": {
+     "qty": 0.01947571378491022,
+     "basis": 15.000000000000002
+    },
+    "QQQ": {
+     "qty": 0.02078886825401225,
+     "basis": 14.999999999999998
+    }
+   },
+   "settled": 0.0,
+   "unsettled": [],
+   "contributed": 100.0,
+   "deposits": [
+    [
+     "2026-10-27",
+     100.0
+    ]
+   ],
+   "realized": 0.0,
+   "hwm_realized": 0.0,
+   "vault": 0.0,
+   "owed_vault": 0.0,
+   "yr_realized": {},
+   "costs": 0.0,
+   "traded": 100.0,
+   "trades": 3,
+   "units": 100.0,
+   "nav_hwm": 1.0,
+   "sleeve_nav_v": 1.0,
+   "sleeve_hwm": 1.0,
+   "sleeve_last_value": 0,
+   "sleeve_flow": 30.0,
+   "sleeve_held": [
+    "QQQ",
+    "SPY"
+   ],
+   "losing_exits": 0,
+   "flags": {},
+   "order_ids": [
+    "hb-D_70_30_vault-2026-10-27-VTI-buy",
+    "hb-D_70_30_vault-2026-10-27-SPY-buy",
+    "hb-D_70_30_vault-2026-10-27-QQQ-buy"
+   ],
+   "pending": [],
+   "last_pass": "2026-10-27",
+   "last_close_nav": {
+    "2026-10-26": 1.0
+   },
+   "month_credited": "2026-10"
+  }
+ },
+ "last_run": "2026-10-27",
+ "last_alerts": []
 }

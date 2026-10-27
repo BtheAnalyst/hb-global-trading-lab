@@ -1,0 +1,32 @@
+{"t": "2026-10-27", "pid": "A_vti", "event": "fill", "symbol": "VTI", "side": "buy", "qty": 0.26447330142022163, "price": 378.11, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "A_vti", "event": "pass", "sleeve": [], "orders": 1, "refused": 0, "alerts": []}
+{"t": "2026-10-27", "pid": "B_90_10", "event": "fill", "symbol": "VTI", "side": "buy", "qty": 0.23802597127819947, "price": 378.11, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "B_90_10", "event": "fill", "symbol": "SPY", "side": "buy", "qty": 0.00649190459497007, "price": 770.19, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "B_90_10", "event": "fill", "symbol": "QQQ", "side": "buy", "qty": 0.006929622751337417, "price": 721.54, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "B_90_10", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 3, "refused": 0, "alerts": []}
+{"t": "2026-10-27", "pid": "C_80_20", "event": "fill", "symbol": "VTI", "side": "buy", "qty": 0.2115786411361773, "price": 378.11, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "C_80_20", "event": "fill", "symbol": "SPY", "side": "buy", "qty": 0.01298380918994014, "price": 770.19, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "C_80_20", "event": "fill", "symbol": "QQQ", "side": "buy", "qty": 0.013859245502674833, "price": 721.54, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "C_80_20", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 3, "refused": 0, "alerts": []}
+{"t": "2026-10-27", "pid": "D_70_30", "event": "fill", "symbol": "VTI", "side": "buy", "qty": 0.18513131099415514, "price": 378.11, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "D_70_30", "event": "fill", "symbol": "SPY", "side": "buy", "qty": 0.01947571378491022, "price": 770.19, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "D_70_30", "event": "fill", "symbol": "QQQ", "side": "buy", "qty": 0.02078886825401225, "price": 721.54, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "D_70_30", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 3, "refused": 0, "alerts": []}
+{"t": "2026-10-27", "pid": "A_vti_vault", "event": "fill", "symbol": "VTI", "side": "buy", "qty": 0.26447330142022163, "price": 378.11, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "A_vti_vault", "event": "pass", "sleeve": [], "orders": 1, "refused": 0, "alerts": []}
+{"t": "2026-10-27", "pid": "B_90_10_vault", "event": "fill", "symbol": "VTI", "side": "buy", "qty": 0.23802597127819947, "price": 378.11, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "B_90_10_vault", "event": "fill", "symbol": "SPY", "side": "buy", "qty": 0.00649190459497007, "price": 770.19, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "B_90_10_vault", "event": "fill", "symbol": "QQQ", "side": "buy", "qty": 0.006929622751337417, "price": 721.54, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "B_90_10_vault", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 3, "refused": 0, "alerts": []}
+{"t": "2026-10-27", "pid": "C_80_20_vault", "event": "fill", "symbol": "VTI", "side": "buy", "qty": 0.2115786411361773, "price": 378.11, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "C_80_20_vault", "event": "fill", "symbol": "SPY", "side": "buy", "qty": 0.01298380918994014, "price": 770.19, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "C_80_20_vault", "event": "fill", "symbol": "QQQ", "side": "buy", "qty": 0.013859245502674833, "price": 721.54, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "C_80_20_vault", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 3, "refused": 0, "alerts": []}
+{"t": "2026-10-27", "pid": "D_70_30_vault", "event": "fill", "symbol": "VTI", "side": "buy", "qty": 0.18513131099415514, "price": 378.11, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "D_70_30_vault", "event": "fill", "symbol": "SPY", "side": "buy", "qty": 0.01947571378491022, "price": 770.19, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "D_70_30_vault", "event": "fill", "symbol": "QQQ", "side": "buy", "qty": 0.02078886825401225, "price": 721.54, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "D_70_30_vault", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 3, "refused": 0, "alerts": []}
+{"t": "2026-10-27", "pid": "FOUNDER", "event": "fill", "symbol": "VTI", "side": "buy", "qty": 0.211154221, "price": 378.106, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "FOUNDER", "event": "fill", "symbol": "SPY", "side": "buy", "qty": 0.012957899, "price": 770.1679999999999, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "FOUNDER", "event": "fill", "symbol": "QQQ", "side": "buy", "qty": 0.013831449, "price": 721.536, "reason": "invest cash toward target", "pnl": null}
+{"t": "2026-10-27", "pid": "FOUNDER", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 3, "refused": 0, "alerts": []}
