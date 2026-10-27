@@ -1,33 +1,13 @@
 {
- "at": "2026-10-27T15:29:54-04:00",
+ "at": "2026-10-27T16:09:00-04:00",
  "mode": "paper",
  "exit_code": 0,
  "problem": false,
  "notes": [
   {
    "level": "notice",
-   "title": "Data",
-   "message": "433 completed daily bars per ETF through 2026-10-26 (previous session 2026-10-26); missing values in last row: 0; ETFs not fractionable: none; refused by allowlist checks: none"
-  },
-  {
-   "level": "notice",
-   "title": "Quotes",
-   "message": "BIL 91.65/91.66 (0.01%); EEM 62.58/62.59 (0.02%); EFA 103.61/103.62 (0.01%); GLD 372.13/372.15 (0.01%); IWM 280.14/280.16 (0.01%); QQQ 721.49/721.54 (0.01%); SPY 770.15/770.19 (0.01%); TLT 81.68/81.69 (0.01%); VNQ 92.25/92.27 (0.02%); VTI 378.09/378.11 (0.01%)"
-  },
-  {
-   "level": "notice",
-   "title": "Paper account (not the Founder's capital)",
-   "message": "Alpaca paper cash $100,000.00, buying power $100,000.00, status ACTIVE. The bot sizes orders only from the Founder's own books; this balance is never used."
-  },
-  {
-   "level": "notice",
-   "title": "Engine pass",
-   "message": "A_vti: buy VTI $100.00 | credited the $100.00 monthly contribution (on the books; no real transfer) || B_90_10: buy VTI $90.00, buy SPY $5.00, buy QQQ $5.00 | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['T-bills'] -> ['QQQ', 'SPY'] || C_80_20: buy VTI $80.00, buy SPY $10.00, buy QQQ $10.00 | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['T-bills'] -> ['QQQ', 'SPY'] || D_70_30: buy VTI $70.00, buy SPY $15.00, buy QQQ $15.00 | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['T-bills'] -> ['QQQ', 'SPY'] || A_vti_vault: buy VTI $100.00 | credited the $100.00 monthly contribution (on the books; no real transfer) || B_90_10_vault: buy VTI $90.00, buy SPY $5.00, buy QQQ $5.00 | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['T-bills'] -> ['QQQ', 'SPY'] || C_80_20_vault: buy VTI $80.00, buy SPY $10.00, buy QQQ $10.00 | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['T-bills'] -> ['QQQ', 'SPY'] || D_70_30_vault: buy VTI $70.00, buy SPY $15.00, buy QQQ $15.00 | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['T-bills'] -> ['QQQ', 'SPY'] || FOUNDER: buy VTI $79.84, buy SPY $9.98, buy QQQ $9.98 | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['T-bills'] -> ['QQQ', 'SPY']"
-  },
-  {
-   "level": "notice",
-   "title": "Reconciliation",
-   "message": "clean | broker positions {'QQQ': 0.013831449, 'SPY': 0.012957899, 'VTI': 0.211154221} | Founder books: positions {'VTI': {'qty': 0.211154221, 'basis': 79.838677885426}, 'SPY': {'qty': 0.012957899, 'basis': 9.979759157032}, 'QQQ': {'qty': 0.013831449, 'basis': 9.979888385664}}, settled cash $0.20, contributed $100.00"
+   "title": "Market closed",
+   "message": "the market is not open right now: no orders, nothing changed"
   }
  ]
 }
