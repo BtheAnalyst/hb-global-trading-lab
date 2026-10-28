@@ -33,7 +33,7 @@ jobs:
     needs: morning
     if: ${{ !cancelled() }}        # run even if the morning job FAILED (positions must still be managed/flattened); not when cancelled
     runs-on: ubuntu-latest
-    timeout-minutes: 240
+    timeout-minutes: 355           # must reach 16:05 ET even if the morning job ended early (GitHub max is 360)
     steps:
       - uses: actions/checkout@v4
         with: { ref: main }

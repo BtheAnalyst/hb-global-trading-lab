@@ -12,6 +12,13 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 CFG = yaml.safe_load((ROOT / "config" / "intraday.yaml").read_text())
 ACC = CFG.get("account", "FOUNDER")
+if ACC == "auto":   # run_intraday picks FOUNDER or ENGINEERING per day: report the account with the newest daily report
+    found = {p.stem.removeprefix("intraday_daily_"): json.loads(p.read_text())
+             for p in (ROOT / "dashboard").glob("intraday_daily_*.json")
+             if p.stem.removeprefix("intraday_daily_") in CFG.get("accounts", {})}
+    if not found:
+        sys.exit("no intraday daily report found")
+    ACC = max(found, key=lambda a: (found[a].get("date", ""), a == "FOUNDER"))
 rep = json.loads((ROOT / "dashboard" / f"intraday_daily_{ACC}.json").read_text())
 st = json.loads((ROOT / "state" / f"intraday_state_{ACC}.json").read_text())
 day = rep["date"]
