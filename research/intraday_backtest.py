@@ -30,7 +30,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from hbgtl.candles import session_frame, volume_profile, rvol  # noqa: E402
-from hbgtl.setups import SETUP_IDS, Signal, evaluate  # noqa: E402
+from hbgtl.setups import SETUP_IDS, Signal, evaluate, reason_key  # noqa: E402
 from hbgtl.intraday_sim import simulate_trade as _sim  # noqa: E402
 
 CHASE_R = 0.25
@@ -98,7 +98,7 @@ def symbol_signals(sym):
                 if isinstance(s, Signal):
                     out.append((date, s, d))
                 elif isinstance(s, str):
-                    rej[f"{setup}: {s.split('(')[0].strip()}"] += 1
+                    rej[reason_key(setup, s)] += 1
     # keep only what simulation needs: the session frame from the signal bar on
     return sym, [(date, s, d.iloc[int(np.searchsorted(d['m'].values, s.m)):].reset_index(drop=True))
                  for date, s, d in out], dict(rej)

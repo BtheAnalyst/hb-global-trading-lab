@@ -50,6 +50,12 @@ class Signal:
         return self.ref - self.stop
 
 
+def reason_key(setup: str, reason: str) -> str:
+    """Group rejection reasons without their numbers (for counts in reports)."""
+    import re
+    return f"{setup}: " + re.sub(r"\s+", " ", re.sub(r"[-+]?\$?\d[\d.,]*%?x?", "#", reason.split("(")[0])).strip()
+
+
 def _risk_ok(ref, stop, p):
     r = (ref - stop) / ref
     if r < p["min_risk_pct"]:

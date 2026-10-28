@@ -24,7 +24,7 @@ import pandas as pd
 from .candles import rvol, session_frame, volume_profile
 from .intraday_sim import simulate_trade
 from .intraday_universe import asset_ok
-from .setups import SETUP_IDS, Signal, evaluate, invalidated
+from .setups import SETUP_IDS, Signal, evaluate, invalidated, reason_key
 
 LIVE_STOP_STATES = {"new", "held", "accepted", "pending_new", "partially_filled"}
 
@@ -161,7 +161,7 @@ class IntradayEngine:
                         continue
                     stale = int(d["m"].iloc[i]) < fresh_m
                     if isinstance(res, str):
-                        key = f"{setup}: {res.split('(')[0].strip()}"
+                        key = reason_key(setup, res)
                         self.day["rejections"][key] = self.day["rejections"].get(key, 0) + 1
                         self.note("candidate_rejected", setup=setup, symbol=sym, m=int(d["m"].iloc[i]), reason=res)
                         continue
@@ -230,7 +230,7 @@ class IntradayEngine:
                           f"share(s) at ${risk_ps:.2f}/share risk; settled cash ${settled:.2f} buys "
                           f"{math.floor(settled / limit)} at ${limit:.2f}")
         if reason:
-            key = f"{sig.setup}: {reason.split(':')[0]}"
+            key = reason_key(sig.setup, "entry refused: " + reason.split(":")[0])
             self.day["rejections"][key] = self.day["rejections"].get(key, 0) + 1
             self.note("entry_refused", setup=sig.setup, symbol=sig.symbol, reason=reason)
             return False

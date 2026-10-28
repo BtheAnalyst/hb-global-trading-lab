@@ -1,0 +1,810 @@
+{
+ "method": "Backtest of the three intraday setups on historical 1-minute bars (research only, no orders).\n\nMethod (predeclared, Oct 28 2026):\n  * Same signal code as the live engine (hbgtl.setups); decisions at the CLOSE of a completed bar, fills at\n    the NEXT bar (no look-ahead). Relative volume uses only PRIOR sessions' volume profile.\n  * Eligibility per day from data known before the open: prior close $5-$100, 20-day average volume >= 1M.\n  * Entry: marketable limit capped at signal close + 0.25R; no fill if the next bar never trades at/below it.\n  * Exits: stop (fills at the stop or worse on a gap), 2R target (needs a trade-through), setup invalidation\n    on a completed bar (next-bar open), flatten 15:50 ET. If one bar touches both stop and target: stop.\n  * Costs: slippage per side on every market-style fill, 5 bps base and 10 bps stress; $0 commission.\n  * Portfolio rules as live: one position at a time, max 3 entries/day, stop for the day at -2R\n    (0.5% risk/trade, 1% daily loss), signals ranked by relative volume.\n  * In-sample = first 2/3 of sessions, out-of-sample = last 1/3. Parameters were NOT tuned on either.\n  * $100 cash-account simulation: whole shares, 0.5% risk ($0.50), settled cash only (T+1), skips logged.",
+ "data": {
+  "feed": "sip",
+  "start": "2026-04-21T09:45:42.477239+00:00",
+  "end": "2026-10-28T09:45:42.477239+00:00",
+  "symbols": 170,
+  "adjustment": "split"
+ },
+ "sessions": 121,
+ "oos_from": "2026-08-31",
+ "rejections_sample": {
+  "ineligible (price/ADV)": 5221,
+  "MOMO_CONT_V1: continuation breakout volume not confirmed": 2157,
+  "PULLBACK_VWAP_V1: stop too tight": 894,
+  "PULLBACK_VWAP_V1: relative volume 0.64 below 1.5": 272,
+  "PULLBACK_VWAP_V1: relative volume 0.65 below 1.5": 254,
+  "PULLBACK_VWAP_V1: relative volume 0.71 below 1.5": 253,
+  "PULLBACK_VWAP_V1: relative volume 0.69 below 1.5": 247,
+  "MOMO_CONT_V1: relative volume 0.88 below 1.5": 245,
+  "MOMO_CONT_V1: relative volume 0.89 below 1.5": 244,
+  "MOMO_CONT_V1: relative volume 0.78 below 1.5": 242,
+  "MOMO_CONT_V1: relative volume 0.97 below 1.5": 241,
+  "PULLBACK_VWAP_V1: relative volume 0.66 below 1.5": 240,
+  "PULLBACK_VWAP_V1: relative volume 0.63 below 1.5": 240,
+  "MOMO_CONT_V1: relative volume 0.77 below 1.5": 239,
+  "PULLBACK_VWAP_V1: relative volume 0.72 below 1.5": 237,
+  "MOMO_CONT_V1: relative volume 0.96 below 1.5": 236,
+  "PULLBACK_VWAP_V1: relative volume 0.81 below 1.5": 236,
+  "MOMO_CONT_V1: relative volume 0.99 below 1.5": 232,
+  "MOMO_CONT_V1: relative volume 0.92 below 1.5": 232,
+  "PULLBACK_VWAP_V1: relative volume 0.62 below 1.5": 232,
+  "MOMO_CONT_V1: relative volume 0.95 below 1.5": 232,
+  "MOMO_CONT_V1: relative volume 0.76 below 1.5": 232,
+  "MOMO_CONT_V1: relative volume 0.94 below 1.5": 231,
+  "PULLBACK_VWAP_V1: relative volume 0.75 below 1.5": 230,
+  "MOMO_CONT_V1: relative volume 1.0 below 1.5": 229
+ },
+ "setups": {
+  "ORB15_V1": {
+   "base": {
+    "all": {
+     "n": 27,
+     "win_rate": 0.37,
+     "avg_win_R": 1.659,
+     "avg_loss_R": -0.716,
+     "expectancy_R": 0.1636,
+     "expectancy_se": 0.2434,
+     "profit_factor": 1.363,
+     "total_R": 4.42,
+     "max_drawdown_R": -3.43
+    },
+    "in_sample": {
+     "n": 15,
+     "win_rate": 0.333,
+     "avg_win_R": 1.619,
+     "avg_loss_R": -0.675,
+     "expectancy_R": 0.0899,
+     "expectancy_se": 0.3191,
+     "profit_factor": 1.2,
+     "total_R": 1.35,
+     "max_drawdown_R": -2.69
+    },
+    "out_of_sample": {
+     "n": 12,
+     "win_rate": 0.417,
+     "avg_win_R": 1.699,
+     "avg_loss_R": -0.775,
+     "expectancy_R": 0.2557,
+     "expectancy_se": 0.3896,
+     "profit_factor": 1.565,
+     "total_R": 3.07,
+     "max_drawdown_R": -3.43
+    },
+    "portfolio_skips": {
+     "one position at a time": 7
+    }
+   },
+   "stress": {
+    "all": {
+     "n": 27,
+     "win_rate": 0.37,
+     "avg_win_R": 1.624,
+     "avg_loss_R": -0.795,
+     "expectancy_R": 0.1008,
+     "expectancy_se": 0.2482,
+     "profit_factor": 1.201,
+     "total_R": 2.72,
+     "max_drawdown_R": -4.02
+    },
+    "in_sample": {
+     "n": 15,
+     "win_rate": 0.333,
+     "avg_win_R": 1.57,
+     "avg_loss_R": -0.75,
+     "expectancy_R": 0.0231,
+     "expectancy_se": 0.3223,
+     "profit_factor": 1.046,
+     "total_R": 0.35,
+     "max_drawdown_R": -2.9
+    },
+    "out_of_sample": {
+     "n": 12,
+     "win_rate": 0.417,
+     "avg_win_R": 1.678,
+     "avg_loss_R": -0.859,
+     "expectancy_R": 0.1979,
+     "expectancy_se": 0.401,
+     "profit_factor": 1.395,
+     "total_R": 2.37,
+     "max_drawdown_R": -4.02
+    },
+    "portfolio_skips": {
+     "one position at a time": 7
+    },
+    "by_exit": {
+     "closed below VWAP": 16,
+     "end of day flatten (15": 2,
+     "stop": 2,
+     "target": 7
+    },
+    "by_time": {
+     "09:30": {
+      "n": 20,
+      "win_rate": 0.35,
+      "avg_win_R": 1.693,
+      "avg_loss_R": -0.807,
+      "expectancy_R": 0.0676,
+      "expectancy_se": 0.2932,
+      "profit_factor": 1.129,
+      "total_R": 1.35,
+      "max_drawdown_R": -3.6
+     },
+     "10:00": {
+      "n": 3,
+      "win_rate": 0.667,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -0.572,
+      "expectancy_R": 1.1427,
+      "expectancy_se": 0.8573,
+      "profit_factor": 6.995,
+      "total_R": 3.43,
+      "max_drawdown_R": -0.57
+     },
+     "10:30": {
+      "n": 3,
+      "win_rate": 0.333,
+      "avg_win_R": 0.391,
+      "avg_loss_R": -0.66,
+      "expectancy_R": -0.3099,
+      "expectancy_se": 0.3782,
+      "profit_factor": 0.296,
+      "total_R": -0.93,
+      "max_drawdown_R": -1.32
+     },
+     "11:00": {
+      "n": 1,
+      "win_rate": 0.0,
+      "avg_win_R": 0,
+      "avg_loss_R": -1.13,
+      "expectancy_R": -1.1298,
+      "expectancy_se": null,
+      "profit_factor": 0.0,
+      "total_R": -1.13,
+      "max_drawdown_R": -1.13
+     }
+    },
+    "by_month": {
+     "2026-05": {
+      "n": 5,
+      "win_rate": 0.2,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -0.714,
+      "expectancy_R": -0.1714,
+      "expectancy_se": 0.5489,
+      "profit_factor": 0.7,
+      "total_R": -0.86,
+      "max_drawdown_R": -1.59
+     },
+     "2026-06": {
+      "n": 2,
+      "win_rate": 0.5,
+      "avg_win_R": 1.819,
+      "avg_loss_R": -0.907,
+      "expectancy_R": 0.4558,
+      "expectancy_se": 1.3631,
+      "profit_factor": 2.005,
+      "total_R": 0.91,
+      "max_drawdown_R": -0.91
+     },
+     "2026-07": {
+      "n": 4,
+      "win_rate": 0.5,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -0.997,
+      "expectancy_R": 0.5015,
+      "expectancy_se": 0.8668,
+      "profit_factor": 2.006,
+      "total_R": 2.01,
+      "max_drawdown_R": -1.99
+     },
+     "2026-08": {
+      "n": 4,
+      "win_rate": 0.25,
+      "avg_win_R": 0.03,
+      "avg_loss_R": -0.581,
+      "expectancy_R": -0.4286,
+      "expectancy_se": 0.2506,
+      "profit_factor": 0.017,
+      "total_R": -1.71,
+      "max_drawdown_R": -1.74
+     },
+     "2026-09": {
+      "n": 5,
+      "win_rate": 0.4,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -0.826,
+      "expectancy_R": 0.3045,
+      "expectancy_se": 0.7027,
+      "profit_factor": 1.614,
+      "total_R": 1.52,
+      "max_drawdown_R": -2.48
+     },
+     "2026-10": {
+      "n": 7,
+      "win_rate": 0.429,
+      "avg_win_R": 1.464,
+      "avg_loss_R": -0.885,
+      "expectancy_R": 0.1218,
+      "expectancy_se": 0.5177,
+      "profit_factor": 1.241,
+      "total_R": 0.85,
+      "max_drawdown_R": -3.54
+     }
+    },
+    "account_100": {
+     "trades": 18,
+     "pnl_usd": -0.12,
+     "end_value": 99.88,
+     "min_value": 99.41,
+     "skips": {
+      "$100 account: no whole share fits risk/settled cash": 11,
+      "one position at a time": 5
+     }
+    }
+   },
+   "activation_criteria_stress_costs": {
+    "in_sample_expectancy_gt_0": true,
+    "oos_expectancy_gt_0": true,
+    "oos_trades_ge_30": false,
+    "oos_profit_factor_gt_1_1": true,
+    "account_100_can_trade": true
+   },
+   "passes": false
+  },
+  "PULLBACK_VWAP_V1": {
+   "base": {
+    "all": {
+     "n": 219,
+     "win_rate": 0.292,
+     "avg_win_R": 1.864,
+     "avg_loss_R": -1.014,
+     "expectancy_R": -0.1726,
+     "expectancy_se": 0.091,
+     "profit_factor": 0.759,
+     "total_R": -37.81,
+     "max_drawdown_R": -54.49
+    },
+    "in_sample": {
+     "n": 148,
+     "win_rate": 0.297,
+     "avg_win_R": 1.925,
+     "avg_loss_R": -1.028,
+     "expectancy_R": -0.1497,
+     "expectancy_se": 0.1134,
+     "profit_factor": 0.793,
+     "total_R": -22.16,
+     "max_drawdown_R": -34.26
+    },
+    "out_of_sample": {
+     "n": 71,
+     "win_rate": 0.282,
+     "avg_win_R": 1.73,
+     "avg_loss_R": -0.985,
+     "expectancy_R": -0.2203,
+     "expectancy_se": 0.1527,
+     "profit_factor": 0.689,
+     "total_R": -15.64,
+     "max_drawdown_R": -24.71
+    },
+    "portfolio_skips": {
+     "one position at a time": 175,
+     "daily loss limit": 45,
+     "max 3 entries/day": 15
+    }
+   },
+   "stress": {
+    "all": {
+     "n": 215,
+     "win_rate": 0.279,
+     "avg_win_R": 1.807,
+     "avg_loss_R": -1.097,
+     "expectancy_R": -0.2867,
+     "expectancy_se": 0.092,
+     "profit_factor": 0.637,
+     "total_R": -61.65,
+     "max_drawdown_R": -76.22
+    },
+    "in_sample": {
+     "n": 146,
+     "win_rate": 0.281,
+     "avg_win_R": 1.902,
+     "avg_loss_R": -1.102,
+     "expectancy_R": -0.2581,
+     "expectancy_se": 0.1146,
+     "profit_factor": 0.674,
+     "total_R": -37.68,
+     "max_drawdown_R": -47.07
+    },
+    "out_of_sample": {
+     "n": 69,
+     "win_rate": 0.275,
+     "avg_win_R": 1.6,
+     "avg_loss_R": -1.087,
+     "expectancy_R": -0.3474,
+     "expectancy_se": 0.154,
+     "profit_factor": 0.559,
+     "total_R": -23.97,
+     "max_drawdown_R": -32.76
+    },
+    "portfolio_skips": {
+     "one position at a time": 181,
+     "daily loss limit": 46,
+     "max 3 entries/day": 12
+    },
+    "by_exit": {
+     "bearish engulfing below VWAP": 42,
+     "end of day flatten (15": 9,
+     "stop": 112,
+     "target": 52
+    },
+    "by_time": {
+     "10:00": {
+      "n": 103,
+      "win_rate": 0.243,
+      "avg_win_R": 1.843,
+      "avg_loss_R": -1.073,
+      "expectancy_R": -0.365,
+      "expectancy_se": 0.1283,
+      "profit_factor": 0.551,
+      "total_R": -37.59,
+      "max_drawdown_R": -46.34
+     },
+     "10:30": {
+      "n": 39,
+      "win_rate": 0.308,
+      "avg_win_R": 1.719,
+      "avg_loss_R": -1.164,
+      "expectancy_R": -0.277,
+      "expectancy_se": 0.2218,
+      "profit_factor": 0.656,
+      "total_R": -10.8,
+      "max_drawdown_R": -16.83
+     },
+     "11:00": {
+      "n": 21,
+      "win_rate": 0.286,
+      "avg_win_R": 1.804,
+      "avg_loss_R": -1.153,
+      "expectancy_R": -0.308,
+      "expectancy_se": 0.3051,
+      "profit_factor": 0.626,
+      "total_R": -6.47,
+      "max_drawdown_R": -8.47
+     },
+     "11:30": {
+      "n": 12,
+      "win_rate": 0.167,
+      "avg_win_R": 1.317,
+      "avg_loss_R": -1.023,
+      "expectancy_R": -0.6331,
+      "expectancy_se": 0.2865,
+      "profit_factor": 0.257,
+      "total_R": -7.6,
+      "max_drawdown_R": -7.6
+     },
+     "12:00": {
+      "n": 8,
+      "win_rate": 0.375,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -1.17,
+      "expectancy_R": 0.0189,
+      "expectancy_se": 0.582,
+      "profit_factor": 1.026,
+      "total_R": 0.15,
+      "max_drawdown_R": -4.59
+     },
+     "12:30": {
+      "n": 9,
+      "win_rate": 0.556,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -1.145,
+      "expectancy_R": 0.6023,
+      "expectancy_se": 0.5533,
+      "profit_factor": 2.184,
+      "total_R": 5.42,
+      "max_drawdown_R": -2.18
+     },
+     "13:00": {
+      "n": 10,
+      "win_rate": 0.5,
+      "avg_win_R": 1.646,
+      "avg_loss_R": -0.765,
+      "expectancy_R": 0.4406,
+      "expectancy_se": 0.448,
+      "profit_factor": 2.152,
+      "total_R": 4.41,
+      "max_drawdown_R": -3.82
+     },
+     "13:30": {
+      "n": 5,
+      "win_rate": 0.0,
+      "avg_win_R": 0,
+      "avg_loss_R": -1.218,
+      "expectancy_R": -1.2185,
+      "expectancy_se": 0.0253,
+      "profit_factor": 0.0,
+      "total_R": -6.09,
+      "max_drawdown_R": -6.09
+     },
+     "14:00": {
+      "n": 7,
+      "win_rate": 0.286,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -1.178,
+      "expectancy_R": -0.2699,
+      "expectancy_se": 0.5876,
+      "profit_factor": 0.679,
+      "total_R": -1.89,
+      "max_drawdown_R": -3.89
+     },
+     "14:30": {
+      "n": 1,
+      "win_rate": 0.0,
+      "avg_win_R": 0,
+      "avg_loss_R": -1.183,
+      "expectancy_R": -1.183,
+      "expectancy_se": null,
+      "profit_factor": 0.0,
+      "total_R": -1.18,
+      "max_drawdown_R": -1.18
+     }
+    },
+    "by_month": {
+     "2026-05": {
+      "n": 38,
+      "win_rate": 0.368,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -1.11,
+      "expectancy_R": 0.0355,
+      "expectancy_se": 0.2488,
+      "profit_factor": 1.051,
+      "total_R": 1.35,
+      "max_drawdown_R": -9.27
+     },
+     "2026-06": {
+      "n": 39,
+      "win_rate": 0.205,
+      "avg_win_R": 1.779,
+      "avg_loss_R": -1.023,
+      "expectancy_R": -0.4481,
+      "expectancy_se": 0.193,
+      "profit_factor": 0.449,
+      "total_R": -17.48,
+      "max_drawdown_R": -24.52
+     },
+     "2026-07": {
+      "n": 38,
+      "win_rate": 0.342,
+      "avg_win_R": 1.828,
+      "avg_loss_R": -1.131,
+      "expectancy_R": -0.1189,
+      "expectancy_se": 0.2364,
+      "profit_factor": 0.84,
+      "total_R": -4.52,
+      "max_drawdown_R": -13.51
+     },
+     "2026-08": {
+      "n": 34,
+      "win_rate": 0.235,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -1.162,
+      "expectancy_R": -0.4176,
+      "expectancy_se": 0.235,
+      "profit_factor": 0.53,
+      "total_R": -14.2,
+      "max_drawdown_R": -19.01
+     },
+     "2026-09": {
+      "n": 29,
+      "win_rate": 0.31,
+      "avg_win_R": 1.375,
+      "avg_loss_R": -1.059,
+      "expectancy_R": -0.3039,
+      "expectancy_se": 0.2295,
+      "profit_factor": 0.584,
+      "total_R": -8.81,
+      "max_drawdown_R": -10.16
+     },
+     "2026-10": {
+      "n": 37,
+      "win_rate": 0.216,
+      "avg_win_R": 1.753,
+      "avg_loss_R": -1.104,
+      "expectancy_R": -0.4861,
+      "expectancy_se": 0.2051,
+      "profit_factor": 0.438,
+      "total_R": -17.99,
+      "max_drawdown_R": -25.02
+     }
+    },
+    "account_100": {
+     "trades": 157,
+     "pnl_usd": -18.35,
+     "end_value": 81.65,
+     "min_value": 80.41,
+     "skips": {
+      "one position at a time": 161,
+      "$100 account: no whole share fits risk/settled cash": 114,
+      "daily loss limit": 22
+     }
+    }
+   },
+   "activation_criteria_stress_costs": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": true,
+    "oos_profit_factor_gt_1_1": false,
+    "account_100_can_trade": true
+   },
+   "passes": false
+  },
+  "MOMO_CONT_V1": {
+   "base": {
+    "all": {
+     "n": 227,
+     "win_rate": 0.295,
+     "avg_win_R": 1.803,
+     "avg_loss_R": -0.99,
+     "expectancy_R": -0.1654,
+     "expectancy_se": 0.0875,
+     "profit_factor": 0.763,
+     "total_R": -37.54,
+     "max_drawdown_R": -45.18
+    },
+    "in_sample": {
+     "n": 152,
+     "win_rate": 0.263,
+     "avg_win_R": 1.764,
+     "avg_loss_R": -0.979,
+     "expectancy_R": -0.2572,
+     "expectancy_se": 0.1024,
+     "profit_factor": 0.643,
+     "total_R": -39.09,
+     "max_drawdown_R": -41.37
+    },
+    "out_of_sample": {
+     "n": 75,
+     "win_rate": 0.36,
+     "avg_win_R": 1.861,
+     "avg_loss_R": -1.015,
+     "expectancy_R": 0.0207,
+     "expectancy_se": 0.1634,
+     "profit_factor": 1.032,
+     "total_R": 1.55,
+     "max_drawdown_R": -8.61
+    },
+    "portfolio_skips": {
+     "one position at a time": 558,
+     "daily loss limit": 131,
+     "max 3 entries/day": 48
+    }
+   },
+   "stress": {
+    "all": {
+     "n": 222,
+     "win_rate": 0.27,
+     "avg_win_R": 1.78,
+     "avg_loss_R": -1.039,
+     "expectancy_R": -0.2769,
+     "expectancy_se": 0.0872,
+     "profit_factor": 0.635,
+     "total_R": -61.48,
+     "max_drawdown_R": -66.3
+    },
+    "in_sample": {
+     "n": 150,
+     "win_rate": 0.233,
+     "avg_win_R": 1.788,
+     "avg_loss_R": -1.028,
+     "expectancy_R": -0.3708,
+     "expectancy_se": 0.1015,
+     "profit_factor": 0.529,
+     "total_R": -55.63,
+     "max_drawdown_R": -57.67
+    },
+    "out_of_sample": {
+     "n": 72,
+     "win_rate": 0.347,
+     "avg_win_R": 1.769,
+     "avg_loss_R": -1.065,
+     "expectancy_R": -0.0813,
+     "expectancy_se": 0.165,
+     "profit_factor": 0.883,
+     "total_R": -5.85,
+     "max_drawdown_R": -12.04
+    },
+    "portfolio_skips": {
+     "one position at a time": 562,
+     "daily loss limit": 131,
+     "max 3 entries/day": 49
+    },
+    "by_exit": {
+     "closed below VWAP": 28,
+     "end of day flatten (15": 20,
+     "stop": 125,
+     "target": 49
+    },
+    "by_time": {
+     "10:00": {
+      "n": 54,
+      "win_rate": 0.222,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -0.966,
+      "expectancy_R": -0.307,
+      "expectancy_se": 0.1725,
+      "profit_factor": 0.591,
+      "total_R": -16.58,
+      "max_drawdown_R": -21.25
+     },
+     "10:30": {
+      "n": 38,
+      "win_rate": 0.368,
+      "avg_win_R": 1.856,
+      "avg_loss_R": -0.985,
+      "expectancy_R": 0.0619,
+      "expectancy_se": 0.2313,
+      "profit_factor": 1.1,
+      "total_R": 2.35,
+      "max_drawdown_R": -9.16
+     },
+     "11:00": {
+      "n": 31,
+      "win_rate": 0.161,
+      "avg_win_R": 1.297,
+      "avg_loss_R": -1.056,
+      "expectancy_R": -0.6768,
+      "expectancy_se": 0.1706,
+      "profit_factor": 0.236,
+      "total_R": -20.98,
+      "max_drawdown_R": -23.29
+     },
+     "11:30": {
+      "n": 33,
+      "win_rate": 0.394,
+      "avg_win_R": 1.797,
+      "avg_loss_R": -1.098,
+      "expectancy_R": 0.0426,
+      "expectancy_se": 0.2573,
+      "profit_factor": 1.064,
+      "total_R": 1.41,
+      "max_drawdown_R": -4.86
+     },
+     "12:00": {
+      "n": 15,
+      "win_rate": 0.267,
+      "avg_win_R": 1.657,
+      "avg_loss_R": -1.107,
+      "expectancy_R": -0.3699,
+      "expectancy_se": 0.3406,
+      "profit_factor": 0.544,
+      "total_R": -5.55,
+      "max_drawdown_R": -9.55
+     },
+     "12:30": {
+      "n": 25,
+      "win_rate": 0.2,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -1.095,
+      "expectancy_R": -0.4757,
+      "expectancy_se": 0.2583,
+      "profit_factor": 0.457,
+      "total_R": -11.89,
+      "max_drawdown_R": -14.39
+     },
+     "13:00": {
+      "n": 14,
+      "win_rate": 0.214,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -1.079,
+      "expectancy_R": -0.4194,
+      "expectancy_se": 0.355,
+      "profit_factor": 0.505,
+      "total_R": -5.87,
+      "max_drawdown_R": -7.21
+     },
+     "13:30": {
+      "n": 12,
+      "win_rate": 0.333,
+      "avg_win_R": 1.09,
+      "avg_loss_R": -1.09,
+      "expectancy_R": -0.3637,
+      "expectancy_se": 0.3301,
+      "profit_factor": 0.5,
+      "total_R": -4.36,
+      "max_drawdown_R": -6.99
+     }
+    },
+    "by_month": {
+     "2026-05": {
+      "n": 40,
+      "win_rate": 0.225,
+      "avg_win_R": 1.922,
+      "avg_loss_R": -1.066,
+      "expectancy_R": -0.3939,
+      "expectancy_se": 0.2026,
+      "profit_factor": 0.523,
+      "total_R": -15.75,
+      "max_drawdown_R": -15.75
+     },
+     "2026-06": {
+      "n": 39,
+      "win_rate": 0.205,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -1.031,
+      "expectancy_R": -0.4094,
+      "expectancy_se": 0.2026,
+      "profit_factor": 0.501,
+      "total_R": -15.97,
+      "max_drawdown_R": -19.43
+     },
+     "2026-07": {
+      "n": 38,
+      "win_rate": 0.263,
+      "avg_win_R": 1.49,
+      "avg_loss_R": -1.046,
+      "expectancy_R": -0.3787,
+      "expectancy_se": 0.1962,
+      "profit_factor": 0.509,
+      "total_R": -14.39,
+      "max_drawdown_R": -16.39
+     },
+     "2026-08": {
+      "n": 34,
+      "win_rate": 0.235,
+      "avg_win_R": 1.799,
+      "avg_loss_R": -0.964,
+      "expectancy_R": -0.3137,
+      "expectancy_se": 0.2142,
+      "profit_factor": 0.574,
+      "total_R": -10.67,
+      "max_drawdown_R": -15.31
+     },
+     "2026-09": {
+      "n": 34,
+      "win_rate": 0.382,
+      "avg_win_R": 1.894,
+      "avg_loss_R": -1.084,
+      "expectancy_R": 0.0546,
+      "expectancy_se": 0.2562,
+      "profit_factor": 1.081,
+      "total_R": 1.85,
+      "max_drawdown_R": -12.04
+     },
+     "2026-10": {
+      "n": 37,
+      "win_rate": 0.324,
+      "avg_win_R": 1.633,
+      "avg_loss_R": -1.046,
+      "expectancy_R": -0.1771,
+      "expectancy_se": 0.2181,
+      "profit_factor": 0.749,
+      "total_R": -6.55,
+      "max_drawdown_R": -10.07
+     }
+    },
+    "account_100": {
+     "trades": 182,
+     "pnl_usd": -16.85,
+     "end_value": 83.15,
+     "min_value": 81.93,
+     "skips": {
+      "$100 account: no whole share fits risk/settled cash": 178,
+      "one position at a time": 479,
+      "max 3 entries/day": 12,
+      "daily loss limit": 113
+     }
+    }
+   },
+   "activation_criteria_stress_costs": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": true,
+    "oos_profit_factor_gt_1_1": false,
+    "account_100_can_trade": true
+   },
+   "passes": false
+  }
+ }
+}
