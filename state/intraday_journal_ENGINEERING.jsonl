@@ -990,3 +990,6 @@
 {"t": "2026-10-28T17:11:11+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "RIOT", "m": 220, "reason": "relative volume 1.0 below 1.5"}
 {"t": "2026-10-28T17:12:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "GME", "m": 221, "reason": "relative volume 0.79 below 1.5"}
 {"t": "2026-10-28T17:12:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KEY", "m": 221, "reason": "relative volume 0.52 below 1.5"}
+{"t": "2026-10-28T17:15:12+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PCG", "m": 224, "reason": "relative volume 1.41 below 1.5"}
+{"t": "2026-10-28T17:16:12+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BSX", "m": 225, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-10-28T17:24:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CIFR", "m": 233, "reason": "relative volume 0.64 below 1.5"}
