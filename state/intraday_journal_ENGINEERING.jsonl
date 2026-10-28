@@ -930,3 +930,10 @@
 {"t": "2026-10-28T15:21:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HRL", "m": 110, "reason": "relative volume 0.49 below 1.5"}
 {"t": "2026-10-28T15:22:09+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KMI", "m": 111, "reason": "relative volume 0.85 below 1.5"}
 {"t": "2026-10-28T15:23:09+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "TSN", "m": 112, "reason": "relative volume 0.52 below 1.5"}
+{"t": "2026-10-28T15:24:08+00:00", "date": "2026-10-28", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "HOOD", "m": 109, "entry": 92.4824, "exit": 91.6483, "risk": 0.7424, "R": -1.1236, "how": "stop", "mins": 4, "rvol": 2.2801949088202065, "stop": 91.74, "exit_m": 113}
+{"t": "2026-10-28T15:26:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CVS", "m": 115, "reason": "relative volume 0.6 below 1.5"}
+{"t": "2026-10-28T15:27:09+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NEE", "m": 116, "reason": "relative volume 0.76 below 1.5"}
+{"t": "2026-10-28T15:31:14+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "HAL", "m": 120, "reason": "relative volume 0.92 below 2.0"}
+{"t": "2026-10-28T15:33:11+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "VZ", "m": 122, "reason": "relative volume 0.46 below 1.5"}
+{"t": "2026-10-28T15:34:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "D", "m": 123, "reason": "relative volume 0.59 below 1.5"}
+{"t": "2026-10-28T15:34:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KMI", "m": 123, "reason": "relative volume 0.88 below 1.5"}
