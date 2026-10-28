@@ -1,0 +1,24 @@
+name: Paper - cancel specific open orders
+on:
+  workflow_dispatch:
+    inputs:
+      client_order_ids:
+        description: "client order ids to cancel (space or comma separated)"
+        required: true
+permissions:
+  contents: read
+jobs:
+  cancel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install alpaca-py
+      - env:
+          ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
+          ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
+          IDS: ${{ inputs.client_order_ids }}
+        run: python scripts/cancel_orders.py $IDS
