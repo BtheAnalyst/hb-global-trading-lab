@@ -1,0 +1,40 @@
+# Intraday sleeve (Oct 28, 2026 directive). PAPER ONLY: the gateway is hard-wired to Alpaca's paper endpoint
+# and live trading is blocked in code (risk.assert_paper_or_approved).
+#
+# mode: signal = scan, detect and journal signals + shadow (virtual) trades; NEVER sends orders.
+#       paper  = also sends Alpaca PAPER bracket orders, but ONLY for setups listed in `execute` and only
+#                when every activation check passes (allocated settled cash, data, broker, kill switch).
+mode: paper
+execute: []            # setups allowed to send paper orders. Empty until a setup passes the predeclared
+                       # backtest criteria (research/intraday_backtest_results.json). See docs/INTRADAY.md.
+evaluate: [ORB15_V1, PULLBACK_VWAP_V1, MOMO_CONT_V1]   # all setups are scanned and shadow-traded
+
+# Which simulated account the sleeve trades. Founder decision Oct 28, 2026: trade from the ENGINEERING
+# account (Portfolio A, $10,000 simulated) "today and tomorrow and until the Founder's Account is rectified".
+# Each account has its own books (state/intraday_state_<ACCOUNT>.json) and its own client-order-id prefix.
+# Results of the two accounts are NEVER mixed, and neither is real money.
+account: ENGINEERING
+accounts:
+  ENGINEERING: {seed_usd: 10000.0, prefix: "ie-"}     # Portfolio A engineering account (paper)
+  FOUNDER:     {seed_usd: 0.0, max_usd: 100.0, prefix: "id-"}   # funded only by --allocate from Founder books
+
+risk:
+  risk_per_trade_pct: 0.005      # 0.5% of sleeve equity planned loss per trade
+  daily_loss_pct: 0.01           # stop new entries for the day at -1% of start-of-day sleeve equity
+  max_open_positions: 1
+  max_entries_per_day: 3
+  chase_r: 0.25                  # entry limit = signal close + 0.25 x planned risk; no chasing beyond
+  entry_timeout_s: 120           # cancel an unfilled entry after 2 minutes
+  max_quote_age_s: 30
+  max_bar_age_s: 150             # the newest completed bar must be this fresh (stale-data guard)
+  max_spread_pct: 0.003          # IEX quote spread cap (IEX top-of-book is wider than the national best)
+  last_entry: "15:00"
+  flatten: "15:50"
+  consecutive_error_kill: 2      # two order/broker errors in a day -> sleeve kill switch ON
+
+universe:
+  price_min: 5
+  price_max: 100
+  adv_min: 1000000
+  shortlist: 25                  # symbols watched minute-by-minute (re-ranked by relative volume every 15 min)
+  feed: iex                      # live: IEX (the account's subscription does not permit real-time SIP)

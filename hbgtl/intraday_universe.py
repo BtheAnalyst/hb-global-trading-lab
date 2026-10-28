@@ -19,7 +19,8 @@ CRWD ZS PANW S IONQ RGTI QBTS SOUN BBAI ACHR JOBY RKLB ASTS LUMN APLD CIFR IREN 
 """.split()))
 
 # Never trade these (ETFs, leveraged or inverse products) even if a screener returns them.
-NAME_DENY = ("ETF", "ETN", "TRUST", "FUND", "2X", "3X", "ULTRA", "BULL", "BEAR", "INVERSE", "LEVERAGED", "DAILY")
+NAME_DENY = ("ETF", "ETN", "TRUST", "FUND", "2X", "3X", "ULTRA", "BULL", "BEAR", "INVERSE", "LEVERAGED", "DAILY", "ULTRAPRO",
+             "PROSHARES", "DIREXION", "ISHARES", "SPDR", "INDEX")
 EXCHANGES = {"NYSE", "NASDAQ", "ARCA", "AMEX", "BATS"}
 
 
@@ -27,6 +28,9 @@ def asset_ok(a: dict) -> str | None:
     """Return a rejection reason, or None if the asset may be traded by the intraday sleeve."""
     if not a:
         return "asset not found"
+    from .equity_risk import LEVERAGED_OR_INVERSE
+    if a.get("symbol") in LEVERAGED_OR_INVERSE:
+        return "ETF / leveraged or inverse product excluded"
     if a.get("class", "us_equity") != "us_equity":
         return "not a U.S. equity"
     if not a.get("tradable", False) or a.get("status", "active") != "active":
