@@ -970,3 +970,4 @@
 {"t": "2026-10-28T16:23:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "WFC", "m": 172, "reason": "relative volume 1.11 below 1.5"}
 {"t": "2026-10-28T16:24:09+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SCHW", "m": 173, "reason": "relative volume 1.1 below 1.5"}
 {"t": "2026-10-28T16:25:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ET", "m": 174, "reason": "relative volume 0.76 below 1.5"}
+{"t": "2026-10-28T16:30:13+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "IVZ", "m": 179, "reason": "relative volume 1.37 below 1.5"}
