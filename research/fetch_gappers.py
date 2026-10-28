@@ -22,8 +22,6 @@ from alpaca.data.historical.stock import StockHistoricalDataClient
 from alpaca.data.requests import StockBarsRequest
 from alpaca.data.timeframe import TimeFrame
 from alpaca.trading.client import TradingClient
-from alpaca.trading.enums import AssetClass, AssetStatus
-from alpaca.trading.requests import GetAssetsRequest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -38,14 +36,15 @@ end = datetime.now(timezone.utc) - timedelta(minutes=20)
 start = end - timedelta(days=DAYS)
 
 syms = []
-for a in tc.get_all_assets(GetAssetsRequest(status=AssetStatus.ACTIVE, asset_class=AssetClass.US_EQUITY)):
-    d = {"symbol": a.symbol, "tradable": a.tradable, "status": "active", "exchange": str(a.exchange.value),
-         "class": "us_equity", "name": a.name or ""}
-    if asset_ok(d) or not a.symbol.isalpha() or (len(a.symbol) == 5 and a.symbol[-1] in "WRUZ"):
+for a in tc.get("/assets", {"status": "active", "asset_class": "us_equity"}):   # raw JSON: SDK enum lacks new venues
+    sym, name = a.get("symbol", ""), a.get("name") or ""
+    d = {"symbol": sym, "tradable": a.get("tradable"), "status": "active", "exchange": a.get("exchange"),
+         "class": "us_equity", "name": name}
+    if asset_ok(d) or not sym.isalpha() or (len(sym) == 5 and sym[-1] in "WRUZ"):
         continue
-    if any(w in (a.name or "").upper() for w in ("WARRANT", "RIGHT", " UNIT", "ACQUISITION CORP", "PREFERRED", "NOTES")):
+    if any(w in name.upper() for w in ("WARRANT", "RIGHT", " UNIT", "ACQUISITION CORP", "PREFERRED", "NOTES")):
         continue
-    syms.append(a.symbol)
+    syms.append(sym)
 print(f"{len(syms)} candidate common stocks")
 
 frames = []
