@@ -30,3 +30,6 @@
 {"t": "2026-10-27", "pid": "FOUNDER", "event": "fill", "symbol": "SPY", "side": "buy", "qty": 0.012957899, "price": 770.1679999999999, "reason": "invest cash toward target", "pnl": null}
 {"t": "2026-10-27", "pid": "FOUNDER", "event": "fill", "symbol": "QQQ", "side": "buy", "qty": 0.013831449, "price": 721.536, "reason": "invest cash toward target", "pnl": null}
 {"t": "2026-10-27", "pid": "FOUNDER", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 3, "refused": 0, "alerts": []}
+{"t": "2026-10-28", "pid": "FOUNDER", "event": "fill", "symbol": "VTI", "side": "sell", "qty": 0.211154221, "price": 378.66, "reason": "founder-approved liquidation: Founder approval Oct 28 2026: 'yes sell that stuff we need to be able to trade from the founders account'", "pnl": 0.117}
+{"t": "2026-10-28", "pid": "FOUNDER", "event": "fill", "symbol": "SPY", "side": "sell", "qty": 0.012957899, "price": 771.496, "reason": "founder-approved liquidation: Founder approval Oct 28 2026: 'yes sell that stuff we need to be able to trade from the founders account'", "pnl": 0.0172}
+{"t": "2026-10-28", "pid": "FOUNDER", "event": "fill", "symbol": "QQQ", "side": "sell", "qty": 0.013831449, "price": 724.098, "reason": "founder-approved liquidation: Founder approval Oct 28 2026: 'yes sell that stuff we need to be able to trade from the founders account'", "pnl": 0.0354}

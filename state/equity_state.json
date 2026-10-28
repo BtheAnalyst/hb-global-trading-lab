@@ -17,22 +17,22 @@
  "portfolios": {
   "FOUNDER": {
    "pid": "FOUNDER",
-   "positions": {
-    "VTI": {
-     "qty": 0.211154221,
-     "basis": 79.838677885426
-    },
-    "SPY": {
-     "qty": 0.012957899,
-     "basis": 9.979759157032
-    },
-    "QQQ": {
-     "qty": 0.013831449,
-     "basis": 9.979888385664
-    }
-   },
+   "positions": {},
    "settled": 0.20167457187800686,
-   "unsettled": [],
+   "unsettled": [
+    [
+     "2026-10-28",
+     79.95565732386001
+    ],
+    [
+     "2026-10-28",
+     9.996967246904
+    ],
+    [
+     "2026-10-28",
+     10.015324558001998
+    ]
+   ],
    "contributed": 100.0,
    "deposits": [
     [
@@ -40,30 +40,37 @@
      100.0
     ]
    ],
-   "realized": 0.0,
-   "hwm_realized": 0.0,
+   "realized": 0.16962370064401355,
+   "hwm_realized": 0.16962370064401355,
    "vault": 0.0,
-   "owed_vault": 0.0,
-   "yr_realized": {},
-   "costs": 0.0013233309480062691,
-   "traded": 99.79832542812198,
-   "trades": 3,
+   "owed_vault": 0.05088711019320407,
+   "yr_realized": {
+    "2026": 0.16962370064401355
+   },
+   "costs": 0.004297373594015901,
+   "traded": 199.769248599534,
+   "trades": 6,
    "units": 100.0,
    "nav_hwm": 1.0,
    "sleeve_nav_v": 1.0,
    "sleeve_hwm": 1.0,
    "sleeve_last_value": 0,
-   "sleeve_flow": 19.959647542695997,
-   "sleeve_held": [
-    "QQQ",
-    "SPY"
-   ],
+   "sleeve_flow": -0.05264426221000029,
+   "sleeve_held": [],
    "losing_exits": 0,
-   "flags": {},
+   "flags": {
+    "etf_liquidated": {
+     "on": "2026-10-28",
+     "reason": "Founder approval Oct 28 2026: 'yes sell that stuff we need to be able to trade from the founders account'"
+    }
+   },
    "order_ids": [
     "hb-FOUNDER-2026-10-27-VTI-buy",
     "hb-FOUNDER-2026-10-27-SPY-buy",
-    "hb-FOUNDER-2026-10-27-QQQ-buy"
+    "hb-FOUNDER-2026-10-27-QQQ-buy",
+    "hb-FOUNDER-2026-10-28-VTI-liquidate",
+    "hb-FOUNDER-2026-10-28-SPY-liquidate",
+    "hb-FOUNDER-2026-10-28-QQQ-liquidate"
    ],
    "pending": [],
    "last_pass": "2026-10-27",
