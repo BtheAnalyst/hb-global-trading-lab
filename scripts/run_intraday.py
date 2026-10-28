@@ -211,6 +211,15 @@ def main():
                 added = eng.add_gappers(scan_gappers(eng, gw, today))
                 if added:
                     eng.update_bars(gw.bars(added, open_utc.to_pydatetime()))   # full day so far for new names
+            if m_now >= 31 and not eng.day.get("or_sip_done"):        # consolidated opening range (>=15 min old)
+                try:
+                    ors = gw.opening_range_sip(list(eng.eligible), open_utc.to_pydatetime())
+                    for sym, rng in ors.items():
+                        eng.day["setup_state"].setdefault(sym, {})["or_sip"] = list(rng)
+                    eng.day["or_sip_done"] = True
+                    eng.note("opening_range_sip", symbols=len(ors))
+                except Exception as e:  # noqa: BLE001
+                    eng.note("loop_error", message=f"SIP opening range: {e}")
             syms = sorted(set(eng.eligible) | ({state["position"]["symbol"]} if state["position"] else set()))
             new = gw.bars(syms, fetched_from.to_pydatetime() - timedelta(minutes=2))
             eng.update_bars(new)

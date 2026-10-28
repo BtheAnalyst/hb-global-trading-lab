@@ -22,6 +22,9 @@ gappers:
   adv_min: 300000
 params:
   GAPGO_PB_V1: {max_spread_pct: 0.006}   # small caps quote wider than large caps
+  # Live data is IEX, which misses some minutes (about 1 in 10 even for Ford). From 10:00 ET the consolidated
+  # (SIP) opening range is used; before that the IEX range needs at least 8 of the 15 opening minutes.
+  ORB15_V1: {min_or_bars: 8}
 
 # Which simulated account the sleeve trades. Founder decision Oct 28, 2026: trade from the ENGINEERING
 # account (Portfolio A, $10,000 simulated) "today and tomorrow and until the Founder's Account is rectified".

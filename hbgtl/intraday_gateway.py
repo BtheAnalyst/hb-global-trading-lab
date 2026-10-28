@@ -82,6 +82,23 @@ class AlpacaIntradayGateway:  # pragma: no cover - network
         r = sc.get_market_movers(MarketMoversRequest(top=top))
         return [{"symbol": g.symbol, "pct": float(g.percent_change), "price": float(g.price)} for g in r.gainers]
 
+    def opening_range_sip(self, symbols: list[str], open_utc) -> dict[str, tuple]:
+        """Consolidated 9:30-9:44 high/low. The plan allows SIP data once it is 15+ minutes old (from ~10:00 ET)."""
+        from alpaca.data.enums import Adjustment, DataFeed
+        from alpaca.data.requests import StockBarsRequest
+        from alpaca.data.timeframe import TimeFrame
+        out = {}
+        for i in range(0, len(symbols), 100):
+            df = self.dc.get_stock_bars(StockBarsRequest(symbol_or_symbols=symbols[i:i + 100], timeframe=TimeFrame.Minute,
+                                                         start=open_utc, end=open_utc + timedelta(minutes=15),
+                                                         feed=DataFeed.SIP, adjustment=Adjustment.SPLIT)).df
+            if df is None or df.empty:
+                continue
+            for sym, g in df.reset_index().groupby("symbol"):
+                if len(g) >= 12:
+                    out[sym] = (float(g["high"].max()), float(g["low"].min()))
+        return out
+
     def quote(self, sym: str):
         from alpaca.data.requests import StockLatestQuoteRequest
         q = self.dc.get_stock_latest_quote(StockLatestQuoteRequest(symbol_or_symbols=sym, feed=self.feed)).get(sym)

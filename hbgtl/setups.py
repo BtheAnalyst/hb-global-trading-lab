@@ -73,14 +73,17 @@ def orb15(d: pd.DataFrame, i: int, sym: str, rv: float | None, p: dict, state: d
     m = int(row["m"])
     if m < p["start_m"] or m > min(p["end_m"], LAST_ENTRY_M):
         return None
-    orb = d[d["m"] < 15]
-    if len(orb) < 12:                           # data-quality: most opening minutes must exist
-        return "opening range incomplete (missing minutes)"
-    orh, orl = float(orb["h"].max()), float(orb["l"].min())
+    if state.get("or_sip"):                     # consolidated (SIP) opening range, when the live engine has it
+        orh, orl = state["or_sip"]
+    else:
+        orb = d[d["m"] < 15]
+        if len(orb) < p.get("min_or_bars", 12):  # data-quality: most opening minutes must exist
+            return "opening range incomplete (missing minutes)"
+        orh, orl = float(orb["h"].max()), float(orb["l"].min())
     if state.get("orb_broken"):                 # first breakout only
         return None
-    if not (row["c"] > orh):
-        return None
+    if not (row["c"] > orh) or (i > 0 and d["c"].iloc[i - 1] > orh):
+        return None                             # needs a fresh cross above the range (prior close inside it)
     state["orb_broken"] = True
     orw = (orh - orl) / orh
     why = []
@@ -218,8 +221,9 @@ FUNCS = {"GAPGO_PB_V1": gapgo_pb, "ORB15_V1": orb15, "PULLBACK_VWAP_V1": pullbac
 def evaluate(setup: str, d, i, sym, rv, params: dict | None, state: dict):
     p = {**DEFAULTS[setup], **(params or {})}
     sub = state.setdefault(setup, {})
-    if "gap" in state:                       # symbol-level context (today's opening gap) shared by all setups
-        sub["gap"] = state["gap"]
+    for k in ("gap", "or_sip"):              # symbol-level context shared by all setups
+        if k in state:
+            sub[k] = state[k]
     return FUNCS[setup](d, i, sym, rv, p, sub)
 
 
