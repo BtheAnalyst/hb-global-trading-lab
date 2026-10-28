@@ -27,12 +27,47 @@ from hbgtl.intraday_universe import RESEARCH_POOL  # noqa: E402
 
 ET = "America/New_York"
 CFG = yaml.safe_load((ROOT / "config" / "intraday.yaml").read_text())
-ACCOUNT = CFG.get("account", "FOUNDER")
-ACCT = CFG["accounts"][ACCOUNT]
-STATE = ROOT / "state" / f"intraday_state_{ACCOUNT}.json"
-JOURNAL = ROOT / "state" / f"intraday_journal_{ACCOUNT}.jsonl"
-REPORT = ROOT / "dashboard" / f"intraday_daily_{ACCOUNT}.json"
 EQUITY = ROOT / "state" / "equity_state.json"
+
+
+def select_account(today: str | None = None) -> str:
+    """account: auto -> FOUNDER once its sleeve holds money (after founder-approved allocation), else ENGINEERING.
+    With auto_allocate_founder (founder approval Oct 28, 2026), the Founder's free SETTLED cash is moved into the
+    Founder sleeve first, up to its cap."""
+    want = CFG.get("account", "FOUNDER")
+    if want != "auto":
+        return want
+    today = today or datetime.now(timezone.utc).astimezone().date().isoformat()
+    fst = ROOT / "state" / "intraday_state_FOUNDER.json"
+    fs = json.loads(fst.read_text()) if fst.exists() else None
+    if CFG.get("auto_allocate_founder"):
+        from hbgtl.equity_ledger import Ledger
+        eq = json.loads(EQUITY.read_text())
+        led = Ledger.from_dict(eq["portfolios"]["FOUNDER"])
+        led.settle(today)                                       # T+1: yesterday's sale proceeds are now settled
+        eq["portfolios"]["FOUNDER"] = led.to_dict()
+        EQUITY.write_text(json.dumps(eq, indent=1))
+        room = CFG["accounts"]["FOUNDER"].get("max_usd", 100.0) - (fs["sleeve"]["allocated"] if fs else 0.0)
+        amt = round(min(led.free_cash(), room), 2)
+        if amt >= 1.0 and not led.positions:                    # only once the ETFs are gone
+            _set_paths("FOUNDER")
+            allocate(amt, "auto: founder-approved funding of the intraday sleeve (Oct 28, 2026)")
+            fs = json.loads(fst.read_text())
+    if fs and fs["sleeve"]["settled"] + sum(a for _, a in fs["sleeve"]["unsettled"]) >= CFG.get("founder_min_usd", 20):
+        return "FOUNDER"
+    return "ENGINEERING"
+
+
+def _set_paths(acct: str):
+    global ACCOUNT, ACCT, STATE, JOURNAL, REPORT
+    ACCOUNT, ACCT = acct, CFG["accounts"][acct]
+    STATE = ROOT / "state" / f"intraday_state_{acct}.json"
+    JOURNAL = ROOT / "state" / f"intraday_journal_{acct}.jsonl"
+    REPORT = ROOT / "dashboard" / f"intraday_daily_{acct}.json"
+
+
+ACCOUNT = ACCT = STATE = JOURNAL = REPORT = None
+_set_paths(CFG.get("account") if CFG.get("account") != "auto" else "FOUNDER")
 KILL_FILE = ROOT / "KILL_SWITCH"
 
 
@@ -60,7 +95,7 @@ def save(state):
 def push(msg):
     """Commit state files and push (rebasing on any other commits). Never fatal."""
     try:
-        subprocess.run(["git", "add", str(STATE), str(JOURNAL), str(REPORT)], cwd=ROOT, check=False,
+        subprocess.run(["git", "add", str(STATE), str(JOURNAL), str(REPORT), str(EQUITY)], cwd=ROOT, check=False,
                        capture_output=True)
         if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT).returncode == 0:
             return
@@ -87,8 +122,7 @@ def allocate(amount: float, reason: str):
     free = f["settled"] - f.get("owed_vault", 0)
     if amount <= 0 or amount > free + 1e-6:
         sys.exit(f"refused: allocation ${amount:.2f} exceeds the Founder's free settled cash ${free:.2f}")
-    if ACCOUNT != "FOUNDER":
-        sys.exit("refused: --allocate funds the FOUNDER sleeve; set account: FOUNDER in config/intraday.yaml")
+    _set_paths("FOUNDER")
     st = load_state()
     if st["sleeve"]["allocated"] + amount > ACCT.get("max_usd", 100.0) + 1e-6:
         sys.exit("refused: the intraday sleeve is capped at $100 of founder capital")
@@ -111,6 +145,8 @@ def main():
     a = ap.parse_args()
     if a.allocate:
         return allocate(a.allocate, a.reason)
+    _set_paths(select_account(pd.Timestamp.now(tz=ET).date().isoformat()))
+    note("Account", f"{ACCOUNT} (config: {CFG.get('account')})")
 
     cfg = {**CFG, "order_prefix": ACCT.get("prefix", "id-"), "account": ACCOUNT}
     from hbgtl.intraday_gateway import AlpacaIntradayGateway
