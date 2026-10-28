@@ -912,3 +912,15 @@
 {"t": "2026-10-28T14:58:08+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "APLD", "m": 87, "reason": "relative volume 0.79 below 1.5"}
 {"t": "2026-10-28T14:58:08+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BMY", "m": 87, "reason": "relative volume 0.44 below 1.5"}
 {"t": "2026-10-28T14:58:08+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KHC", "m": 87, "reason": "relative volume 0.56 below 1.5"}
+{"t": "2026-10-28T15:02:11+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "DVN", "m": 91, "reason": "relative volume 0.62 below 1.5"}
+{"t": "2026-10-28T15:03:11+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "OXY", "m": 92, "reason": "relative volume 0.51 below 1.5"}
+{"t": "2026-10-28T15:04:11+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "EXC", "m": 93, "reason": "stop too tight (0.22% < 0.25%): noise would stop it out"}
+{"t": "2026-10-28T15:04:11+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KDP", "m": 93, "reason": "relative volume 1.36 below 1.5"}
+{"t": "2026-10-28T15:05:12+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "EXC", "m": 94, "reason": "relative volume 1.71 below 2.0"}
+{"t": "2026-10-28T15:05:12+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "PPL", "m": 94, "reason": "relative volume 0.43 below 2.0"}
+{"t": "2026-10-28T15:07:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "HOOD", "m": 96, "reason": "breakout bar closed weak (upper wick)"}
+{"t": "2026-10-28T15:07:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HOOD", "m": 96, "reason": "breakout bar closed weak"}
+{"t": "2026-10-28T15:08:09+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KR", "m": 97, "reason": "relative volume 0.5 below 1.5"}
+{"t": "2026-10-28T15:08:09+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 97, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-10-28T15:09:09+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KMI", "m": 98, "reason": "relative volume 0.81 below 1.5"}
+{"t": "2026-10-28T15:12:09+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GME", "m": 101, "reason": "relative volume 0.97 below 1.5"}
