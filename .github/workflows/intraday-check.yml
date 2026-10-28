@@ -15,4 +15,4 @@ jobs:
       - env:
           ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
           ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
-        run: python scripts/intraday_order_test.py
+        run: python scripts/intraday_order_check.py
