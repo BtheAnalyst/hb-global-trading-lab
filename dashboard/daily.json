@@ -1,8 +1,110 @@
 [
  {
-  "date": "2026-10-26",
-  "placeholder": true,
-  "portfolio": "none",
-  "wealth": 0
+  "date": "2026-10-27",
+  "portfolio": "A_vti",
+  "wealth": 99.95,
+  "contributed": 100.0,
+  "trading": 99.95,
+  "vault": 0.0,
+  "realized": 0.0,
+  "unrealized": -0.05,
+  "net_gain": -0.05,
+  "return_pct": -0.0005
+ },
+ {
+  "date": "2026-10-27",
+  "portfolio": "A_vti_vault",
+  "wealth": 99.95,
+  "contributed": 100.0,
+  "trading": 99.95,
+  "vault": 0.0,
+  "realized": 0.0,
+  "unrealized": -0.05,
+  "net_gain": -0.05,
+  "return_pct": -0.0005
+ },
+ {
+  "date": "2026-10-27",
+  "portfolio": "B_90_10",
+  "wealth": 99.95,
+  "contributed": 100.0,
+  "trading": 99.95,
+  "vault": 0.0,
+  "realized": 0.0,
+  "unrealized": -0.05,
+  "net_gain": -0.05,
+  "return_pct": -0.0005
+ },
+ {
+  "date": "2026-10-27",
+  "portfolio": "B_90_10_vault",
+  "wealth": 99.95,
+  "contributed": 100.0,
+  "trading": 99.95,
+  "vault": 0.0,
+  "realized": 0.0,
+  "unrealized": -0.05,
+  "net_gain": -0.05,
+  "return_pct": -0.0005
+ },
+ {
+  "date": "2026-10-27",
+  "portfolio": "C_80_20",
+  "wealth": 99.95,
+  "contributed": 100.0,
+  "trading": 99.95,
+  "vault": 0.0,
+  "realized": 0.0,
+  "unrealized": -0.05,
+  "net_gain": -0.05,
+  "return_pct": -0.0005
+ },
+ {
+  "date": "2026-10-27",
+  "portfolio": "C_80_20_vault",
+  "wealth": 99.95,
+  "contributed": 100.0,
+  "trading": 99.95,
+  "vault": 0.0,
+  "realized": 0.0,
+  "unrealized": -0.05,
+  "net_gain": -0.05,
+  "return_pct": -0.0005
+ },
+ {
+  "date": "2026-10-27",
+  "portfolio": "D_70_30",
+  "wealth": 99.95,
+  "contributed": 100.0,
+  "trading": 99.95,
+  "vault": 0.0,
+  "realized": 0.0,
+  "unrealized": -0.05,
+  "net_gain": -0.05,
+  "return_pct": -0.0005
+ },
+ {
+  "date": "2026-10-27",
+  "portfolio": "D_70_30_vault",
+  "wealth": 99.95,
+  "contributed": 100.0,
+  "trading": 99.95,
+  "vault": 0.0,
+  "realized": 0.0,
+  "unrealized": -0.05,
+  "net_gain": -0.05,
+  "return_pct": -0.0005
+ },
+ {
+  "date": "2026-10-27",
+  "portfolio": "FOUNDER",
+  "wealth": 99.95,
+  "contributed": 100.0,
+  "trading": 99.95,
+  "vault": 0.0,
+  "realized": 0.0,
+  "unrealized": -0.05,
+  "net_gain": -0.05,
+  "return_pct": -0.0005
  }
 ]
