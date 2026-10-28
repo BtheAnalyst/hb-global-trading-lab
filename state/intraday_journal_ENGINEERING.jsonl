@@ -1023,3 +1023,4 @@
 {"t": "2026-10-28T18:12:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "WULF", "m": 281, "reason": "relative volume 0.66 below 1.5"}
 {"t": "2026-10-28T18:18:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "INTC", "m": 287, "reason": "relative volume 0.8 below 1.5"}
 {"t": "2026-10-28T18:30:13+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KDP", "m": 299, "reason": "relative volume 1.16 below 1.5"}
+{"t": "2026-10-28T18:50:10+00:00", "date": "2026-10-28", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "BSX", "m": 237, "entry": 43.4884, "exit": 43.0469, "risk": 0.3984, "R": -1.1081, "how": "stop", "mins": 82, "rvol": 5.445487664475944, "stop": 43.09, "exit_m": 319}
