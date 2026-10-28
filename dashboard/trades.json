@@ -1,5 +1,44 @@
 [
  {
+  "date": "2026-10-28",
+  "portfolio": "FOUNDER",
+  "name": "Founder's Account",
+  "side": "sell",
+  "symbol": "QQQ",
+  "qty": 0.013831,
+  "price": 724.098,
+  "dollars": 10.02,
+  "pnl": 0.0354,
+  "reason": "founder-approved liquidation: Founder approval Oct 28 2026: 'yes sell that stuff we need to be able to trade from the founders account'",
+  "fills": "Paper-broker fills \u00b7 simulated money"
+ },
+ {
+  "date": "2026-10-28",
+  "portfolio": "FOUNDER",
+  "name": "Founder's Account",
+  "side": "sell",
+  "symbol": "SPY",
+  "qty": 0.012958,
+  "price": 771.496,
+  "dollars": 10.0,
+  "pnl": 0.0172,
+  "reason": "founder-approved liquidation: Founder approval Oct 28 2026: 'yes sell that stuff we need to be able to trade from the founders account'",
+  "fills": "Paper-broker fills \u00b7 simulated money"
+ },
+ {
+  "date": "2026-10-28",
+  "portfolio": "FOUNDER",
+  "name": "Founder's Account",
+  "side": "sell",
+  "symbol": "VTI",
+  "qty": 0.211154,
+  "price": 378.66,
+  "dollars": 79.96,
+  "pnl": 0.117,
+  "reason": "founder-approved liquidation: Founder approval Oct 28 2026: 'yes sell that stuff we need to be able to trade from the founders account'",
+  "fills": "Paper-broker fills \u00b7 simulated money"
+ },
+ {
   "date": "2026-10-27",
   "portfolio": "FOUNDER",
   "name": "Founder's Account",
