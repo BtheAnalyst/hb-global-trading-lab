@@ -152,7 +152,11 @@ def main():
     open_utc = pd.Timestamp(f"{today} 09:30", tz=ET).tz_convert("UTC")
     stop_at = pd.Timestamp(f"{today} {a.until}", tz=ET).tz_convert("UTC")
     fetched_from = open_utc
+    last_pull = 0.0
     while True:
+        if time.time() - last_pull > 300:                       # pick up founder changes made on main mid-session
+            last_pull = time.time()
+            _refresh_controls(eng, state)
         now = pd.Timestamp.now(tz="UTC")
         if now >= stop_at:
             break
@@ -182,6 +186,28 @@ def main():
     persist()
     push(f"Intraday {'final' if a.final else 'session'} {today}")
     return 0
+
+
+def _refresh_controls(eng, state):
+    """git pull, then re-read mode/execute and the KILL_SWITCH file. Only these controls change mid-session;
+    risk limits and setup rules are fixed for the session."""
+    try:
+        save(state)
+        subprocess.run(["git", "stash", "-q"], cwd=ROOT, capture_output=True)
+        subprocess.run(["git", "pull", "-q", "--rebase"], cwd=ROOT, capture_output=True)
+        subprocess.run(["git", "stash", "pop", "-q"], cwd=ROOT, capture_output=True)
+        cfg = yaml.safe_load((ROOT / "config" / "intraday.yaml").read_text())
+        mode, ex = cfg.get("mode", "signal"), set(cfg.get("execute") or [])
+        new_ex = ex if mode == "paper" else set()
+        if mode != eng.mode or new_ex != eng.execute:
+            eng.note("controls", mode=mode, execute=sorted(new_ex), before={"mode": eng.mode, "execute": sorted(eng.execute)})
+            note("Controls changed", f"mode {mode}, execute {sorted(new_ex) or 'none'}")
+            eng.mode, eng.execute = mode, new_ex
+        if KILL_FILE.exists() and not state.get("kill_switch"):
+            state["kill_switch"] = True
+            eng.note("risk", reason="KILL_SWITCH file present: no new entries")
+    except Exception as e:  # noqa: BLE001
+        note("Control refresh failed", e, "warning")
 
 
 def _recover(eng, gw, state):

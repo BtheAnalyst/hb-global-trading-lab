@@ -1,6 +1,6 @@
 name: Intraday engine (paper)
 # Long-running session job (GitHub's cron is hours late for this repo, so the engine itself keeps the clock):
-# a morning job until 12:45 ET, then an afternoon job until 16:05 ET that flattens and writes the daily report.
+# a morning job until 12:30 ET, then an afternoon job until 16:05 ET that flattens and writes the daily report.
 # Started each weekday ~9:10 ET by a Claude scheduled task; the cron below is only a late backup.
 # mode/execute come from config/intraday.yaml. Alpaca PAPER only; live trading is blocked in code.
 on:
@@ -16,7 +16,7 @@ permissions:
 jobs:
   morning:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
         with: { ref: main }
@@ -24,11 +24,11 @@ jobs:
         with: { python-version: "3.12" }
       - run: pip install -r requirements.txt
       - run: git config user.name "HB Atelier Bot" && git config user.email "atelier-bot@users.noreply.github.com"
-      - name: Morning session (to 12:45 ET)
+      - name: Morning session (to 12:30 ET)
         env:
           ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
           ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
-        run: python scripts/run_intraday.py --until 12:45
+        run: python scripts/run_intraday.py --until 12:30
   afternoon:
     needs: morning
     if: always()                   # run even if the morning job failed, so positions are always managed/flattened
