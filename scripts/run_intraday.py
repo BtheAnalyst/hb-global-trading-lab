@@ -132,6 +132,7 @@ def allocate(amount: float, reason: str):
     if st["sleeve"]["allocated"] + amount > ACCT.get("max_usd", 100.0) + 1e-6:
         sys.exit("refused: the intraday sleeve is capped at $100 of founder capital")
     f["settled"] -= amount
+    f["intraday"] = f.get("intraday", 0.0) + amount       # still the Founder's money: counted in the Founder's wealth
     st["sleeve"]["allocated"] += amount
     st["sleeve"]["settled"] += amount
     st["sleeve"]["allocations"].append({"at": datetime.now(timezone.utc).isoformat(), "amount": amount,
@@ -320,6 +321,16 @@ def _recover(eng, gw, state):
         eng.note("recover", position=p)
 
 
+def sync_founder_books(sleeve_equity: float):
+    """The Founder sleeve's money still belongs to the Founder's Account: keep its value in the Founder's books
+    (settled + unsettled sleeve cash after the day's flatten), so the Letter and drawdown checks see it."""
+    if ACCOUNT != "FOUNDER":
+        return
+    eq = json.loads(EQUITY.read_text())
+    eq["portfolios"]["FOUNDER"]["intraday"] = round(sleeve_equity, 6)
+    EQUITY.write_text(json.dumps(eq, indent=1))
+
+
 def _final(eng, gw, state):
     """Afternoon job end: nothing may be held overnight. Then write the daily report."""
     p = state.get("position")
@@ -335,6 +346,7 @@ def _final(eng, gw, state):
         note("Overnight position", f"{p['symbol']} still held after final flatten", "error")
     rep = eng.end_of_day_report()
     REPORT.write_text(json.dumps(rep, indent=1, default=str))
+    sync_founder_books(eng.equity())
     note("Intraday daily report", f"PAPER | signals {rep['signals']} | trades {len(rep['trades'])} | realized "
          f"${rep['realized_pnl']:.2f} | settled ${rep['settled_cash']:.2f} | shadow "
          + ", ".join(f"{k} {v['trades']} trades {v['R']:+.2f}R" for k, v in rep["shadow"].items()))

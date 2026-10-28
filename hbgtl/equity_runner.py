@@ -29,6 +29,20 @@ ROOT = Path(__file__).resolve().parent.parent
 KILL_FILE = ROOT / "KILL_SWITCH"
 
 
+def intraday_symbols(state_dir: Path = ROOT / "state") -> set:
+    """Symbols the intraday sleeves (state/intraday_state_<ACCOUNT>.json) hold or are entering/exiting."""
+    import json
+    out = set()
+    for f in state_dir.glob("intraday_state_*.json"):
+        try:
+            p = json.loads(f.read_text()).get("position")
+        except (OSError, ValueError):
+            continue
+        if p and p.get("symbol"):
+            out.add(p["symbol"])
+    return out
+
+
 @dataclass
 class PortfolioSpec:
     pid: str
@@ -381,7 +395,11 @@ class Engine:
             if spec.mode == "broker" and spec.pid in books:
                 for s, p in books[spec.pid]["positions"].items():
                     ledger_qty[s] = ledger_qty.get(s, 0.0) + p["qty"]
-        problems = reconcile(broker.positions(), ledger_qty, px, self.rc.recon_tolerance)
+        held = broker.positions()
+        for s in intraday_symbols():   # same Alpaca account: the intraday sleeve reconciles its own position
+            if s not in ledger_qty:
+                held.pop(s, None)
+        problems = reconcile(held, ledger_qty, px, self.rc.recon_tolerance)
         summary["reconciliation"] = problems or "clean"
         if problems:
             state["kill_switch"] = True

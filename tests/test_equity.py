@@ -277,6 +277,26 @@ def test_reconciliation_mismatch_trips_kill_switch():
     assert state["kill_switch"] is True and r["portfolios"]["T"]["orders"] == []
 
 
+def test_intraday_sleeve_position_is_not_an_unknown_broker_position(monkeypatch):
+    import hbgtl.equity_runner as er
+    class FakeBroker(SimGateway):
+        is_broker = True
+        def positions(self):
+            return {"TSLA": 3.0}
+    monkeypatch.setattr(er, "intraday_symbols", lambda: {"TSLA"})
+    C = _toy_closes(); eng = Engine([_spec(mode="broker")], RiskConfig()); state = {}
+    b = FakeBroker(); b.set_prices(C.iloc[120].to_dict())
+    r = eng.run_day(state, C, 119, str(C.index[120].date()), {"shadow": SimGateway(), "broker": b})
+    assert not state.get("kill_switch") and r["reconciliation"] == "clean"
+
+
+def test_intraday_symbols_reads_sleeve_states(tmp_path):
+    from hbgtl.equity_runner import intraday_symbols
+    (tmp_path / "intraday_state_FOUNDER.json").write_text('{"position": {"symbol": "HOOD", "status": "open"}}')
+    (tmp_path / "intraday_state_ENGINEERING.json").write_text('{"position": null}')
+    assert intraday_symbols(tmp_path) == {"HOOD"}
+
+
 # ---------------- signals and parity with the research backtest ----------------
 def test_signals_match_backtest_momentum():
     from backtest_v2 import UNIVERSE, load
@@ -474,3 +494,11 @@ def test_deposit_alone_never_trips_or_clears_the_pause():
     dd_before = 1 - led.nav(px2) / led.nav_hwm
     led.deposit("d2", 100, led.total(px2))
     assert 1 - led.nav(px2) / led.nav_hwm == pytest.approx(dd_before)
+
+
+def test_intraday_sleeve_money_stays_in_founder_wealth():
+    led = Ledger("FOUNDER", settled=100.12, units=100.0, nav_hwm=1.0, vault=0.05)
+    before = led.total({})
+    led.settled -= 100.0; led.intraday += 100.0           # run_intraday.allocate moves it to the sleeve
+    assert led.total({}) == pytest.approx(before) and led.free_cash() == pytest.approx(0.12)
+    assert Ledger.from_dict({k: v for k, v in led.to_dict().items() if k != "intraday"}).intraday == 0.0

@@ -42,6 +42,7 @@ class Ledger:
     last_pass: str | None = None                         # ISO date of the last decision pass
     last_close_nav: dict = field(default_factory=dict)   # date_iso -> unit NAV at that close (last 10)
     month_credited: str | None = None                    # "YYYY-MM" of the last credited deposit
+    intraday: float = 0.0                                # money moved to the intraday sleeve, at its last saved value
 
     # ---------- serialization ----------
     def to_dict(self) -> dict:
@@ -127,7 +128,7 @@ class Ledger:
 
     def equity(self, px: dict) -> float:
         """Trading equity: holdings + settled + unsettled cash (vault already removed; owed vault is inside)."""
-        return sum(self.values(px).values()) + self.settled + self.unsettled_total()
+        return sum(self.values(px).values()) + self.settled + self.unsettled_total() + self.intraday
 
     def total(self, px: dict) -> float:
         return self.equity(px) + self.vault
@@ -160,6 +161,7 @@ class Ledger:
                 "prior_losses_to_recover": round(max(0.0, self.hwm_realized - self.realized), 2),
                 "tax_reserve_est": round(sum(max(0.0, v) for v in self.yr_realized.values()) * tax_rate, 2),
                 "settled_cash": round(self.settled, 2), "unsettled_cash": round(self.unsettled_total(), 2),
+                "intraday_sleeve": round(self.intraday, 2),
                 "nav": round(self.nav(px), 6), "nav_high": round(self.nav_hwm, 6),
                 "drawdown_from_high": round(1 - self.nav(px) / self.nav_hwm, 4) if self.nav_hwm else 0.0,
                 "costs": round(self.costs, 2), "trades": self.trades,

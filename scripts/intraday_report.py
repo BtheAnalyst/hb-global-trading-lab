@@ -60,8 +60,11 @@ L += [f"- {k}: {v}" for k, v in rj] or ["- none"]
 if refused:
     L += [f"- entry refused: {k} ({v})" for k, v in refused.most_common(8)]
 L += ["", "**Risk events**", ""] + ([f"- {r['event']}: {r.get('reason') or r.get('message') or r.get('newest')}" for r in risk[:15]] or ["- none"])
-L += ["", f"**Founder's Account ($100)**: ETF strategy frozen; holdings {', '.join(f'{s} {v['qty']:.6f}' for s, v in fe['positions'].items()) or 'none'}; "
-      f"settled cash ${fe['settled']:.2f}. Intraday trading from it needs your approval to sell the ETFs (cash settles T+1)."]
+L += ["", f"**Founder's Account ($100)**: ETF strategy frozen; ETF holdings {', '.join(f'{s} {v['qty']:.6f}' for s, v in fe['positions'].items()) or 'none'}; "
+      f"settled cash ${fe['settled']:.2f}, settling (T+1) ${sum(a for _, a in fe['unsettled']):.2f}; "
+      f"in the intraday sleeve ${fe.get('intraday', 0.0):.2f}. "
+      + ("This sleeve traded today." if ACC == "FOUNDER" else
+         "The intraday sleeve trades from the Founder's Account once its cash has settled and been moved in (automatic).")]
 Path("intraday_report.md").write_text("\n".join(L))
 print("\n".join(L))
 sys.exit(0)
