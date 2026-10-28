@@ -1,0 +1,58 @@
+{
+ "sleeve": {
+  "allocated": 10000.0,
+  "settled": 10000.0,
+  "unsettled": [],
+  "realized": 0.0,
+  "allocations": [
+   {
+    "at": "2026-10-28T10:50:26.690618+00:00",
+    "amount": 10000.0,
+    "reason": "ENGINEERING account simulated starting capital"
+   }
+  ]
+ },
+ "position": null,
+ "day": {
+  "date": "2026-10-28",
+  "start_equity": 10000.0,
+  "entries": 0,
+  "realized": 0.0,
+  "errors": 0,
+  "halted": null,
+  "signals": 0,
+  "rejections": {},
+  "setup_state": {},
+  "last_m": {},
+  "scanned": 173,
+  "eligible": 123,
+  "released": 0
+ },
+ "order_ids": [],
+ "trades": [],
+ "shadow": {
+  "ORB15_V1": {
+   "open": null,
+   "entries": 0,
+   "day_R": 0.0,
+   "busy_until": -1,
+   "trades": []
+  },
+  "PULLBACK_VWAP_V1": {
+   "open": null,
+   "entries": 0,
+   "day_R": 0.0,
+   "busy_until": -1,
+   "trades": []
+  },
+  "MOMO_CONT_V1": {
+   "open": null,
+   "entries": 0,
+   "day_R": 0.0,
+   "busy_until": -1,
+   "trades": []
+  }
+ },
+ "kill_switch": false,
+ "account": "ENGINEERING"
+}
