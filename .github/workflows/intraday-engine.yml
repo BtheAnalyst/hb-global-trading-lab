@@ -31,7 +31,7 @@ jobs:
         run: python scripts/run_intraday.py --until 12:30
   afternoon:
     needs: morning
-    if: always()                   # run even if the morning job failed, so positions are always managed/flattened
+    if: ${{ !cancelled() }}        # run even if the morning job FAILED (positions must still be managed/flattened); not when cancelled
     runs-on: ubuntu-latest
     timeout-minutes: 240
     steps:
