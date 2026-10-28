@@ -191,8 +191,13 @@ def main() -> int:
     for pid, r in summ["portfolios"].items():
         spec = next((sp for sp in specs if sp.pid == pid), None)
         if spec is not None and spec.mode == "broker" and r["refused"] and a.mode == "paper":
-            note("Founder order refused", "; ".join(f"{x['side']} {x['symbol']}: {x['reason']}" for x in r["refused"]),
-                 "warning")
+            frozen = [x for x in r["refused"] if x["reason"].startswith("ETF allocation strategy frozen")]
+            other = [x for x in r["refused"] if x not in frozen]
+            if frozen:   # expected while the ETF strategy is stopped: a notice, not an alert
+                note("Founder ETF orders frozen", "; ".join(f"{x['side']} {x['symbol']}" for x in frozen))
+            if other:
+                note("Founder order refused", "; ".join(f"{x['side']} {x['symbol']}: {x['reason']}" for x in other),
+                     "warning")
     if "reconciliation" in summ:
         bspec = next((sp for sp in specs if sp.mode == "broker"), None)
         fb = work.get("portfolios", {}).get(bspec.pid, {}) if bspec else {}

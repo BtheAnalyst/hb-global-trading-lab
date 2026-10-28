@@ -42,6 +42,7 @@ class PortfolioSpec:
     enabled: bool = True
     tax_rate: float = 0.24
     label: str = ""
+    frozen: bool = False           # Oct 28 directive: no new ETF orders (buys or sells); books, marks, reconciliation continue
 
     def contribution(self, month: str, first: bool) -> float:
         if first:
@@ -70,7 +71,8 @@ def specs_from_cfg(cfg: dict) -> list[PortfolioSpec]:
                                  float(q.get("monthly", 100)),
                                  tuple((str(i["from"]), float(i["monthly"])) for i in q.get("increases", []) or []),
                                  q.get("mode", "shadow"), bool(q.get("enabled", True)),
-                                 float(q.get("tax_rate", 0.24)), q.get("label", pid)))
+                                 float(q.get("tax_rate", 0.24)), q.get("label", pid),
+                                 bool(q.get("orders_frozen", False))))
         if out[-1].mode == "broker" and pid != selected:
             raise ValueError(f"{pid} is set to broker mode but broker_portfolio is {selected!r}: refusing to start")
     if sum(s.mode == "broker" for s in out) > 1:
@@ -257,6 +259,9 @@ class Engine:
                 reason = quote_problem(o.symbol, *(q or (0, 0, None)), px.get(o.symbol, 0.0), rc,
                                        check_age=gw.is_broker)
             cid = f"hb-{spec.pid}-{today}-{o.symbol}-{o.side}"
+            if not reason and spec.frozen:
+                reason = ("ETF allocation strategy frozen (Oct 28 directive): no new ETF orders; "
+                          "liquidation needs the founder's approval")
             if not reason and cid in led.order_ids:
                 reason = "duplicate order for today refused"
             if not reason and o.side == "buy" and led.flags.get("wealth_pause"):

@@ -35,7 +35,10 @@ portfolios:
   D_70_30_vault: {label: "D · 70/30 · Vault 70/30",  core_weight: 0.7, vault_pct: 0.30}
   # Founder's Account: its OWN $100 start + $100/month on its own books (never the broker's buying power).
   # Sends real orders to the Alpaca PAPER account only on a manual "paper" run. Separate from C_80_20_vault.
-  FOUNDER:      {label: "Founder's Account · 80/20 · Vault 70/30 (paper orders)", core_weight: 0.8, vault_pct: 0.30, mode: broker, enabled: true}
+  FOUNDER:      {label: "Founder's Account · 80/20 · Vault 70/30 (paper orders)", core_weight: 0.8, vault_pct: 0.30, mode: broker, enabled: true, orders_frozen: true}
+  # Oct 28, 2026 directive: the 80/20 ETF strategy is STOPPED for the Founder's Account. orders_frozen refuses every
+  # new ETF order (no purchases, and no sales until the founder approves liquidation). Existing holdings, history,
+  # marks, reconciliation, drawdown pause and kill switch are unchanged.
 risk:                            # evidence and reasoning: docs/RISK_THRESHOLDS.md
   core_cap_margin: 0.05
   etf_cap_mult: 1.5

@@ -1,0 +1,38 @@
+name: Intraday research data (read-only)
+# Downloads historical 1-minute bars for the intraday research pool and commits them to the
+# `research-data` branch (never main). No orders.
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "calendar days of history"
+        default: "190"
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - env:
+          ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
+          ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
+          DAYS: ${{ inputs.days }}
+        run: python research/fetch_intraday.py
+      - name: Commit to research-data branch
+        run: |
+          git config user.name "HB Atelier Bot"; git config user.email "atelier-bot@users.noreply.github.com"
+          mv research/intraday_data /tmp/intraday_data
+          git checkout --orphan research-data
+          git rm -rq --cached . ; rm -rf ./* .github 2>/dev/null || true
+          mkdir -p intraday_data && cp -r /tmp/intraday_data/* intraday_data/
+          git add intraday_data
+          git commit -qm "Intraday research data $(date -u +%FT%RZ)"
+          git push -f origin research-data
