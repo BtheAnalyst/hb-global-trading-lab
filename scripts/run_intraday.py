@@ -95,11 +95,16 @@ def save(state):
 def push(msg):
     """Commit state files and push (rebasing on any other commits). Never fatal."""
     try:
-        subprocess.run(["git", "add", str(STATE), str(JOURNAL), str(REPORT), str(EQUITY)], cwd=ROOT, check=False,
-                       capture_output=True)
-        if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT).returncode == 0:
-            return
-        subprocess.run(["git", "commit", "-qm", msg], cwd=ROOT, check=True, capture_output=True)
+        files = [str(f) for f in (STATE, JOURNAL, REPORT, EQUITY) if f.exists()]   # missing paths would abort `git add`
+        r = subprocess.run(["git", "add", *files], cwd=ROOT, capture_output=True, text=True)
+        if r.returncode:
+            note("git add failed", r.stderr, "warning")
+        if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT).returncode != 0:
+            subprocess.run(["git", "commit", "-qm", msg], cwd=ROOT, check=True, capture_output=True)
+            print(f"committed: {msg}", flush=True)
+        ahead = subprocess.run(["git", "rev-list", "--count", "@{u}..HEAD"], cwd=ROOT, capture_output=True, text=True)
+        if ahead.returncode == 0 and ahead.stdout.strip() == "0":
+            return                                              # nothing unpushed
         for _ in range(3):
             subprocess.run(["git", "pull", "-q", "--rebase", "-X", "theirs"], cwd=ROOT, capture_output=True)
             if subprocess.run(["git", "push", "-q"], cwd=ROOT, capture_output=True).returncode == 0:
