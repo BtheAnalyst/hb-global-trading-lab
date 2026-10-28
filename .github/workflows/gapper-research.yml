@@ -1,0 +1,35 @@
+name: Gapper research data (read-only)
+# Market-wide gap-up days + their 1-minute bars, committed to the `research-gappers` branch (never main). No orders.
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "calendar days of history"
+        default: "190"
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - env:
+          ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
+          ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
+          DAYS: ${{ inputs.days }}
+        run: python research/fetch_gappers.py
+      - name: Commit to research-gappers branch
+        run: |
+          git config user.name "HB Atelier Bot"; git config user.email "atelier-bot@users.noreply.github.com"
+          mv research/gapper_data /tmp/gapper_data
+          git checkout --orphan research-gappers
+          git rm -rq --cached . ; rm -rf ./* .github 2>/dev/null || true
+          mkdir -p gapper_data && cp -r /tmp/gapper_data/* gapper_data/
+          git add gapper_data
+          git commit -qm "Gapper research data $(date -u +%FT%RZ)"
+          git push -f origin research-gappers
