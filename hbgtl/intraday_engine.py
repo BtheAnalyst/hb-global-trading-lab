@@ -21,7 +21,7 @@ from typing import Callable
 
 import pandas as pd
 
-from .candles import rvol, session_frame, volume_profile
+from .candles import rvol, rvol_daily, session_frame, volume_profile
 from .intraday_sim import simulate_trade
 from .intraday_universe import asset_ok
 from .setups import SETUP_IDS, Signal, evaluate, invalidated, reason_key
@@ -53,6 +53,7 @@ class IntradayEngine:
         self.frames: dict[str, pd.DataFrame] = {}
         self.profiles: dict[str, dict] = {}
         self.eligible: list[str] = []
+        self.ctx: dict[str, dict] = {}            # gappers: {"prev_close", "adv20"} (stocks in play)
 
     # ------------------------------------------------------------------ helpers
     @property
@@ -110,6 +111,19 @@ class IntradayEngine:
         return {"eligible": elig, "excluded": why}
 
     # ------------------------------------------------------------------ per-minute tick
+    def add_gappers(self, found: dict[str, dict]) -> list[str]:
+        """Add today's gap-up 'stocks in play' (from the market movers scan) to the watch list."""
+        added = []
+        for sym, c in found.items():
+            if sym not in self.ctx:
+                self.ctx[sym] = c
+                if sym not in self.eligible:
+                    self.eligible.append(sym)
+                added.append(sym)
+        if added:
+            self.note("gappers_added", symbols={k: self.ctx[k] for k in added})
+        return added
+
     def update_bars(self, new: dict[str, pd.DataFrame]) -> None:
         for sym, df in new.items():
             old = self.raw.get(sym)
@@ -154,7 +168,13 @@ class IntradayEngine:
             self.day["last_m"][sym] = int(d["m"].iloc[-1])
             st = self.day["setup_state"].setdefault(sym, {})
             for i in idx:
-                rv = rvol(float(d["cumv"].iloc[i]), int(d["m"].iloc[i]), self.profiles.get(sym))
+                c = self.ctx.get(sym)
+                if c and "gap" not in st and int(d["m"].iloc[0]) <= 2 and c.get("prev_close"):
+                    st["gap"] = float(d["o"].iloc[0]) / c["prev_close"] - 1
+                if sym in self.profiles:
+                    rv = rvol(float(d["cumv"].iloc[i]), int(d["m"].iloc[i]), self.profiles.get(sym))
+                else:   # no intraday history of its own (a gapper): RVOL vs average daily volume
+                    rv = rvol_daily(float(d["cumv"].iloc[i]), int(d["m"].iloc[i]), (c or {}).get("adv20"))
                 for setup in self.evaluate_ids:
                     res = evaluate(setup, d, i, sym, rv, (self.cfg.get("params") or {}).get(setup), st)
                     if res is None:
@@ -210,7 +230,8 @@ class IntradayEngine:
                 reason = "no valid quote"
             elif q[2] > self.r["max_quote_age_s"]:
                 reason = f"stale quote ({q[2]:.0f}s old)"
-            elif (q[1] - q[0]) / ((q[1] + q[0]) / 2) > self.r["max_spread_pct"]:
+            elif (q[1] - q[0]) / ((q[1] + q[0]) / 2) > ((self.cfg.get("params") or {}).get(sig.setup, {})
+                                                         .get("max_spread_pct", self.r["max_spread_pct"])):
                 reason = f"spread {(q[1] - q[0]) / ((q[1] + q[0]) / 2):.2%} too wide"
         limit = round(sig.ref + self.r["chase_r"] * sig.risk_ps, 2)
         if not reason and q[1] > limit:

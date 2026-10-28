@@ -248,3 +248,32 @@ def test_founder_etf_orders_frozen():
     cfg = yaml.safe_load(open("config/equity.yaml"))
     f = next(s for s in specs_from_cfg(cfg) if s.pid == "FOUNDER")
     assert f.frozen is True and f.mode == "broker"
+
+
+def gap_bars():
+    """Gapped stock: opens 5.00, pushes to 5.40 by minute 6, 3-bar pullback holding 5.28 (above VWAP),
+    then a new-high candle at minute 10."""
+    t0 = pd.Timestamp(f"{DAY} 09:30", tz="America/New_York").tz_convert("UTC")
+    path = [(5.00, 5.08), (5.08, 5.15), (5.15, 5.22), (5.22, 5.30), (5.30, 5.36), (5.36, 5.40),
+            (5.40, 5.35), (5.35, 5.31), (5.31, 5.33), (5.33, 5.38), (5.38, 5.45), (5.45, 5.50)]
+    rows = []
+    for m, (o, c) in enumerate(path):
+        h, lo = max(o, c) + 0.01, min(o, c) - 0.01
+        if m in (6, 7, 8):
+            lo = max(lo, 5.28)
+        rows.append({"t": t0 + pd.Timedelta(minutes=m), "o": o, "h": h, "l": lo, "c": c, "v": 200_000})
+    return pd.DataFrame(rows)
+
+
+def test_gapgo_first_pullback_signal():
+    d = session_frame(gap_bars())
+    st = {"gap": 0.15}
+    sigs = [evaluate("GAPGO_PB_V1", d, i, "GAPR", 8.0, None, st) for i in range(len(d))]
+    real = [x for x in sigs if isinstance(x, Signal)]
+    assert len(real) == 1 and real[0].m == 9 and real[0].stop < 5.31 and real[0].target > real[0].ref
+    # no gap -> no signal; low relative volume -> rejected with a reason
+    assert not any(isinstance(evaluate("GAPGO_PB_V1", d, i, "X", 8.0, None, s2), Signal)
+                   for s2 in [{"gap": 0.02}] for i in range(len(d)))
+    st = {"gap": 0.15}
+    out = [evaluate("GAPGO_PB_V1", d, i, "X", 2.0, None, st) for i in range(len(d))]
+    assert any(isinstance(x, str) and "relative volume" in x for x in out)

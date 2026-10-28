@@ -99,3 +99,16 @@ def levels(d: pd.DataFrame, upto: int, prev_day: dict | None = None) -> dict:
     if prev_day:
         out.update({f"prev_{k}": v for k, v in prev_day.items()})
     return out
+
+
+# Typical share of a full day's volume traded by each 5-minute mark (cumulative, through that 5-minute block),
+# measured on the research pool (Apr-Oct 2026, SIP). Used when a symbol has no intraday history of its own
+# (e.g. a gapper): RVOL = volume so far / (20-day average daily volume x typical share done by now).
+DAY_CURVE = {0: 0.038, 5: 0.0572, 10: 0.0742, 15: 0.0914, 20: 0.107, 25: 0.1214, 30: 0.1374, 35: 0.1518, 40: 0.1666, 45: 0.1809, 50: 0.1942, 55: 0.2068, 60: 0.2208, 65: 0.2333, 70: 0.2453, 75: 0.2577, 80: 0.2698, 85: 0.2816, 90: 0.2937, 95: 0.3054, 100: 0.3169, 105: 0.3282, 110: 0.3392, 115: 0.3508, 120: 0.3628, 125: 0.3732, 130: 0.3831, 135: 0.3928, 140: 0.4023, 145: 0.4115, 150: 0.421, 155: 0.4304, 160: 0.4393, 165: 0.4485, 170: 0.4576, 175: 0.4661, 180: 0.4749, 185: 0.4834, 190: 0.4918, 195: 0.5, 200: 0.5081, 205: 0.5163, 210: 0.525, 215: 0.5332, 220: 0.5413, 225: 0.5495, 230: 0.5578, 235: 0.5661, 240: 0.5753, 245: 0.5837, 250: 0.5918, 255: 0.5999, 260: 0.6082, 265: 0.6165, 270: 0.6265, 275: 0.6354, 280: 0.644, 285: 0.6527, 290: 0.6612, 295: 0.6698, 300: 0.679, 305: 0.6878, 310: 0.6967, 315: 0.7061, 320: 0.7155, 325: 0.7257, 330: 0.7368, 335: 0.7476, 340: 0.7587, 345: 0.7704, 350: 0.7826, 355: 0.7962, 360: 0.8127, 365: 0.8285, 370: 0.8464, 375: 0.8686, 380: 0.9036, 385: 1.0}
+
+
+def rvol_daily(cumv_now: float, minute: int, adv20: float | None) -> float | None:
+    if not adv20:
+        return None
+    frac = DAY_CURVE.get((max(0, minute) // 5) * 5) or 1.0
+    return float(cumv_now / (adv20 * frac))

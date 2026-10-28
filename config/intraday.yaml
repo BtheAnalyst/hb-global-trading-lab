@@ -10,7 +10,18 @@ execute: [ORB15_V1]    # Founder Oct 28: trade, "the bot can take calculated ris
                        # (+0.10R/trade at stress costs, 27 trades) but it did NOT meet the predeclared bar (needs
                        # >=30 out-of-sample trades) -> this is a FORWARD TEST. PULLBACK_VWAP_V1 (-0.29R) and
                        # MOMO_CONT_V1 (-0.28R) lost money in the backtest and stay signal-only (shadow book).
-evaluate: [ORB15_V1, PULLBACK_VWAP_V1, MOMO_CONT_V1]   # all setups are scanned and shadow-traded
+evaluate: [ORB15_V1, PULLBACK_VWAP_V1, MOMO_CONT_V1, GAPGO_PB_V1]   # all setups are scanned and shadow-traded
+
+# Stocks in play (SMB) / gap-and-go (Ross Cameron): top % gainers that gapped >= 10% at the open are added to
+# the watch list during the first hour. Price band defaults to the directive's $5 floor; Cameron uses $2-$20.
+gappers:
+  enabled: true
+  min_gap: 0.10
+  price_min: 5
+  price_max: 20
+  adv_min: 300000
+params:
+  GAPGO_PB_V1: {max_spread_pct: 0.006}   # small caps quote wider than large caps
 
 # Which simulated account the sleeve trades. Founder decision Oct 28, 2026: trade from the ENGINEERING
 # account (Portfolio A, $10,000 simulated) "today and tomorrow and until the Founder's Account is rectified".

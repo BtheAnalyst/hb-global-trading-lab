@@ -27,6 +27,9 @@ DEFAULTS = {
     "MOMO_CONT_V1": {"start_m": 30, "end_m": 270, "min_rvol": 1.5, "min_move_pct": 0.015, "cons_bars": 10,
                      "max_cons_frac": 0.4, "vol_mult": 1.5, "min_risk_pct": 0.0025, "max_risk_pct": 0.015,
                      "target_r": 2.0},
+    # Setup D (Ross Cameron-style gap-and-go, first pullback). Universe: gappers >= 10% at the open.
+    "GAPGO_PB_V1": {"start_m": 2, "end_m": 60, "min_gap": 0.10, "min_rvol": 5.0, "min_push": 0.03,
+                    "max_retrace": 0.5, "pb_max": 5, "min_risk_pct": 0.004, "max_risk_pct": 0.04, "target_r": 2.0},
 }
 SETUP_IDS = tuple(DEFAULTS)
 LAST_ENTRY_M = 330      # no new entries after 15:00 ET
@@ -173,12 +176,51 @@ def momo_cont(d, i, sym, rv, p, state):
                   rv, why, {"base_high": ch, "base_low": cl, "move": round(move, 4)})
 
 
-FUNCS = {"ORB15_V1": orb15, "PULLBACK_VWAP_V1": pullback_vwap, "MOMO_CONT_V1": momo_cont}
+def gapgo_pb(d, i, sym, rv, p, state):
+    """First pullback after an opening push on a stock that gapped up >= 10% (news/float not checked: the data
+    feed has neither, so relative volume >= 5 stands in for 'in play')."""
+    row = d.iloc[i]
+    m = int(row["m"])
+    if m < p["start_m"] or m > min(p["end_m"], LAST_ENTRY_M) or i < 3 or state.get("gg_done"):
+        return None
+    if (state.get("gap") or 0) < p["min_gap"]:
+        return None
+    day_open = float(d["o"].iloc[0])
+    prior = d.iloc[:i]
+    hod_i = int(prior["h"].values.argmax())
+    hod = float(prior["h"].iloc[hod_i])
+    if hod < day_open * (1 + p["min_push"]):
+        return None                                               # no opening push yet
+    pb = d.iloc[hod_i + 1: i]                                     # bars after the high, before the trigger
+    if not (1 <= len(pb) <= p["pb_max"]) or not (~pb["bull"]).any():
+        return None
+    pb_low = float(min(pb["l"].min(), d["l"].iloc[i]))
+    if pb_low < hod - p["max_retrace"] * (hod - day_open) or pb_low <= float(row["vwap"]):
+        return None                                               # pulled back too deep / lost VWAP
+    if not (row["bull"] and row["c"] > d["h"].iloc[i - 1]):
+        return None                                               # first candle to make a new high
+    state["gg_done"] = True
+    if rv is None or rv < p["min_rvol"]:
+        return f"relative volume {rv if rv is None else round(rv, 1)} below {p['min_rvol']}"
+    stop = pb_low - 0.01
+    bad = _risk_ok(row["c"], stop, p)
+    if bad:
+        return bad
+    why = (f"gap {state['gap']:.0%}, push to {hod:.2f}, {len(pb)}-bar pullback held {pb_low:.2f} above VWAP, "
+           f"new-high candle {row['c']:.2f}, RVOL {rv:.1f}")
+    return Signal("GAPGO_PB_V1", sym, m, float(row["c"]), stop, float(row["c"] + p["target_r"] * (row["c"] - stop)),
+                  rv, why, {"gap": round(state["gap"], 4), "hod": hod, "pb_low": pb_low, "vwap": float(row["vwap"])})
+
+
+FUNCS = {"GAPGO_PB_V1": gapgo_pb, "ORB15_V1": orb15, "PULLBACK_VWAP_V1": pullback_vwap, "MOMO_CONT_V1": momo_cont}
 
 
 def evaluate(setup: str, d, i, sym, rv, params: dict | None, state: dict):
     p = {**DEFAULTS[setup], **(params or {})}
-    return FUNCS[setup](d, i, sym, rv, p, state.setdefault(setup, {}))
+    sub = state.setdefault(setup, {})
+    if "gap" in state:                       # symbol-level context (today's opening gap) shared by all setups
+        sub["gap"] = state["gap"]
+    return FUNCS[setup](d, i, sym, rv, p, sub)
 
 
 def invalidated(setup: str, d, i, entry: float) -> str | None:
@@ -186,7 +228,7 @@ def invalidated(setup: str, d, i, entry: float) -> str | None:
     row = d.iloc[i]
     if int(row["m"]) >= FLATTEN_M:
         return "end of day flatten (15:50 ET)"
-    if setup in ("ORB15_V1", "MOMO_CONT_V1") and row["c"] < row["vwap"]:
+    if (setup.startswith("ORB15") or setup in ("MOMO_CONT_V1", "GAPGO_PB_V1")) and row["c"] < row["vwap"]:
         return "closed below VWAP: momentum failed"
     if setup == "PULLBACK_VWAP_V1" and row["bear_engulf"] and row["c"] < row["vwap"]:
         return "bearish engulfing below VWAP: trend weakening"

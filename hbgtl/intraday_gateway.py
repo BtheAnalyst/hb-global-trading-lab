@@ -73,6 +73,15 @@ class AlpacaIntradayGateway:  # pragma: no cover - network
                                                      adjustment=Adjustment.SPLIT)).df
         return {sym: g.reset_index() for sym, g in df.reset_index().groupby("symbol")} if df is not None else {}
 
+    def gainers(self, top: int = 50) -> list[dict]:
+        """Market movers (top % gainers) from Alpaca's screener."""
+        from alpaca.data.historical.screener import ScreenerClient
+        from alpaca.data.requests import MarketMoversRequest
+        import os as _os
+        sc = ScreenerClient(_os.environ["ALPACA_PAPER_KEY"].strip(), _os.environ["ALPACA_PAPER_SECRET"].strip())
+        r = sc.get_market_movers(MarketMoversRequest(top=top))
+        return [{"symbol": g.symbol, "pct": float(g.percent_change), "price": float(g.price)} for g in r.gainers]
+
     def quote(self, sym: str):
         from alpaca.data.requests import StockLatestQuoteRequest
         q = self.dc.get_stock_latest_quote(StockLatestQuoteRequest(symbol_or_symbols=sym, feed=self.feed)).get(sym)

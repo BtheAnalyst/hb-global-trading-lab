@@ -206,6 +206,11 @@ def main():
             nxt = max(nxt, open_utc + pd.Timedelta(seconds=66))
         time.sleep(max(1.0, (nxt - pd.Timestamp.now(tz="UTC")).total_seconds()))
         try:
+            m_now = (pd.Timestamp.now(tz=ET) - pd.Timestamp(f"{today} 09:30", tz=ET)).total_seconds() // 60
+            if 1 <= m_now <= 60 and m_now % 5 == 1:              # stocks-in-play scan, first hour, every 5 min
+                added = eng.add_gappers(scan_gappers(eng, gw, today))
+                if added:
+                    eng.update_bars(gw.bars(added, open_utc.to_pydatetime()))   # full day so far for new names
             syms = sorted(set(eng.eligible) | ({state["position"]["symbol"]} if state["position"] else set()))
             new = gw.bars(syms, fetched_from.to_pydatetime() - timedelta(minutes=2))
             eng.update_bars(new)
@@ -227,6 +232,47 @@ def main():
     persist()
     push(f"Intraday {'final' if a.final else 'session'} {today}")
     return 0
+
+
+def scan_gappers(eng, gw, today: str) -> dict:
+    """Stocks in play: today's top % gainers that gapped up at the open, $price band, liquid enough, not ETFs.
+    Gap and RVOL are re-checked from bars by the setups themselves."""
+    g = CFG.get("gappers") or {}
+    if not g.get("enabled"):
+        return {}
+    try:
+        movers = [m for m in gw.gainers(50) if m["pct"] >= 100 * g.get("min_gap", 0.10)
+                  and m["symbol"] not in eng.ctx and m["symbol"].isalpha()]
+        if not movers:
+            return {}
+        syms = [m["symbol"] for m in movers]
+        assets = gw.assets(syms)
+        daily = gw.daily_sip(syms, 45)
+        found, why = {}, {}
+        for sym in syms:
+            from hbgtl.intraday_universe import asset_ok
+            bad = asset_ok(assets.get(sym))
+            d = daily.get(sym)
+            if d is not None:
+                d = d[pd.to_datetime(d["timestamp"], utc=True).dt.tz_convert(ET).dt.date.astype(str) < today]
+            if not bad and (d is None or len(d) < 15):
+                bad = "not enough daily history"
+            if not bad:
+                pc, adv = float(d["close"].iloc[-1]), float(d["volume"].iloc[-20:].mean())
+                if not (g.get("price_min", 5) <= pc <= g.get("price_max", 20)):
+                    bad = f"prior close ${pc:.2f} outside ${g.get('price_min', 5)}-${g.get('price_max', 20)}"
+                elif adv < g.get("adv_min", 300_000):
+                    bad = f"average volume {adv:,.0f} too low"
+            if bad:
+                why[sym] = bad
+            else:
+                found[sym] = {"prev_close": pc, "adv20": adv}
+        if why:
+            eng.note("gappers_excluded", excluded=why)
+        return found
+    except Exception as e:  # noqa: BLE001
+        eng.note("loop_error", message=f"gapper scan: {e}")
+        return {}
 
 
 def _refresh_controls(eng, state):
