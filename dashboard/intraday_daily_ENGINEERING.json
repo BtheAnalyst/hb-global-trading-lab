@@ -1,0 +1,94 @@
+{
+ "date": "2026-10-28",
+ "account": "ENGINEERING",
+ "label": "PAPER TRADING (ENGINEERING account) - simulated, not real money",
+ "mode": "paper",
+ "execute": [
+  "ORB15_V1"
+ ],
+ "scanned": 173,
+ "eligible": 123,
+ "signals": 5,
+ "trades": [],
+ "realized_pnl": 0,
+ "settled_cash": 10000.0,
+ "unsettled_cash": 0,
+ "sleeve_equity": 10000.0,
+ "allocated": 10000.0,
+ "shadow": {
+  "ORB15_V1": {
+   "trades": 0,
+   "R": 0,
+   "detail": []
+  },
+  "PULLBACK_VWAP_V1": {
+   "trades": 1,
+   "R": -0.071,
+   "detail": [
+    {
+     "setup": "PULLBACK_VWAP_V1",
+     "symbol": "VFC",
+     "m": 38,
+     "entry": 16.4214,
+     "exit": 16.4086,
+     "risk": 0.1814,
+     "R": -0.0707,
+     "how": "bearish engulfing below VWAP",
+     "mins": 125,
+     "rvol": 2.430752648048258,
+     "stop": 16.24,
+     "exit_m": 163
+    }
+   ]
+  },
+  "MOMO_CONT_V1": {
+   "trades": 2,
+   "R": -2.232,
+   "detail": [
+    {
+     "setup": "MOMO_CONT_V1",
+     "symbol": "HOOD",
+     "m": 109,
+     "entry": 92.4824,
+     "exit": 91.6483,
+     "risk": 0.7424,
+     "R": -1.1236,
+     "how": "stop",
+     "mins": 4,
+     "rvol": 2.2801949088202065,
+     "stop": 91.74,
+     "exit_m": 113
+    },
+    {
+     "setup": "MOMO_CONT_V1",
+     "symbol": "BSX",
+     "m": 237,
+     "entry": 43.4884,
+     "exit": 43.0469,
+     "risk": 0.3984,
+     "R": -1.1081,
+     "how": "stop",
+     "mins": 82,
+     "rvol": 5.445487664475944,
+     "stop": 43.09,
+     "exit_m": 319
+    }
+   ]
+  }
+ },
+ "rejections": {
+  "ORB15_V1: opening range incomplete": 822,
+  "ORB15_V1: relative volume # below #": 36,
+  "ORB15_V1: opening range # outside ##": 3,
+  "ORB15_V1: breakout bar volume not confirmed": 1,
+  "PULLBACK_VWAP_V1: relative volume # below #": 116,
+  "MOMO_CONT_V1: relative volume # below #": 22,
+  "MOMO_CONT_V1: continuation breakout volume not confirmed": 6,
+  "PULLBACK_VWAP_V1: stop too tight": 6,
+  "ORB15_V1: breakout bar closed weak": 1,
+  "MOMO_CONT_V1: breakout bar closed weak": 1
+ },
+ "halted": null,
+ "kill_switch": false,
+ "position_open": null
+}
