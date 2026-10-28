@@ -1011,3 +1011,12 @@
 {"t": "2026-10-28T17:46:11+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "TFC", "m": 255, "reason": "relative volume 1.14 below 1.5"}
 {"t": "2026-10-28T17:51:09+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "DVN", "m": 260, "reason": "relative volume 0.84 below 1.5"}
 {"t": "2026-10-28T17:51:09+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 260, "reason": "relative volume 1.45 below 1.5"}
+{"t": "2026-10-28T18:00:12+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "EXC", "m": 269, "reason": "stop too tight (0.04% < 0.25%): noise would stop it out"}
+{"t": "2026-10-28T18:00:12+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KDP", "m": 269, "reason": "relative volume 1.11 below 1.5"}
+{"t": "2026-10-28T18:01:13+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "APA", "m": 270, "reason": "relative volume 0.8 below 1.5"}
+{"t": "2026-10-28T18:02:11+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "DVN", "m": 271, "reason": "relative volume 0.88 below 1.5"}
+{"t": "2026-10-28T18:03:10+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "AAL", "m": 272, "reason": "relative volume 0.84 below 1.5"}
+{"t": "2026-10-28T18:03:11+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BAC", "m": 272, "reason": "relative volume 0.52 below 1.5"}
+{"t": "2026-10-28T18:03:11+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "RKLB", "m": 272, "reason": "relative volume 0.82 below 1.5"}
+{"t": "2026-10-28T18:03:11+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "UBER", "m": 272, "reason": "relative volume 1.32 below 1.5"}
+{"t": "2026-10-28T18:03:11+00:00", "date": "2026-10-28", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "WFC", "m": 272, "reason": "relative volume 1.2 below 1.5"}
