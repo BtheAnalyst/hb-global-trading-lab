@@ -1,0 +1,564 @@
+{
+ "method": "Backtest on market-wide GAPPERS (open >= 10% above prior close, prior close $2-$20, ADV20 >= 300k; selection\nuses only information available at the open). Same simulator, costs, portfolio rules and activation criteria\nas research/intraday_backtest.py.\n\n  GAPGO_PB_V1   Setup D: Ross Cameron-style first pullback after the opening push\n  ORB15_INPLAY  Setup A (opening-range breakout) applied to the gapper \"stocks in play\" list (SMB-style)\n\nTwo price bands are reported: $2-$20 (Cameron) and $5-$20 (the directive's $5 floor).",
+ "gapper_days": 1057,
+ "sessions": 131,
+ "oos_from": "2026-08-25",
+ "setups": {
+  "GAPGO_PB_V1 $2-20": {
+   "base": {
+    "all": {
+     "n": 56,
+     "win_rate": 0.304,
+     "avg_win_R": 1.903,
+     "avg_loss_R": -0.941,
+     "expectancy_R": -0.0775,
+     "expectancy_se": 0.1801,
+     "profit_factor": 0.882,
+     "total_R": -4.34,
+     "max_drawdown_R": -12.56
+    },
+    "in_sample": {
+     "n": 43,
+     "win_rate": 0.279,
+     "avg_win_R": 1.862,
+     "avg_loss_R": -0.929,
+     "expectancy_R": -0.1498,
+     "expectancy_se": 0.1988,
+     "profit_factor": 0.776,
+     "total_R": -6.44,
+     "max_drawdown_R": -11.71
+    },
+    "out_of_sample": {
+     "n": 13,
+     "win_rate": 0.385,
+     "avg_win_R": 2.0,
+     "avg_loss_R": -0.988,
+     "expectancy_R": 0.1615,
+     "expectancy_se": 0.4202,
+     "profit_factor": 1.266,
+     "total_R": 2.1,
+     "max_drawdown_R": -5.84
+    },
+    "portfolio_skips": {
+     "one position at a time": 18
+    }
+   },
+   "stress": {
+    "all": {
+     "n": 56,
+     "win_rate": 0.304,
+     "avg_win_R": 1.901,
+     "avg_loss_R": -0.965,
+     "expectancy_R": -0.0947,
+     "expectancy_se": 0.1815,
+     "profit_factor": 0.859,
+     "total_R": -5.3,
+     "max_drawdown_R": -13.38
+    },
+    "in_sample": {
+     "n": 43,
+     "win_rate": 0.279,
+     "avg_win_R": 1.86,
+     "avg_loss_R": -0.953,
+     "expectancy_R": -0.1679,
+     "expectancy_se": 0.2004,
+     "profit_factor": 0.756,
+     "total_R": -7.22,
+     "max_drawdown_R": -12.38
+    },
+    "out_of_sample": {
+     "n": 13,
+     "win_rate": 0.385,
+     "avg_win_R": 2.0,
+     "avg_loss_R": -1.01,
+     "expectancy_R": 0.1474,
+     "expectancy_se": 0.4234,
+     "profit_factor": 1.237,
+     "total_R": 1.92,
+     "max_drawdown_R": -5.96
+    },
+    "portfolio_skips": {
+     "one position at a time": 18
+    },
+    "by_exit": {
+     "closed below VWAP": 9,
+     "stop": 31,
+     "target": 16
+    },
+    "by_month": {
+     "2026-04": {
+      "n": 1,
+      "win_rate": 0.0,
+      "avg_win_R": 0,
+      "avg_loss_R": -1.027,
+      "expectancy_R": -1.0271,
+      "expectancy_se": null,
+      "profit_factor": 0.0,
+      "total_R": -1.03,
+      "max_drawdown_R": -1.03
+     },
+     "2026-05": {
+      "n": 24,
+      "win_rate": 0.375,
+      "avg_win_R": 1.813,
+      "avg_loss_R": -1.052,
+      "expectancy_R": 0.0227,
+      "expectancy_se": 0.297,
+      "profit_factor": 1.034,
+      "total_R": 0.54,
+      "max_drawdown_R": -9.59
+     },
+     "2026-06": {
+      "n": 2,
+      "win_rate": 0.0,
+      "avg_win_R": 0,
+      "avg_loss_R": -1.056,
+      "expectancy_R": -1.0556,
+      "expectancy_se": 0.0207,
+      "profit_factor": 0.0,
+      "total_R": -2.11,
+      "max_drawdown_R": -2.11
+     },
+     "2026-07": {
+      "n": 4,
+      "win_rate": 0.25,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -0.854,
+      "expectancy_R": -0.1403,
+      "expectancy_se": 0.7291,
+      "profit_factor": 0.781,
+      "total_R": -0.56,
+      "max_drawdown_R": -2.56
+     },
+     "2026-08": {
+      "n": 14,
+      "win_rate": 0.286,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -0.806,
+      "expectancy_R": -0.0044,
+      "expectancy_se": 0.3575,
+      "profit_factor": 0.992,
+      "total_R": -0.06,
+      "max_drawdown_R": -4.06
+     },
+     "2026-09": {
+      "n": 8,
+      "win_rate": 0.125,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -0.999,
+      "expectancy_R": -0.624,
+      "expectancy_se": 0.3766,
+      "profit_factor": 0.286,
+      "total_R": -4.99,
+      "max_drawdown_R": -5.96
+     },
+     "2026-10": {
+      "n": 3,
+      "win_rate": 0.667,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -1.092,
+      "expectancy_R": 0.9695,
+      "expectancy_se": 1.0305,
+      "profit_factor": 3.664,
+      "total_R": 2.91,
+      "max_drawdown_R": -1.09
+     }
+    },
+    "account_100": {
+     "trades": 53,
+     "pnl_usd": -2.37,
+     "end_value": 97.63,
+     "skips": {
+      "$100 account: no whole share fits risk/settled cash": 5,
+      "one position at a time": 16
+     }
+    }
+   },
+   "activation_criteria_stress_costs": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": true,
+    "oos_trades_ge_30": false,
+    "oos_profit_factor_gt_1_1": true,
+    "account_100_can_trade": true
+   },
+   "passes": false
+  },
+  "GAPGO_PB_V1 $5-20": {
+   "base": {
+    "all": {
+     "n": 39,
+     "win_rate": 0.231,
+     "avg_win_R": 1.816,
+     "avg_loss_R": -0.936,
+     "expectancy_R": -0.3007,
+     "expectancy_se": 0.1949,
+     "profit_factor": 0.582,
+     "total_R": -11.73,
+     "max_drawdown_R": -17.06
+    },
+    "in_sample": {
+     "n": 33,
+     "win_rate": 0.242,
+     "avg_win_R": 1.793,
+     "avg_loss_R": -0.918,
+     "expectancy_R": -0.2605,
+     "expectancy_se": 0.214,
+     "profit_factor": 0.625,
+     "total_R": -8.6,
+     "max_drawdown_R": -11.93
+    },
+    "out_of_sample": {
+     "n": 6,
+     "win_rate": 0.167,
+     "avg_win_R": 2.0,
+     "avg_loss_R": -1.026,
+     "expectancy_R": -0.5215,
+     "expectancy_se": 0.5043,
+     "profit_factor": 0.39,
+     "total_R": -3.13,
+     "max_drawdown_R": -5.13
+    },
+    "portfolio_skips": {
+     "one position at a time": 8
+    }
+   },
+   "stress": {
+    "all": {
+     "n": 39,
+     "win_rate": 0.231,
+     "avg_win_R": 1.813,
+     "avg_loss_R": -0.96,
+     "expectancy_R": -0.3201,
+     "expectancy_se": 0.1965,
+     "profit_factor": 0.567,
+     "total_R": -12.49,
+     "max_drawdown_R": -17.78
+    },
+    "in_sample": {
+     "n": 33,
+     "win_rate": 0.242,
+     "avg_win_R": 1.79,
+     "avg_loss_R": -0.942,
+     "expectancy_R": -0.2799,
+     "expectancy_se": 0.2157,
+     "profit_factor": 0.608,
+     "total_R": -9.24,
+     "max_drawdown_R": -12.53
+    },
+    "out_of_sample": {
+     "n": 6,
+     "win_rate": 0.167,
+     "avg_win_R": 2.0,
+     "avg_loss_R": -1.05,
+     "expectancy_R": -0.5416,
+     "expectancy_se": 0.5084,
+     "profit_factor": 0.381,
+     "total_R": -3.25,
+     "max_drawdown_R": -5.25
+    },
+    "portfolio_skips": {
+     "one position at a time": 8
+    },
+    "by_exit": {
+     "closed below VWAP": 6,
+     "stop": 25,
+     "target": 8
+    },
+    "by_month": {
+     "2026-04": {
+      "n": 1,
+      "win_rate": 0.0,
+      "avg_win_R": 0,
+      "avg_loss_R": -1.027,
+      "expectancy_R": -1.0271,
+      "expectancy_se": null,
+      "profit_factor": 0.0,
+      "total_R": -1.03,
+      "max_drawdown_R": -1.03
+     },
+     "2026-05": {
+      "n": 18,
+      "win_rate": 0.389,
+      "avg_win_R": 1.76,
+      "avg_loss_R": -1.053,
+      "expectancy_R": 0.0407,
+      "expectancy_se": 0.3443,
+      "profit_factor": 1.063,
+      "total_R": 0.73,
+      "max_drawdown_R": -7.53
+     },
+     "2026-06": {
+      "n": 1,
+      "win_rate": 0.0,
+      "avg_win_R": 0,
+      "avg_loss_R": -1.035,
+      "expectancy_R": -1.035,
+      "expectancy_se": null,
+      "profit_factor": 0.0,
+      "total_R": -1.03,
+      "max_drawdown_R": -1.03
+     },
+     "2026-07": {
+      "n": 4,
+      "win_rate": 0.25,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -0.854,
+      "expectancy_R": -0.1403,
+      "expectancy_se": 0.7291,
+      "profit_factor": 0.781,
+      "total_R": -0.56,
+      "max_drawdown_R": -2.56
+     },
+     "2026-08": {
+      "n": 9,
+      "win_rate": 0.0,
+      "avg_win_R": 0,
+      "avg_loss_R": -0.816,
+      "expectancy_R": -0.816,
+      "expectancy_se": 0.1061,
+      "profit_factor": 0.0,
+      "total_R": -7.34,
+      "max_drawdown_R": -7.34
+     },
+     "2026-09": {
+      "n": 4,
+      "win_rate": 0.0,
+      "avg_win_R": 0,
+      "avg_loss_R": -1.04,
+      "expectancy_R": -1.0395,
+      "expectancy_se": 0.0017,
+      "profit_factor": 0.0,
+      "total_R": -4.16,
+      "max_drawdown_R": -4.16
+     },
+     "2026-10": {
+      "n": 2,
+      "win_rate": 0.5,
+      "avg_win_R": 2.0,
+      "avg_loss_R": -1.092,
+      "expectancy_R": 0.4542,
+      "expectancy_se": 1.5458,
+      "profit_factor": 1.832,
+      "total_R": 0.91,
+      "max_drawdown_R": -1.09
+     }
+    },
+    "account_100": {
+     "trades": 33,
+     "pnl_usd": -4.3,
+     "end_value": 95.7,
+     "skips": {
+      "$100 account: no whole share fits risk/settled cash": 6,
+      "one position at a time": 8
+     }
+    }
+   },
+   "activation_criteria_stress_costs": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": false,
+    "oos_profit_factor_gt_1_1": false,
+    "account_100_can_trade": true
+   },
+   "passes": false
+  },
+  "ORB15_INPLAY $2-20": {
+   "base": {
+    "all": {
+     "n": 2,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -0.462,
+     "expectancy_R": -0.4616,
+     "expectancy_se": 0.0103,
+     "profit_factor": 0.0,
+     "total_R": -0.92,
+     "max_drawdown_R": -0.92
+    },
+    "in_sample": {
+     "n": 2,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -0.462,
+     "expectancy_R": -0.4616,
+     "expectancy_se": 0.0103,
+     "profit_factor": 0.0,
+     "total_R": -0.92,
+     "max_drawdown_R": -0.92
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "portfolio_skips": {}
+   },
+   "stress": {
+    "all": {
+     "n": 2,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -0.533,
+     "expectancy_R": -0.5328,
+     "expectancy_se": 0.0001,
+     "profit_factor": 0.0,
+     "total_R": -1.07,
+     "max_drawdown_R": -1.07
+    },
+    "in_sample": {
+     "n": 2,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -0.533,
+     "expectancy_R": -0.5328,
+     "expectancy_se": 0.0001,
+     "profit_factor": 0.0,
+     "total_R": -1.07,
+     "max_drawdown_R": -1.07
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "portfolio_skips": {},
+    "by_exit": {
+     "closed below VWAP": 2
+    },
+    "by_month": {
+     "2026-06": {
+      "n": 1,
+      "win_rate": 0.0,
+      "avg_win_R": 0,
+      "avg_loss_R": -0.533,
+      "expectancy_R": -0.5327,
+      "expectancy_se": null,
+      "profit_factor": 0.0,
+      "total_R": -0.53,
+      "max_drawdown_R": -0.53
+     },
+     "2026-07": {
+      "n": 1,
+      "win_rate": 0.0,
+      "avg_win_R": 0,
+      "avg_loss_R": -0.533,
+      "expectancy_R": -0.5329,
+      "expectancy_se": null,
+      "profit_factor": 0.0,
+      "total_R": -0.53,
+      "max_drawdown_R": -0.53
+     }
+    },
+    "account_100": {
+     "trades": 2,
+     "pnl_usd": -0.42,
+     "end_value": 99.58,
+     "skips": {}
+    }
+   },
+   "activation_criteria_stress_costs": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": false,
+    "oos_profit_factor_gt_1_1": false,
+    "account_100_can_trade": true
+   },
+   "passes": false
+  },
+  "ORB15_INPLAY $5-20": {
+   "base": {
+    "all": {
+     "n": 2,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -0.462,
+     "expectancy_R": -0.4616,
+     "expectancy_se": 0.0103,
+     "profit_factor": 0.0,
+     "total_R": -0.92,
+     "max_drawdown_R": -0.92
+    },
+    "in_sample": {
+     "n": 2,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -0.462,
+     "expectancy_R": -0.4616,
+     "expectancy_se": 0.0103,
+     "profit_factor": 0.0,
+     "total_R": -0.92,
+     "max_drawdown_R": -0.92
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "portfolio_skips": {}
+   },
+   "stress": {
+    "all": {
+     "n": 2,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -0.533,
+     "expectancy_R": -0.5328,
+     "expectancy_se": 0.0001,
+     "profit_factor": 0.0,
+     "total_R": -1.07,
+     "max_drawdown_R": -1.07
+    },
+    "in_sample": {
+     "n": 2,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -0.533,
+     "expectancy_R": -0.5328,
+     "expectancy_se": 0.0001,
+     "profit_factor": 0.0,
+     "total_R": -1.07,
+     "max_drawdown_R": -1.07
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "portfolio_skips": {},
+    "by_exit": {
+     "closed below VWAP": 2
+    },
+    "by_month": {
+     "2026-06": {
+      "n": 1,
+      "win_rate": 0.0,
+      "avg_win_R": 0,
+      "avg_loss_R": -0.533,
+      "expectancy_R": -0.5327,
+      "expectancy_se": null,
+      "profit_factor": 0.0,
+      "total_R": -0.53,
+      "max_drawdown_R": -0.53
+     },
+     "2026-07": {
+      "n": 1,
+      "win_rate": 0.0,
+      "avg_win_R": 0,
+      "avg_loss_R": -0.533,
+      "expectancy_R": -0.5329,
+      "expectancy_se": null,
+      "profit_factor": 0.0,
+      "total_R": -0.53,
+      "max_drawdown_R": -0.53
+     }
+    },
+    "account_100": {
+     "trades": 2,
+     "pnl_usd": -0.42,
+     "end_value": 99.58,
+     "skips": {}
+    }
+   },
+   "activation_criteria_stress_costs": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": false,
+    "oos_profit_factor_gt_1_1": false,
+    "account_100_can_trade": true
+   },
+   "passes": false
+  }
+ }
+}
