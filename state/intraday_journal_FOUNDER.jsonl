@@ -522,3 +522,7 @@
 {"t": "2026-10-29T18:05:12+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "OXY", "m": 274, "reason": "relative volume 0.75 below 1.5"}
 {"t": "2026-10-29T18:07:11+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SO", "m": 276, "reason": "relative volume 1.18 below 1.5"}
 {"t": "2026-10-29T18:11:11+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "AMCR", "m": 280, "reason": "relative volume 0.96 below 1.5"}
+{"t": "2026-10-29T18:26:10+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "ASTS", "m": 295, "reason": "relative volume 0.96 below 1.5"}
+{"t": "2026-10-29T18:27:10+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KO", "m": 296, "reason": "relative volume 0.68 below 1.5"}
+{"t": "2026-10-29T18:29:10+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HRL", "m": 298, "reason": "relative volume 0.45 below 1.5"}
+{"t": "2026-10-29T18:30:14+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "DKNG", "m": 299, "reason": "relative volume 0.65 below 1.5"}
