@@ -526,3 +526,4 @@
 {"t": "2026-10-29T18:27:10+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KO", "m": 296, "reason": "relative volume 0.68 below 1.5"}
 {"t": "2026-10-29T18:29:10+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HRL", "m": 298, "reason": "relative volume 0.45 below 1.5"}
 {"t": "2026-10-29T18:30:14+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "DKNG", "m": 299, "reason": "relative volume 0.65 below 1.5"}
+{"t": "2026-10-29T19:51:10+00:00", "date": "2026-10-29", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "F", "m": 47, "entry": 12.1872, "exit": 12.3227, "risk": 0.1372, "R": 0.9877, "how": "end of day flatten (15", "mins": 333, "rvol": 3.1713780183653077, "stop": 12.05, "exit_m": 380}
