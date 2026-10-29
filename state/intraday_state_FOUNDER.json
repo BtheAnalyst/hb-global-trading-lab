@@ -1,0 +1,65 @@
+{
+ "sleeve": {
+  "allocated": 100.0,
+  "settled": 100.0,
+  "unsettled": [],
+  "realized": 0.0,
+  "allocations": [
+   {
+    "at": "2026-10-29T12:49:35.560750+00:00",
+    "amount": 100.0,
+    "reason": "auto: founder-approved funding of the intraday sleeve (Oct 28, 2026)"
+   }
+  ]
+ },
+ "position": null,
+ "day": {
+  "date": "2026-10-29",
+  "start_equity": 100.0,
+  "entries": 0,
+  "realized": 0.0,
+  "errors": 0,
+  "halted": null,
+  "signals": 0,
+  "rejections": {},
+  "setup_state": {},
+  "last_m": {},
+  "scanned": 173,
+  "eligible": 121,
+  "released": 0
+ },
+ "order_ids": [],
+ "trades": [],
+ "shadow": {
+  "ORB15_V1": {
+   "open": null,
+   "entries": 0,
+   "day_R": 0.0,
+   "busy_until": -1,
+   "trades": []
+  },
+  "PULLBACK_VWAP_V1": {
+   "open": null,
+   "entries": 0,
+   "day_R": 0.0,
+   "busy_until": -1,
+   "trades": []
+  },
+  "MOMO_CONT_V1": {
+   "open": null,
+   "entries": 0,
+   "day_R": 0.0,
+   "busy_until": -1,
+   "trades": []
+  },
+  "GAPGO_PB_V1": {
+   "open": null,
+   "entries": 0,
+   "day_R": 0.0,
+   "busy_until": -1,
+   "trades": []
+  }
+ },
+ "kill_switch": false,
+ "account": "FOUNDER"
+}
