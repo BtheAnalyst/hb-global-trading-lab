@@ -63,10 +63,11 @@
     "hb-FOUNDER-2026-10-28-QQQ-liquidate"
    ],
    "pending": [],
-   "last_pass": "2026-10-28",
+   "last_pass": "2026-10-29",
    "last_close_nav": {
     "2026-10-26": 1.0,
-    "2026-10-27": 1.0016962370064402
+    "2026-10-27": 1.0016962370064402,
+    "2026-10-28": 1.0016962370064402
    },
    "month_credited": "2026-10",
    "intraday": 100.0
@@ -97,7 +98,7 @@
    "traded": 100.0,
    "trades": 1,
    "units": 100.0,
-   "nav_hwm": 1.0,
+   "nav_hwm": 1.0028034169950544,
    "sleeve_nav_v": 1.0,
    "sleeve_hwm": 1.0,
    "sleeve_last_value": 0,
@@ -109,12 +110,14 @@
     "hb-A_vti-2026-10-27-VTI-buy"
    ],
    "pending": [],
-   "last_pass": "2026-10-28",
+   "last_pass": "2026-10-29",
    "last_close_nav": {
     "2026-10-26": 1.0,
-    "2026-10-27": 0.9994975007273017
+    "2026-10-27": 0.9994975007273017,
+    "2026-10-28": 1.0028034169950544
    },
-   "month_credited": "2026-10"
+   "month_credited": "2026-10",
+   "intraday": 0.0
   },
   "B_90_10": {
    "pid": "B_90_10",
@@ -150,10 +153,10 @@
    "traded": 100.0,
    "trades": 3,
    "units": 100.0,
-   "nav_hwm": 1.0,
-   "sleeve_nav_v": 1.0,
-   "sleeve_hwm": 1.0,
-   "sleeve_last_value": 9.994549699966775,
+   "nav_hwm": 1.0029427393189418,
+   "sleeve_nav_v": 1.004744255999113,
+   "sleeve_hwm": 1.004744255999113,
+   "sleeve_last_value": 10.041966402339277,
    "sleeve_flow": 0.0,
    "sleeve_held": [
     "QQQ",
@@ -167,12 +170,14 @@
     "hb-B_90_10-2026-10-27-QQQ-buy"
    ],
    "pending": [],
-   "last_pass": "2026-10-28",
+   "last_pass": "2026-10-29",
    "last_close_nav": {
     "2026-10-26": 1.0,
-    "2026-10-27": 0.9994932476542392
+    "2026-10-27": 0.9994932476542392,
+    "2026-10-28": 1.0029427393189418
    },
-   "month_credited": "2026-10"
+   "month_credited": "2026-10",
+   "intraday": 0.0
   },
   "C_80_20": {
    "pid": "C_80_20",
@@ -208,10 +213,10 @@
    "traded": 100.0,
    "trades": 3,
    "units": 100.0,
-   "nav_hwm": 1.0,
-   "sleeve_nav_v": 1.0,
-   "sleeve_hwm": 1.0,
-   "sleeve_last_value": 19.98909939993355,
+   "nav_hwm": 1.003082061642829,
+   "sleeve_nav_v": 1.004744255999113,
+   "sleeve_hwm": 1.004744255999113,
+   "sleeve_last_value": 20.083932804678554,
    "sleeve_flow": 0.0,
    "sleeve_held": [
     "QQQ",
@@ -225,12 +230,14 @@
     "hb-C_80_20-2026-10-27-QQQ-buy"
    ],
    "pending": [],
-   "last_pass": "2026-10-28",
+   "last_pass": "2026-10-29",
    "last_close_nav": {
     "2026-10-26": 1.0,
-    "2026-10-27": 0.9994889945811768
+    "2026-10-27": 0.9994889945811768,
+    "2026-10-28": 1.003082061642829
    },
-   "month_credited": "2026-10"
+   "month_credited": "2026-10",
+   "intraday": 0.0
   },
   "D_70_30": {
    "pid": "D_70_30",
@@ -266,10 +273,10 @@
    "traded": 100.0,
    "trades": 3,
    "units": 100.0,
-   "nav_hwm": 1.0,
-   "sleeve_nav_v": 1.0,
-   "sleeve_hwm": 1.0,
-   "sleeve_last_value": 29.983649099900333,
+   "nav_hwm": 1.0032213839667166,
+   "sleeve_nav_v": 1.004744255999113,
+   "sleeve_hwm": 1.004744255999113,
+   "sleeve_last_value": 30.125899207017838,
    "sleeve_flow": 0.0,
    "sleeve_held": [
     "QQQ",
@@ -283,12 +290,14 @@
     "hb-D_70_30-2026-10-27-QQQ-buy"
    ],
    "pending": [],
-   "last_pass": "2026-10-28",
+   "last_pass": "2026-10-29",
    "last_close_nav": {
     "2026-10-26": 1.0,
-    "2026-10-27": 0.9994847415081145
+    "2026-10-27": 0.9994847415081145,
+    "2026-10-28": 1.0032213839667166
    },
-   "month_credited": "2026-10"
+   "month_credited": "2026-10",
+   "intraday": 0.0
   },
   "A_vti_vault": {
    "pid": "A_vti_vault",
@@ -316,7 +325,7 @@
    "traded": 100.0,
    "trades": 1,
    "units": 100.0,
-   "nav_hwm": 1.0,
+   "nav_hwm": 1.0028034169950544,
    "sleeve_nav_v": 1.0,
    "sleeve_hwm": 1.0,
    "sleeve_last_value": 0,
@@ -328,12 +337,14 @@
     "hb-A_vti_vault-2026-10-27-VTI-buy"
    ],
    "pending": [],
-   "last_pass": "2026-10-28",
+   "last_pass": "2026-10-29",
    "last_close_nav": {
     "2026-10-26": 1.0,
-    "2026-10-27": 0.9994975007273017
+    "2026-10-27": 0.9994975007273017,
+    "2026-10-28": 1.0028034169950544
    },
-   "month_credited": "2026-10"
+   "month_credited": "2026-10",
+   "intraday": 0.0
   },
   "B_90_10_vault": {
    "pid": "B_90_10_vault",
@@ -369,10 +380,10 @@
    "traded": 100.0,
    "trades": 3,
    "units": 100.0,
-   "nav_hwm": 1.0,
-   "sleeve_nav_v": 1.0,
-   "sleeve_hwm": 1.0,
-   "sleeve_last_value": 9.994549699966775,
+   "nav_hwm": 1.0029427393189418,
+   "sleeve_nav_v": 1.004744255999113,
+   "sleeve_hwm": 1.004744255999113,
+   "sleeve_last_value": 10.041966402339277,
    "sleeve_flow": 0.0,
    "sleeve_held": [
     "QQQ",
@@ -386,12 +397,14 @@
     "hb-B_90_10_vault-2026-10-27-QQQ-buy"
    ],
    "pending": [],
-   "last_pass": "2026-10-28",
+   "last_pass": "2026-10-29",
    "last_close_nav": {
     "2026-10-26": 1.0,
-    "2026-10-27": 0.9994932476542392
+    "2026-10-27": 0.9994932476542392,
+    "2026-10-28": 1.0029427393189418
    },
-   "month_credited": "2026-10"
+   "month_credited": "2026-10",
+   "intraday": 0.0
   },
   "C_80_20_vault": {
    "pid": "C_80_20_vault",
@@ -427,10 +440,10 @@
    "traded": 100.0,
    "trades": 3,
    "units": 100.0,
-   "nav_hwm": 1.0,
-   "sleeve_nav_v": 1.0,
-   "sleeve_hwm": 1.0,
-   "sleeve_last_value": 19.98909939993355,
+   "nav_hwm": 1.003082061642829,
+   "sleeve_nav_v": 1.004744255999113,
+   "sleeve_hwm": 1.004744255999113,
+   "sleeve_last_value": 20.083932804678554,
    "sleeve_flow": 0.0,
    "sleeve_held": [
     "QQQ",
@@ -444,12 +457,14 @@
     "hb-C_80_20_vault-2026-10-27-QQQ-buy"
    ],
    "pending": [],
-   "last_pass": "2026-10-28",
+   "last_pass": "2026-10-29",
    "last_close_nav": {
     "2026-10-26": 1.0,
-    "2026-10-27": 0.9994889945811768
+    "2026-10-27": 0.9994889945811768,
+    "2026-10-28": 1.003082061642829
    },
-   "month_credited": "2026-10"
+   "month_credited": "2026-10",
+   "intraday": 0.0
   },
   "D_70_30_vault": {
    "pid": "D_70_30_vault",
@@ -485,10 +500,10 @@
    "traded": 100.0,
    "trades": 3,
    "units": 100.0,
-   "nav_hwm": 1.0,
-   "sleeve_nav_v": 1.0,
-   "sleeve_hwm": 1.0,
-   "sleeve_last_value": 29.983649099900333,
+   "nav_hwm": 1.0032213839667166,
+   "sleeve_nav_v": 1.004744255999113,
+   "sleeve_hwm": 1.004744255999113,
+   "sleeve_last_value": 30.125899207017838,
    "sleeve_flow": 0.0,
    "sleeve_held": [
     "QQQ",
@@ -502,15 +517,17 @@
     "hb-D_70_30_vault-2026-10-27-QQQ-buy"
    ],
    "pending": [],
-   "last_pass": "2026-10-28",
+   "last_pass": "2026-10-29",
    "last_close_nav": {
     "2026-10-26": 1.0,
-    "2026-10-27": 0.9994847415081145
+    "2026-10-27": 0.9994847415081145,
+    "2026-10-28": 1.0032213839667166
    },
-   "month_credited": "2026-10"
+   "month_credited": "2026-10",
+   "intraday": 0.0
   }
  },
- "last_run": "2026-10-28",
+ "last_run": "2026-10-29",
  "last_alerts": [],
  "history": [
   {

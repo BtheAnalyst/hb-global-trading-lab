@@ -42,3 +42,12 @@
 {"t": "2026-10-28", "pid": "C_80_20_vault", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 0, "refused": 0, "alerts": []}
 {"t": "2026-10-28", "pid": "D_70_30_vault", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 0, "refused": 0, "alerts": []}
 {"t": "2026-10-28", "pid": "FOUNDER", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-10-29", "pid": "A_vti", "event": "pass", "sleeve": [], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-10-29", "pid": "B_90_10", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-10-29", "pid": "C_80_20", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-10-29", "pid": "D_70_30", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-10-29", "pid": "A_vti_vault", "event": "pass", "sleeve": [], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-10-29", "pid": "B_90_10_vault", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-10-29", "pid": "C_80_20_vault", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-10-29", "pid": "D_70_30_vault", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-10-29", "pid": "FOUNDER", "event": "pass", "sleeve": ["QQQ", "SPY"], "orders": 0, "refused": 0, "alerts": []}

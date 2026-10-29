@@ -1,13 +1,33 @@
 {
- "at": "2026-10-28T16:24:13-04:00",
+ "at": "2026-10-29T15:43:13-04:00",
  "mode": "paper",
  "exit_code": 0,
  "problem": false,
  "notes": [
   {
    "level": "notice",
-   "title": "Market closed",
-   "message": "the market is not open right now: no orders, nothing changed"
+   "title": "Data",
+   "message": "433 completed daily bars per ETF through 2026-10-28 (previous session 2026-10-28); missing values in last row: 0; ETFs not fractionable: none; refused by allowlist checks: none"
+  },
+  {
+   "level": "notice",
+   "title": "Quotes",
+   "message": "BIL 91.67/91.68 (0.01%); EEM 62.55/62.56 (0.02%); EFA 104.25/104.26 (0.01%); GLD 368.22/368.25 (0.01%); IWM 283.37/283.38 (0.00%); QQQ 713.37/713.42 (0.01%); SPY 768.18/768.22 (0.01%); TLT 81.54/81.56 (0.02%); VNQ 93.88/93.89 (0.01%); VTI 377.59/377.62 (0.01%)"
+  },
+  {
+   "level": "notice",
+   "title": "Paper account (not the Founder's capital)",
+   "message": "Alpaca paper cash $100,000.15, buying power $100,000.15, status ACTIVE. The bot sizes orders only from the Founder's own books; this balance is never used."
+  },
+  {
+   "level": "notice",
+   "title": "Engine pass",
+   "message": "A_vti: no orders || B_90_10: no orders || C_80_20: no orders || D_70_30: no orders || A_vti_vault: no orders || B_90_10_vault: no orders || C_80_20_vault: no orders || D_70_30_vault: no orders || FOUNDER: no orders"
+  },
+  {
+   "level": "notice",
+   "title": "Reconciliation",
+   "message": "clean | broker positions none | Founder books: positions none, settled cash $0.12, contributed $100.00"
   }
  ]
 }
