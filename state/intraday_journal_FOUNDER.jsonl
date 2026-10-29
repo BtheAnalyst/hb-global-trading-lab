@@ -439,3 +439,7 @@
 {"t": "2026-10-29T16:23:11+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "QBTS", "m": 172, "reason": "relative volume 1.02 below 1.5"}
 {"t": "2026-10-29T16:23:11+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RKLB", "m": 172, "reason": "relative volume 0.88 below 1.5"}
 {"t": "2026-10-29T16:24:10+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PPL", "m": 173, "reason": "stop too tight (0.10% < 0.25%): noise would stop it out"}
+{"t": "2026-10-29T16:27:10+00:00", "date": "2026-10-29", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "NCLH", "m": 176, "ref": 18.26, "stop": 18.175, "target": 18.43, "rvol": 3.24, "why": "up 3.8% from open, 10-bar base 18.18-18.22 above VWAP, breakout close 18.26, RVOL 3.2", "conditions": {"base_high": 18.22, "base_low": 18.185, "move": 0.0382}, "stale": false}
+{"t": "2026-10-29T16:28:09+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AMCR", "m": 177, "reason": "relative volume 1.1 below 1.5"}
+{"t": "2026-10-29T16:28:09+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BMY", "m": 177, "reason": "relative volume 1.49 below 1.5"}
+{"t": "2026-10-29T16:29:10+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SO", "m": 178, "reason": "relative volume 1.17 below 1.5"}
