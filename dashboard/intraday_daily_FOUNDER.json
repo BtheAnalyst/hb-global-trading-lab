@@ -1,0 +1,98 @@
+{
+ "date": "2026-10-29",
+ "account": "FOUNDER",
+ "label": "PAPER TRADING (FOUNDER account) - simulated, not real money",
+ "mode": "paper",
+ "execute": [
+  "ORB15_V1"
+ ],
+ "scanned": 173,
+ "eligible": 121,
+ "signals": 12,
+ "trades": [],
+ "realized_pnl": 0,
+ "settled_cash": 100.0,
+ "unsettled_cash": 0,
+ "sleeve_equity": 100.0,
+ "allocated": 100.0,
+ "shadow": {
+  "ORB15_V1": {
+   "trades": 0,
+   "R": 0,
+   "detail": []
+  },
+  "PULLBACK_VWAP_V1": {
+   "trades": 2,
+   "R": 0.711,
+   "detail": [
+    {
+     "setup": "PULLBACK_VWAP_V1",
+     "symbol": "KGC",
+     "m": 43,
+     "entry": 21.8168,
+     "exit": 21.6533,
+     "risk": 0.1268,
+     "R": -1.2892,
+     "how": "stop",
+     "mins": 22,
+     "rvol": 2.2431526421999664,
+     "stop": 21.689999999999998,
+     "exit_m": 65
+    },
+    {
+     "setup": "PULLBACK_VWAP_V1",
+     "symbol": "NOK",
+     "m": 72,
+     "entry": 9.1642,
+     "exit": 9.2325,
+     "risk": 0.0342,
+     "R": 2.0,
+     "how": "target",
+     "mins": 19,
+     "rvol": 4.05453079411915,
+     "stop": 9.13,
+     "exit_m": 91
+    }
+   ]
+  },
+  "MOMO_CONT_V1": {
+   "trades": 1,
+   "R": 0.988,
+   "detail": [
+    {
+     "setup": "MOMO_CONT_V1",
+     "symbol": "F",
+     "m": 47,
+     "entry": 12.1872,
+     "exit": 12.3227,
+     "risk": 0.1372,
+     "R": 0.9877,
+     "how": "end of day flatten (15",
+     "mins": 333,
+     "rvol": 3.1713780183653077,
+     "stop": 12.05,
+     "exit_m": 380
+    }
+   ]
+  },
+  "GAPGO_PB_V1": {
+   "trades": 0,
+   "R": 0,
+   "detail": []
+  }
+ },
+ "rejections": {
+  "GAPGO_PB_V1: relative volume # below #": 2,
+  "ORB15_V1: opening range incomplete": 170,
+  "ORB15_V1: relative volume # below #": 65,
+  "ORB15_V1: opening range # outside ##": 6,
+  "ORB15_V1: breakout bar volume not confirmed": 6,
+  "MOMO_CONT_V1: relative volume # below #": 129,
+  "PULLBACK_VWAP_V1: relative volume # below #": 95,
+  "MOMO_CONT_V1: continuation breakout volume not confirmed": 15,
+  "PULLBACK_VWAP_V1: stop too tight": 7
+ },
+ "halted": null,
+ "kill_switch": false,
+ "position_open": null
+}
