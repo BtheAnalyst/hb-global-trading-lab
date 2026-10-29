@@ -431,3 +431,11 @@
 {"t": "2026-10-29T16:13:10+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BHC", "m": 162, "reason": "relative volume 0.81 below 1.5"}
 {"t": "2026-10-29T16:14:10+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NKE", "m": 163, "reason": "relative volume 0.76 below 1.5"}
 {"t": "2026-10-29T16:14:10+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PURR", "m": 163, "reason": "relative volume 0.34 below 1.5"}
+{"t": "2026-10-29T16:19:10+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "F", "m": 168, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-10-29T16:19:11+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BHC", "m": 168, "reason": "relative volume 0.81 below 1.5"}
+{"t": "2026-10-29T16:20:12+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "NKE", "m": 169, "reason": "relative volume 0.75 below 1.5"}
+{"t": "2026-10-29T16:22:11+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "U", "m": 171, "reason": "relative volume 0.71 below 1.5"}
+{"t": "2026-10-29T16:23:10+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GM", "m": 172, "reason": "relative volume 0.99 below 1.5"}
+{"t": "2026-10-29T16:23:11+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "QBTS", "m": 172, "reason": "relative volume 1.02 below 1.5"}
+{"t": "2026-10-29T16:23:11+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RKLB", "m": 172, "reason": "relative volume 0.88 below 1.5"}
+{"t": "2026-10-29T16:24:10+00:00", "date": "2026-10-29", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PPL", "m": 173, "reason": "stop too tight (0.10% < 0.25%): noise would stop it out"}
