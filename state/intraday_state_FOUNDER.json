@@ -23,14 +23,14 @@
   "signals": 1,
   "rejections": {
    "GAPGO_PB_V1: relative volume # below #": 2,
-   "ORB15_V1: opening range incomplete": 50,
+   "ORB15_V1: opening range incomplete": 51,
    "ORB15_V1: breakout bar volume not confirmed": 1,
    "ORB15_V1: relative volume # below #": 33,
    "ORB15_V1: opening range # outside ##": 4,
-   "MOMO_CONT_V1: continuation breakout volume not confirmed": 1,
-   "PULLBACK_VWAP_V1: relative volume # below #": 8,
+   "MOMO_CONT_V1: continuation breakout volume not confirmed": 2,
+   "PULLBACK_VWAP_V1: relative volume # below #": 15,
    "PULLBACK_VWAP_V1: stop too tight": 2,
-   "MOMO_CONT_V1: relative volume # below #": 1
+   "MOMO_CONT_V1: relative volume # below #": 3
   },
   "setup_state": {
    "AA": {
@@ -1077,7 +1077,7 @@
       51.95,
       51.455
      ],
-     "pb_last": 40
+     "pb_last": 51
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -1352,7 +1352,8 @@
      "or_sip": [
       85.7325,
       84.73
-     ]
+     ],
+     "pb_last": 47
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -1573,7 +1574,7 @@
       29.15,
       26.955
      ],
-     "mc_last": 33
+     "mc_last": 51
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -3082,7 +3083,7 @@
       54.1,
       53.29
      ],
-     "pb_last": 42
+     "pb_last": 54
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -3113,7 +3114,8 @@
      "or_sip": [
       32.8,
       32.015
-     ]
+     ],
+     "pb_last": 50
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -3234,7 +3236,8 @@
      "or_sip": [
       21.51,
       21.24
-     ]
+     ],
+     "pb_last": 48
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -3452,7 +3455,8 @@
      "or_sip": [
       11.35,
       11.06
-     ]
+     ],
+     "mc_last": 46
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -3507,7 +3511,8 @@
      "or_sip": [
       45.045,
       44.41
-     ]
+     ],
+     "pb_last": 51
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -3569,7 +3574,7 @@
       75.1,
       73.95
      ],
-     "pb_last": 31
+     "pb_last": 45
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -3706,7 +3711,8 @@
      "or_sip": [
       11.6,
       10.3
-     ]
+     ],
+     "mc_last": 42
     },
     "GAPGO_PB_V1": {
      "gap": 0.10115911485774487,
@@ -3904,133 +3910,133 @@
    }
   },
   "last_m": {
-   "AA": 43,
-   "AAL": 43,
-   "AEO": 43,
-   "AES": 36,
-   "AFRM": 42,
-   "AG": 43,
-   "AGNC": 43,
-   "AMCR": 43,
-   "APA": 43,
-   "APLD": 43,
-   "ASTS": 43,
-   "BABA": 42,
-   "BAC": 43,
-   "BBVA": 41,
-   "BEN": 42,
-   "BMY": 43,
-   "BSX": 43,
-   "BTU": 38,
-   "CAG": 42,
-   "CCL": 43,
-   "CDE": 43,
-   "CFG": 43,
-   "CHWY": 43,
-   "CIFR": 43,
-   "CLF": 43,
-   "CLSK": 42,
-   "CMCSA": 43,
-   "CNP": 43,
-   "CORZ": 43,
-   "CSX": 43,
-   "CVS": 43,
-   "DAL": 42,
-   "DKNG": 43,
-   "DOCU": 43,
-   "DVN": 43,
-   "EPD": 43,
-   "ERIC": 43,
-   "EXC": 43,
-   "F": 43,
-   "FCX": 43,
-   "FE": 43,
-   "FITB": 43,
-   "GIS": 43,
-   "GM": 43,
-   "GME": 43,
-   "HAL": 43,
-   "HBAN": 43,
-   "HL": 43,
-   "HOOD": 43,
-   "HPE": 43,
-   "HPQ": 43,
-   "HRL": 43,
-   "HUT": 43,
-   "ING": 43,
-   "INTC": 43,
-   "IONQ": 43,
-   "IREN": 43,
-   "ITUB": 43,
-   "IVZ": 43,
-   "JD": 42,
-   "JOBY": 43,
-   "KDP": 43,
-   "KEY": 43,
-   "KGC": 43,
-   "KHC": 43,
-   "KMI": 43,
-   "KO": 43,
-   "KR": 43,
-   "KSS": 43,
-   "KVUE": 43,
-   "LEVI": 43,
-   "LUV": 43,
-   "LYFT": 43,
-   "M": 43,
-   "MARA": 43,
-   "MO": 43,
-   "NCLH": 43,
-   "NEE": 43,
-   "NKE": 43,
-   "NOK": 43,
-   "NU": 43,
-   "OKE": 42,
-   "ON": 43,
-   "OXY": 43,
-   "PATH": 43,
-   "PBR": 43,
-   "PCG": 43,
-   "PFE": 43,
-   "PINS": 43,
-   "PPL": 43,
-   "PYPL": 43,
-   "QBTS": 43,
-   "RBLX": 43,
-   "RF": 43,
-   "RGTI": 43,
-   "RIOT": 43,
-   "RIVN": 43,
-   "RKLB": 43,
-   "S": 43,
-   "SCHW": 43,
-   "SLB": 43,
-   "SMCI": 43,
-   "SNAP": 43,
-   "SO": 43,
-   "SOFI": 43,
-   "T": 43,
-   "TFC": 43,
-   "TSN": 43,
-   "U": 43,
-   "UAA": 43,
-   "UBER": 43,
-   "USB": 43,
-   "VALE": 43,
-   "VFC": 43,
-   "VZ": 43,
-   "WFC": 43,
-   "WMB": 43,
-   "WULF": 43,
-   "ZM": 43,
-   "CPRI": 43,
-   "GDYN": 43,
-   "ALK": 43,
-   "D": 42,
-   "NLY": 43,
-   "ET": 43,
-   "URBN": 32,
-   "AIOK": 43,
+   "AA": 53,
+   "AAL": 54,
+   "AEO": 54,
+   "AES": 53,
+   "AFRM": 53,
+   "AG": 54,
+   "AGNC": 54,
+   "AMCR": 54,
+   "APA": 54,
+   "APLD": 54,
+   "ASTS": 54,
+   "BABA": 54,
+   "BAC": 54,
+   "BBVA": 54,
+   "BEN": 54,
+   "BMY": 54,
+   "BSX": 54,
+   "BTU": 54,
+   "CAG": 54,
+   "CCL": 54,
+   "CDE": 54,
+   "CFG": 54,
+   "CHWY": 54,
+   "CIFR": 54,
+   "CLF": 54,
+   "CLSK": 54,
+   "CMCSA": 54,
+   "CNP": 54,
+   "CORZ": 54,
+   "CSX": 54,
+   "CVS": 54,
+   "DAL": 54,
+   "DKNG": 54,
+   "DOCU": 54,
+   "DVN": 54,
+   "EPD": 54,
+   "ERIC": 54,
+   "EXC": 54,
+   "F": 54,
+   "FCX": 54,
+   "FE": 54,
+   "FITB": 54,
+   "GIS": 54,
+   "GM": 54,
+   "GME": 54,
+   "HAL": 54,
+   "HBAN": 54,
+   "HL": 54,
+   "HOOD": 54,
+   "HPE": 54,
+   "HPQ": 54,
+   "HRL": 54,
+   "HUT": 54,
+   "ING": 54,
+   "INTC": 54,
+   "IONQ": 54,
+   "IREN": 54,
+   "ITUB": 54,
+   "IVZ": 54,
+   "JD": 54,
+   "JOBY": 54,
+   "KDP": 54,
+   "KEY": 54,
+   "KGC": 54,
+   "KHC": 54,
+   "KMI": 54,
+   "KO": 54,
+   "KR": 54,
+   "KSS": 54,
+   "KVUE": 54,
+   "LEVI": 54,
+   "LUV": 54,
+   "LYFT": 54,
+   "M": 54,
+   "MARA": 54,
+   "MO": 54,
+   "NCLH": 54,
+   "NEE": 54,
+   "NKE": 54,
+   "NOK": 54,
+   "NU": 54,
+   "OKE": 51,
+   "ON": 54,
+   "OXY": 54,
+   "PATH": 54,
+   "PBR": 54,
+   "PCG": 54,
+   "PFE": 54,
+   "PINS": 54,
+   "PPL": 54,
+   "PYPL": 54,
+   "QBTS": 54,
+   "RBLX": 54,
+   "RF": 54,
+   "RGTI": 54,
+   "RIOT": 54,
+   "RIVN": 54,
+   "RKLB": 54,
+   "S": 54,
+   "SCHW": 54,
+   "SLB": 54,
+   "SMCI": 54,
+   "SNAP": 54,
+   "SO": 54,
+   "SOFI": 54,
+   "T": 54,
+   "TFC": 54,
+   "TSN": 54,
+   "U": 54,
+   "UAA": 54,
+   "UBER": 54,
+   "USB": 54,
+   "VALE": 54,
+   "VFC": 54,
+   "VZ": 54,
+   "WFC": 54,
+   "WMB": 54,
+   "WULF": 54,
+   "ZM": 51,
+   "CPRI": 54,
+   "GDYN": 54,
+   "ALK": 48,
+   "D": 53,
+   "NLY": 54,
+   "ET": 54,
+   "URBN": 52,
+   "AIOK": 53,
    "BUUU": 35
   },
   "scanned": 173,
