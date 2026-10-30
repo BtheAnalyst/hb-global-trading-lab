@@ -738,3 +738,4 @@
 {"t": "2026-10-30T16:37:13+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "FE", "m": 186, "reason": "relative volume 0.97 below 1.5"}
 {"t": "2026-10-30T16:38:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KHC", "m": 187, "reason": "relative volume 1.39 below 1.5"}
 {"t": "2026-10-30T16:39:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CSX", "m": 188, "reason": "stop too tight (0.19% < 0.25%): noise would stop it out"}
+{"t": "2026-10-30T16:52:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "RF", "m": 201, "reason": "relative volume 1.17 below 1.5"}
