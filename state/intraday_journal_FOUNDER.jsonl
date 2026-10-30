@@ -715,3 +715,7 @@
 {"t": "2026-10-30T15:36:13+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GDYN", "m": 125, "reason": "relative volume 0.53 below 1.5"}
 {"t": "2026-10-30T15:47:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PPL", "m": 136, "reason": "relative volume 1.16 below 1.5"}
 {"t": "2026-10-30T15:51:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "GIS", "m": 140, "reason": "relative volume 1.42 below 1.5"}
+{"t": "2026-10-30T15:57:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GDYN", "m": 146, "reason": "relative volume 0.52 below 1.5"}
+{"t": "2026-10-30T16:00:16+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CSX", "m": 149, "reason": "stop too tight (0.07% < 0.25%): noise would stop it out"}
+{"t": "2026-10-30T16:00:16+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GM", "m": 149, "reason": "relative volume 1.28 below 1.5"}
+{"t": "2026-10-30T16:00:16+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HPQ", "m": 149, "reason": "continuation breakout volume not confirmed"}
