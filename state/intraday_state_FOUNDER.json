@@ -22,807 +22,3783 @@
   "halted": null,
   "signals": 0,
   "rejections": {
-   "GAPGO_PB_V1: relative volume # below #": 1,
-   "ORB15_V1: opening range incomplete": 21,
+   "GAPGO_PB_V1: relative volume # below #": 2,
+   "ORB15_V1: opening range incomplete": 49,
    "ORB15_V1: breakout bar volume not confirmed": 1,
-   "ORB15_V1: relative volume # below #": 12,
-   "ORB15_V1: opening range # outside ##": 1
+   "ORB15_V1: relative volume # below #": 27,
+   "ORB15_V1: opening range # outside ##": 3
   },
   "setup_state": {
    "AA": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      39.7,
+      38.9
+     ],
+     "orb_broken": true
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      39.7,
+      38.9
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      39.7,
+      38.9
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      39.7,
+      38.9
+     ]
+    },
+    "or_sip": [
+     39.7,
+     38.9
+    ]
    },
    "AAL": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      12.64,
+      12.5404
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      12.64,
+      12.5404
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      12.64,
+      12.5404
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      12.64,
+      12.5404
+     ]
+    },
+    "or_sip": [
+     12.64,
+     12.5404
+    ]
    },
    "AEO": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      20.4182,
+      19.735
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      20.4182,
+      19.735
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      20.4182,
+      19.735
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      20.4182,
+      19.735
+     ]
+    },
+    "or_sip": [
+     20.4182,
+     19.735
+    ]
    },
    "AES": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      14.88,
+      14.86
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      14.88,
+      14.86
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      14.88,
+      14.86
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      14.88,
+      14.86
+     ]
+    },
+    "or_sip": [
+     14.88,
+     14.86
+    ]
    },
    "AFRM": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      74.1429,
+      72.42
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      74.1429,
+      72.42
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      74.1429,
+      72.42
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      74.1429,
+      72.42
+     ]
+    },
+    "or_sip": [
+     74.1429,
+     72.42
+    ]
    },
    "AG": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      14.54,
+      14.18
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      14.54,
+      14.18
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      14.54,
+      14.18
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      14.54,
+      14.18
+     ]
+    },
+    "or_sip": [
+     14.54,
+     14.18
+    ]
    },
    "AGNC": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      8.89,
+      8.81
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      8.89,
+      8.81
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      8.89,
+      8.81
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      8.89,
+      8.81
+     ]
+    },
+    "or_sip": [
+     8.89,
+     8.81
+    ]
    },
    "AMCR": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      47.68,
+      47.18
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      47.68,
+      47.18
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      47.68,
+      47.18
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      47.68,
+      47.18
+     ]
+    },
+    "or_sip": [
+     47.68,
+     47.18
+    ]
    },
    "APA": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "orb_broken": true,
+     "or_sip": [
+      52.37,
+      51.93
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      52.37,
+      51.93
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      52.37,
+      51.93
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      52.37,
+      51.93
+     ]
+    },
+    "or_sip": [
+     52.37,
+     51.93
+    ]
    },
    "APLD": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      18.44,
+      17.78
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      18.44,
+      17.78
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      18.44,
+      17.78
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      18.44,
+      17.78
+     ]
+    },
+    "or_sip": [
+     18.44,
+     17.78
+    ]
    },
    "ASTS": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      42.36,
+      40.9
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      42.36,
+      40.9
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      42.36,
+      40.9
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      42.36,
+      40.9
+     ]
+    },
+    "or_sip": [
+     42.36,
+     40.9
+    ]
    },
    "BABA": {
     "ORB15_V1": {
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      99.21,
+      97.97
+     ]
     },
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      99.21,
+      97.97
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      99.21,
+      97.97
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      99.21,
+      97.97
+     ]
+    },
+    "or_sip": [
+     99.21,
+     97.97
+    ]
    },
    "BAC": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      51.3366,
+      50.3002
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      51.3366,
+      50.3002
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      51.3366,
+      50.3002
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      51.3366,
+      50.3002
+     ]
+    },
+    "or_sip": [
+     51.3366,
+     50.3002
+    ]
    },
    "BBVA": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      23.88,
+      23.77
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      23.88,
+      23.77
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      23.88,
+      23.77
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      23.88,
+      23.77
+     ]
+    },
+    "or_sip": [
+     23.88,
+     23.77
+    ]
    },
    "BEN": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      32.15,
+      31.7
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      32.15,
+      31.7
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      32.15,
+      31.7
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      32.15,
+      31.7
+     ]
+    },
+    "or_sip": [
+     32.15,
+     31.7
+    ]
    },
    "BMY": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      64.05,
+      62.87
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      64.05,
+      62.87
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      64.05,
+      62.87
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      64.05,
+      62.87
+     ]
+    },
+    "or_sip": [
+     64.05,
+     62.87
+    ]
    },
    "BSX": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "orb_broken": true,
+     "or_sip": [
+      43.2256,
+      42.26
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      43.2256,
+      42.26
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      43.2256,
+      42.26
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      43.2256,
+      42.26
+     ]
+    },
+    "or_sip": [
+     43.2256,
+     42.26
+    ]
    },
    "BTU": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      22.55,
+      21.84
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      22.55,
+      21.84
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      22.55,
+      21.84
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      22.55,
+      21.84
+     ]
+    },
+    "or_sip": [
+     22.55,
+     21.84
+    ]
    },
    "CAG": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      14.49,
+      14.315
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      14.49,
+      14.315
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      14.49,
+      14.315
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      14.49,
+      14.315
+     ]
+    },
+    "or_sip": [
+     14.49,
+     14.315
+    ]
    },
    "CCL": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      28.7,
+      28.445
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      28.7,
+      28.445
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      28.7,
+      28.445
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      28.7,
+      28.445
+     ]
+    },
+    "or_sip": [
+     28.7,
+     28.445
+    ]
    },
    "CDE": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      13.34,
+      13.01
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      13.34,
+      13.01
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      13.34,
+      13.01
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      13.34,
+      13.01
+     ]
+    },
+    "or_sip": [
+     13.34,
+     13.01
+    ]
    },
    "CFG": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      65.39,
+      64.39
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      65.39,
+      64.39
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      65.39,
+      64.39
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      65.39,
+      64.39
+     ]
+    },
+    "or_sip": [
+     65.39,
+     64.39
+    ]
    },
    "CHWY": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      21.31,
+      20.685
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      21.31,
+      20.685
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      21.31,
+      20.685
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      21.31,
+      20.685
+     ]
+    },
+    "or_sip": [
+     21.31,
+     20.685
+    ]
    },
    "CIFR": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      7.63,
+      7.33
+     ],
+     "orb_broken": true
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      7.63,
+      7.33
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      7.63,
+      7.33
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      7.63,
+      7.33
+     ]
+    },
+    "or_sip": [
+     7.63,
+     7.33
+    ]
    },
    "CLF": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "orb_broken": true,
+     "or_sip": [
+      14.1,
+      13.87
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      14.1,
+      13.87
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      14.1,
+      13.87
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      14.1,
+      13.87
+     ]
+    },
+    "or_sip": [
+     14.1,
+     13.87
+    ]
    },
    "CLSK": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      7.79,
+      7.52
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      7.79,
+      7.52
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      7.79,
+      7.52
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      7.79,
+      7.52
+     ]
+    },
+    "or_sip": [
+     7.79,
+     7.52
+    ]
    },
    "CMCSA": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      22.95,
+      22.595
+     ],
+     "orb_broken": true
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      22.95,
+      22.595
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      22.95,
+      22.595
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      22.95,
+      22.595
+     ]
+    },
+    "or_sip": [
+     22.95,
+     22.595
+    ]
    },
    "CNP": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      42.61,
+      42.205
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      42.61,
+      42.205
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      42.61,
+      42.205
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      42.61,
+      42.205
+     ]
+    },
+    "or_sip": [
+     42.61,
+     42.205
+    ]
    },
    "CORZ": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      13.68,
+      13.13
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      13.68,
+      13.13
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      13.68,
+      13.13
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      13.68,
+      13.13
+     ]
+    },
+    "or_sip": [
+     13.68,
+     13.13
+    ]
    },
    "CSX": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      52.32,
+      51.319
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      52.32,
+      51.319
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      52.32,
+      51.319
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      52.32,
+      51.319
+     ]
+    },
+    "or_sip": [
+     52.32,
+     51.319
+    ]
    },
    "CVS": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      91.95,
+      90.96
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      91.95,
+      90.96
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      91.95,
+      90.96
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      91.95,
+      90.96
+     ]
+    },
+    "or_sip": [
+     91.95,
+     90.96
+    ]
    },
    "DAL": {
     "ORB15_V1": {
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      80.65,
+      79.6597
+     ]
     },
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      80.65,
+      79.6597
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      80.65,
+      79.6597
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      80.65,
+      79.6597
+     ]
+    },
+    "or_sip": [
+     80.65,
+     79.6597
+    ]
    },
    "DKNG": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      20.69,
+      20.08
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      20.69,
+      20.08
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      20.69,
+      20.08
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      20.69,
+      20.08
+     ]
+    },
+    "or_sip": [
+     20.69,
+     20.08
+    ]
    },
    "DOCU": {
     "ORB15_V1": {
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      83.57,
+      81.66
+     ]
     },
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      83.57,
+      81.66
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      83.57,
+      81.66
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      83.57,
+      81.66
+     ]
+    },
+    "or_sip": [
+     83.57,
+     81.66
+    ]
    },
    "DVN": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "orb_broken": true,
+     "or_sip": [
+      51.95,
+      51.455
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      51.95,
+      51.455
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      51.95,
+      51.455
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      51.95,
+      51.455
+     ]
+    },
+    "or_sip": [
+     51.95,
+     51.455
+    ]
    },
    "EPD": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      38.64,
+      38.11
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      38.64,
+      38.11
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      38.64,
+      38.11
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      38.64,
+      38.11
+     ]
+    },
+    "or_sip": [
+     38.64,
+     38.11
+    ]
    },
    "ERIC": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      11.205,
+      11.14
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      11.205,
+      11.14
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      11.205,
+      11.14
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      11.205,
+      11.14
+     ]
+    },
+    "or_sip": [
+     11.205,
+     11.14
+    ]
    },
    "EXC": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      47.09,
+      46.425
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      47.09,
+      46.425
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      47.09,
+      46.425
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      47.09,
+      46.425
+     ]
+    },
+    "or_sip": [
+     47.09,
+     46.425
+    ]
    },
    "F": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      12.3263,
+      12.1203
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      12.3263,
+      12.1203
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      12.3263,
+      12.1203
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      12.3263,
+      12.1203
+     ]
+    },
+    "or_sip": [
+     12.3263,
+     12.1203
+    ]
    },
    "FCX": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      63.6,
+      62.33
+     ],
+     "orb_broken": true
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      63.6,
+      62.33
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      63.6,
+      62.33
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      63.6,
+      62.33
+     ]
+    },
+    "or_sip": [
+     63.6,
+     62.33
+    ]
    },
    "FE": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      47.4,
+      47.175
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      47.4,
+      47.175
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      47.4,
+      47.175
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      47.4,
+      47.175
+     ]
+    },
+    "or_sip": [
+     47.4,
+     47.175
+    ]
    },
    "FITB": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      55.0,
+      54.05
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      55.0,
+      54.05
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      55.0,
+      54.05
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      55.0,
+      54.05
+     ]
+    },
+    "or_sip": [
+     55.0,
+     54.05
+    ]
    },
    "GIS": {
     "ORB15_V1": {
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      34.5,
+      33.9
+     ]
     },
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      34.5,
+      33.9
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      34.5,
+      33.9
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      34.5,
+      33.9
+     ]
+    },
+    "or_sip": [
+     34.5,
+     33.9
+    ]
    },
    "GM": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      85.7325,
+      84.73
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      85.7325,
+      84.73
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      85.7325,
+      84.73
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      85.7325,
+      84.73
+     ]
+    },
+    "or_sip": [
+     85.7325,
+     84.73
+    ]
    },
    "GME": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      23.99,
+      23.3101
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      23.99,
+      23.3101
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      23.99,
+      23.3101
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      23.99,
+      23.3101
+     ]
+    },
+    "or_sip": [
+     23.99,
+     23.3101
+    ]
    },
    "HAL": {
     "ORB15_V1": {
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      36.3354,
+      35.76
+     ]
     },
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      36.3354,
+      35.76
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      36.3354,
+      35.76
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      36.3354,
+      35.76
+     ]
+    },
+    "or_sip": [
+     36.3354,
+     35.76
+    ]
    },
    "HBAN": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      16.03,
+      15.805
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      16.03,
+      15.805
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      16.03,
+      15.805
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      16.03,
+      15.805
+     ]
+    },
+    "or_sip": [
+     16.03,
+     15.805
+    ]
    },
    "HL": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      13.785,
+      13.41
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      13.785,
+      13.41
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      13.785,
+      13.41
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      13.785,
+      13.41
+     ]
+    },
+    "or_sip": [
+     13.785,
+     13.41
+    ]
    },
    "HOOD": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      85.28,
+      82.34
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      85.28,
+      82.34
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      85.28,
+      82.34
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      85.28,
+      82.34
+     ]
+    },
+    "or_sip": [
+     85.28,
+     82.34
+    ]
    },
    "HPE": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      55.8512,
+      54.22
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      55.8512,
+      54.22
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      55.8512,
+      54.22
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      55.8512,
+      54.22
+     ]
+    },
+    "or_sip": [
+     55.8512,
+     54.22
+    ]
    },
    "HPQ": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      29.15,
+      26.955
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      29.15,
+      26.955
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      29.15,
+      26.955
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      29.15,
+      26.955
+     ]
+    },
+    "or_sip": [
+     29.15,
+     26.955
+    ]
    },
    "HRL": {
     "ORB15_V1": {
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      21.41,
+      21.2
+     ]
     },
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      21.41,
+      21.2
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      21.41,
+      21.2
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      21.41,
+      21.2
+     ]
+    },
+    "or_sip": [
+     21.41,
+     21.2
+    ]
    },
    "HUT": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      61.81,
+      59.5
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      61.81,
+      59.5
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      61.81,
+      59.5
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      61.81,
+      59.5
+     ]
+    },
+    "or_sip": [
+     61.81,
+     59.5
+    ]
    },
    "ING": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      31.69,
+      31.5
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      31.69,
+      31.5
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      31.69,
+      31.5
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      31.69,
+      31.5
+     ]
+    },
+    "or_sip": [
+     31.69,
+     31.5
+    ]
    },
    "INTC": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      68.77,
+      64.78
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      68.77,
+      64.78
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      68.77,
+      64.78
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      68.77,
+      64.78
+     ]
+    },
+    "or_sip": [
+     68.77,
+     64.78
+    ]
    },
    "IONQ": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      30.37,
+      29.312
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      30.37,
+      29.312
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      30.37,
+      29.312
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      30.37,
+      29.312
+     ]
+    },
+    "or_sip": [
+     30.37,
+     29.312
+    ]
    },
    "IREN": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      24.68,
+      24.0914
+     ],
+     "orb_broken": true
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      24.68,
+      24.0914
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      24.68,
+      24.0914
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      24.68,
+      24.0914
+     ]
+    },
+    "or_sip": [
+     24.68,
+     24.0914
+    ]
    },
    "ITUB": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      7.25,
+      7.18
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      7.25,
+      7.18
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      7.25,
+      7.18
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      7.25,
+      7.18
+     ]
+    },
+    "or_sip": [
+     7.25,
+     7.18
+    ]
    },
    "IVZ": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      28.64,
+      27.88
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      28.64,
+      27.88
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      28.64,
+      27.88
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      28.64,
+      27.88
+     ]
+    },
+    "or_sip": [
+     28.64,
+     27.88
+    ]
    },
    "JD": {
     "ORB15_V1": {
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      25.83,
+      25.645
+     ]
     },
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      25.83,
+      25.645
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      25.83,
+      25.645
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      25.83,
+      25.645
+     ]
+    },
+    "or_sip": [
+     25.83,
+     25.645
+    ]
    },
    "JOBY": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      4.995,
+      4.92
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      4.995,
+      4.92
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      4.995,
+      4.92
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      4.995,
+      4.92
+     ]
+    },
+    "or_sip": [
+     4.995,
+     4.92
+    ]
    },
    "KDP": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      36.13,
+      35.665
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      36.13,
+      35.665
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      36.13,
+      35.665
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      36.13,
+      35.665
+     ]
+    },
+    "or_sip": [
+     36.13,
+     35.665
+    ]
    },
    "KEY": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      21.535,
+      21.225
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      21.535,
+      21.225
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      21.535,
+      21.225
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      21.535,
+      21.225
+     ]
+    },
+    "or_sip": [
+     21.535,
+     21.225
+    ]
    },
    "KGC": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      20.75,
+      20.3754
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      20.75,
+      20.3754
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      20.75,
+      20.3754
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      20.75,
+      20.3754
+     ]
+    },
+    "or_sip": [
+     20.75,
+     20.3754
+    ]
    },
    "KHC": {
     "ORB15_V1": {
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      24.58,
+      24.33
+     ]
     },
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      24.58,
+      24.33
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      24.58,
+      24.33
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      24.58,
+      24.33
+     ]
+    },
+    "or_sip": [
+     24.58,
+     24.33
+    ]
    },
    "KMI": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      34.225,
+      33.96
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      34.225,
+      33.96
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      34.225,
+      33.96
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      34.225,
+      33.96
+     ]
+    },
+    "or_sip": [
+     34.225,
+     33.96
+    ]
    },
    "KO": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      95.08,
+      94.37
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      95.08,
+      94.37
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      95.08,
+      94.37
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      95.08,
+      94.37
+     ]
+    },
+    "or_sip": [
+     95.08,
+     94.37
+    ]
    },
    "KR": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      68.02,
+      66.94
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      68.02,
+      66.94
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      68.02,
+      66.94
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      68.02,
+      66.94
+     ]
+    },
+    "or_sip": [
+     68.02,
+     66.94
+    ]
    },
    "KSS": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      24.74,
+      24.3
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      24.74,
+      24.3
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      24.74,
+      24.3
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      24.74,
+      24.3
+     ]
+    },
+    "or_sip": [
+     24.74,
+     24.3
+    ]
    },
    "KVUE": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      20.0,
+      19.78
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      20.0,
+      19.78
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      20.0,
+      19.78
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      20.0,
+      19.78
+     ]
+    },
+    "or_sip": [
+     20.0,
+     19.78
+    ]
    },
    "LEVI": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      23.02,
+      22.65
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      23.02,
+      22.65
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      23.02,
+      22.65
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      23.02,
+      22.65
+     ]
+    },
+    "or_sip": [
+     23.02,
+     22.65
+    ]
    },
    "LUV": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      43.27,
+      42.9
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      43.27,
+      42.9
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      43.27,
+      42.9
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      43.27,
+      42.9
+     ]
+    },
+    "or_sip": [
+     43.27,
+     42.9
+    ]
    },
    "LYFT": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      16.3642,
+      15.955
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      16.3642,
+      15.955
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      16.3642,
+      15.955
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      16.3642,
+      15.955
+     ]
+    },
+    "or_sip": [
+     16.3642,
+     15.955
+    ]
    },
    "M": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      25.055,
+      24.7
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      25.055,
+      24.7
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      25.055,
+      24.7
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      25.055,
+      24.7
+     ]
+    },
+    "or_sip": [
+     25.055,
+     24.7
+    ]
    },
    "MARA": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      6.81,
+      6.56
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      6.81,
+      6.56
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      6.81,
+      6.56
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      6.81,
+      6.56
+     ]
+    },
+    "or_sip": [
+     6.81,
+     6.56
+    ]
    },
    "MO": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      79.81,
+      77.8126
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      79.81,
+      77.8126
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      79.81,
+      77.8126
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      79.81,
+      77.8126
+     ]
+    },
+    "or_sip": [
+     79.81,
+     77.8126
+    ]
    },
    "NCLH": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      17.985,
+      17.57
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      17.985,
+      17.57
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      17.985,
+      17.57
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      17.985,
+      17.57
+     ]
+    },
+    "or_sip": [
+     17.985,
+     17.57
+    ]
    },
    "NEE": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "orb_broken": true,
+     "or_sip": [
+      83.46,
+      82.922
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      83.46,
+      82.922
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      83.46,
+      82.922
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      83.46,
+      82.922
+     ]
+    },
+    "or_sip": [
+     83.46,
+     82.922
+    ]
    },
    "NKE": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      39.235,
+      38.74
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      39.235,
+      38.74
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      39.235,
+      38.74
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      39.235,
+      38.74
+     ]
+    },
+    "or_sip": [
+     39.235,
+     38.74
+    ]
    },
    "NOK": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      8.69,
+      8.565
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      8.69,
+      8.565
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      8.69,
+      8.565
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      8.69,
+      8.565
+     ]
+    },
+    "or_sip": [
+     8.69,
+     8.565
+    ]
    },
    "NU": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      11.84,
+      11.61
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      11.84,
+      11.61
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      11.84,
+      11.61
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      11.84,
+      11.61
+     ]
+    },
+    "or_sip": [
+     11.84,
+     11.61
+    ]
    },
    "OKE": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "orb_broken": true,
+     "or_sip": [
+      97.6,
+      95.98
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      97.6,
+      95.98
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      97.6,
+      95.98
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      97.6,
+      95.98
+     ]
+    },
+    "or_sip": [
+     97.6,
+     95.98
+    ]
    },
    "ON": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      72.77,
+      71.81
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      72.77,
+      71.81
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      72.77,
+      71.81
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      72.77,
+      71.81
+     ]
+    },
+    "or_sip": [
+     72.77,
+     71.81
+    ]
    },
    "OXY": {
     "ORB15_V1": {
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      63.9,
+      63.335
+     ]
     },
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      63.9,
+      63.335
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      63.9,
+      63.335
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      63.9,
+      63.335
+     ]
+    },
+    "or_sip": [
+     63.9,
+     63.335
+    ]
    },
    "PATH": {
     "ORB15_V1": {
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      13.92,
+      13.645
+     ]
     },
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      13.92,
+      13.645
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      13.92,
+      13.645
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      13.92,
+      13.645
+     ]
+    },
+    "or_sip": [
+     13.92,
+     13.645
+    ]
    },
    "PBR": {
     "ORB15_V1": {
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      22.165,
+      21.89
+     ]
     },
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      22.165,
+      21.89
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      22.165,
+      21.89
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      22.165,
+      21.89
+     ]
+    },
+    "or_sip": [
+     22.165,
+     21.89
+    ]
    },
    "PCG": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      13.38,
+      13.24
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      13.38,
+      13.24
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      13.38,
+      13.24
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      13.38,
+      13.24
+     ]
+    },
+    "or_sip": [
+     13.38,
+     13.24
+    ]
    },
    "PFE": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      30.645,
+      30.28
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      30.645,
+      30.28
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      30.645,
+      30.28
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      30.645,
+      30.28
+     ]
+    },
+    "or_sip": [
+     30.645,
+     30.28
+    ]
    },
    "PINS": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      19.2,
+      18.15
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      19.2,
+      18.15
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      19.2,
+      18.15
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      19.2,
+      18.15
+     ]
+    },
+    "or_sip": [
+     19.2,
+     18.15
+    ]
    },
    "PPL": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      36.035,
+      35.865
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      36.035,
+      35.865
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      36.035,
+      35.865
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      36.035,
+      35.865
+     ]
+    },
+    "or_sip": [
+     36.035,
+     35.865
+    ]
    },
    "PYPL": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      57.33,
+      56.56
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      57.33,
+      56.56
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      57.33,
+      56.56
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      57.33,
+      56.56
+     ]
+    },
+    "or_sip": [
+     57.33,
+     56.56
+    ]
    },
    "QBTS": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      11.09,
+      10.8
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      11.09,
+      10.8
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      11.09,
+      10.8
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      11.09,
+      10.8
+     ]
+    },
+    "or_sip": [
+     11.09,
+     10.8
+    ]
    },
    "RBLX": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      47.76,
+      43.5
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      47.76,
+      43.5
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      47.76,
+      43.5
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      47.76,
+      43.5
+     ]
+    },
+    "or_sip": [
+     47.76,
+     43.5
+    ]
    },
    "RF": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      29.01,
+      28.71
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      29.01,
+      28.71
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      29.01,
+      28.71
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      29.01,
+      28.71
+     ]
+    },
+    "or_sip": [
+     29.01,
+     28.71
+    ]
    },
    "RGTI": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      11.52,
+      11.2512
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      11.52,
+      11.2512
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      11.52,
+      11.2512
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      11.52,
+      11.2512
+     ]
+    },
+    "or_sip": [
+     11.52,
+     11.2512
+    ]
    },
    "RIOT": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      13.0,
+      12.54
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      13.0,
+      12.54
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      13.0,
+      12.54
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      13.0,
+      12.54
+     ]
+    },
+    "or_sip": [
+     13.0,
+     12.54
+    ]
    },
    "RIVN": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      12.21,
+      11.6
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      12.21,
+      11.6
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      12.21,
+      11.6
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      12.21,
+      11.6
+     ]
+    },
+    "or_sip": [
+     12.21,
+     11.6
+    ]
    },
    "RKLB": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      57.5504,
+      55.59
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      57.5504,
+      55.59
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      57.5504,
+      55.59
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      57.5504,
+      55.59
+     ]
+    },
+    "or_sip": [
+     57.5504,
+     55.59
+    ]
    },
    "S": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      25.91,
+      25.195
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      25.91,
+      25.195
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      25.91,
+      25.195
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      25.91,
+      25.195
+     ]
+    },
+    "or_sip": [
+     25.91,
+     25.195
+    ]
    },
    "SCHW": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      89.71,
+      88.3
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      89.71,
+      88.3
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      89.71,
+      88.3
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      89.71,
+      88.3
+     ]
+    },
+    "or_sip": [
+     89.71,
+     88.3
+    ]
    },
    "SLB": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      54.1,
+      53.29
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      54.1,
+      53.29
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      54.1,
+      53.29
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      54.1,
+      53.29
+     ]
+    },
+    "or_sip": [
+     54.1,
+     53.29
+    ]
    },
    "SMCI": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "orb_broken": true,
+     "or_sip": [
+      32.8,
+      32.015
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      32.8,
+      32.015
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      32.8,
+      32.015
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      32.8,
+      32.015
+     ]
+    },
+    "or_sip": [
+     32.8,
+     32.015
+    ]
    },
    "SNAP": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      5.49,
+      5.24
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      5.49,
+      5.24
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      5.49,
+      5.24
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      5.49,
+      5.24
+     ]
+    },
+    "or_sip": [
+     5.49,
+     5.24
+    ]
    },
    "SO": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      94.35,
+      93.775
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      94.35,
+      93.775
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      94.35,
+      93.775
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      94.35,
+      93.775
+     ]
+    },
+    "or_sip": [
+     94.35,
+     93.775
+    ]
    },
    "SOFI": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      17.32,
+      17.02
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      17.32,
+      17.02
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      17.32,
+      17.02
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      17.32,
+      17.02
+     ]
+    },
+    "or_sip": [
+     17.32,
+     17.02
+    ]
    },
    "T": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "orb_broken": true,
+     "or_sip": [
+      21.51,
+      21.24
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      21.51,
+      21.24
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      21.51,
+      21.24
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      21.51,
+      21.24
+     ]
+    },
+    "or_sip": [
+     21.51,
+     21.24
+    ]
    },
    "TFC": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      49.67,
+      49.08
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      49.67,
+      49.08
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      49.67,
+      49.08
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      49.67,
+      49.08
+     ]
+    },
+    "or_sip": [
+     49.67,
+     49.08
+    ]
    },
    "TSN": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      57.62,
+      57.05
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      57.62,
+      57.05
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      57.62,
+      57.05
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      57.62,
+      57.05
+     ]
+    },
+    "or_sip": [
+     57.62,
+     57.05
+    ]
    },
    "U": {
     "ORB15_V1": {
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      38.24,
+      37.42
+     ]
     },
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      38.24,
+      37.42
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      38.24,
+      37.42
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      38.24,
+      37.42
+     ]
+    },
+    "or_sip": [
+     38.24,
+     37.42
+    ]
    },
    "UAA": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      5.15,
+      5.075
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      5.15,
+      5.075
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      5.15,
+      5.075
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      5.15,
+      5.075
+     ]
+    },
+    "or_sip": [
+     5.15,
+     5.075
+    ]
    },
    "UBER": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      65.8,
+      64.6745
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      65.8,
+      64.6745
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      65.8,
+      64.6745
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      65.8,
+      64.6745
+     ]
+    },
+    "or_sip": [
+     65.8,
+     64.6745
+    ]
    },
    "USB": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      61.05,
+      60.1
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      61.05,
+      60.1
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      61.05,
+      60.1
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      61.05,
+      60.1
+     ]
+    },
+    "or_sip": [
+     61.05,
+     60.1
+    ]
    },
    "VALE": {
     "ORB15_V1": {
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      11.35,
+      11.06
+     ]
     },
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      11.35,
+      11.06
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      11.35,
+      11.06
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      11.35,
+      11.06
+     ]
+    },
+    "or_sip": [
+     11.35,
+     11.06
+    ]
    },
    "VFC": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      18.62,
+      18.37
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      18.62,
+      18.37
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      18.62,
+      18.37
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      18.62,
+      18.37
+     ]
+    },
+    "or_sip": [
+     18.62,
+     18.37
+    ]
    },
    "VZ": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      45.045,
+      44.41
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      45.045,
+      44.41
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      45.045,
+      44.41
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      45.045,
+      44.41
+     ]
+    },
+    "or_sip": [
+     45.045,
+     44.41
+    ]
    },
    "WFC": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      85.21,
+      83.8
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      85.21,
+      83.8
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      85.21,
+      83.8
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      85.21,
+      83.8
+     ]
+    },
+    "or_sip": [
+     85.21,
+     83.8
+    ]
    },
    "WMB": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "orb_broken": true,
+     "or_sip": [
+      75.1,
+      73.95
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      75.1,
+      73.95
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      75.1,
+      73.95
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      75.1,
+      73.95
+     ]
+    },
+    "or_sip": [
+     75.1,
+     73.95
+    ]
    },
    "WULF": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      12.01,
+      11.54
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      12.01,
+      11.54
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      12.01,
+      11.54
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      12.01,
+      11.54
+     ]
+    },
+    "or_sip": [
+     12.01,
+     11.54
+    ]
    },
    "ZM": {
     "ORB15_V1": {},
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "GAPGO_PB_V1": {},
+    "or_sip": [
+     97.3083,
+     95.56
+    ]
    },
    "CPRI": {
     "gap": 0.09900373599003731,
     "ORB15_V1": {
-     "gap": 0.09900373599003731
+     "gap": 0.09900373599003731,
+     "or_sip": [
+      19.1426,
+      17.6
+     ]
     },
     "PULLBACK_VWAP_V1": {
-     "gap": 0.09900373599003731
+     "gap": 0.09900373599003731,
+     "or_sip": [
+      19.1426,
+      17.6
+     ]
     },
     "MOMO_CONT_V1": {
-     "gap": 0.09900373599003731
+     "gap": 0.09900373599003731,
+     "or_sip": [
+      19.1426,
+      17.6
+     ]
     },
     "GAPGO_PB_V1": {
-     "gap": 0.09900373599003731
-    }
+     "gap": 0.09900373599003731,
+     "or_sip": [
+      19.1426,
+      17.6
+     ]
+    },
+    "or_sip": [
+     19.1426,
+     17.6
+    ]
    },
    "GDYN": {
     "gap": 0.10115911485774487,
     "ORB15_V1": {
-     "gap": 0.10115911485774487
+     "gap": 0.10115911485774487,
+     "orb_broken": true,
+     "or_sip": [
+      11.6,
+      10.3
+     ]
     },
     "PULLBACK_VWAP_V1": {
-     "gap": 0.10115911485774487
+     "gap": 0.10115911485774487,
+     "or_sip": [
+      11.6,
+      10.3
+     ]
     },
     "MOMO_CONT_V1": {
-     "gap": 0.10115911485774487
+     "gap": 0.10115911485774487,
+     "or_sip": [
+      11.6,
+      10.3
+     ]
     },
     "GAPGO_PB_V1": {
      "gap": 0.10115911485774487,
-     "gg_done": true
-    }
+     "gg_done": true,
+     "or_sip": [
+      11.6,
+      10.3
+     ]
+    },
+    "or_sip": [
+     11.6,
+     10.3
+    ]
    },
    "ALK": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      35.8475,
+      35.23
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      35.8475,
+      35.23
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      35.8475,
+      35.23
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      35.8475,
+      35.23
+     ]
+    },
+    "or_sip": [
+     35.8475,
+     35.23
+    ]
    },
    "D": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "orb_broken": true,
+     "or_sip": [
+      66.33,
+      65.85
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      66.33,
+      65.85
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      66.33,
+      65.85
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      66.33,
+      65.85
+     ]
+    },
+    "or_sip": [
+     66.33,
+     65.85
+    ]
    },
    "NLY": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "or_sip": [
+      18.7,
+      18.54
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      18.7,
+      18.54
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      18.7,
+      18.54
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      18.7,
+      18.54
+     ]
+    },
+    "or_sip": [
+     18.7,
+     18.54
+    ]
    },
    "ET": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {}
+    "ORB15_V1": {
+     "orb_broken": true,
+     "or_sip": [
+      21.07,
+      20.92
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      21.07,
+      20.92
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      21.07,
+      20.92
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      21.07,
+      20.92
+     ]
+    },
+    "or_sip": [
+     21.07,
+     20.92
+    ]
    },
    "URBN": {
     "ORB15_V1": {},
@@ -834,17 +3810,38 @@
     "gap": 0.11699311805187929,
     "ORB15_V1": {
      "gap": 0.11699311805187929,
-     "orb_broken": true
+     "orb_broken": true,
+     "or_sip": [
+      25.8,
+      20.51
+     ]
     },
     "PULLBACK_VWAP_V1": {
-     "gap": 0.11699311805187929
+     "gap": 0.11699311805187929,
+     "or_sip": [
+      25.8,
+      20.51
+     ]
     },
     "MOMO_CONT_V1": {
-     "gap": 0.11699311805187929
+     "gap": 0.11699311805187929,
+     "or_sip": [
+      25.8,
+      20.51
+     ]
     },
     "GAPGO_PB_V1": {
-     "gap": 0.11699311805187929
-    }
+     "gap": 0.11699311805187929,
+     "gg_done": true,
+     "or_sip": [
+      25.8,
+      20.51
+     ]
+    },
+    "or_sip": [
+     25.8,
+     20.51
+    ]
    },
    "BUUU": {
     "gap": 0.0059931506849315586,
@@ -863,138 +3860,139 @@
    }
   },
   "last_m": {
-   "AA": 22,
-   "AAL": 22,
-   "AEO": 22,
-   "AES": 20,
-   "AFRM": 22,
-   "AG": 22,
-   "AGNC": 22,
-   "AMCR": 22,
-   "APA": 22,
-   "APLD": 22,
-   "ASTS": 22,
-   "BABA": 21,
-   "BAC": 22,
-   "BBVA": 22,
-   "BEN": 21,
-   "BMY": 22,
-   "BSX": 22,
-   "BTU": 21,
-   "CAG": 22,
-   "CCL": 22,
-   "CDE": 22,
-   "CFG": 22,
-   "CHWY": 22,
-   "CIFR": 22,
-   "CLF": 22,
-   "CLSK": 22,
-   "CMCSA": 22,
-   "CNP": 22,
-   "CORZ": 22,
-   "CSX": 22,
-   "CVS": 22,
-   "DAL": 22,
-   "DKNG": 22,
-   "DOCU": 22,
-   "DVN": 22,
-   "EPD": 22,
-   "ERIC": 22,
-   "EXC": 22,
-   "F": 22,
-   "FCX": 22,
-   "FE": 22,
-   "FITB": 22,
-   "GIS": 22,
-   "GM": 22,
-   "GME": 22,
-   "HAL": 22,
-   "HBAN": 22,
-   "HL": 22,
-   "HOOD": 22,
-   "HPE": 22,
-   "HPQ": 22,
-   "HRL": 22,
-   "HUT": 22,
-   "ING": 22,
-   "INTC": 22,
-   "IONQ": 22,
-   "IREN": 22,
-   "ITUB": 22,
-   "IVZ": 22,
-   "JD": 22,
-   "JOBY": 22,
-   "KDP": 22,
-   "KEY": 22,
-   "KGC": 22,
-   "KHC": 22,
-   "KMI": 22,
-   "KO": 22,
-   "KR": 22,
-   "KSS": 22,
-   "KVUE": 22,
-   "LEVI": 22,
-   "LUV": 22,
-   "LYFT": 22,
-   "M": 21,
-   "MARA": 22,
-   "MO": 22,
-   "NCLH": 22,
-   "NEE": 22,
-   "NKE": 22,
-   "NOK": 22,
-   "NU": 22,
-   "OKE": 22,
-   "ON": 22,
-   "OXY": 22,
-   "PATH": 22,
-   "PBR": 22,
-   "PCG": 22,
-   "PFE": 22,
-   "PINS": 22,
-   "PPL": 22,
-   "PYPL": 22,
-   "QBTS": 22,
-   "RBLX": 22,
-   "RF": 22,
-   "RGTI": 22,
-   "RIOT": 22,
-   "RIVN": 22,
-   "RKLB": 22,
-   "S": 22,
-   "SCHW": 22,
-   "SLB": 22,
-   "SMCI": 22,
-   "SNAP": 22,
-   "SO": 22,
-   "SOFI": 22,
-   "T": 22,
-   "TFC": 22,
-   "TSN": 22,
-   "U": 22,
-   "UAA": 22,
-   "UBER": 22,
-   "USB": 21,
-   "VALE": 22,
-   "VFC": 22,
-   "VZ": 22,
-   "WFC": 22,
-   "WMB": 22,
-   "WULF": 22,
-   "ZM": 22,
-   "CPRI": 22,
-   "GDYN": 22,
-   "ALK": 21,
-   "D": 21,
-   "NLY": 22,
-   "ET": 21,
-   "URBN": 19,
-   "AIOK": 22,
+   "AA": 32,
+   "AAL": 32,
+   "AEO": 32,
+   "AES": 31,
+   "AFRM": 32,
+   "AG": 32,
+   "AGNC": 31,
+   "AMCR": 32,
+   "APA": 32,
+   "APLD": 32,
+   "ASTS": 32,
+   "BABA": 32,
+   "BAC": 32,
+   "BBVA": 32,
+   "BEN": 30,
+   "BMY": 32,
+   "BSX": 32,
+   "BTU": 32,
+   "CAG": 32,
+   "CCL": 32,
+   "CDE": 32,
+   "CFG": 32,
+   "CHWY": 32,
+   "CIFR": 32,
+   "CLF": 32,
+   "CLSK": 32,
+   "CMCSA": 32,
+   "CNP": 32,
+   "CORZ": 32,
+   "CSX": 32,
+   "CVS": 32,
+   "DAL": 32,
+   "DKNG": 32,
+   "DOCU": 32,
+   "DVN": 32,
+   "EPD": 32,
+   "ERIC": 32,
+   "EXC": 32,
+   "F": 32,
+   "FCX": 32,
+   "FE": 32,
+   "FITB": 32,
+   "GIS": 32,
+   "GM": 32,
+   "GME": 32,
+   "HAL": 32,
+   "HBAN": 32,
+   "HL": 32,
+   "HOOD": 32,
+   "HPE": 32,
+   "HPQ": 32,
+   "HRL": 32,
+   "HUT": 32,
+   "ING": 32,
+   "INTC": 32,
+   "IONQ": 32,
+   "IREN": 32,
+   "ITUB": 32,
+   "IVZ": 32,
+   "JD": 32,
+   "JOBY": 32,
+   "KDP": 32,
+   "KEY": 32,
+   "KGC": 32,
+   "KHC": 32,
+   "KMI": 32,
+   "KO": 32,
+   "KR": 31,
+   "KSS": 32,
+   "KVUE": 32,
+   "LEVI": 32,
+   "LUV": 32,
+   "LYFT": 32,
+   "M": 32,
+   "MARA": 32,
+   "MO": 32,
+   "NCLH": 32,
+   "NEE": 32,
+   "NKE": 32,
+   "NOK": 32,
+   "NU": 32,
+   "OKE": 30,
+   "ON": 32,
+   "OXY": 32,
+   "PATH": 32,
+   "PBR": 32,
+   "PCG": 32,
+   "PFE": 32,
+   "PINS": 32,
+   "PPL": 32,
+   "PYPL": 32,
+   "QBTS": 32,
+   "RBLX": 32,
+   "RF": 32,
+   "RGTI": 32,
+   "RIOT": 32,
+   "RIVN": 32,
+   "RKLB": 32,
+   "S": 32,
+   "SCHW": 32,
+   "SLB": 32,
+   "SMCI": 32,
+   "SNAP": 32,
+   "SO": 32,
+   "SOFI": 32,
+   "T": 32,
+   "TFC": 32,
+   "TSN": 31,
+   "U": 32,
+   "UAA": 32,
+   "UBER": 32,
+   "USB": 32,
+   "VALE": 32,
+   "VFC": 32,
+   "VZ": 32,
+   "WFC": 32,
+   "WMB": 32,
+   "WULF": 32,
+   "ZM": 29,
+   "CPRI": 32,
+   "GDYN": 32,
+   "ALK": 32,
+   "D": 32,
+   "NLY": 32,
+   "ET": 32,
+   "URBN": 32,
+   "AIOK": 31,
    "BUUU": 17
   },
   "scanned": 173,
   "eligible": 124,
-  "released": 0
+  "released": 0,
+  "or_sip_done": true
  },
  "order_ids": [],
  "trades": [],
