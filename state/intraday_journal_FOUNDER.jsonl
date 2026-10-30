@@ -674,3 +674,8 @@
 {"t": "2026-10-30T14:44:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "URBN", "m": 73, "reason": "opening range incomplete (missing minutes)"}
 {"t": "2026-10-30T14:46:14+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "ITUB", "m": 75, "reason": "relative volume 0.96 below 2.0"}
 {"t": "2026-10-30T14:47:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GM", "m": 76, "reason": "relative volume 1.13 below 1.5"}
+{"t": "2026-10-30T14:48:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CPRI", "m": 77, "reason": "relative volume 0.29 below 1.5"}
+{"t": "2026-10-30T14:49:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HPQ", "m": 78, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-10-30T14:49:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GDYN", "m": 78, "reason": "relative volume 0.47 below 1.5"}
+{"t": "2026-10-30T14:53:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "URBN", "m": 82, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-10-30T14:57:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "URBN", "m": 86, "reason": "opening range incomplete (missing minutes)"}
