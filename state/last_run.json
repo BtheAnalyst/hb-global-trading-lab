@@ -1,5 +1,5 @@
 {
- "at": "2026-10-30T15:30:06-04:00",
+ "at": "2026-10-30T15:57:57-04:00",
  "mode": "paper",
  "exit_code": 0,
  "problem": false,
@@ -12,7 +12,7 @@
   {
    "level": "notice",
    "title": "Quotes",
-   "message": "BIL 91.70/91.71 (0.01%); EEM 60.71/60.73 (0.03%); EFA 102.91/102.92 (0.01%); GLD 355.15/355.18 (0.01%); IWM 278.35/278.37 (0.01%); QQQ 687.01/687.08 (0.01%); SPY 752.47/752.65 (0.02%); TLT 81.58/81.59 (0.01%); VNQ 93.89/93.90 (0.01%); VTI 370.06/370.09 (0.01%)"
+   "message": "BIL 91.70/91.71 (0.01%); EEM 60.99/61.00 (0.02%); EFA 103.18/103.20 (0.02%); GLD 355.62/355.64 (0.01%); IWM 279.21/279.22 (0.00%); QQQ 690.53/690.63 (0.01%); SPY 755.58/755.69 (0.01%); TLT 81.58/81.59 (0.01%); VNQ 93.82/93.83 (0.01%); VTI 371.48/371.54 (0.02%)"
   },
   {
    "level": "notice",
@@ -22,7 +22,7 @@
   {
    "level": "notice",
    "title": "Engine pass",
-   "message": "A_vti: no orders || B_90_10: no orders || C_80_20: no orders || D_70_30: no orders || A_vti_vault: no orders || B_90_10_vault: no orders || C_80_20_vault: no orders || D_70_30_vault: no orders || FOUNDER: no orders"
+   "message": "A_vti: no orders | already ran today: no second decision pass || B_90_10: no orders | already ran today: no second decision pass || C_80_20: no orders | already ran today: no second decision pass || D_70_30: no orders | already ran today: no second decision pass || A_vti_vault: no orders | already ran today: no second decision pass || B_90_10_vault: no orders | already ran today: no second decision pass || C_80_20_vault: no orders | already ran today: no second decision pass || D_70_30_vault: no orders | already ran today: no second decision pass || FOUNDER: no orders | already ran today: no second decision pass"
   },
   {
    "level": "notice",
