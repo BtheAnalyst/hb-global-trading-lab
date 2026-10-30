@@ -698,3 +698,15 @@
 {"t": "2026-10-30T15:18:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GM", "m": 107, "reason": "relative volume 1.25 below 1.5"}
 {"t": "2026-10-30T15:18:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "URBN", "m": 107, "reason": "opening range incomplete (missing minutes)"}
 {"t": "2026-10-30T15:20:13+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GDYN", "m": 109, "reason": "relative volume 0.54 below 1.5"}
+{"t": "2026-10-30T15:23:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HOOD", "m": 112, "reason": "stop too tight (0.17% < 0.25%): noise would stop it out"}
+{"t": "2026-10-30T15:24:10+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "ASTS", "m": 113, "reason": "relative volume 0.66 below 1.5"}
+{"t": "2026-10-30T15:24:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "URBN", "m": 113, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-10-30T15:24:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "WULF", "m": 113, "reason": "relative volume 0.7 below 1.5"}
+{"t": "2026-10-30T15:25:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "URBN", "m": 114, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-10-30T15:27:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "APA", "m": 116, "reason": "relative volume 0.59 below 1.5"}
+{"t": "2026-10-30T15:27:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "DVN", "m": 116, "reason": "relative volume 1.13 below 1.5"}
+{"t": "2026-10-30T15:28:11+00:00", "date": "2026-10-30", "event": "signal", "setup": "PULLBACK_VWAP_V1", "symbol": "CORZ", "m": 117, "ref": 13.39, "stop": 13.33, "target": 13.51, "rvol": 1.54, "why": "uptrend above VWAP, pullback touched VWAP 13.36, close above prior high, RVOL 1.5", "conditions": {"vwap": 13.359503298713754, "pattern": "close above prior high"}, "stale": false}
+{"t": "2026-10-30T15:28:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "URBN", "m": 117, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-10-30T15:30:15+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "FE", "m": 119, "reason": "relative volume 1.03 below 1.5"}
+{"t": "2026-10-30T15:30:15+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GM", "m": 119, "reason": "relative volume 1.24 below 1.5"}
+{"t": "2026-10-30T15:30:15+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "BUUU", "m": 119, "reason": "opening range incomplete (missing minutes)"}
