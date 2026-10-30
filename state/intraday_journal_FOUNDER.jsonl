@@ -689,3 +689,12 @@
 {"t": "2026-10-30T15:07:12+00:00", "date": "2026-10-30", "event": "signal", "setup": "PULLBACK_VWAP_V1", "symbol": "HOOD", "m": 96, "ref": 84.2, "stop": 83.88, "target": 84.84, "rvol": 2.82, "why": "uptrend above VWAP, pullback touched VWAP 83.97, close above prior high, RVOL 2.8", "conditions": {"vwap": 83.96764694522132, "pattern": "close above prior high"}, "stale": false}
 {"t": "2026-10-30T15:09:10+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CCL", "m": 98, "reason": "relative volume 0.61 below 1.5"}
 {"t": "2026-10-30T15:09:10+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GDYN", "m": 98, "reason": "relative volume 0.49 below 1.5"}
+{"t": "2026-10-30T15:10:13+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "WULF", "m": 99, "reason": "relative volume 0.73 below 1.5"}
+{"t": "2026-10-30T15:11:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "CLSK", "m": 100, "reason": "relative volume 0.58 below 2.0"}
+{"t": "2026-10-30T15:12:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NEE", "m": 101, "reason": "stop too tight (0.10% < 0.25%): noise would stop it out"}
+{"t": "2026-10-30T15:14:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HPE", "m": 103, "reason": "relative volume 0.69 below 1.5"}
+{"t": "2026-10-30T15:15:14+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "BUUU", "m": 104, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-10-30T15:16:13+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HUT", "m": 105, "reason": "relative volume 1.03 below 1.5"}
+{"t": "2026-10-30T15:18:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GM", "m": 107, "reason": "relative volume 1.25 below 1.5"}
+{"t": "2026-10-30T15:18:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "URBN", "m": 107, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-10-30T15:20:13+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GDYN", "m": 109, "reason": "relative volume 0.54 below 1.5"}
