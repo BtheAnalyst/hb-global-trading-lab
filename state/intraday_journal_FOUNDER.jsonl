@@ -719,3 +719,11 @@
 {"t": "2026-10-30T16:00:16+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CSX", "m": 149, "reason": "stop too tight (0.07% < 0.25%): noise would stop it out"}
 {"t": "2026-10-30T16:00:16+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GM", "m": 149, "reason": "relative volume 1.28 below 1.5"}
 {"t": "2026-10-30T16:00:16+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HPQ", "m": 149, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-10-30T16:08:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GDYN", "m": 157, "reason": "relative volume 0.52 below 1.5"}
+{"t": "2026-10-30T16:09:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CNP", "m": 158, "reason": "relative volume 0.67 below 1.5"}
+{"t": "2026-10-30T16:10:15+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VALE", "m": 159, "reason": "relative volume 0.95 below 1.5"}
+{"t": "2026-10-30T16:11:14+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "JD", "m": 160, "reason": "relative volume 0.57 below 1.5"}
+{"t": "2026-10-30T16:13:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CSX", "m": 162, "reason": "stop too tight (0.11% < 0.25%): noise would stop it out"}
+{"t": "2026-10-30T16:13:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GM", "m": 162, "reason": "relative volume 1.27 below 1.5"}
+{"t": "2026-10-30T16:13:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PYPL", "m": 162, "reason": "relative volume 0.57 below 1.5"}
+{"t": "2026-10-30T16:13:13+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "VALE", "m": 162, "reason": "relative volume 0.95 below 1.5"}
