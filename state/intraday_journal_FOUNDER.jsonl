@@ -762,3 +762,4 @@
 {"t": "2026-10-30T17:57:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GIS", "m": 266, "reason": "relative volume 1.33 below 1.5"}
 {"t": "2026-10-30T17:59:11+00:00", "date": "2026-10-30", "event": "signal", "setup": "PULLBACK_VWAP_V1", "symbol": "PINS", "m": 268, "ref": 18.61, "stop": 18.55, "target": 18.73, "rvol": 3.61, "why": "uptrend above VWAP, pullback touched VWAP 18.56, bullish engulfing, RVOL 3.6", "conditions": {"vwap": 18.558766591080087, "pattern": "bullish engulfing"}, "stale": false}
 {"t": "2026-10-30T18:16:15+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PPL", "m": 285, "reason": "relative volume 1.12 below 1.5"}
+{"t": "2026-10-30T18:22:13+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "T", "m": 291, "reason": "relative volume 1.06 below 1.5"}
