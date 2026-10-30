@@ -666,3 +666,11 @@
 {"t": "2026-10-30T14:36:14+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "HPQ", "m": 65, "reason": "opening range 7.53% outside 0.4%-4%"}
 {"t": "2026-10-30T14:36:14+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HPQ", "m": 65, "reason": "continuation breakout volume not confirmed"}
 {"t": "2026-10-30T14:36:14+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "URBN", "m": 65, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-10-30T14:40:13+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "URBN", "m": 69, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-10-30T14:40:13+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VALE", "m": 69, "reason": "relative volume 0.97 below 1.5"}
+{"t": "2026-10-30T14:43:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NEE", "m": 72, "reason": "stop too tight (0.13% < 0.25%): noise would stop it out"}
+{"t": "2026-10-30T14:43:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "WFC", "m": 72, "reason": "relative volume 0.51 below 1.5"}
+{"t": "2026-10-30T14:44:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CAG", "m": 73, "reason": "relative volume 1.41 below 1.5"}
+{"t": "2026-10-30T14:44:11+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "URBN", "m": 73, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-10-30T14:46:14+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "ITUB", "m": 75, "reason": "relative volume 0.96 below 2.0"}
+{"t": "2026-10-30T14:47:12+00:00", "date": "2026-10-30", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GM", "m": 76, "reason": "relative volume 1.13 below 1.5"}
