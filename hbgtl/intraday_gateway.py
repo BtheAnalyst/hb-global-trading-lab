@@ -111,7 +111,8 @@ class AlpacaIntradayGateway:  # pragma: no cover - network
         for s in symbols:
             try:
                 a = self.tc.get_asset(s)
-                out[s] = {"symbol": s, "tradable": bool(a.tradable), "status": str(a.status.value), "name": a.name or "",
+                out[s] = {"symbol": s, "tradable": bool(a.tradable), "fractionable": bool(a.fractionable),
+                          "status": str(a.status.value), "name": a.name or "",
                           "exchange": str(a.exchange.value), "class": str(a.asset_class.value)}
             except Exception:  # noqa: BLE001
                 out[s] = None
@@ -147,6 +148,24 @@ class AlpacaIntradayGateway:  # pragma: no cover - network
             take_profit=TakeProfitRequest(limit_price=round(target, 2)),
             stop_loss=StopLossRequest(stop_price=round(stop, 2))))
         return self._o(o)
+
+    def submit_limit_buy(self, cid: str, sym: str, qty: float, limit: float) -> dict:
+        """Fractional (or whole) DAY limit buy without legs; the stop is placed after the fill."""
+        _guard(sym)
+        from alpaca.trading.enums import OrderSide, TimeInForce
+        from alpaca.trading.requests import LimitOrderRequest
+        return self._o(self.tc.submit_order(LimitOrderRequest(symbol=sym, qty=qty, side=OrderSide.BUY,
+                                                              time_in_force=TimeInForce.DAY,
+                                                              limit_price=round(limit, 2), client_order_id=cid)))
+
+    def stop_sell(self, cid: str, sym: str, qty: float, stop: float) -> dict:
+        """Protective DAY stop (market) sell; Alpaca accepts fractional quantities for stop orders."""
+        _guard(sym)
+        from alpaca.trading.enums import OrderSide, TimeInForce
+        from alpaca.trading.requests import StopOrderRequest
+        return self._o(self.tc.submit_order(StopOrderRequest(symbol=sym, qty=qty, side=OrderSide.SELL,
+                                                             time_in_force=TimeInForce.DAY,
+                                                             stop_price=round(stop, 2), client_order_id=cid)))
 
     def order(self, cid: str) -> dict | None:
         try:

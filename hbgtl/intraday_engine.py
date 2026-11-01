@@ -42,6 +42,8 @@ def new_state() -> dict:
 class IntradayEngine:
     def __init__(self, cfg: dict, gw, state: dict, journal: Callable[[dict], None], persist: Callable[[], None]):
         self.cfg, self.gw, self.s, self.j, self.persist = cfg, gw, state, journal, persist
+        import time as _t
+        self.sleep = getattr(gw, "sleep", _t.sleep)
         self.r = cfg["risk"]
         self.u = cfg["universe"]
         self.mode = cfg.get("mode", "signal")
@@ -53,6 +55,7 @@ class IntradayEngine:
         self.frames: dict[str, pd.DataFrame] = {}
         self.profiles: dict[str, dict] = {}
         self.eligible: list[str] = []
+        self.fractionable: set[str] = set()
         self.ctx: dict[str, dict] = {}            # gappers: {"prev_close", "adv20"} (stocks in play)
 
     # ------------------------------------------------------------------ helpers
@@ -83,6 +86,7 @@ class IntradayEngine:
             self.s["shadow"] = {k: {"open": None, "entries": 0, "day_R": 0.0, "busy_until": -1, "trades": []}
                                 for k in SETUP_IDS}
         elig, why = [], {}
+        self.fractionable |= {k for k, v in assets.items() if v and v.get("fractionable")}
         for sym in pool:
             a = assets.get(sym)
             reason = asset_ok(a) if a is not None else "asset not found"
@@ -245,11 +249,18 @@ class IntradayEngine:
             entry_est = min(q[1], limit)
             risk_ps = entry_est - sig.stop
             settled = self.s["sleeve"]["settled"]
-            qty = min(math.floor(risk_usd / risk_ps) if risk_ps > 0 else 0, math.floor(settled / limit))
-            if qty < 1:
-                reason = (f"account too small: ${risk_usd:.2f} risk allows {math.floor(risk_usd / risk_ps) if risk_ps > 0 else 0} "
-                          f"share(s) at ${risk_ps:.2f}/share risk; settled cash ${settled:.2f} buys "
-                          f"{math.floor(settled / limit)} at ${limit:.2f}")
+            exact = min(risk_usd / risk_ps if risk_ps > 0 else 0.0, settled / limit)
+            qty = math.floor(exact)
+            frac = False
+            if qty < 1 or qty < 0.75 * exact:                       # whole shares would waste most of the trade
+                if self.r.get("fractional") and sig.symbol in self.fractionable:
+                    fq = math.floor(exact * 1e6) / 1e6
+                    if fq * limit >= self.r.get("min_notional", 1.0):
+                        qty, frac = fq, True
+            if qty <= 0 or (not frac and qty < 1):
+                reason = (f"account too small: ${risk_usd:.2f} risk at ${risk_ps:.2f}/share risk and settled cash "
+                          f"${settled:.2f} allow {exact:.3f} share(s) at ${limit:.2f}"
+                          + ("" if sig.symbol in self.fractionable else " (not fractionable)"))
         if reason:
             key = reason_key(sig.setup, "entry refused: " + reason.split(":")[0])
             self.day["rejections"][key] = self.day["rejections"].get(key, 0) + 1
@@ -264,14 +275,15 @@ class IntradayEngine:
         self.s["position"] = {"cid": cid, "symbol": sig.symbol, "setup": sig.setup, "qty": qty, "limit": limit,
                               "stop": round(sig.stop, 2), "target": target, "status": "submitting",
                               "signal_m": sig.m, "sent_at": now.isoformat(), "why": sig.why,
-                              "conditions": sig.conditions, "rvol": sig.rvol, "quote": list(q)}
+                              "conditions": sig.conditions, "rvol": sig.rvol, "quote": list(q), "frac": frac}
         self.day["entries"] += 1
         self.persist()                                              # persist BEFORE sending
         try:
-            o = self.gw.submit_bracket(cid, sig.symbol, qty, limit, sig.stop, target)
+            o = (self.gw.submit_limit_buy(cid, sig.symbol, qty, limit) if frac
+                 else self.gw.submit_bracket(cid, sig.symbol, qty, limit, sig.stop, target))
             self.s["position"].update(status="entering", order_id=o["id"])
             self.note("entry_sent", **{k: self.s["position"][k] for k in ("cid", "symbol", "setup", "qty", "limit",
-                                                                           "stop", "target", "why")})
+                                                                           "stop", "target", "why", "frac")})
             out["orders"].append(cid)
         except Exception as e:  # noqa: BLE001
             self._error(f"entry order failed for {sig.symbol}: {e}")
@@ -284,11 +296,29 @@ class IntradayEngine:
         return True
 
     # ------------------------------------------------------------------ position management
+    def _view(self, p):
+        """Entry order with its protective legs. Bracket: the broker's legs. Fractional: our separate stop order
+        (the target is managed by the bot because Alpaca has no bracket/OCO for fractional shares)."""
+        o = self.gw.order(p["cid"])
+        if o is not None and p.get("frac"):
+            st = self.gw.order(p["stop_cid"]) if p.get("stop_cid") else None
+            o = {**o, "legs": [st] if st else []}
+        return o
+
+    def _place_frac_stop(self, p, now):
+        p["stop_cid"] = f"{p['cid']}-s"
+        self.persist()
+        try:
+            self.gw.stop_sell(p["stop_cid"], p["symbol"], p["qty"], p["stop"])
+            self.note("stop_placed", symbol=p["symbol"], qty=p["qty"], stop=p["stop"], cid=p["stop_cid"])
+        except Exception as e:  # noqa: BLE001
+            self._error(f"protective stop failed for {p['symbol']}: {e}")
+
     def _manage_position(self, now, m_now):
         p = self.s["position"]
         if p is None:
             return
-        o = self.gw.order(p["cid"])
+        o = self._view(p)
         if o is None:
             if p["status"] == "submitting":                         # never reached the broker
                 self.note("entry_lost", symbol=p["symbol"], reason="order not found at broker; nothing held")
@@ -301,14 +331,17 @@ class IntradayEngine:
                 p.update(status="open", entry=o["filled_avg_price"], qty=o["filled_qty"], filled_at=now.isoformat())
                 self.s["sleeve"]["settled"] -= p["entry"] * p["qty"]
                 self.note("entry_filled", symbol=p["symbol"], setup=p["setup"], qty=p["qty"], entry=p["entry"],
-                          stop=p["stop"], target=p["target"])
+                          stop=p["stop"], target=p["target"], frac=p.get("frac", False))
+                if p.get("frac"):
+                    self._place_frac_stop(p, now)
+                    o = self._view(p) or o
                 if not self._stop_live(o):
                     self._exit(p, o, now, "protective stop not live at the broker: closed immediately")
                 return
             age = (now - pd.Timestamp(p["sent_at"])).total_seconds()
             if o["status"] in ("canceled", "expired", "rejected") or age > self.r["entry_timeout_s"]:
                 self.gw.cancel(o["id"])
-                o2 = self.gw.order(p["cid"]) or o
+                o2 = self._view(p) or o
                 if o2["filled_qty"] > 0:                            # partial fill: unwind it, never hold a half bracket
                     p.update(status="open", entry=o2["filled_avg_price"], qty=o2["filled_qty"])
                     self.s["sleeve"]["settled"] -= p["entry"] * p["qty"]
@@ -331,6 +364,10 @@ class IntradayEngine:
                 self._exit(p, o, now, "protective stop leg no longer live")
                 return
             d = self.frames.get(p["symbol"])
+            if p.get("frac") and d is not None and len(d) and int(d["m"].iloc[-1]) > p["signal_m"] \
+                    and float(d["h"].iloc[-1]) >= p["target"] + 0.01:
+                self._exit(p, o, now, "target")                     # bot-managed target (fractional position)
+                return
             if m_now >= hm(self.r["flatten"]):
                 self._exit(p, o, now, "end of day flatten (15:50 ET)")
             elif d is not None and len(d):
@@ -340,7 +377,9 @@ class IntradayEngine:
             return
         if p["status"] == "exiting":
             e = self.gw.order(p["exit_cid"])
-            if e and e["status"] == "filled":
+            if e is None and p.get("exit_tries", 0) < 5:             # the sell never reached the broker: send again
+                self._send_exit(p, now, retry=True)
+            elif e and e["status"] == "filled":
                 self._close(p, e["filled_avg_price"], p["exit_reason"], now)
             elif e and e["status"] in ("canceled", "rejected", "expired"):
                 self._error(f"exit order {e['status']} for {p['symbol']}")
@@ -356,7 +395,12 @@ class IntradayEngine:
                 self.gw.cancel(x["id"])
         if o["status"] not in ("filled", "canceled", "expired", "rejected"):
             self.gw.cancel(o["id"])
-        o2 = self.gw.order(p["cid"]) or o
+        o2 = self._view(p) or o
+        for _ in range(10):                                         # let cancels finish so the shares are free to sell
+            if not any(x["status"] in ("pending_cancel", "new", "held", "accepted") for x in o2.get("legs", [])):
+                break
+            self.sleep(0.5)
+            o2 = self._view(p) or o2
         leg = next((x for x in o2.get("legs", []) if x["status"] == "filled"), None)
         if leg:                                                     # a leg filled while we were cancelling
             how = "stop" if leg["type"] in ("stop", "stop_limit") else "target"

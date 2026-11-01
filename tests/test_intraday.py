@@ -135,19 +135,37 @@ class FakeGW:
     def position_qty(self, sym):
         return 0
 
+    def sleep(self, s):
+        pass
+
+    def submit_limit_buy(self, cid, sym, qty, limit):
+        o = {"id": cid, "cid": cid, "symbol": sym, "status": "new", "type": "limit", "qty": qty, "filled_qty": 0,
+             "filled_avg_price": None, "legs": []}
+        self.orders[cid] = o; self.sent.append(("limit", cid, sym, qty, limit))
+        return o
+
+    def stop_sell(self, cid, sym, qty, stop):
+        o = {"id": cid, "cid": cid, "symbol": sym, "status": "new", "type": "stop", "qty": qty, "filled_qty": 0,
+             "filled_avg_price": None, "legs": []}
+        self.orders[cid] = o; self.sent.append(("stop", cid, sym, qty, stop))
+        return o
+
     def fill(self, cid, px):
         o = self.orders[cid]; o.update(status="filled", filled_qty=o["qty"], filled_avg_price=px)
-        o["legs"][1]["status"] = "new"; o["legs"][0]["status"] = "new"
+        if o["legs"]:
+            o["legs"][1]["status"] = "new"; o["legs"][0]["status"] = "new"
 
 
-def engine(settled=100.0, mode="paper", gw=None):
+def engine(settled=100.0, mode="paper", gw=None, fractional=False):
     st = new_state()
     st["sleeve"].update(allocated=settled, settled=settled)
     j = []
     gw = gw or FakeGW()
-    e = IntradayEngine({**CFG, "mode": mode}, gw, st, j.append, lambda: None)
+    e = IntradayEngine({**CFG, "mode": mode, "risk": {**CFG["risk"], "fractional": fractional}}, gw, st, j.append,
+                       lambda: None)
     daily = {"XYZ": pd.DataFrame({"close": [20.0] * 25, "volume": [5_000_000] * 25})}
     asset = {"XYZ": {"class": "us_equity", "tradable": True, "status": "active", "exchange": "NYSE", "name": "Xyz Inc"}}
+    asset["XYZ"]["fractionable"] = True
     e.start_day(DAY, ["XYZ"], daily, {"XYZ": profile()}, asset)
     return e, st, j, gw
 
@@ -277,3 +295,40 @@ def test_gapgo_first_pullback_signal():
     st = {"gap": 0.15}
     out = [evaluate("GAPGO_PB_V1", d, i, "X", 2.0, None, st) for i in range(len(d))]
     assert any(isinstance(x, str) and "relative volume" in x for x in out)
+
+
+def test_fractional_entry_places_broker_stop_and_bot_target():
+    # $30 at 0.5% = $0.15 risk; stop 20.10 vs entry ~20.31 -> 0.71 share -> no whole share fits -> fractional
+    e, st, j, gw = engine(30.0, fractional=True)
+    run_to(e, 21)
+    kind, cid, sym, qty, limit = gw.sent[0]
+    assert kind == "limit" and qty != int(qty) and qty * (min(20.31, limit) - 20.10) <= 0.15 + 1e-6
+    gw.fill(cid, 20.30)
+    run_to(e, 22)
+    p = st["position"]
+    assert p["status"] == "open" and gw.sent[1][0] == "stop" and gw.sent[1][3] == qty and gw.sent[1][4] == 20.10
+    # a completed bar trades through the target -> bot cancels the stop and sells
+    df = bars(60)
+    df.loc[22:, "h"] = 25.0
+    run_to(e, 24, df)
+    run_to(e, 25, df)
+    assert gw.orders[p["stop_cid"]]["status"] == "canceled"
+    assert st["position"] is None and st["trades"][-1]["how"] == "target"
+
+
+def test_fractional_stop_rejected_closes_position():
+    e, st, j, gw = engine(30.0, fractional=True)
+    run_to(e, 21)
+    cid = gw.sent[0][1]
+    gw.stop_sell = lambda *a: (_ for _ in ()).throw(RuntimeError("fractional stop not allowed"))
+    gw.fill(cid, 20.30)
+    run_to(e, 22)
+    run_to(e, 23)
+    assert any(x[0] == "sell" for x in gw.sent) and st["position"] is None
+    assert "protective stop" in st["trades"][-1]["how"]
+
+
+def test_whole_shares_used_when_they_fit():
+    e, st, j, gw = engine(10000.0, fractional=True)
+    run_to(e, 21)
+    assert gw.sent[0][0] == "bracket" and gw.sent[0][3] == int(gw.sent[0][3]) >= 100

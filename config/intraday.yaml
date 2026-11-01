@@ -49,6 +49,8 @@ risk:
   chase_r: 0.25                  # entry limit = signal close + 0.25 x planned risk; no chasing beyond
   entry_timeout_s: 120           # cancel an unfilled entry after 2 minutes
   max_quote_age_s: 30
+  fractional: true               # small accounts: fractional entry + broker-held stop order; target managed by the bot
+  min_notional: 1.0              # Alpaca's minimum fractional order
   max_bar_age_s: 150             # the newest completed bar must be this fresh (stale-data guard)
   max_spread_pct: 0.003          # IEX quote spread cap (IEX top-of-book is wider than the national best)
   last_entry: "15:00"
