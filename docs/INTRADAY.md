@@ -57,3 +57,14 @@ rewritten by the bot; any change goes through the backtest and tests again.
 | A on gappers (SMB in play) | gappers | 2 | n/a | n/a | too few trades (gapper opening ranges are wider than 4%) |
 Details: `research/intraday_backtest_results.json`, `research/gapper_backtest_results.json`. Not part of the test:
 news catalysts and share float (no data source), which both Cameron and SMB treat as central.
+
+## Nov 1, 2026: fixes tested (stress costs)
+| Test | Trades | Expectancy | Out-of-sample | $100 account | Decision |
+|---|---|---|---|---|---|
+| A on ALL liquid U.S. stocks (1,906 names) | 185 | -0.24R (se 0.07) | -0.27R (66) | -$16.68 (fractional) | **rejected**: wide universe stays OFF |
+| A on the stocks outside the 172 pool | 181 | -0.24R | -0.31R | -$17.14 | the pool's small positive result does not generalise |
+| A on the 172 pool (same data build) | 25 | +0.06R | +0.03R (11) | whole -$0.87 / **fractional +$1.08** | unchanged; fractional sizing ON |
+| A threshold RVOL 1.5 (pool) | 71 | -0.18R | -0.16R | -$2.93 | rejected |
+Reading: on a broad, unbiased universe the opening-range breakout loses ~0.24R per trade after costs. The pool's
+slightly positive result is most likely selection luck (the pool was chosen in October 2026). Setup A remains a
+paper forward test on the pool only; it has NOT shown an edge.
