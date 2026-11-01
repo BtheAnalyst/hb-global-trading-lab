@@ -29,6 +29,15 @@ jobs:
           ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
           ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
         run: python scripts/run_intraday.py --until 12:30
+      - name: Alert the founder if this session failed
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create intraday-alert --color 5E1A22 --description "Intraday engine needs attention" 2>/dev/null || true
+          gh issue create --label intraday-alert --assignee "${{ github.repository_owner }}" \
+            --title "Intraday engine alert · $(TZ=America/New_York date +'%a %b %-d %H:%M') ET · morning session failed" \
+            --body "The morning session of the intraday PAPER engine stopped with an error. Protective stop orders stay at the broker; the afternoon job / 15:50 flatten is the backstop. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}. Paper trading only; no real money." || true
   afternoon:
     needs: morning
     if: ${{ !cancelled() }}        # run even if the morning job FAILED (positions must still be managed/flattened); not when cancelled
@@ -46,6 +55,15 @@ jobs:
           ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
           ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
         run: python scripts/run_intraday.py --until 16:05 --final
+      - name: Alert the founder if this session failed
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create intraday-alert --color 5E1A22 --description "Intraday engine needs attention" 2>/dev/null || true
+          gh issue create --label intraday-alert --assignee "${{ github.repository_owner }}" \
+            --title "Intraday engine alert · $(TZ=America/New_York date +'%a %b %-d %H:%M') ET · afternoon session failed" \
+            --body "The afternoon session of the intraday PAPER engine stopped with an error. Protective stop orders stay at the broker; the afternoon job / 15:50 flatten is the backstop. Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}. Paper trading only; no real money." || true
       - name: Post the intraday daily report
         if: always()
         env:
