@@ -65,7 +65,8 @@ universe:
   # Wide universe (Nov 1, 2026, founder-approved fix): Setup A scans EVERY liquid U.S. common stock that passes
   # the filters above, not just the 172-stock pool. Same rules; more stocks means more days with a qualifying
   # breakout. Setups B/C/D stay on the pool + gappers. Wide-only names are dropped after A's entry window.
-  wide: false                    # turned on only if the wide-universe backtest holds up (research/wide_backtest_results.json)
+  wide: false                    # STAYS OFF (Nov 1, 2026 backtest, stress costs): wide universe -0.24R/trade over 185 trades,
+                                 # OOS -0.27R, profit factor 0.56; $100 account -> $83. The 172-stock pool stays (+0.06R, 25 trades).
   wide_setups: [ORB15_V1]
   wide_until: "11:30"
   feed: iex                      # live: IEX (the account's subscription does not permit real-time SIP)

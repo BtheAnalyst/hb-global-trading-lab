@@ -54,6 +54,7 @@ rewritten by the bot; any change goes through the backtest and tests again.
 | C `MOMO_CONT_V1` | liquid pool | 222 | -0.28R | -0.08R | signal-only |
 | D `GAPGO_PB_V1` (Cameron) | gappers $2-$20 | 56 | -0.09R | +0.15R (13) | signal-only |
 | D `GAPGO_PB_V1` | gappers $5-$20 | 39 | -0.32R | -0.54R (6) | signal-only (live band) |
+| A `ORB15_V1` (Nov 1) | WIDE: every liquid U.S. stock $5-$100 | 185 | -0.24R | -0.27R (66) | **not used**: more trades (~7.5/week) but losing; $100 → $83 |
 | A on gappers (SMB in play) | gappers | 2 | n/a | n/a | too few trades (gapper opening ranges are wider than 4%) |
 Details: `research/intraday_backtest_results.json`, `research/gapper_backtest_results.json`. Not part of the test:
 news catalysts and share float (no data source), which both Cameron and SMB treat as central.
