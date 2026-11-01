@@ -56,6 +56,8 @@ class IntradayEngine:
         self.profiles: dict[str, dict] = {}
         self.eligible: list[str] = []
         self.fractionable: set[str] = set()
+        self.core: set[str] | None = None           # symbols for every setup; others only get universe.wide_setups
+        self.wide_setups = set((cfg.get("universe") or {}).get("wide_setups") or ["ORB15_V1"])
         self.ctx: dict[str, dict] = {}            # gappers: {"prev_close", "adv20"} (stocks in play)
 
     # ------------------------------------------------------------------ helpers
@@ -115,6 +117,19 @@ class IntradayEngine:
         return {"eligible": elig, "excluded": why}
 
     # ------------------------------------------------------------------ per-minute tick
+    def drop_wide(self) -> None:
+        """After the wide setups' entry window: stop watching wide-only symbols (saves data calls and CPU)."""
+        if self.core is None:
+            return
+        keep = self.core | set(self.ctx) | ({self.s["position"]["symbol"]} if self.s["position"] else set())
+        before = len(self.eligible)
+        self.eligible = [x for x in self.eligible if x in keep]
+        for x in list(self.raw):
+            if x not in keep:
+                self.raw.pop(x, None); self.frames.pop(x, None)
+        self.day["wide_dropped"] = True
+        self.note("wide_dropped", watched_before=before, watched_now=len(self.eligible))
+
     def add_gappers(self, found: dict[str, dict]) -> list[str]:
         """Add today's gap-up 'stocks in play' (from the market movers scan) to the watch list."""
         added = []
@@ -180,6 +195,9 @@ class IntradayEngine:
                 else:   # no intraday history of its own (a gapper): RVOL vs average daily volume
                     rv = rvol_daily(float(d["cumv"].iloc[i]), int(d["m"].iloc[i]), (c or {}).get("adv20"))
                 for setup in self.evaluate_ids:
+                    if self.core is not None and sym not in self.core and sym not in self.ctx \
+                            and setup not in self.wide_setups:
+                        continue
                     res = evaluate(setup, d, i, sym, rv, (self.cfg.get("params") or {}).get(setup), st)
                     if res is None:
                         continue

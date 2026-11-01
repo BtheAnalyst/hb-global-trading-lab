@@ -23,13 +23,18 @@ jobs:
           ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
           DAYS: ${{ inputs.days }}
         run: python research/fetch_wide.py
+      - name: Backtest Setup A on the wide universe
+        continue-on-error: true
+        run: python research/wide_backtest.py research/wide_data
       - name: Commit to research-wide branch
         run: |
           git config user.name "HB Atelier Bot"; git config user.email "atelier-bot@users.noreply.github.com"
+          cp research/wide_backtest_results.json /tmp/ || true
           mv research/wide_data /tmp/wide_data
           git checkout --orphan research-wide
           git rm -rq --cached . ; rm -rf ./* .github 2>/dev/null || true
           mkdir -p wide_data && cp -r /tmp/wide_data/* wide_data/
+          cp /tmp/wide_backtest_results.json wide_data/ || true
           git add wide_data
           git commit -qm "Wide research data $(date -u +%FT%RZ)"
           git push -f origin research-wide

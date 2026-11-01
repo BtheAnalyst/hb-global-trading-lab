@@ -61,6 +61,15 @@ class AlpacaIntradayGateway:  # pragma: no cover - network
                                                      start=start, feed=self.feed, adjustment=Adjustment.SPLIT)).df
         return {sym: g.reset_index() for sym, g in df.reset_index().groupby("symbol")} if df is not None else {}
 
+    def all_assets(self) -> dict[str, dict]:
+        """Every active U.S. equity in one call (raw JSON: the SDK model rejects new exchange codes)."""
+        out = {}
+        for a in self.tc.get("/assets", {"status": "active", "asset_class": "us_equity"}):
+            out[a["symbol"]] = {"symbol": a["symbol"], "tradable": bool(a.get("tradable")),
+                                "fractionable": bool(a.get("fractionable")), "status": a.get("status", "active"),
+                                "name": a.get("name") or "", "exchange": a.get("exchange"), "class": "us_equity"}
+        return out
+
     def daily_sip(self, symbols: list[str], days: int = 45) -> dict[str, pd.DataFrame]:
         """Consolidated (SIP) daily bars up to yesterday: allowed on the free plan (older than 15 minutes).
         Used for average daily volume, which IEX alone would understate ~50x."""
@@ -68,10 +77,14 @@ class AlpacaIntradayGateway:  # pragma: no cover - network
         from alpaca.data.requests import StockBarsRequest
         from alpaca.data.timeframe import TimeFrame
         end = datetime.now(timezone.utc) - timedelta(minutes=20)
-        df = self.dc.get_stock_bars(StockBarsRequest(symbol_or_symbols=symbols, timeframe=TimeFrame.Day,
-                                                     start=end - timedelta(days=days), end=end, feed=DataFeed.SIP,
-                                                     adjustment=Adjustment.SPLIT)).df
-        return {sym: g.reset_index() for sym, g in df.reset_index().groupby("symbol")} if df is not None else {}
+        out = {}
+        for i in range(0, len(symbols), 200):
+            df = self.dc.get_stock_bars(StockBarsRequest(symbol_or_symbols=symbols[i:i + 200], timeframe=TimeFrame.Day,
+                                                         start=end - timedelta(days=days), end=end, feed=DataFeed.SIP,
+                                                         adjustment=Adjustment.SPLIT)).df
+            if df is not None and len(df):
+                out.update({sym: g.reset_index(drop=True) for sym, g in df.reset_index().groupby("symbol")})
+        return out
 
     def gainers(self, top: int = 50) -> list[dict]:
         """Market movers (top % gainers) from Alpaca's screener."""

@@ -71,6 +71,11 @@ _set_paths(CFG.get("account") if CFG.get("account") != "auto" else "FOUNDER")
 KILL_FILE = ROOT / "KILL_SWITCH"
 
 
+def hm_et(s: str) -> int:
+    h, m = s.split(":")
+    return int(h) * 60 + int(m) - 570
+
+
 def note(title, msg, level="notice"):
     print(f"::{level} title={title}::{' '.join(str(msg).split())[:3500]}", flush=True)
 
@@ -178,13 +183,26 @@ def main():
         state["kill_switch"] = True
 
     # ---- pre-market scan: eligibility from consolidated daily bars, RVOL profiles from IEX 5-minute bars
-    pool = sorted(set(RESEARCH_POOL))
+    assets = gw.all_assets()
+    core = sorted(set(RESEARCH_POOL))
+    pool = core
+    u = CFG["universe"]
+    if u.get("wide"):   # every liquid U.S. common stock, for the setups listed in universe.wide_setups
+        from hbgtl.intraday_universe import asset_ok
+        pool = sorted(set(core) | {k for k, a in assets.items() if k.isalpha() and not asset_ok(a)
+                                   and not (len(k) == 5 and k[-1] in "WRUZ")
+                                   and not any(w in a["name"].upper() for w in
+                                               ("WARRANT", "RIGHT", " UNIT", "ACQUISITION CORP", "PREFERRED", "NOTES"))})
     daily = gw.daily_sip(pool, days=45)
     daily = {k: v[pd.to_datetime(v["timestamp"], utc=True).dt.tz_convert(ET).dt.date.astype(str) < today]
              for k, v in daily.items()}
-    five = gw.bars(pool, datetime.now(timezone.utc) - timedelta(days=35), minutes=5)
+    liquid = [k for k, v in daily.items() if len(v) >= 21 and u["price_min"] <= float(v["close"].iloc[-1]) <= u["price_max"]
+              and float(v["volume"].iloc[-20:].mean()) >= u["adv_min"]]
+    pool = sorted(set(core) | set(liquid))
+    five = gw.bars(liquid, datetime.now(timezone.utc) - timedelta(days=35), minutes=5)
     profiles = profiles_from_bars(five, today)
-    scan = eng.start_day(today, pool, daily, profiles, gw.assets(pool))
+    eng.core = set(core)
+    scan = eng.start_day(today, pool, daily, profiles, {k: assets.get(k) for k in pool})
     note("Scan", f"account {ACCOUNT} | {len(scan['eligible'])} of {len(pool)} eligible | mode {cfg.get('mode')} | execute "
                  f"{cfg.get('execute') or 'none (signal-only)'} | sleeve settled ${state['sleeve']['settled']:.2f}")
     _recover(eng, gw, state)
@@ -221,6 +239,8 @@ def main():
                     eng.note("opening_range_sip", symbols=len(ors))
                 except Exception as e:  # noqa: BLE001
                     eng.note("loop_error", message=f"SIP opening range: {e}")
+            if m_now > hm_et(CFG["universe"].get("wide_until", "11:30")) and not eng.day.get("wide_dropped"):
+                eng.drop_wide()                                       # wide-universe setups are done for the day
             syms = sorted(set(eng.eligible) | ({state["position"]["symbol"]} if state["position"] else set()))
             new = gw.bars(syms, fetched_from.to_pydatetime() - timedelta(minutes=2))
             eng.update_bars(new)

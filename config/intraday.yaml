@@ -61,5 +61,11 @@ universe:
   price_min: 5
   price_max: 100
   adv_min: 1000000
-  shortlist: 25                  # symbols watched minute-by-minute (re-ranked by relative volume every 15 min)
+  shortlist: 25                  # (unused)
+  # Wide universe (Nov 1, 2026, founder-approved fix): Setup A scans EVERY liquid U.S. common stock that passes
+  # the filters above, not just the 172-stock pool. Same rules; more stocks means more days with a qualifying
+  # breakout. Setups B/C/D stay on the pool + gappers. Wide-only names are dropped after A's entry window.
+  wide: true
+  wide_setups: [ORB15_V1]
+  wide_until: "11:30"
   feed: iex                      # live: IEX (the account's subscription does not permit real-time SIP)

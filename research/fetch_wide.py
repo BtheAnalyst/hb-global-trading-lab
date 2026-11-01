@@ -8,7 +8,7 @@
    mark up to 11:30 ET, its cumulative volume was >= 1.8x its own prior-20-session profile. Setup A needs
    relative volume >= 2.0 at a breakout between 9:45 and 11:30, so every day that could signal is kept;
    the prefilter uses nothing after 11:30 and no prices, so it cannot select on the outcome.
-Output: research/wide_data/{daily.csv.gz, profiles.json.gz, minute/<DATE>.csv.gz, meta.json}
+Output: research/wide_data/{daily.csv.gz, profiles/<DATE>.json.gz, minute/<DATE>.csv.gz, meta.json}
 """
 from __future__ import annotations
 
@@ -85,7 +85,7 @@ print(f"{len(universe)} symbols eligible on at least one day; {len(elig)} eligib
 
 # 5-minute bars -> per-day cumulative profile and the fetch prefilter
 five_tf = TimeFrame(5, TimeFrameUnit.Minute)
-profiles: dict[str, dict] = {}          # sym -> {date: {bucket: cumv}} (regular session, prior days used later)
+profiles: dict[str, dict] = {}          # date -> sym -> prior-20-session profile {bucket: avg cumv}
 keep: dict[str, list[str]] = {}         # date -> symbols needing 1-minute bars
 for i in range(0, len(universe), 50):
     chunk = universe[i:i + 50]
@@ -113,10 +113,12 @@ for i in range(0, len(universe), 50):
             hit = any(prof.get(m) and cur.get(m, 0) >= 1.8 * prof[m] for m in range(10, 125, 5))
             if hit:
                 keep.setdefault(date, []).append(sym)
-        profiles[sym] = {d: {int(m): float(v) for m, v in days[d].items()} for d in dates}
+                profiles.setdefault(date, {})[sym] = {int(m): round(float(v), 1) for m, v in prof.items()}
     print(f"5min {min(i + 50, len(universe))}/{len(universe)}", flush=True)
-with gzip.open(OUT / "profiles.json.gz", "wt") as fh:
-    json.dump(profiles, fh)
+(OUT / "profiles").mkdir(exist_ok=True)
+for date, pr in profiles.items():          # prior-20-session profile for each kept symbol-day, one file per date
+    with gzip.open(OUT / "profiles" / f"{date}.json.gz", "wt") as fh:
+        json.dump(pr, fh)
 n_keep = sum(len(v) for v in keep.values())
 print(f"prefilter kept {n_keep} symbol-days for 1-minute data")
 
