@@ -1,0 +1,35 @@
+name: Wide-universe research data (read-only)
+# All liquid U.S. stocks (5-min bars + 1-min bars for high-volume days), committed to the `research-wide` branch (never main). No orders.
+on:
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "calendar days of history"
+        default: "190"
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - env:
+          ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
+          ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
+          DAYS: ${{ inputs.days }}
+        run: python research/fetch_wide.py
+      - name: Commit to research-wide branch
+        run: |
+          git config user.name "HB Atelier Bot"; git config user.email "atelier-bot@users.noreply.github.com"
+          mv research/wide_data /tmp/wide_data
+          git checkout --orphan research-wide
+          git rm -rq --cached . ; rm -rf ./* .github 2>/dev/null || true
+          mkdir -p wide_data && cp -r /tmp/wide_data/* wide_data/
+          git add wide_data
+          git commit -qm "Wide research data $(date -u +%FT%RZ)"
+          git push -f origin research-wide
