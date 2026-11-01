@@ -1,0 +1,441 @@
+{
+ "method": "Setup A (ORB15_V1) on the WIDE universe: every liquid U.S. common stock that day (prior close $5-$100,\n20-day average volume >= 1M), unchanged rules (relative volume >= 2.0 etc.), same simulator, costs, portfolio\nrules and activation bar as research/intraday_backtest.py. Also reports the $100 Founder account with\nwhole shares only vs fractional shares.",
+ "meta": {
+  "start": "2026-04-25T15:39:31.129495+00:00",
+  "end": "2026-11-01T15:39:31.129495+00:00",
+  "stocks": 5291,
+  "universe": 1906,
+  "eligible_symbol_days": 159330,
+  "prefilter_symbol_days": 24753,
+  "feed": "sip"
+ },
+ "sessions_with_candidates": 131,
+ "oos_from": "2026-08-31",
+ "variants": {
+  "wide": {
+   "base": {
+    "all": {
+     "n": 185,
+     "win_rate": 0.243,
+     "avg_win_R": 1.345,
+     "avg_loss_R": -0.643,
+     "expectancy_R": -0.1596,
+     "expectancy_se": 0.0719,
+     "profit_factor": 0.672,
+     "total_R": -29.52,
+     "max_drawdown_R": -30.98
+    },
+    "in_sample": {
+     "n": 119,
+     "win_rate": 0.244,
+     "avg_win_R": 1.475,
+     "avg_loss_R": -0.658,
+     "expectancy_R": -0.1382,
+     "expectancy_se": 0.094,
+     "profit_factor": 0.722,
+     "total_R": -16.45,
+     "max_drawdown_R": -16.45
+    },
+    "out_of_sample": {
+     "n": 66,
+     "win_rate": 0.242,
+     "avg_win_R": 1.11,
+     "avg_loss_R": -0.617,
+     "expectancy_R": -0.1981,
+     "expectancy_se": 0.1096,
+     "profit_factor": 0.576,
+     "total_R": -13.07,
+     "max_drawdown_R": -17.04
+    },
+    "portfolio_skips": {
+     "one position at a time": 221,
+     "daily loss limit": 1
+    }
+   },
+   "stress": {
+    "all": {
+     "n": 185,
+     "win_rate": 0.222,
+     "avg_win_R": 1.365,
+     "avg_loss_R": -0.696,
+     "expectancy_R": -0.2396,
+     "expectancy_se": 0.0714,
+     "profit_factor": 0.558,
+     "total_R": -44.32,
+     "max_drawdown_R": -45.41
+    },
+    "in_sample": {
+     "n": 119,
+     "win_rate": 0.218,
+     "avg_win_R": 1.506,
+     "avg_loss_R": -0.709,
+     "expectancy_R": -0.2253,
+     "expectancy_se": 0.0927,
+     "profit_factor": 0.594,
+     "total_R": -26.81,
+     "max_drawdown_R": -26.81
+    },
+    "out_of_sample": {
+     "n": 66,
+     "win_rate": 0.227,
+     "avg_win_R": 1.121,
+     "avg_loss_R": -0.673,
+     "expectancy_R": -0.2653,
+     "expectancy_se": 0.1112,
+     "profit_factor": 0.49,
+     "total_R": -17.51,
+     "max_drawdown_R": -20.95
+    },
+    "portfolio_skips": {
+     "one position at a time": 221,
+     "daily loss limit": 1
+    },
+    "by_month": {
+     "2026-04": [
+      6,
+      -0.8776
+     ],
+     "2026-05": [
+      32,
+      -0.2638
+     ],
+     "2026-06": [
+      29,
+      -0.1766
+     ],
+     "2026-07": [
+      25,
+      -0.0322
+     ],
+     "2026-08": [
+      27,
+      -0.2658
+     ],
+     "2026-09": [
+      33,
+      -0.3118
+     ],
+     "2026-10": [
+      33,
+      -0.2188
+     ]
+    },
+    "trades_per_week": 7.52,
+    "account_100_whole": {
+     "trades": 152,
+     "pnl_usd": -11.78,
+     "end_value": 88.22,
+     "min_value": 88.07,
+     "skips": {
+      "no whole share fits": 89
+     }
+    },
+    "account_100_fractional": {
+     "trades": 183,
+     "pnl_usd": -16.68,
+     "end_value": 83.32,
+     "min_value": 82.77,
+     "skips": {
+      "no whole share fits": 8
+     }
+    },
+    "account_10000": {
+     "trades": 181,
+     "pnl_usd": -1736.87,
+     "end_value": 8263.13,
+     "min_value": 8209.91,
+     "skips": {
+      "no whole share fits": 10
+     }
+    }
+   },
+   "activation_criteria_stress_costs": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": true,
+    "oos_profit_factor_gt_1_1": false
+   },
+   "passes": false
+  },
+  "pool_only": {
+   "base": {
+    "all": {
+     "n": 25,
+     "win_rate": 0.36,
+     "avg_win_R": 1.621,
+     "avg_loss_R": -0.724,
+     "expectancy_R": 0.1204,
+     "expectancy_se": 0.2503,
+     "profit_factor": 1.26,
+     "total_R": 3.01,
+     "max_drawdown_R": -5.43
+    },
+    "in_sample": {
+     "n": 14,
+     "win_rate": 0.357,
+     "avg_win_R": 1.619,
+     "avg_loss_R": -0.684,
+     "expectancy_R": 0.1387,
+     "expectancy_se": 0.3387,
+     "profit_factor": 1.316,
+     "total_R": 1.94,
+     "max_drawdown_R": -2.69
+    },
+    "out_of_sample": {
+     "n": 11,
+     "win_rate": 0.364,
+     "avg_win_R": 1.624,
+     "avg_loss_R": -0.775,
+     "expectancy_R": 0.0972,
+     "expectancy_se": 0.3898,
+     "profit_factor": 1.197,
+     "total_R": 1.07,
+     "max_drawdown_R": -5.43
+    },
+    "portfolio_skips": {
+     "one position at a time": 7
+    }
+   },
+   "stress": {
+    "all": {
+     "n": 25,
+     "win_rate": 0.36,
+     "avg_win_R": 1.582,
+     "avg_loss_R": -0.801,
+     "expectancy_R": 0.0568,
+     "expectancy_se": 0.2548,
+     "profit_factor": 1.111,
+     "total_R": 1.42,
+     "max_drawdown_R": -6.02
+    },
+    "in_sample": {
+     "n": 14,
+     "win_rate": 0.357,
+     "avg_win_R": 1.57,
+     "avg_loss_R": -0.756,
+     "expectancy_R": 0.0747,
+     "expectancy_se": 0.3417,
+     "profit_factor": 1.154,
+     "total_R": 1.05,
+     "max_drawdown_R": -2.9
+    },
+    "out_of_sample": {
+     "n": 11,
+     "win_rate": 0.364,
+     "avg_win_R": 1.598,
+     "avg_loss_R": -0.859,
+     "expectancy_R": 0.0341,
+     "expectancy_se": 0.401,
+     "profit_factor": 1.062,
+     "total_R": 0.37,
+     "max_drawdown_R": -6.02
+    },
+    "portfolio_skips": {
+     "one position at a time": 7
+    },
+    "by_month": {
+     "2026-05": [
+      4,
+      -0.0393
+     ],
+     "2026-06": [
+      2,
+      0.4558
+     ],
+     "2026-07": [
+      4,
+      0.5015
+     ],
+     "2026-08": [
+      4,
+      -0.4286
+     ],
+     "2026-09": [
+      4,
+      -0.1194
+     ],
+     "2026-10": [
+      7,
+      0.1218
+     ]
+    },
+    "trades_per_week": 1.02,
+    "account_100_whole": {
+     "trades": 16,
+     "pnl_usd": -0.87,
+     "end_value": 99.13,
+     "min_value": 98.95,
+     "skips": {
+      "no whole share fits": 11
+     }
+    },
+    "account_100_fractional": {
+     "trades": 25,
+     "pnl_usd": 1.08,
+     "end_value": 101.08,
+     "min_value": 98.91,
+     "skips": {}
+    },
+    "account_10000": {
+     "trades": 25,
+     "pnl_usd": 81.14,
+     "end_value": 10081.14,
+     "min_value": 9864.89,
+     "skips": {}
+    }
+   },
+   "activation_criteria_stress_costs": {
+    "in_sample_expectancy_gt_0": true,
+    "oos_expectancy_gt_0": true,
+    "oos_trades_ge_30": false,
+    "oos_profit_factor_gt_1_1": false
+   },
+   "passes": false
+  },
+  "wide_minus_pool": {
+   "base": {
+    "all": {
+     "n": 181,
+     "win_rate": 0.249,
+     "avg_win_R": 1.296,
+     "avg_loss_R": -0.639,
+     "expectancy_R": -0.1583,
+     "expectancy_se": 0.0716,
+     "profit_factor": 0.67,
+     "total_R": -28.66,
+     "max_drawdown_R": -28.75
+    },
+    "in_sample": {
+     "n": 115,
+     "win_rate": 0.261,
+     "avg_win_R": 1.418,
+     "avg_loss_R": -0.654,
+     "expectancy_R": -0.1136,
+     "expectancy_se": 0.0956,
+     "profit_factor": 0.765,
+     "total_R": -13.07,
+     "max_drawdown_R": -13.07
+    },
+    "out_of_sample": {
+     "n": 66,
+     "win_rate": 0.227,
+     "avg_win_R": 1.051,
+     "avg_loss_R": -0.615,
+     "expectancy_R": -0.2362,
+     "expectancy_se": 0.1043,
+     "profit_factor": 0.503,
+     "total_R": -15.59,
+     "max_drawdown_R": -16.19
+    },
+    "portfolio_skips": {
+     "one position at a time": 193,
+     "daily loss limit": 1
+    }
+   },
+   "stress": {
+    "all": {
+     "n": 181,
+     "win_rate": 0.227,
+     "avg_win_R": 1.308,
+     "avg_loss_R": -0.693,
+     "expectancy_R": -0.2396,
+     "expectancy_se": 0.0712,
+     "profit_factor": 0.553,
+     "total_R": -43.36,
+     "max_drawdown_R": -43.36
+    },
+    "in_sample": {
+     "n": 115,
+     "win_rate": 0.235,
+     "avg_win_R": 1.438,
+     "avg_loss_R": -0.705,
+     "expectancy_R": -0.2016,
+     "expectancy_se": 0.0943,
+     "profit_factor": 0.626,
+     "total_R": -23.18,
+     "max_drawdown_R": -23.18
+    },
+    "out_of_sample": {
+     "n": 66,
+     "win_rate": 0.212,
+     "avg_win_R": 1.059,
+     "avg_loss_R": -0.673,
+     "expectancy_R": -0.3057,
+     "expectancy_se": 0.1058,
+     "profit_factor": 0.423,
+     "total_R": -20.18,
+     "max_drawdown_R": -20.53
+    },
+    "portfolio_skips": {
+     "one position at a time": 193,
+     "daily loss limit": 1
+    },
+    "by_month": {
+     "2026-04": [
+      6,
+      -0.8776
+     ],
+     "2026-05": [
+      31,
+      -0.197
+     ],
+     "2026-06": [
+      27,
+      -0.2235
+     ],
+     "2026-07": [
+      25,
+      0.0398
+     ],
+     "2026-08": [
+      26,
+      -0.2605
+     ],
+     "2026-09": [
+      32,
+      -0.3728
+     ],
+     "2026-10": [
+      34,
+      -0.2426
+     ]
+    },
+    "trades_per_week": 7.36,
+    "account_100_whole": {
+     "trades": 148,
+     "pnl_usd": -11.6,
+     "end_value": 88.4,
+     "min_value": 88.24,
+     "skips": {
+      "no whole share fits": 80
+     }
+    },
+    "account_100_fractional": {
+     "trades": 180,
+     "pnl_usd": -17.14,
+     "end_value": 82.86,
+     "min_value": 82.86,
+     "skips": {
+      "no whole share fits": 4
+     }
+    },
+    "account_10000": {
+     "trades": 178,
+     "pnl_usd": -1767.04,
+     "end_value": 8232.96,
+     "min_value": 8232.96,
+     "skips": {
+      "no whole share fits": 6
+     }
+    }
+   },
+   "activation_criteria_stress_costs": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": true,
+    "oos_profit_factor_gt_1_1": false
+   },
+   "passes": false
+  }
+ }
+}

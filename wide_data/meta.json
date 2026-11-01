@@ -1,0 +1,9 @@
+{
+ "start": "2026-04-25T15:39:31.129495+00:00",
+ "end": "2026-11-01T15:39:31.129495+00:00",
+ "stocks": 5291,
+ "universe": 1906,
+ "eligible_symbol_days": 159330,
+ "prefilter_symbol_days": 24753,
+ "feed": "sip"
+}
