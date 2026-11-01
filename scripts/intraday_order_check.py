@@ -42,6 +42,29 @@ legs = {x["type"]: x["status"] for x in o["legs"]}
 print(f"::notice title=Bracket canceled::status {o['status']} legs {legs}; F position {gw.position_qty('F')}")
 ok &= o["status"] == "canceled" and gw.position_qty("F") == 0
 
+# fractional path (small accounts like the $100 Founder sleeve): an unfillable fractional DAY limit buy must be
+# accepted by the broker, then cancelled. (The protective stop can only be placed after a real fill.)
+fcid = f"it-fractest-{int(time.time())}"
+fq = 0.5
+flim = round(ref * 0.6, 2)
+try:
+    fo = gw.submit_limit_buy(fcid, "F", fq, flim)
+    time.sleep(2)
+    fo = gw.order(fcid)
+    print(f"::notice title=Fractional limit buy::status {fo['status']} qty {fq} limit {flim}")
+    ok &= fo["status"] in ("new", "accepted", "pending_new")
+    gw.cancel(fo["id"])
+    for _ in range(10):
+        time.sleep(1)
+        fo = gw.order(fcid)
+        if fo["status"] == "canceled":
+            break
+    print(f"::notice title=Fractional canceled::status {fo['status']}; F position {gw.position_qty('F')}")
+    ok &= fo["status"] == "canceled" and gw.position_qty("F") == 0
+except Exception as e:  # noqa: BLE001
+    print(f"::error title=Fractional order refused::{type(e).__name__}: {' '.join(str(e).split())[:300]}")
+    ok = False
+
 # pre-market scan, exactly as the session job does it (nothing saved)
 cfg = yaml.safe_load((ROOT / "config" / "intraday.yaml").read_text())
 eng = IntradayEngine(cfg, gw, new_state(), lambda r: None, lambda: None)
