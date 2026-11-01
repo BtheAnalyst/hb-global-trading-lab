@@ -45,12 +45,11 @@ jobs:
           [ -f research/wide_backtest_results.json ] || exit 0
           cp research/wide_backtest_results.json /tmp/wide_backtest_results.json
           git config user.name "HB Atelier Bot"; git config user.email "atelier-bot@users.noreply.github.com"
-          git stash -u -q || true
+          git checkout -- research/wide_backtest_results.json   # clean tree for the pull; untracked data is untouched
           git pull -q --rebase origin main
           cp /tmp/wide_backtest_results.json research/wide_backtest_results.json
           git add research/wide_backtest_results.json
           git diff --cached --quiet || (git commit -qm "Wide-universe Setup A backtest results" && git push -q origin HEAD:main)
-          git stash pop -q || true
       - name: Commit to research-wide branch
         continue-on-error: true          # large data push; the result file is already saved to main above
         run: |
