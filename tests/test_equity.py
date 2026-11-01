@@ -502,3 +502,20 @@ def test_intraday_sleeve_money_stays_in_founder_wealth():
     led.settled -= 100.0; led.intraday += 100.0           # run_intraday.allocate moves it to the sleeve
     assert led.total({}) == pytest.approx(before) and led.free_cash() == pytest.approx(0.12)
     assert Ledger.from_dict({k: v for k, v in led.to_dict().items() if k != "intraday"}).intraday == 0.0
+
+
+def test_intraday_position_not_yet_in_committed_state_does_not_trip_equity_kill_switch(tmp_path, monkeypatch):
+    """The intraday sleeve shares the Alpaca paper account. Its committed state can lag a fresh entry, so the
+    equity reconciliation must recognise intraday positions from the broker's own order history."""
+    import hbgtl.equity_runner as er
+    monkeypatch.setattr(er, "intraday_symbols", lambda *a, **k: set())    # committed intraday state shows nothing
+    C = _toy_closes(); eng = Engine([_founder()], RiskConfig()); state = {}; b = BrokerSim()
+    b.pos = {"PINS": 2.5}
+    b.orders["id-20261102-PINS-1"] = {"symbol": "PINS", "side": "buy", "qty": 2.5, "status": "filled",
+                                      "filled_qty": 2.5, "filled_avg_price": 18.6}
+    _bday(eng, state, C, 120, b)
+    assert state.get("kill_switch") is not True
+    b.pos["TSLA"] = 1.0                                                    # a truly unknown position still trips it
+    state2 = {}
+    _bday(eng, state2, C, 121, b)
+    assert state2.get("kill_switch") is True

@@ -43,6 +43,35 @@ def intraday_symbols(state_dir: Path = ROOT / "state") -> set:
     return out
 
 
+def intraday_order_symbols(broker, days: int = 2) -> set:
+    """Symbols with recent broker orders from the intraday sleeves (client order ids 'id-'/'ie-' or the prefixes
+    in config/intraday.yaml). The committed intraday state can lag a live entry by minutes, so the broker's own
+    order history is the reliable way to tell an intraday position from an unknown one."""
+    prefixes = {"id-", "ie-"}
+    try:
+        import yaml
+        cfg = yaml.safe_load((ROOT / "config" / "intraday.yaml").read_text()) or {}
+        prefixes |= {a.get("prefix") for a in (cfg.get("accounts") or {}).values() if a and a.get("prefix")}
+    except Exception:  # noqa: BLE001
+        pass
+    out = set()
+    for p in prefixes:
+        try:
+            out |= {r["symbol"] for r in broker.orders_since(p, days=days)} if _takes_days(broker) \
+                else {r["symbol"] for r in broker.orders_since(p)}
+        except Exception:  # noqa: BLE001 - never let this lookup itself trip a kill switch
+            pass
+    return out
+
+
+def _takes_days(broker) -> bool:
+    import inspect
+    try:
+        return "days" in inspect.signature(broker.orders_since).parameters
+    except (TypeError, ValueError):
+        return False
+
+
 @dataclass
 class PortfolioSpec:
     pid: str
@@ -396,7 +425,8 @@ class Engine:
                 for s, p in books[spec.pid]["positions"].items():
                     ledger_qty[s] = ledger_qty.get(s, 0.0) + p["qty"]
         held = broker.positions()
-        for s in intraday_symbols():   # same Alpaca account: the intraday sleeve reconciles its own position
+        intra = intraday_symbols() | intraday_order_symbols(broker)
+        for s in intra:   # same Alpaca account: the intraday sleeve reconciles its own position
             if s not in ledger_qty:
                 held.pop(s, None)
         problems = reconcile(held, ledger_qty, px, self.rc.recon_tolerance)
