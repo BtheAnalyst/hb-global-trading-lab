@@ -69,3 +69,33 @@ news catalysts and share float (no data source), which both Cameron and SMB trea
 Reading: on a broad, unbiased universe the opening-range breakout loses ~0.24R per trade after costs. The pool's
 slightly positive result is most likely selection luck (the pool was chosen in October 2026). Setup A remains a
 paper forward test on the pool only; it has NOT shown an edge.
+
+## Strategy lab (Nov 1, 2026): 15 published and influencer strategies, one test
+`research/strategy_lab.py` (rules and pass bar predeclared in its docstring; sources listed per strategy in the result
+files). Long-only, flat by 15:50, stop on every trade, next-bar fills, in-sample/out-of-sample split, and a STRICTER
+pass bar because many strategies were tried at once (t-stat >= 2.5, both halves positive, >= 30 out-of-sample trades,
+profit factor > 1.1, and the $100 cash-account simulation must end above $100) at stress costs.
+
+| Strategy | Data | Trades | No costs | Base costs | Stress costs | $100 becomes (stress) | Bar |
+|---|---|---|---|---|---|---|---|
+| ORB5_ZARATTINI | 170 liquid stocks | 216 | -0.3503R | -0.5561R | -0.7102R | $66.07 | fail |
+| ORB30_ZARATTINI | 170 liquid stocks | 212 | 0.0248R | -0.2281R | -0.4187R | $78.34 | fail |
+| RED_TO_GREEN | 170 liquid stocks | 34 | 0.0239R | -0.0377R | -0.0947R | $98.34 | fail |
+| VWAP_RECLAIM | 170 liquid stocks | 185 | 0.0201R | -0.1902R | -0.3032R | $77.69 | fail |
+| BULL_FLAG | 170 liquid stocks | 252 | -0.242R | -0.3853R | -0.518R | $72.28 | fail |
+| ABCD | 170 liquid stocks | 99 | 0.0764R | 0.0166R | -0.0715R | $96.4 | fail |
+| EMA9_VWAP_CROSS | 170 liquid stocks | 228 | -0.1015R | -0.3995R | -0.5466R | $76.66 | fail |
+| HOD_BREAK_PM | 170 liquid stocks | 69 | 0.0996R | 0.0058R | -0.0616R | $97.82 | fail |
+| OVERSOLD_BOUNCE | 170 liquid stocks | 186 | 0.141R | -0.2289R | -0.4378R | $87.23 | fail |
+| SECOND_DAY | 170 liquid stocks | 5 | -1.0R | -1.0551R | -1.0997R | $97.45 | fail |
+| GAP_FILL_LONG | 170 liquid stocks | 119 | -0.0759R | -0.2111R | -0.3543R | $84.53 | fail |
+| ORB5_ETF | 14 ETFs | 773 | -0.0467R | -0.5082R | -0.7813R | $38.92 | fail |
+| OVERSOLD_BOUNCE | 14 ETFs | 301 | -0.1617R | -0.6313R | -0.8934R | $65.46 | fail |
+| GAP_FILL_LONG | 14 ETFs | 299 | -0.0123R | -0.3908R | -0.646R | $55.62 | fail |
+| INTRADAY_MOM_LAST30 | 14 ETFs | 501 | 0.0025R | -0.093R | -0.1797R | $63.72 | fail |
+| NOISE_BREAKOUT | 14 ETFs | 677 | -0.0339R | -0.3667R | -0.6003R | $40.6 | fail |
+| VWAP_TREND_5M | 14 ETFs | 940 | 0.0584R | -0.3058R | -0.5539R | $42.09 | fail |
+
+**Result: none passes; none shows a reliable edge even before costs** (best: VWAP trend on ETFs, +0.06R gross,
+t = 1.0, which typical costs erase). The live engine keeps ORB15_V1 as its only paper-execution setup.
+Files: `research/strategy_lab_results_intraday_data.json`, `research/strategy_lab_results_etf_data.json`.

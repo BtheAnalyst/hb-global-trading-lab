@@ -1,0 +1,2284 @@
+{
+ "method": "Strategy lab: many published / influencer day-trading strategies, one honest test (research only, no orders).\n\nPREDECLARED (Nov 1, 2026, before any result was seen):\n  * Long only, stocks/ETFs only, no leverage, no shorts, flat by 15:50 ET (the founder's mandate). Strategies that\n    only work short, with options or with leverage are tested in their long-only form.\n  * Decisions on COMPLETED 1-minute bars; entries at the NEXT bar (open, or a stop-entry trade-through); no look-ahead.\n    Relative volume uses only PRIOR sessions. Daily inputs (ATR14, ADV20, prior close/high) use only prior days.\n  * Every strategy has an initial protective stop (needed live); R = entry - stop. Stop fills at the stop or worse\n    on a gap; if one bar touches stop and target, the stop is assumed. Targets need a 1-cent trade-through.\n  * Costs per side on every fill: base 5 bps, stress 10 bps. $0 commission.\n  * Split: in-sample = first 2/3 of sessions, out-of-sample = last 1/3. Rules were written from the sources, NOT\n    tuned on this data.\n  * MULTIPLE-TESTING BAR (stricter than the single-strategy bar, because many strategies are tried at once). At\n    STRESS costs a strategy PASSES only if ALL hold: in-sample expectancy > 0; out-of-sample expectancy > 0;\n    >= 30 out-of-sample trades; out-of-sample profit factor > 1.1; full-sample t-statistic of mean R >= 2.5;\n    and the $100 cash-account simulation (fractional shares, settled cash T+1, 0.5% risk, 1 position, <= 3\n    entries/day, -2R daily stop) ends above $100.\n  * $100 simulation: notional = min(settled cash, 0.5% x equity / (risk/entry)); fractional shares allowed (min $1).",
+ "sources": {
+  "ORB5_ZARATTINI": "Zarattini, Barbon & Aziz 2024 'A Profitable Day Trading Strategy for the U.S. Equity Market': 5-min opening range, Stocks in Play (top-20 by opening relative volume), stop 10% of ATR, exit at close",
+  "ORB30_ZARATTINI": "Same paper, 30-minute opening range variant",
+  "ORB5_ETF": "Zarattini 5-min ORB rules applied to index/sector ETFs",
+  "RED_TO_GREEN": "Humbled Trader / Aziz 'How to Day Trade for a Living': gap-down stock reclaims the prior close",
+  "VWAP_RECLAIM": "Aziz / Humbled Trader VWAP trade: stock below VWAP reclaims it on volume",
+  "BULL_FLAG": "Ross Cameron / Aziz bull flag: strong 1-min pole, shallow 2-4 bar flag, break of flag high",
+  "ABCD": "Aziz ABCD pattern: morning push A-B, higher-low C above VWAP, break of B",
+  "EMA9_VWAP_CROSS": "SMB 'fashionably late': 9-EMA crosses above VWAP on 5-min bars, 10:00-13:00",
+  "HOD_BREAK_PM": "Momentum day-trader 'new high of day after 11:00' with relative volume >= 2",
+  "OVERSOLD_BOUNCE": "Aziz reversal trade: stretched >= 2.5% below VWAP + hammer/engulfing, target VWAP",
+  "SECOND_DAY": "SMB second-day play: yesterday's stock in play breaks yesterday's high",
+  "GAP_FILL_LONG": "Heather Love / classic gap fill: gap-down 0.25%-1.5% fills toward the prior close",
+  "INTRADAY_MOM_LAST30": "Gao, Han, Li & Zhou 2018 'Market Intraday Momentum': first half-hour return predicts the last half-hour (adapted: hold 15:20-15:50)",
+  "NOISE_BREAKOUT": "Zarattini, Aziz & Barbon 2024 'Beat the Market' SPY noise-area breakout, long side, VWAP/boundary trailing exit at half-hour checks",
+  "VWAP_TREND_5M": "Zarattini & Aziz 2023 'VWAP: the Holy Grail for Day Trading Systems': long above VWAP, out below it (5-min bars, long only)"
+ },
+ "data": {
+  "dirs": [
+   "/tmp/claude-0/-home-claude/6d5d9706-f57b-548f-9a42-287d70593508/scratchpad/lab/intraday_data"
+  ],
+  "symbols": 170,
+  "first": "2026-04-21",
+  "last": "2026-10-27",
+  "sessions": 132
+ },
+ "strategies": {
+  "ORB5_ZARATTINI": {
+   "gross": {
+    "raw_signals": {
+     "n": 2015,
+     "win_rate": 0.141,
+     "avg_win_R": 4.637,
+     "avg_loss_R": -0.998,
+     "expectancy_R": -0.2009,
+     "t_stat": -3.87,
+     "profit_factor": 0.766,
+     "total_R": -404.78,
+     "max_drawdown_R": -431.27,
+     "avg_trade_return_pct": -0.0873
+    },
+    "portfolio": {
+     "n": 216,
+     "win_rate": 0.116,
+     "avg_win_R": 4.667,
+     "avg_loss_R": -1.007,
+     "expectancy_R": -0.3503,
+     "t_stat": -2.58,
+     "profit_factor": 0.607,
+     "total_R": -75.67,
+     "max_drawdown_R": -92.28,
+     "avg_trade_return_pct": -0.1197
+    },
+    "in_sample": {
+     "n": 131,
+     "win_rate": 0.115,
+     "avg_win_R": 5.124,
+     "avg_loss_R": -1.011,
+     "expectancy_R": -0.3087,
+     "t_stat": -1.67,
+     "profit_factor": 0.655,
+     "total_R": -40.45,
+     "max_drawdown_R": -50.86,
+     "avg_trade_return_pct": -0.0721
+    },
+    "out_of_sample": {
+     "n": 85,
+     "win_rate": 0.118,
+     "avg_win_R": 3.983,
+     "avg_loss_R": -1.001,
+     "expectancy_R": -0.4144,
+     "t_stat": -2.11,
+     "profit_factor": 0.531,
+     "total_R": -35.23,
+     "max_drawdown_R": -41.41,
+     "avg_trade_return_pct": -0.1931
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 83.19,
+     "min_value": 83.19
+    },
+    "trades_per_week": 8.18
+   },
+   "base": {
+    "raw_signals": {
+     "n": 2015,
+     "win_rate": 0.14,
+     "avg_win_R": 3.871,
+     "avg_loss_R": -1.118,
+     "expectancy_R": -0.4197,
+     "t_stat": -9.22,
+     "profit_factor": 0.563,
+     "total_R": -845.78,
+     "max_drawdown_R": -863.48,
+     "avg_trade_return_pct": -0.1872
+    },
+    "portfolio": {
+     "n": 216,
+     "win_rate": 0.116,
+     "avg_win_R": 3.845,
+     "avg_loss_R": -1.132,
+     "expectancy_R": -0.5561,
+     "t_stat": -4.69,
+     "profit_factor": 0.445,
+     "total_R": -120.11,
+     "max_drawdown_R": -122.41,
+     "avg_trade_return_pct": -0.2195
+    },
+    "in_sample": {
+     "n": 131,
+     "win_rate": 0.115,
+     "avg_win_R": 4.301,
+     "avg_loss_R": -1.131,
+     "expectancy_R": -0.5095,
+     "t_stat": -3.13,
+     "profit_factor": 0.492,
+     "total_R": -66.74,
+     "max_drawdown_R": -66.74,
+     "avg_trade_return_pct": -0.172
+    },
+    "out_of_sample": {
+     "n": 85,
+     "win_rate": 0.118,
+     "avg_win_R": 3.162,
+     "avg_loss_R": -1.133,
+     "expectancy_R": -0.6279,
+     "t_stat": -3.74,
+     "profit_factor": 0.372,
+     "total_R": -53.37,
+     "max_drawdown_R": -55.67,
+     "avg_trade_return_pct": -0.2928
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 74.02,
+     "min_value": 74.02
+    },
+    "trades_per_week": 8.18
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 2015,
+     "win_rate": 0.133,
+     "avg_win_R": 3.431,
+     "avg_loss_R": -1.202,
+     "expectancy_R": -0.5854,
+     "t_stat": -14.34,
+     "profit_factor": 0.438,
+     "total_R": -1179.56,
+     "max_drawdown_R": -1193.96,
+     "avg_trade_return_pct": -0.287
+    },
+    "portfolio": {
+     "n": 216,
+     "win_rate": 0.116,
+     "avg_win_R": 3.23,
+     "avg_loss_R": -1.226,
+     "expectancy_R": -0.7102,
+     "t_stat": -6.69,
+     "profit_factor": 0.345,
+     "total_R": -153.4,
+     "max_drawdown_R": -154.37,
+     "avg_trade_return_pct": -0.3193
+    },
+    "in_sample": {
+     "n": 131,
+     "win_rate": 0.115,
+     "avg_win_R": 3.685,
+     "avg_loss_R": -1.223,
+     "expectancy_R": -0.6606,
+     "t_stat": -4.49,
+     "profit_factor": 0.39,
+     "total_R": -86.53,
+     "max_drawdown_R": -86.53,
+     "avg_trade_return_pct": -0.2717
+    },
+    "out_of_sample": {
+     "n": 85,
+     "win_rate": 0.118,
+     "avg_win_R": 2.546,
+     "avg_loss_R": -1.231,
+     "expectancy_R": -0.7867,
+     "t_stat": -5.34,
+     "profit_factor": 0.276,
+     "total_R": -66.87,
+     "max_drawdown_R": -67.83,
+     "avg_trade_return_pct": -0.3925
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 66.07,
+     "min_value": 66.07
+    },
+    "trades_per_week": 8.18
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": true,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": "False"
+   },
+   "passes": false
+  },
+  "ORB30_ZARATTINI": {
+   "gross": {
+    "raw_signals": {
+     "n": 1832,
+     "win_rate": 0.188,
+     "avg_win_R": 3.684,
+     "avg_loss_R": -0.993,
+     "expectancy_R": -0.1123,
+     "t_stat": -2.13,
+     "profit_factor": 0.861,
+     "total_R": -205.72,
+     "max_drawdown_R": -248.31,
+     "avg_trade_return_pct": -0.0672
+    },
+    "portfolio": {
+     "n": 212,
+     "win_rate": 0.175,
+     "avg_win_R": 4.886,
+     "avg_loss_R": -1.003,
+     "expectancy_R": 0.0248,
+     "t_stat": 0.12,
+     "profit_factor": 1.03,
+     "total_R": 5.26,
+     "max_drawdown_R": -60.87,
+     "avg_trade_return_pct": 0.0101
+    },
+    "in_sample": {
+     "n": 135,
+     "win_rate": 0.156,
+     "avg_win_R": 4.594,
+     "avg_loss_R": -1.004,
+     "expectancy_R": -0.1335,
+     "t_stat": -0.51,
+     "profit_factor": 0.843,
+     "total_R": -18.02,
+     "max_drawdown_R": -47.55,
+     "avg_trade_return_pct": -0.0686
+    },
+    "out_of_sample": {
+     "n": 77,
+     "win_rate": 0.208,
+     "avg_win_R": 5.269,
+     "avg_loss_R": -1.001,
+     "expectancy_R": 0.3023,
+     "t_stat": 0.86,
+     "profit_factor": 1.381,
+     "total_R": 23.28,
+     "max_drawdown_R": -19.02,
+     "avg_trade_return_pct": 0.148
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 98.17,
+     "min_value": 92.94
+    },
+    "trades_per_week": 8.03
+   },
+   "base": {
+    "raw_signals": {
+     "n": 1832,
+     "win_rate": 0.181,
+     "avg_win_R": 3.075,
+     "avg_loss_R": -1.11,
+     "expectancy_R": -0.3514,
+     "t_stat": -7.66,
+     "profit_factor": 0.613,
+     "total_R": -643.7,
+     "max_drawdown_R": -658.3,
+     "avg_trade_return_pct": -0.1671
+    },
+    "portfolio": {
+     "n": 212,
+     "win_rate": 0.17,
+     "avg_win_R": 4.154,
+     "avg_loss_R": -1.125,
+     "expectancy_R": -0.2281,
+     "t_stat": -1.25,
+     "profit_factor": 0.756,
+     "total_R": -48.35,
+     "max_drawdown_R": -92.31,
+     "avg_trade_return_pct": -0.0899
+    },
+    "in_sample": {
+     "n": 135,
+     "win_rate": 0.148,
+     "avg_win_R": 4.029,
+     "avg_loss_R": -1.114,
+     "expectancy_R": -0.3519,
+     "t_stat": -1.54,
+     "profit_factor": 0.629,
+     "total_R": -47.5,
+     "max_drawdown_R": -68.16,
+     "avg_trade_return_pct": -0.1685
+    },
+    "out_of_sample": {
+     "n": 77,
+     "win_rate": 0.208,
+     "avg_win_R": 4.311,
+     "avg_loss_R": -1.145,
+     "expectancy_R": -0.011,
+     "t_stat": -0.04,
+     "profit_factor": 0.988,
+     "total_R": -0.85,
+     "max_drawdown_R": -24.91,
+     "avg_trade_return_pct": 0.0479
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 87.61,
+     "min_value": 85.8
+    },
+    "trades_per_week": 8.03
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 1832,
+     "win_rate": 0.17,
+     "avg_win_R": 2.684,
+     "avg_loss_R": -1.191,
+     "expectancy_R": -0.5308,
+     "t_stat": -12.98,
+     "profit_factor": 0.463,
+     "total_R": -972.42,
+     "max_drawdown_R": -980.95,
+     "avg_trade_return_pct": -0.2669
+    },
+    "portfolio": {
+     "n": 212,
+     "win_rate": 0.165,
+     "avg_win_R": 3.6,
+     "avg_loss_R": -1.213,
+     "expectancy_R": -0.4187,
+     "t_stat": -2.59,
+     "profit_factor": 0.587,
+     "total_R": -88.76,
+     "max_drawdown_R": -118.72,
+     "avg_trade_return_pct": -0.1898
+    },
+    "in_sample": {
+     "n": 135,
+     "win_rate": 0.141,
+     "avg_win_R": 3.6,
+     "avg_loss_R": -1.195,
+     "expectancy_R": -0.5198,
+     "t_stat": -2.55,
+     "profit_factor": 0.494,
+     "total_R": -70.17,
+     "max_drawdown_R": -86.49,
+     "avg_trade_return_pct": -0.2683
+    },
+    "out_of_sample": {
+     "n": 77,
+     "win_rate": 0.208,
+     "avg_win_R": 3.6,
+     "avg_loss_R": -1.249,
+     "expectancy_R": -0.2414,
+     "t_stat": -0.91,
+     "profit_factor": 0.756,
+     "total_R": -18.59,
+     "max_drawdown_R": -32.6,
+     "avg_trade_return_pct": -0.0521
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 78.34,
+     "min_value": 78.1
+    },
+    "trades_per_week": 8.03
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": true,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": "False"
+   },
+   "passes": false
+  },
+  "ORB5_ETF": {
+   "gross": {
+    "raw_signals": {
+     "n": 0
+    },
+    "portfolio": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "trades_per_week": 0.0
+   },
+   "base": {
+    "raw_signals": {
+     "n": 0
+    },
+    "portfolio": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "trades_per_week": 0.0
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 0
+    },
+    "portfolio": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "trades_per_week": 0.0
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": false,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": false
+   },
+   "passes": false
+  },
+  "RED_TO_GREEN": {
+   "gross": {
+    "raw_signals": {
+     "n": 45,
+     "win_rate": 0.356,
+     "avg_win_R": 1.049,
+     "avg_loss_R": -0.814,
+     "expectancy_R": -0.1512,
+     "t_stat": -0.99,
+     "profit_factor": 0.712,
+     "total_R": -6.81,
+     "max_drawdown_R": -11.09,
+     "avg_trade_return_pct": -0.2446
+    },
+    "portfolio": {
+     "n": 34,
+     "win_rate": 0.441,
+     "avg_win_R": 1.092,
+     "avg_loss_R": -0.819,
+     "expectancy_R": 0.0239,
+     "t_stat": 0.13,
+     "profit_factor": 1.052,
+     "total_R": 0.81,
+     "max_drawdown_R": -6.99,
+     "avg_trade_return_pct": 0.0081
+    },
+    "in_sample": {
+     "n": 22,
+     "win_rate": 0.545,
+     "avg_win_R": 1.135,
+     "avg_loss_R": -0.9,
+     "expectancy_R": 0.21,
+     "t_stat": 0.85,
+     "profit_factor": 1.513,
+     "total_R": 4.62,
+     "max_drawdown_R": -2.91,
+     "avg_trade_return_pct": 0.276
+    },
+    "out_of_sample": {
+     "n": 12,
+     "win_rate": 0.25,
+     "avg_win_R": 0.918,
+     "avg_loss_R": -0.729,
+     "expectancy_R": -0.3171,
+     "t_stat": -1.2,
+     "profit_factor": 0.42,
+     "total_R": -3.81,
+     "max_drawdown_R": -5.79,
+     "avg_trade_return_pct": -0.4832
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.23,
+     "min_value": 99.0
+    },
+    "trades_per_week": 1.29
+   },
+   "base": {
+    "raw_signals": {
+     "n": 45,
+     "win_rate": 0.356,
+     "avg_win_R": 0.961,
+     "avg_loss_R": -0.855,
+     "expectancy_R": -0.2091,
+     "t_stat": -1.39,
+     "profit_factor": 0.621,
+     "total_R": -9.41,
+     "max_drawdown_R": -12.98,
+     "avg_trade_return_pct": -0.331
+    },
+    "portfolio": {
+     "n": 34,
+     "win_rate": 0.441,
+     "avg_win_R": 1.003,
+     "avg_loss_R": -0.859,
+     "expectancy_R": -0.0377,
+     "t_stat": -0.21,
+     "profit_factor": 0.921,
+     "total_R": -1.28,
+     "max_drawdown_R": -7.93,
+     "avg_trade_return_pct": -0.0743
+    },
+    "in_sample": {
+     "n": 22,
+     "win_rate": 0.545,
+     "avg_win_R": 1.043,
+     "avg_loss_R": -0.939,
+     "expectancy_R": 0.1419,
+     "t_stat": 0.59,
+     "profit_factor": 1.332,
+     "total_R": 3.12,
+     "max_drawdown_R": -3.17,
+     "avg_trade_return_pct": 0.1962
+    },
+    "out_of_sample": {
+     "n": 12,
+     "win_rate": 0.25,
+     "avg_win_R": 0.843,
+     "avg_loss_R": -0.771,
+     "expectancy_R": -0.3671,
+     "t_stat": -1.41,
+     "profit_factor": 0.365,
+     "total_R": -4.41,
+     "max_drawdown_R": -6.25,
+     "avg_trade_return_pct": -0.5702
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 99.25,
+     "min_value": 98.44
+    },
+    "trades_per_week": 1.29
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 45,
+     "win_rate": 0.356,
+     "avg_win_R": 0.881,
+     "avg_loss_R": -0.893,
+     "expectancy_R": -0.2625,
+     "t_stat": -1.78,
+     "profit_factor": 0.544,
+     "total_R": -11.81,
+     "max_drawdown_R": -14.81,
+     "avg_trade_return_pct": -0.4173
+    },
+    "portfolio": {
+     "n": 34,
+     "win_rate": 0.441,
+     "avg_win_R": 0.922,
+     "avg_loss_R": -0.897,
+     "expectancy_R": -0.0947,
+     "t_stat": -0.52,
+     "profit_factor": 0.811,
+     "total_R": -3.22,
+     "max_drawdown_R": -8.79,
+     "avg_trade_return_pct": -0.1565
+    },
+    "in_sample": {
+     "n": 22,
+     "win_rate": 0.545,
+     "avg_win_R": 0.959,
+     "avg_loss_R": -0.976,
+     "expectancy_R": 0.0792,
+     "t_stat": 0.33,
+     "profit_factor": 1.179,
+     "total_R": 1.74,
+     "max_drawdown_R": -3.41,
+     "avg_trade_return_pct": 0.1165
+    },
+    "out_of_sample": {
+     "n": 12,
+     "win_rate": 0.25,
+     "avg_win_R": 0.774,
+     "avg_loss_R": -0.809,
+     "expectancy_R": -0.4135,
+     "t_stat": -1.6,
+     "profit_factor": 0.319,
+     "total_R": -4.96,
+     "max_drawdown_R": -6.67,
+     "avg_trade_return_pct": -0.6571
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 98.34,
+     "min_value": 97.57
+    },
+    "trades_per_week": 1.29
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": true,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": false,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": "False"
+   },
+   "passes": false
+  },
+  "VWAP_RECLAIM": {
+   "gross": {
+    "raw_signals": {
+     "n": 995,
+     "win_rate": 0.349,
+     "avg_win_R": 1.514,
+     "avg_loss_R": -0.942,
+     "expectancy_R": -0.0853,
+     "t_stat": -2.15,
+     "profit_factor": 0.861,
+     "total_R": -84.85,
+     "max_drawdown_R": -106.48,
+     "avg_trade_return_pct": -0.0499
+    },
+    "portfolio": {
+     "n": 204,
+     "win_rate": 0.387,
+     "avg_win_R": 1.521,
+     "avg_loss_R": -0.928,
+     "expectancy_R": 0.0201,
+     "t_stat": 0.22,
+     "profit_factor": 1.035,
+     "total_R": 4.09,
+     "max_drawdown_R": -20.11,
+     "avg_trade_return_pct": 0.0025
+    },
+    "in_sample": {
+     "n": 127,
+     "win_rate": 0.402,
+     "avg_win_R": 1.442,
+     "avg_loss_R": -0.932,
+     "expectancy_R": 0.0215,
+     "t_stat": 0.19,
+     "profit_factor": 1.038,
+     "total_R": 2.73,
+     "max_drawdown_R": -13.23,
+     "avg_trade_return_pct": -0.0314
+    },
+    "out_of_sample": {
+     "n": 77,
+     "win_rate": 0.364,
+     "avg_win_R": 1.663,
+     "avg_loss_R": -0.922,
+     "expectancy_R": 0.0178,
+     "t_stat": 0.12,
+     "profit_factor": 1.03,
+     "total_R": 1.37,
+     "max_drawdown_R": -12.36,
+     "avg_trade_return_pct": 0.0585
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 98.01,
+     "min_value": 91.47
+    },
+    "trades_per_week": 7.73
+   },
+   "base": {
+    "raw_signals": {
+     "n": 995,
+     "win_rate": 0.321,
+     "avg_win_R": 1.366,
+     "avg_loss_R": -1.013,
+     "expectancy_R": -0.2503,
+     "t_stat": -6.6,
+     "profit_factor": 0.636,
+     "total_R": -249.06,
+     "max_drawdown_R": -254.28,
+     "avg_trade_return_pct": -0.1564
+    },
+    "portfolio": {
+     "n": 195,
+     "win_rate": 0.333,
+     "avg_win_R": 1.393,
+     "avg_loss_R": -0.982,
+     "expectancy_R": -0.1902,
+     "t_stat": -2.19,
+     "profit_factor": 0.709,
+     "total_R": -37.09,
+     "max_drawdown_R": -39.27,
+     "avg_trade_return_pct": -0.1333
+    },
+    "in_sample": {
+     "n": 120,
+     "win_rate": 0.342,
+     "avg_win_R": 1.317,
+     "avg_loss_R": -0.964,
+     "expectancy_R": -0.1843,
+     "t_stat": -1.7,
+     "profit_factor": 0.709,
+     "total_R": -22.12,
+     "max_drawdown_R": -25.42,
+     "avg_trade_return_pct": -0.1722
+    },
+    "out_of_sample": {
+     "n": 75,
+     "win_rate": 0.32,
+     "avg_win_R": 1.522,
+     "avg_loss_R": -1.01,
+     "expectancy_R": -0.1996,
+     "t_stat": -1.37,
+     "profit_factor": 0.709,
+     "total_R": -14.97,
+     "max_drawdown_R": -15.79,
+     "avg_trade_return_pct": -0.0712
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 84.89,
+     "min_value": 82.54
+    },
+    "trades_per_week": 7.39
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 995,
+     "win_rate": 0.305,
+     "avg_win_R": 1.255,
+     "avg_loss_R": -1.069,
+     "expectancy_R": -0.3616,
+     "t_stat": -9.83,
+     "profit_factor": 0.514,
+     "total_R": -359.75,
+     "max_drawdown_R": -363.53,
+     "avg_trade_return_pct": -0.2501
+    },
+    "portfolio": {
+     "n": 185,
+     "win_rate": 0.314,
+     "avg_win_R": 1.289,
+     "avg_loss_R": -1.03,
+     "expectancy_R": -0.3032,
+     "t_stat": -3.51,
+     "profit_factor": 0.571,
+     "total_R": -56.09,
+     "max_drawdown_R": -57.39,
+     "avg_trade_return_pct": -0.2331
+    },
+    "in_sample": {
+     "n": 116,
+     "win_rate": 0.319,
+     "avg_win_R": 1.262,
+     "avg_loss_R": -1.02,
+     "expectancy_R": -0.2926,
+     "t_stat": -2.7,
+     "profit_factor": 0.579,
+     "total_R": -33.94,
+     "max_drawdown_R": -35.23,
+     "avg_trade_return_pct": -0.2656
+    },
+    "out_of_sample": {
+     "n": 69,
+     "win_rate": 0.304,
+     "avg_win_R": 1.337,
+     "avg_loss_R": -1.047,
+     "expectancy_R": -0.3211,
+     "t_stat": -2.23,
+     "profit_factor": 0.559,
+     "total_R": -22.16,
+     "max_drawdown_R": -22.83,
+     "avg_trade_return_pct": -0.1785
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 77.69,
+     "min_value": 76.91
+    },
+    "trades_per_week": 7.01
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": true,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": "False"
+   },
+   "passes": false
+  },
+  "BULL_FLAG": {
+   "gross": {
+    "raw_signals": {
+     "n": 2085,
+     "win_rate": 0.331,
+     "avg_win_R": 1.952,
+     "avg_loss_R": -0.999,
+     "expectancy_R": -0.0223,
+     "t_stat": -0.73,
+     "profit_factor": 0.967,
+     "total_R": -46.5,
+     "max_drawdown_R": -56.9,
+     "avg_trade_return_pct": -0.005
+    },
+    "portfolio": {
+     "n": 260,
+     "win_rate": 0.254,
+     "avg_win_R": 1.968,
+     "avg_loss_R": -0.994,
+     "expectancy_R": -0.242,
+     "t_stat": -3.01,
+     "profit_factor": 0.674,
+     "total_R": -62.92,
+     "max_drawdown_R": -68.92,
+     "avg_trade_return_pct": -0.1478
+    },
+    "in_sample": {
+     "n": 168,
+     "win_rate": 0.25,
+     "avg_win_R": 1.949,
+     "avg_loss_R": -1.001,
+     "expectancy_R": -0.2637,
+     "t_stat": -2.65,
+     "profit_factor": 0.649,
+     "total_R": -44.3,
+     "max_drawdown_R": -49.3,
+     "avg_trade_return_pct": -0.1544
+    },
+    "out_of_sample": {
+     "n": 92,
+     "win_rate": 0.261,
+     "avg_win_R": 2.0,
+     "avg_loss_R": -0.98,
+     "expectancy_R": -0.2024,
+     "t_stat": -1.47,
+     "profit_factor": 0.721,
+     "total_R": -18.62,
+     "max_drawdown_R": -25.18,
+     "avg_trade_return_pct": -0.1358
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 91.31,
+     "min_value": 90.7
+    },
+    "trades_per_week": 9.85
+   },
+   "base": {
+    "raw_signals": {
+     "n": 2086,
+     "win_rate": 0.307,
+     "avg_win_R": 1.859,
+     "avg_loss_R": -1.08,
+     "expectancy_R": -0.1785,
+     "t_stat": -5.97,
+     "profit_factor": 0.762,
+     "total_R": -372.37,
+     "max_drawdown_R": -374.27,
+     "avg_trade_return_pct": -0.1018
+    },
+    "portfolio": {
+     "n": 257,
+     "win_rate": 0.233,
+     "avg_win_R": 1.875,
+     "avg_loss_R": -1.074,
+     "expectancy_R": -0.3853,
+     "t_stat": -4.91,
+     "profit_factor": 0.532,
+     "total_R": -99.03,
+     "max_drawdown_R": -102.52,
+     "avg_trade_return_pct": -0.2601
+    },
+    "in_sample": {
+     "n": 166,
+     "win_rate": 0.235,
+     "avg_win_R": 1.853,
+     "avg_loss_R": -1.078,
+     "expectancy_R": -0.3896,
+     "t_stat": -4.0,
+     "profit_factor": 0.528,
+     "total_R": -64.67,
+     "max_drawdown_R": -67.29,
+     "avg_trade_return_pct": -0.257
+    },
+    "out_of_sample": {
+     "n": 91,
+     "win_rate": 0.231,
+     "avg_win_R": 1.915,
+     "avg_loss_R": -1.065,
+     "expectancy_R": -0.3775,
+     "t_stat": -2.84,
+     "profit_factor": 0.539,
+     "total_R": -34.35,
+     "max_drawdown_R": -37.14,
+     "avg_trade_return_pct": -0.2657
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 81.78,
+     "min_value": 81.31
+    },
+    "trades_per_week": 9.73
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 2086,
+     "win_rate": 0.28,
+     "avg_win_R": 1.786,
+     "avg_loss_R": -1.146,
+     "expectancy_R": -0.3235,
+     "t_stat": -11.11,
+     "profit_factor": 0.608,
+     "total_R": -674.83,
+     "max_drawdown_R": -674.83,
+     "avg_trade_return_pct": -0.2085
+    },
+    "portfolio": {
+     "n": 252,
+     "win_rate": 0.21,
+     "avg_win_R": 1.801,
+     "avg_loss_R": -1.136,
+     "expectancy_R": -0.518,
+     "t_stat": -6.79,
+     "profit_factor": 0.422,
+     "total_R": -130.54,
+     "max_drawdown_R": -133.6,
+     "avg_trade_return_pct": -0.363
+    },
+    "in_sample": {
+     "n": 165,
+     "win_rate": 0.218,
+     "avg_win_R": 1.775,
+     "avg_loss_R": -1.146,
+     "expectancy_R": -0.5088,
+     "t_stat": -5.35,
+     "profit_factor": 0.432,
+     "total_R": -83.96,
+     "max_drawdown_R": -86.25,
+     "avg_trade_return_pct": -0.3479
+    },
+    "out_of_sample": {
+     "n": 87,
+     "win_rate": 0.195,
+     "avg_win_R": 1.856,
+     "avg_loss_R": -1.116,
+     "expectancy_R": -0.5355,
+     "t_stat": -4.18,
+     "profit_factor": 0.404,
+     "total_R": -46.58,
+     "max_drawdown_R": -49.2,
+     "avg_trade_return_pct": -0.3915
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 72.28,
+     "min_value": 71.92
+    },
+    "trades_per_week": 9.55
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": true,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": "False"
+   },
+   "passes": false
+  },
+  "ABCD": {
+   "gross": {
+    "raw_signals": {
+     "n": 235,
+     "win_rate": 0.494,
+     "avg_win_R": 1.003,
+     "avg_loss_R": -0.751,
+     "expectancy_R": 0.115,
+     "t_stat": 1.71,
+     "profit_factor": 1.302,
+     "total_R": 27.02,
+     "max_drawdown_R": -11.75,
+     "avg_trade_return_pct": 0.1655
+    },
+    "portfolio": {
+     "n": 99,
+     "win_rate": 0.465,
+     "avg_win_R": 1.048,
+     "avg_loss_R": -0.767,
+     "expectancy_R": 0.0764,
+     "t_stat": 0.72,
+     "profit_factor": 1.186,
+     "total_R": 7.57,
+     "max_drawdown_R": -11.64,
+     "avg_trade_return_pct": 0.1101
+    },
+    "in_sample": {
+     "n": 67,
+     "win_rate": 0.463,
+     "avg_win_R": 1.028,
+     "avg_loss_R": -0.818,
+     "expectancy_R": 0.0364,
+     "t_stat": 0.28,
+     "profit_factor": 1.083,
+     "total_R": 2.44,
+     "max_drawdown_R": -11.64,
+     "avg_trade_return_pct": -0.0007
+    },
+    "out_of_sample": {
+     "n": 32,
+     "win_rate": 0.469,
+     "avg_win_R": 1.089,
+     "avg_loss_R": -0.659,
+     "expectancy_R": 0.1603,
+     "t_stat": 0.88,
+     "profit_factor": 1.458,
+     "total_R": 5.13,
+     "max_drawdown_R": -4.06,
+     "avg_trade_return_pct": 0.3421
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 103.71,
+     "min_value": 98.58
+    },
+    "trades_per_week": 3.75
+   },
+   "base": {
+    "raw_signals": {
+     "n": 235,
+     "win_rate": 0.472,
+     "avg_win_R": 0.964,
+     "avg_loss_R": -0.764,
+     "expectancy_R": 0.0521,
+     "t_stat": 0.79,
+     "profit_factor": 1.129,
+     "total_R": 12.25,
+     "max_drawdown_R": -13.84,
+     "avg_trade_return_pct": 0.0815
+    },
+    "portfolio": {
+     "n": 99,
+     "win_rate": 0.434,
+     "avg_win_R": 1.042,
+     "avg_loss_R": -0.77,
+     "expectancy_R": 0.0166,
+     "t_stat": 0.16,
+     "profit_factor": 1.038,
+     "total_R": 1.64,
+     "max_drawdown_R": -12.59,
+     "avg_trade_return_pct": 0.0297
+    },
+    "in_sample": {
+     "n": 67,
+     "win_rate": 0.418,
+     "avg_win_R": 1.058,
+     "avg_loss_R": -0.795,
+     "expectancy_R": -0.0204,
+     "t_stat": -0.16,
+     "profit_factor": 0.956,
+     "total_R": -1.37,
+     "max_drawdown_R": -12.59,
+     "avg_trade_return_pct": -0.0805
+    },
+    "out_of_sample": {
+     "n": 32,
+     "win_rate": 0.469,
+     "avg_win_R": 1.01,
+     "avg_loss_R": -0.714,
+     "expectancy_R": 0.0941,
+     "t_stat": 0.52,
+     "profit_factor": 1.248,
+     "total_R": 3.01,
+     "max_drawdown_R": -5.02,
+     "avg_trade_return_pct": 0.2605
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.69,
+     "min_value": 97.4
+    },
+    "trades_per_week": 3.75
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 235,
+     "win_rate": 0.443,
+     "avg_win_R": 0.912,
+     "avg_loss_R": -0.765,
+     "expectancy_R": -0.0229,
+     "t_stat": -0.36,
+     "profit_factor": 0.946,
+     "total_R": -5.39,
+     "max_drawdown_R": -18.99,
+     "avg_trade_return_pct": -0.0276
+    },
+    "portfolio": {
+     "n": 99,
+     "win_rate": 0.424,
+     "avg_win_R": 0.917,
+     "avg_loss_R": -0.8,
+     "expectancy_R": -0.0715,
+     "t_stat": -0.72,
+     "profit_factor": 0.845,
+     "total_R": -7.08,
+     "max_drawdown_R": -14.89,
+     "avg_trade_return_pct": -0.0979
+    },
+    "in_sample": {
+     "n": 67,
+     "win_rate": 0.403,
+     "avg_win_R": 0.923,
+     "avg_loss_R": -0.815,
+     "expectancy_R": -0.1147,
+     "t_stat": -0.94,
+     "profit_factor": 0.764,
+     "total_R": -7.68,
+     "max_drawdown_R": -14.82,
+     "avg_trade_return_pct": -0.2185
+    },
+    "out_of_sample": {
+     "n": 32,
+     "win_rate": 0.469,
+     "avg_win_R": 0.907,
+     "avg_loss_R": -0.765,
+     "expectancy_R": 0.0188,
+     "t_stat": 0.11,
+     "profit_factor": 1.046,
+     "total_R": 0.6,
+     "max_drawdown_R": -5.9,
+     "avg_trade_return_pct": 0.1545
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 96.4,
+     "min_value": 95.03
+    },
+    "trades_per_week": 3.75
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": true,
+    "oos_trades_ge_30": true,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": "False"
+   },
+   "passes": false
+  },
+  "EMA9_VWAP_CROSS": {
+   "gross": {
+    "raw_signals": {
+     "n": 8132,
+     "win_rate": 0.345,
+     "avg_win_R": 1.736,
+     "avg_loss_R": -0.971,
+     "expectancy_R": -0.0361,
+     "t_stat": -2.44,
+     "profit_factor": 0.943,
+     "total_R": -293.81,
+     "max_drawdown_R": -316.43,
+     "avg_trade_return_pct": -0.0023
+    },
+    "portfolio": {
+     "n": 247,
+     "win_rate": 0.316,
+     "avg_win_R": 1.776,
+     "avg_loss_R": -0.968,
+     "expectancy_R": -0.1015,
+     "t_stat": -1.21,
+     "profit_factor": 0.847,
+     "total_R": -25.08,
+     "max_drawdown_R": -54.79,
+     "avg_trade_return_pct": -0.0052
+    },
+    "in_sample": {
+     "n": 152,
+     "win_rate": 0.316,
+     "avg_win_R": 1.812,
+     "avg_loss_R": -0.976,
+     "expectancy_R": -0.0955,
+     "t_stat": -0.88,
+     "profit_factor": 0.857,
+     "total_R": -14.52,
+     "max_drawdown_R": -39.24,
+     "avg_trade_return_pct": 0.0212
+    },
+    "out_of_sample": {
+     "n": 95,
+     "win_rate": 0.316,
+     "avg_win_R": 1.719,
+     "avg_loss_R": -0.956,
+     "expectancy_R": -0.1112,
+     "t_stat": -0.84,
+     "profit_factor": 0.83,
+     "total_R": -10.56,
+     "max_drawdown_R": -19.21,
+     "avg_trade_return_pct": -0.0474
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 95.85,
+     "min_value": 93.59
+    },
+    "trades_per_week": 9.36
+   },
+   "base": {
+    "raw_signals": {
+     "n": 8153,
+     "win_rate": 0.306,
+     "avg_win_R": 1.565,
+     "avg_loss_R": -1.089,
+     "expectancy_R": -0.2758,
+     "t_stat": -19.52,
+     "profit_factor": 0.635,
+     "total_R": -2248.86,
+     "max_drawdown_R": -2263.61,
+     "avg_trade_return_pct": -0.0991
+    },
+    "portfolio": {
+     "n": 236,
+     "win_rate": 0.25,
+     "avg_win_R": 1.65,
+     "avg_loss_R": -1.083,
+     "expectancy_R": -0.3995,
+     "t_stat": -5.0,
+     "profit_factor": 0.508,
+     "total_R": -94.28,
+     "max_drawdown_R": -106.46,
+     "avg_trade_return_pct": -0.1458
+    },
+    "in_sample": {
+     "n": 151,
+     "win_rate": 0.245,
+     "avg_win_R": 1.638,
+     "avg_loss_R": -1.095,
+     "expectancy_R": -0.4251,
+     "t_stat": -4.27,
+     "profit_factor": 0.486,
+     "total_R": -64.19,
+     "max_drawdown_R": -71.89,
+     "avg_trade_return_pct": -0.1216
+    },
+    "out_of_sample": {
+     "n": 85,
+     "win_rate": 0.259,
+     "avg_win_R": 1.67,
+     "avg_loss_R": -1.061,
+     "expectancy_R": -0.354,
+     "t_stat": -2.62,
+     "profit_factor": 0.55,
+     "total_R": -30.09,
+     "max_drawdown_R": -34.57,
+     "avg_trade_return_pct": -0.1888
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 84.81,
+     "min_value": 82.84
+    },
+    "trades_per_week": 8.94
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 8156,
+     "win_rate": 0.275,
+     "avg_win_R": 1.449,
+     "avg_loss_R": -1.165,
+     "expectancy_R": -0.4453,
+     "t_stat": -32.77,
+     "profit_factor": 0.473,
+     "total_R": -3632.05,
+     "max_drawdown_R": -3642.61,
+     "avg_trade_return_pct": -0.1934
+    },
+    "portfolio": {
+     "n": 228,
+     "win_rate": 0.219,
+     "avg_win_R": 1.607,
+     "avg_loss_R": -1.152,
+     "expectancy_R": -0.5466,
+     "t_stat": -6.94,
+     "profit_factor": 0.392,
+     "total_R": -124.63,
+     "max_drawdown_R": -134.21,
+     "avg_trade_return_pct": -0.2219
+    },
+    "in_sample": {
+     "n": 146,
+     "win_rate": 0.212,
+     "avg_win_R": 1.676,
+     "avg_loss_R": -1.163,
+     "expectancy_R": -0.5603,
+     "t_stat": -5.63,
+     "profit_factor": 0.388,
+     "total_R": -81.81,
+     "max_drawdown_R": -87.31,
+     "avg_trade_return_pct": -0.1954
+    },
+    "out_of_sample": {
+     "n": 82,
+     "win_rate": 0.232,
+     "avg_win_R": 1.496,
+     "avg_loss_R": -1.131,
+     "expectancy_R": -0.5223,
+     "t_stat": -4.04,
+     "profit_factor": 0.399,
+     "total_R": -42.83,
+     "max_drawdown_R": -46.9,
+     "avg_trade_return_pct": -0.2691
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 76.66,
+     "min_value": 74.98
+    },
+    "trades_per_week": 8.64
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": true,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": "False"
+   },
+   "passes": false
+  },
+  "HOD_BREAK_PM": {
+   "gross": {
+    "raw_signals": {
+     "n": 107,
+     "win_rate": 0.477,
+     "avg_win_R": 0.908,
+     "avg_loss_R": -0.672,
+     "expectancy_R": 0.081,
+     "t_stat": 0.85,
+     "profit_factor": 1.23,
+     "total_R": 8.67,
+     "max_drawdown_R": -10.58,
+     "avg_trade_return_pct": -0.0736
+    },
+    "portfolio": {
+     "n": 69,
+     "win_rate": 0.464,
+     "avg_win_R": 1.046,
+     "avg_loss_R": -0.719,
+     "expectancy_R": 0.0996,
+     "t_stat": 0.79,
+     "profit_factor": 1.258,
+     "total_R": 6.87,
+     "max_drawdown_R": -9.26,
+     "avg_trade_return_pct": -0.0461
+    },
+    "in_sample": {
+     "n": 44,
+     "win_rate": 0.409,
+     "avg_win_R": 0.972,
+     "avg_loss_R": -0.795,
+     "expectancy_R": -0.0718,
+     "t_stat": -0.46,
+     "profit_factor": 0.847,
+     "total_R": -3.16,
+     "max_drawdown_R": -9.26,
+     "avg_trade_return_pct": -0.2153
+    },
+    "out_of_sample": {
+     "n": 25,
+     "win_rate": 0.56,
+     "avg_win_R": 1.141,
+     "avg_loss_R": -0.54,
+     "expectancy_R": 0.4013,
+     "t_stat": 1.95,
+     "profit_factor": 2.687,
+     "total_R": 10.03,
+     "max_drawdown_R": -2.83,
+     "avg_trade_return_pct": 0.2516
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 103.36,
+     "min_value": 97.88
+    },
+    "trades_per_week": 2.61
+   },
+   "base": {
+    "raw_signals": {
+     "n": 107,
+     "win_rate": 0.43,
+     "avg_win_R": 0.872,
+     "avg_loss_R": -0.66,
+     "expectancy_R": -0.0015,
+     "t_stat": -0.02,
+     "profit_factor": 0.996,
+     "total_R": -0.16,
+     "max_drawdown_R": -14.32,
+     "avg_trade_return_pct": -0.1752
+    },
+    "portfolio": {
+     "n": 69,
+     "win_rate": 0.435,
+     "avg_win_R": 0.959,
+     "avg_loss_R": -0.727,
+     "expectancy_R": 0.0058,
+     "t_stat": 0.05,
+     "profit_factor": 1.014,
+     "total_R": 0.4,
+     "max_drawdown_R": -11.16,
+     "avg_trade_return_pct": -0.1574
+    },
+    "in_sample": {
+     "n": 44,
+     "win_rate": 0.386,
+     "avg_win_R": 0.836,
+     "avg_loss_R": -0.812,
+     "expectancy_R": -0.1754,
+     "t_stat": -1.22,
+     "profit_factor": 0.648,
+     "total_R": -7.72,
+     "max_drawdown_R": -11.16,
+     "avg_trade_return_pct": -0.3466
+    },
+    "out_of_sample": {
+     "n": 25,
+     "win_rate": 0.52,
+     "avg_win_R": 1.119,
+     "avg_loss_R": -0.536,
+     "expectancy_R": 0.3248,
+     "t_stat": 1.61,
+     "profit_factor": 2.263,
+     "total_R": 8.12,
+     "max_drawdown_R": -3.16,
+     "avg_trade_return_pct": 0.1754
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.12,
+     "min_value": 96.05
+    },
+    "trades_per_week": 2.61
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 107,
+     "win_rate": 0.393,
+     "avg_win_R": 0.861,
+     "avg_loss_R": -0.664,
+     "expectancy_R": -0.0653,
+     "t_stat": -0.73,
+     "profit_factor": 0.838,
+     "total_R": -6.99,
+     "max_drawdown_R": -17.75,
+     "avg_trade_return_pct": -0.261
+    },
+    "portfolio": {
+     "n": 69,
+     "win_rate": 0.42,
+     "avg_win_R": 0.894,
+     "avg_loss_R": -0.754,
+     "expectancy_R": -0.0616,
+     "t_stat": -0.53,
+     "profit_factor": 0.859,
+     "total_R": -4.25,
+     "max_drawdown_R": -12.88,
+     "avg_trade_return_pct": -0.2442
+    },
+    "in_sample": {
+     "n": 44,
+     "win_rate": 0.386,
+     "avg_win_R": 0.74,
+     "avg_loss_R": -0.859,
+     "expectancy_R": -0.2413,
+     "t_stat": -1.73,
+     "profit_factor": 0.542,
+     "total_R": -10.62,
+     "max_drawdown_R": -12.88,
+     "avg_trade_return_pct": -0.4394
+    },
+    "out_of_sample": {
+     "n": 25,
+     "win_rate": 0.48,
+     "avg_win_R": 1.112,
+     "avg_loss_R": -0.537,
+     "expectancy_R": 0.2548,
+     "t_stat": 1.29,
+     "profit_factor": 1.913,
+     "total_R": 6.37,
+     "max_drawdown_R": -3.47,
+     "avg_trade_return_pct": 0.0992
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 97.82,
+     "min_value": 94.71
+    },
+    "trades_per_week": 2.61
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": true,
+    "oos_trades_ge_30": false,
+    "oos_profit_factor_gt_1_1": true,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": "False"
+   },
+   "passes": false
+  },
+  "OVERSOLD_BOUNCE": {
+   "gross": {
+    "raw_signals": {
+     "n": 735,
+     "win_rate": 0.112,
+     "avg_win_R": 7.57,
+     "avg_loss_R": -1.001,
+     "expectancy_R": -0.0444,
+     "t_stat": -0.38,
+     "profit_factor": 0.95,
+     "total_R": -32.66,
+     "max_drawdown_R": -79.58,
+     "avg_trade_return_pct": -0.0377
+    },
+    "portfolio": {
+     "n": 184,
+     "win_rate": 0.147,
+     "avg_win_R": 6.776,
+     "avg_loss_R": -1.0,
+     "expectancy_R": 0.141,
+     "t_stat": 0.58,
+     "profit_factor": 1.165,
+     "total_R": 25.94,
+     "max_drawdown_R": -36.33,
+     "avg_trade_return_pct": 0.0076
+    },
+    "in_sample": {
+     "n": 127,
+     "win_rate": 0.165,
+     "avg_win_R": 7.14,
+     "avg_loss_R": -1.0,
+     "expectancy_R": 0.346,
+     "t_stat": 1.05,
+     "profit_factor": 1.414,
+     "total_R": 43.94,
+     "max_drawdown_R": -36.33,
+     "avg_trade_return_pct": 0.0318
+    },
+    "out_of_sample": {
+     "n": 57,
+     "win_rate": 0.105,
+     "avg_win_R": 5.501,
+     "avg_loss_R": -1.0,
+     "expectancy_R": -0.3157,
+     "t_stat": -1.14,
+     "profit_factor": 0.647,
+     "total_R": -17.99,
+     "max_drawdown_R": -25.12,
+     "avg_trade_return_pct": -0.0464
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 106.77,
+     "min_value": 98.37
+    },
+    "trades_per_week": 6.97
+   },
+   "base": {
+    "raw_signals": {
+     "n": 742,
+     "win_rate": 0.111,
+     "avg_win_R": 6.079,
+     "avg_loss_R": -1.161,
+     "expectancy_R": -0.3612,
+     "t_stat": -3.87,
+     "profit_factor": 0.65,
+     "total_R": -267.98,
+     "max_drawdown_R": -273.51,
+     "avg_trade_return_pct": -0.1376
+    },
+    "portfolio": {
+     "n": 185,
+     "win_rate": 0.141,
+     "avg_win_R": 5.4,
+     "avg_loss_R": -1.149,
+     "expectancy_R": -0.2289,
+     "t_stat": -1.2,
+     "profit_factor": 0.768,
+     "total_R": -42.35,
+     "max_drawdown_R": -62.86,
+     "avg_trade_return_pct": -0.1044
+    },
+    "in_sample": {
+     "n": 127,
+     "win_rate": 0.157,
+     "avg_win_R": 5.613,
+     "avg_loss_R": -1.136,
+     "expectancy_R": -0.0735,
+     "t_stat": -0.29,
+     "profit_factor": 0.923,
+     "total_R": -9.34,
+     "max_drawdown_R": -45.97,
+     "avg_trade_return_pct": -0.0867
+    },
+    "out_of_sample": {
+     "n": 58,
+     "win_rate": 0.103,
+     "avg_win_R": 4.691,
+     "avg_loss_R": -1.176,
+     "expectancy_R": -0.5691,
+     "t_stat": -2.34,
+     "profit_factor": 0.46,
+     "total_R": -33.01,
+     "max_drawdown_R": -35.32,
+     "avg_trade_return_pct": -0.1432
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 96.77,
+     "min_value": 94.98
+    },
+    "trades_per_week": 7.01
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 744,
+     "win_rate": 0.11,
+     "avg_win_R": 5.057,
+     "avg_loss_R": -1.271,
+     "expectancy_R": -0.5735,
+     "t_stat": -7.2,
+     "profit_factor": 0.493,
+     "total_R": -426.67,
+     "max_drawdown_R": -426.67,
+     "avg_trade_return_pct": -0.2373
+    },
+    "portfolio": {
+     "n": 186,
+     "win_rate": 0.14,
+     "avg_win_R": 4.574,
+     "avg_loss_R": -1.252,
+     "expectancy_R": -0.4378,
+     "t_stat": -2.68,
+     "profit_factor": 0.594,
+     "total_R": -81.43,
+     "max_drawdown_R": -92.2,
+     "avg_trade_return_pct": -0.2042
+    },
+    "in_sample": {
+     "n": 127,
+     "win_rate": 0.157,
+     "avg_win_R": 4.73,
+     "avg_loss_R": -1.228,
+     "expectancy_R": -0.29,
+     "t_stat": -1.34,
+     "profit_factor": 0.72,
+     "total_R": -36.83,
+     "max_drawdown_R": -54.8,
+     "avg_trade_return_pct": -0.1866
+    },
+    "out_of_sample": {
+     "n": 59,
+     "win_rate": 0.102,
+     "avg_win_R": 4.053,
+     "avg_loss_R": -1.3,
+     "expectancy_R": -0.756,
+     "t_stat": -3.47,
+     "profit_factor": 0.353,
+     "total_R": -44.61,
+     "max_drawdown_R": -45.25,
+     "avg_trade_return_pct": -0.2422
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 87.23,
+     "min_value": 87.23
+    },
+    "trades_per_week": 7.05
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": true,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": "False"
+   },
+   "passes": false
+  },
+  "SECOND_DAY": {
+   "gross": {
+    "raw_signals": {
+     "n": 5,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -1.0,
+     "expectancy_R": -1.0,
+     "t_stat": null,
+     "profit_factor": 0.0,
+     "total_R": -5.0,
+     "max_drawdown_R": -5.0,
+     "avg_trade_return_pct": -1.7637
+    },
+    "portfolio": {
+     "n": 5,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -1.0,
+     "expectancy_R": -1.0,
+     "t_stat": null,
+     "profit_factor": 0.0,
+     "total_R": -5.0,
+     "max_drawdown_R": -5.0,
+     "avg_trade_return_pct": -1.7637
+    },
+    "in_sample": {
+     "n": 3,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -1.0,
+     "expectancy_R": -1.0,
+     "t_stat": null,
+     "profit_factor": 0.0,
+     "total_R": -3.0,
+     "max_drawdown_R": -3.0,
+     "avg_trade_return_pct": -1.8017
+    },
+    "out_of_sample": {
+     "n": 2,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -1.0,
+     "expectancy_R": -1.0,
+     "t_stat": null,
+     "profit_factor": 0.0,
+     "total_R": -2.0,
+     "max_drawdown_R": -2.0,
+     "avg_trade_return_pct": -1.7067
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 97.75,
+     "min_value": 97.75
+    },
+    "trades_per_week": 0.19
+   },
+   "base": {
+    "raw_signals": {
+     "n": 5,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -1.055,
+     "expectancy_R": -1.0551,
+     "t_stat": -39.37,
+     "profit_factor": 0.0,
+     "total_R": -5.28,
+     "max_drawdown_R": -5.28,
+     "avg_trade_return_pct": -1.8619
+    },
+    "portfolio": {
+     "n": 5,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -1.055,
+     "expectancy_R": -1.0551,
+     "t_stat": -39.37,
+     "profit_factor": 0.0,
+     "total_R": -5.28,
+     "max_drawdown_R": -5.28,
+     "avg_trade_return_pct": -1.8619
+    },
+    "in_sample": {
+     "n": 3,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -1.065,
+     "expectancy_R": -1.0649,
+     "t_stat": -23.2,
+     "profit_factor": 0.0,
+     "total_R": -3.19,
+     "max_drawdown_R": -3.19,
+     "avg_trade_return_pct": -1.8998
+    },
+    "out_of_sample": {
+     "n": 2,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -1.04,
+     "expectancy_R": -1.0404,
+     "t_stat": -46.34,
+     "profit_factor": 0.0,
+     "total_R": -2.08,
+     "max_drawdown_R": -2.08,
+     "avg_trade_return_pct": -1.805
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 97.6,
+     "min_value": 97.6
+    },
+    "trades_per_week": 0.19
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 5,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -1.1,
+     "expectancy_R": -1.0997,
+     "t_stat": -24.11,
+     "profit_factor": 0.0,
+     "total_R": -5.5,
+     "max_drawdown_R": -5.5,
+     "avg_trade_return_pct": -1.96
+    },
+    "portfolio": {
+     "n": 5,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -1.1,
+     "expectancy_R": -1.0997,
+     "t_stat": -24.11,
+     "profit_factor": 0.0,
+     "total_R": -5.5,
+     "max_drawdown_R": -5.5,
+     "avg_trade_return_pct": -1.96
+    },
+    "in_sample": {
+     "n": 3,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -1.115,
+     "expectancy_R": -1.1151,
+     "t_stat": -14.32,
+     "profit_factor": 0.0,
+     "total_R": -3.35,
+     "max_drawdown_R": -3.35,
+     "avg_trade_return_pct": -1.9979
+    },
+    "out_of_sample": {
+     "n": 2,
+     "win_rate": 0.0,
+     "avg_win_R": 0,
+     "avg_loss_R": -1.077,
+     "expectancy_R": -1.0766,
+     "t_stat": -25.94,
+     "profit_factor": 0.0,
+     "total_R": -2.15,
+     "max_drawdown_R": -2.15,
+     "avg_trade_return_pct": -1.9031
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 97.45,
+     "min_value": 97.45
+    },
+    "trades_per_week": 0.19
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": false,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": "False"
+   },
+   "passes": false
+  },
+  "GAP_FILL_LONG": {
+   "gross": {
+    "raw_signals": {
+     "n": 1127,
+     "win_rate": 0.555,
+     "avg_win_R": 0.644,
+     "avg_loss_R": -0.98,
+     "expectancy_R": -0.078,
+     "t_stat": -2.69,
+     "profit_factor": 0.821,
+     "total_R": -87.93,
+     "max_drawdown_R": -101.69,
+     "avg_trade_return_pct": -0.0371
+    },
+    "portfolio": {
+     "n": 120,
+     "win_rate": 0.575,
+     "avg_win_R": 0.643,
+     "avg_loss_R": -1.049,
+     "expectancy_R": -0.0759,
+     "t_stat": -0.81,
+     "profit_factor": 0.83,
+     "total_R": -9.11,
+     "max_drawdown_R": -19.79,
+     "avg_trade_return_pct": -0.0311
+    },
+    "in_sample": {
+     "n": 76,
+     "win_rate": 0.566,
+     "avg_win_R": 0.574,
+     "avg_loss_R": -1.067,
+     "expectancy_R": -0.1387,
+     "t_stat": -1.22,
+     "profit_factor": 0.701,
+     "total_R": -10.54,
+     "max_drawdown_R": -18.26,
+     "avg_trade_return_pct": -0.0874
+    },
+    "out_of_sample": {
+     "n": 44,
+     "win_rate": 0.591,
+     "avg_win_R": 0.758,
+     "avg_loss_R": -1.015,
+     "expectancy_R": 0.0325,
+     "t_stat": 0.2,
+     "profit_factor": 1.078,
+     "total_R": 1.43,
+     "max_drawdown_R": -6.7,
+     "avg_trade_return_pct": 0.0662
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 98.51,
+     "min_value": 95.88
+    },
+    "trades_per_week": 4.55
+   },
+   "base": {
+    "raw_signals": {
+     "n": 1074,
+     "win_rate": 0.488,
+     "avg_win_R": 0.527,
+     "avg_loss_R": -1.002,
+     "expectancy_R": -0.2563,
+     "t_stat": -9.38,
+     "profit_factor": 0.501,
+     "total_R": -275.26,
+     "max_drawdown_R": -281.24,
+     "avg_trade_return_pct": -0.1391
+    },
+    "portfolio": {
+     "n": 120,
+     "win_rate": 0.525,
+     "avg_win_R": 0.566,
+     "avg_loss_R": -1.069,
+     "expectancy_R": -0.2111,
+     "t_stat": -2.38,
+     "profit_factor": 0.585,
+     "total_R": -25.33,
+     "max_drawdown_R": -27.82,
+     "avg_trade_return_pct": -0.1044
+    },
+    "in_sample": {
+     "n": 76,
+     "win_rate": 0.5,
+     "avg_win_R": 0.489,
+     "avg_loss_R": -1.068,
+     "expectancy_R": -0.2895,
+     "t_stat": -2.73,
+     "profit_factor": 0.458,
+     "total_R": -22.0,
+     "max_drawdown_R": -24.03,
+     "avg_trade_return_pct": -0.1673
+    },
+    "out_of_sample": {
+     "n": 44,
+     "win_rate": 0.568,
+     "avg_win_R": 0.681,
+     "avg_loss_R": -1.071,
+     "expectancy_R": -0.0756,
+     "t_stat": -0.48,
+     "profit_factor": 0.837,
+     "total_R": -3.32,
+     "max_drawdown_R": -8.01,
+     "avg_trade_return_pct": 0.0042
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 92.76,
+     "min_value": 91.51
+    },
+    "trades_per_week": 4.55
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 1021,
+     "win_rate": 0.417,
+     "avg_win_R": 0.438,
+     "avg_loss_R": -0.99,
+     "expectancy_R": -0.3943,
+     "t_stat": -14.94,
+     "profit_factor": 0.317,
+     "total_R": -402.62,
+     "max_drawdown_R": -405.76,
+     "avg_trade_return_pct": -0.2366
+    },
+    "portfolio": {
+     "n": 119,
+     "win_rate": 0.437,
+     "avg_win_R": 0.49,
+     "avg_loss_R": -1.009,
+     "expectancy_R": -0.3543,
+     "t_stat": -4.34,
+     "profit_factor": 0.376,
+     "total_R": -42.16,
+     "max_drawdown_R": -42.68,
+     "avg_trade_return_pct": -0.2226
+    },
+    "in_sample": {
+     "n": 75,
+     "win_rate": 0.413,
+     "avg_win_R": 0.408,
+     "avg_loss_R": -1.003,
+     "expectancy_R": -0.4198,
+     "t_stat": -4.39,
+     "profit_factor": 0.287,
+     "total_R": -31.48,
+     "max_drawdown_R": -31.51,
+     "avg_trade_return_pct": -0.294
+    },
+    "out_of_sample": {
+     "n": 44,
+     "win_rate": 0.477,
+     "avg_win_R": 0.609,
+     "avg_loss_R": -1.021,
+     "expectancy_R": -0.2427,
+     "t_stat": -1.63,
+     "profit_factor": 0.545,
+     "total_R": -10.68,
+     "max_drawdown_R": -11.88,
+     "avg_trade_return_pct": -0.101
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 84.53,
+     "min_value": 84.32
+    },
+    "trades_per_week": 4.51
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": true,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": "False"
+   },
+   "passes": false
+  },
+  "INTRADAY_MOM_LAST30": {
+   "gross": {
+    "raw_signals": {
+     "n": 0
+    },
+    "portfolio": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "trades_per_week": 0.0
+   },
+   "base": {
+    "raw_signals": {
+     "n": 0
+    },
+    "portfolio": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "trades_per_week": 0.0
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 0
+    },
+    "portfolio": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "trades_per_week": 0.0
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": false,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": false
+   },
+   "passes": false
+  },
+  "NOISE_BREAKOUT": {
+   "gross": {
+    "raw_signals": {
+     "n": 0
+    },
+    "portfolio": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "trades_per_week": 0.0
+   },
+   "base": {
+    "raw_signals": {
+     "n": 0
+    },
+    "portfolio": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "trades_per_week": 0.0
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 0
+    },
+    "portfolio": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "trades_per_week": 0.0
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": false,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": false
+   },
+   "passes": false
+  },
+  "VWAP_TREND_5M": {
+   "gross": {
+    "raw_signals": {
+     "n": 0
+    },
+    "portfolio": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "trades_per_week": 0.0
+   },
+   "base": {
+    "raw_signals": {
+     "n": 0
+    },
+    "portfolio": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "trades_per_week": 0.0
+   },
+   "stress": {
+    "raw_signals": {
+     "n": 0
+    },
+    "portfolio": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "oos_from": "2026-08-26",
+    "account_100_fractional": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "trades_per_week": 0.0
+   },
+   "criteria_stress": {
+    "in_sample_expectancy_gt_0": false,
+    "oos_expectancy_gt_0": false,
+    "oos_trades_ge_30": false,
+    "oos_profit_factor_gt_1_1": false,
+    "full_t_stat_ge_2_5": false,
+    "account_100_ends_above_100": false
+   },
+   "passes": false
+  }
+ }
+}
