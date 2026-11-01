@@ -26,7 +26,33 @@ jobs:
       - name: Backtest Setup A on the wide universe
         continue-on-error: true
         run: python research/wide_backtest.py research/wide_data
+      - name: Report the backtest result (annotations, readable without logs)
+        if: always()
+        run: |
+          python - <<'PY' || true
+          import json
+          r = json.load(open("research/wide_backtest_results.json"))
+          for name, b in r.get("variants", {}).items():
+              st = b["stress"]
+              msg = (f"passes={b.get('passes')} criteria={json.dumps(b.get('activation_criteria_stress_costs'))} "
+                     f"ALL={json.dumps(st['all'])} IS={json.dumps(st['in_sample'])} OOS={json.dumps(st['out_of_sample'])} "
+                     f"trades/wk={st.get('trades_per_week')} $100frac={json.dumps(st.get('account_100_fractional'))[:400]}")
+              print(f"::notice title=Wide backtest {name}::{msg[:3900]}")
+          PY
+      - name: Save the result file to main (small; the data itself goes to the research-wide branch)
+        if: always()
+        run: |
+          [ -f research/wide_backtest_results.json ] || exit 0
+          cp research/wide_backtest_results.json /tmp/wide_backtest_results.json
+          git config user.name "HB Atelier Bot"; git config user.email "atelier-bot@users.noreply.github.com"
+          git stash -u -q || true
+          git pull -q --rebase origin main
+          cp /tmp/wide_backtest_results.json research/wide_backtest_results.json
+          git add research/wide_backtest_results.json
+          git diff --cached --quiet || (git commit -qm "Wide-universe Setup A backtest results" && git push -q origin HEAD:main)
+          git stash pop -q || true
       - name: Commit to research-wide branch
+        continue-on-error: true          # large data push; the result file is already saved to main above
         run: |
           git config user.name "HB Atelier Bot"; git config user.email "atelier-bot@users.noreply.github.com"
           cp research/wide_backtest_results.json /tmp/ || true
