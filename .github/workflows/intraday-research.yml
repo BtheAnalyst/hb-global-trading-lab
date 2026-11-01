@@ -7,12 +7,18 @@ on:
       days:
         description: "calendar days of history"
         default: "190"
+      symbols:
+        description: "comma-separated symbols (empty = the research pool)"
+        default: ""
+      branch:
+        description: "branch to store the data on (never main)"
+        default: "research-data"
 permissions:
   contents: write
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
         with:
@@ -25,14 +31,16 @@ jobs:
           ALPACA_PAPER_KEY: ${{ secrets.ALPACA_PAPER_KEY }}
           ALPACA_PAPER_SECRET: ${{ secrets.ALPACA_PAPER_SECRET }}
           DAYS: ${{ inputs.days }}
+          SYMBOLS: ${{ inputs.symbols }}
         run: python research/fetch_intraday.py
       - name: Commit to research-data branch
         run: |
           git config user.name "HB Atelier Bot"; git config user.email "atelier-bot@users.noreply.github.com"
           mv research/intraday_data /tmp/intraday_data
-          git checkout --orphan research-data
+          B="${{ inputs.branch }}"; case "$B" in main|"") echo "refusing branch $B"; exit 1;; esac
+          git checkout --orphan "$B"
           git rm -rq --cached . ; rm -rf ./* .github 2>/dev/null || true
           mkdir -p intraday_data && cp -r /tmp/intraday_data/* intraday_data/
           git add intraday_data
           git commit -qm "Intraday research data $(date -u +%FT%RZ)"
-          git push -f origin research-data
+          git push -f origin "$B"

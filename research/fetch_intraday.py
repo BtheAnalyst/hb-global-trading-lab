@@ -23,6 +23,7 @@ sys.path.insert(0, str(ROOT))
 from hbgtl.intraday_universe import RESEARCH_POOL  # noqa: E402
 
 OUT = ROOT / "research" / "intraday_data"
+POOL = [x.strip().upper() for x in os.environ.get("SYMBOLS", "").split(",") if x.strip()] or RESEARCH_POOL
 OUT.mkdir(parents=True, exist_ok=True)
 DAYS = int(os.environ.get("DAYS", "190"))
 
@@ -45,14 +46,15 @@ except Exception as e:  # noqa: BLE001
     print(f"::warning title=SIP refused::{e}; using IEX")
     feed = DataFeed.IEX
 
-daily = bars(RESEARCH_POOL, TimeFrame.Day, start - timedelta(days=60), feed).reset_index()
+daily = bars(POOL, TimeFrame.Day, start - timedelta(days=60), feed).reset_index()
 daily.to_csv(OUT / "daily.csv.gz", index=False)
 got = sorted(daily["symbol"].unique())
 print(f"daily bars for {len(got)} symbols")
 
 written = []
-for i in range(0, len(got), 10):
-    chunk = got[i:i + 10]
+step = 10 if len(got) > 20 else 2
+for i in range(0, len(got), step):
+    chunk = got[i:i + step]
     df = bars(chunk, TimeFrame.Minute, start, feed).reset_index()
     df["t"] = pd.to_datetime(df["timestamp"], utc=True)
     et = df["t"].dt.tz_convert("America/New_York")
@@ -63,7 +65,7 @@ for i in range(0, len(got), 10):
                               "trade_count": "n", "vwap": "vw"})[["t", "o", "h", "l", "c", "v", "n", "vw"]]
         g.to_csv(OUT / f"{sym}.csv.gz", index=False)
         written.append(sym)
-    print(f"{min(i + 10, len(got))}/{len(got)}")
+    print(f"{min(i + step, len(got))}/{len(got)}", flush=True)
 
 (OUT / "meta.json").write_text(json.dumps({"feed": feed.value, "start": start.isoformat(), "end": end.isoformat(),
                                            "symbols": written, "adjustment": "split"}, indent=1))
