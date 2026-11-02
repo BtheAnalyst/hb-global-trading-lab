@@ -1123,3 +1123,13 @@
 {"t": "2026-11-02T17:38:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PYPL", "m": 187, "reason": "continuation breakout volume not confirmed"}
 {"t": "2026-11-02T17:38:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SNAP", "m": 187, "reason": "relative volume 0.96 below 1.5"}
 {"t": "2026-11-02T17:40:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CMCSA", "m": 189, "reason": "relative volume 0.88 below 1.5"}
+{"t": "2026-11-02T17:46:11+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "T", "m": 195, "reason": "relative volume 0.9 below 1.5"}
+{"t": "2026-11-02T17:47:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KR", "m": 196, "reason": "relative volume 0.87 below 1.5"}
+{"t": "2026-11-02T17:47:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "NEE", "m": 196, "reason": "relative volume 1.2 below 1.5"}
+{"t": "2026-11-02T17:49:09+00:00", "date": "2026-11-02", "event": "signal", "setup": "PULLBACK_VWAP_V1", "symbol": "RBLX", "m": 198, "ref": 43.83, "stop": 43.55, "target": 44.39, "rvol": 2.01, "why": "uptrend above VWAP, pullback touched VWAP 43.50, close above prior high, RVOL 2.0", "conditions": {"vwap": 43.49993610659027, "pattern": "close above prior high"}, "stale": false}
+{"t": "2026-11-02T17:51:09+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CVS", "m": 200, "reason": "relative volume 1.15 below 1.5"}
+{"t": "2026-11-02T17:51:09+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DKNG", "m": 200, "reason": "relative volume 0.81 below 1.5"}
+{"t": "2026-11-02T17:51:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PYPL", "m": 200, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-02T17:51:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RBLX", "m": 200, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-02T17:51:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 200, "reason": "relative volume 0.62 below 1.5"}
+{"t": "2026-11-02T17:52:09+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DOCU", "m": 201, "reason": "relative volume 0.66 below 1.5"}
