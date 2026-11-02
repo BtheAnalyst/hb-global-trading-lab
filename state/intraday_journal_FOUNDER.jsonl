@@ -1045,3 +1045,13 @@
 {"t": "2026-11-02T16:25:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ULCC", "m": 114, "reason": "relative volume 0.1 below 1.5"}
 {"t": "2026-11-02T16:26:09+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CCL", "m": 115, "reason": "relative volume 1.42 below 1.5"}
 {"t": "2026-11-02T16:26:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "PPL", "m": 115, "reason": "relative volume 1.81 below 2.0"}
+{"t": "2026-11-02T16:27:09+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BSX", "m": 116, "reason": "relative volume 1.31 below 1.5"}
+{"t": "2026-11-02T16:27:09+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "F", "m": 116, "reason": "relative volume 0.7 below 1.5"}
+{"t": "2026-11-02T16:31:06+00:00", "date": "2026-11-02", "event": "wide_dropped", "watched_before": 123, "watched_now": 123}
+{"t": "2026-11-02T16:31:12+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CHWY", "m": 120, "reason": "relative volume 1.12 below 1.5"}
+{"t": "2026-11-02T16:32:11+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AFRM", "m": 121, "reason": "relative volume 1.14 below 1.5"}
+{"t": "2026-11-02T16:32:11+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "FCX", "m": 121, "reason": "relative volume 1.11 below 1.5"}
+{"t": "2026-11-02T16:32:11+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 121, "reason": "relative volume 0.6 below 1.5"}
+{"t": "2026-11-02T16:35:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CMCSA", "m": 124, "reason": "relative volume 0.81 below 1.5"}
+{"t": "2026-11-02T16:35:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "UBER", "m": 124, "reason": "relative volume 1.24 below 1.5"}
+{"t": "2026-11-02T16:37:09+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DKNG", "m": 126, "reason": "relative volume 0.82 below 1.5"}
