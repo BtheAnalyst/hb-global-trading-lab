@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import json
 import math
+import re
 from datetime import datetime
 from typing import Callable
 
@@ -329,8 +330,37 @@ class IntradayEngine:
         try:
             self.gw.stop_sell(p["stop_cid"], p["symbol"], p["qty"], p["stop"])
             self.note("stop_placed", symbol=p["symbol"], qty=p["qty"], stop=p["stop"], cid=p["stop_cid"])
+            return
         except Exception as e:  # noqa: BLE001
-            self._error(f"protective stop failed for {p['symbol']}: {e}")
+            first = e
+        # Alpaca refuses a sell stop that is not below the current price ("stop price must be less than current
+        # price"). That happens when the price ticks down to the planned stop right after the fill. Re-place the stop
+        # one cent under the current price, but ONLY if the risk per share stays within 10% of the planned risk;
+        # otherwise the trade has genuinely hit its stop and the caller closes it (unchanged safety rule).
+        mkt = self._rejected_market_price(first)
+        if mkt is None:
+            q = self.gw.quote(p["symbol"])
+            mkt = q[0] if q and q[0] else None
+        planned = p["entry"] - p["stop"]
+        if mkt is not None and planned > 0:
+            new_stop = round(min(p["stop"], mkt) - 0.01, 2)
+            if p["entry"] - new_stop <= 1.10 * planned + 1e-9:
+                p["stop_cid"] = f"{p['cid']}-s2"
+                self.persist()
+                try:
+                    self.gw.stop_sell(p["stop_cid"], p["symbol"], p["qty"], new_stop)
+                    self.note("stop_placed", symbol=p["symbol"], qty=p["qty"], stop=new_stop, cid=p["stop_cid"],
+                              note=f"planned stop {p['stop']} was not below the market ({mkt}); placed 1c under it")
+                    p["stop"] = new_stop
+                    return
+                except Exception as e2:  # noqa: BLE001
+                    first = e2
+        self._error(f"protective stop failed for {p['symbol']}: {first}")
+
+    @staticmethod
+    def _rejected_market_price(e):
+        m = re.search(r'"market_price"\s*:\s*"?([0-9.]+)', str(e))
+        return float(m.group(1)) if m else None
 
     def _manage_position(self, now, m_now):
         p = self.s["position"]

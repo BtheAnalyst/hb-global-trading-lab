@@ -332,3 +332,41 @@ def test_whole_shares_used_when_they_fit():
     e, st, j, gw = engine(10000.0, fractional=True)
     run_to(e, 21)
     assert gw.sent[0][0] == "bracket" and gw.sent[0][3] == int(gw.sent[0][3]) >= 100
+
+
+def _reject_first_stop(gw, market):
+    real, calls = gw.stop_sell, []
+
+    def stop_sell(cid, sym, qty, stop):
+        calls.append(stop)
+        if len(calls) == 1:
+            raise RuntimeError('{"code":42210000,"market_price":"%s","message":"stop price must be less than '
+                               'current price","stop_price":"%s"}' % (market, stop))
+        return real(cid, sym, qty, stop)
+    gw.stop_sell = stop_sell
+    return calls
+
+
+def test_fractional_stop_at_market_is_replaced_one_cent_lower_and_trade_stays_open():
+    # Nov 2 PYPL case: price touched the planned stop right after the fill; broker refused the stop
+    e, st, j, gw = engine(30.0, fractional=True)
+    run_to(e, 21)
+    cid = gw.sent[0][1]
+    calls = _reject_first_stop(gw, "20.10")
+    gw.fill(cid, 20.30)
+    run_to(e, 22)
+    p = st["position"]
+    assert calls == [20.10, 20.09] and p is not None and p["status"] == "open" and p["stop"] == 20.09
+    assert not any(x[0] == "sell" for x in gw.sent)
+
+
+def test_fractional_stop_far_below_plan_still_closes_trade():
+    # price already well under the planned stop: the trade really hit its stop, so close it (no wider stop)
+    e, st, j, gw = engine(30.0, fractional=True)
+    run_to(e, 21)
+    cid = gw.sent[0][1]
+    calls = _reject_first_stop(gw, "19.90")
+    gw.fill(cid, 20.30)
+    run_to(e, 22)
+    run_to(e, 23)
+    assert calls == [20.10] and any(x[0] == "sell" for x in gw.sent) and st["position"] is None
