@@ -1206,3 +1206,6 @@
 {"t": "2026-11-02T19:14:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "RF", "m": 283, "reason": "relative volume 0.89 below 1.5"}
 {"t": "2026-11-02T19:14:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "USB", "m": 283, "reason": "relative volume 0.69 below 1.5"}
 {"t": "2026-11-02T19:17:11+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "FITB", "m": 286, "reason": "relative volume 0.91 below 1.5"}
+{"t": "2026-11-02T19:23:09+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CVS", "m": 292, "reason": "relative volume 1.28 below 1.5"}
+{"t": "2026-11-02T19:28:09+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "FITB", "m": 297, "reason": "relative volume 0.97 below 1.5"}
+{"t": "2026-11-02T19:28:10+00:00", "date": "2026-11-02", "event": "signal", "setup": "PULLBACK_VWAP_V1", "symbol": "RBLX", "m": 297, "ref": 43.765, "stop": 43.495, "target": 44.305, "rvol": 1.83, "why": "uptrend above VWAP, pullback touched VWAP 43.54, close above prior high, RVOL 1.8", "conditions": {"vwap": 43.53949896429827, "pattern": "close above prior high"}, "stale": false}
