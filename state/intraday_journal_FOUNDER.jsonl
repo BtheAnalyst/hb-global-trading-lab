@@ -1174,3 +1174,11 @@
 {"t": "2026-11-02T18:33:11+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KR", "m": 242, "reason": "relative volume 0.86 below 1.5"}
 {"t": "2026-11-02T18:34:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "FITB", "m": 243, "reason": "relative volume 0.81 below 1.5"}
 {"t": "2026-11-02T18:34:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "RF", "m": 243, "reason": "relative volume 0.9 below 1.5"}
+{"t": "2026-11-02T18:36:11+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "FE", "m": 245, "reason": "relative volume 1.08 below 1.5"}
+{"t": "2026-11-02T18:36:12+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SCHW", "m": 245, "reason": "relative volume 0.89 below 1.5"}
+{"t": "2026-11-02T18:37:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DKNG", "m": 246, "reason": "relative volume 0.77 below 1.5"}
+{"t": "2026-11-02T18:39:09+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CMCSA", "m": 248, "reason": "relative volume 0.9 below 1.5"}
+{"t": "2026-11-02T18:40:12+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KO", "m": 249, "reason": "relative volume 1.14 below 1.5"}
+{"t": "2026-11-02T18:40:12+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "NEE", "m": 249, "reason": "relative volume 1.23 below 1.5"}
+{"t": "2026-11-02T18:40:12+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VZ", "m": 249, "reason": "relative volume 0.66 below 1.5"}
+{"t": "2026-11-02T18:44:10+00:00", "date": "2026-11-02", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KR", "m": 253, "reason": "relative volume 0.89 below 1.5"}
