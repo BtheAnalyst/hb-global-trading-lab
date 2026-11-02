@@ -1,0 +1,1225 @@
+{
+ "method": "Exit-rule comparison for the live entry signals (research only, no orders). Nov 2 2026.\n\nQuestion (founder): instead of taking profit at a fixed 2R target, should the bot \"ride the wave\" \u2014 a further\ntarget, a trailing stop, or hold until the 15:50 flatten?\n\nMethod (predeclared before running):\n  * SAME entry signals, entry fills, initial stop, VWAP invalidation and 15:50 flatten as the live engine\n    (signals from research/intraday_backtest.symbol_signals; next-bar entry with the 0.25R chase cap).\n  * Only the profit-taking rule changes. Variants:\n      T2      fixed 2R target (live today, baseline)\n      T3      fixed 3R target\n      T5      fixed 5R target\n      HOLD    no target: stop, VWAP invalidation, or 15:50 flatten\n      BE_T3   move stop to breakeven after +1R, 3R target\n      TRAIL1  move stop to breakeven after +1R, then trail 1R under the highest high, no target\n      TRAIL15 same, trail 1.5R\n      HALF    sell half at 2R, rest trails 1R under the high (stop to breakeven after 2R)\n  * Trailing stops update only from COMPLETED bars and apply from the next bar (no look-ahead). A bar touching\n    the stop is treated as stopped first. Stops/invalidations/flatten pay slippage; targets fill at the limit.\n  * Costs: stress 10 bps per side (the bar every strategy must clear). Live portfolio rules (one position,\n    max 3/day, -2R day stop). In-sample first 2/3 of sessions, out-of-sample last 1/3.",
+ "sessions": 121,
+ "first": "2026-05-05",
+ "last": "2026-10-27",
+ "oos_from": "2026-08-31",
+ "setups": {
+  "ORB15_V1": {
+   "T2": {
+    "all": {
+     "n": 27,
+     "win_rate": 0.37,
+     "avg_win_R": 1.624,
+     "avg_loss_R": -0.795,
+     "expectancy_R": 0.1008,
+     "t_stat": 0.41,
+     "profit_factor": 1.201,
+     "total_R": 2.72,
+     "best_R": 2.0
+    },
+    "in_sample": {
+     "n": 15,
+     "win_rate": 0.333,
+     "avg_win_R": 1.57,
+     "avg_loss_R": -0.75,
+     "expectancy_R": 0.0231,
+     "t_stat": 0.07,
+     "profit_factor": 1.046,
+     "total_R": 0.35,
+     "best_R": 2.0
+    },
+    "out_of_sample": {
+     "n": 12,
+     "win_rate": 0.417,
+     "avg_win_R": 1.678,
+     "avg_loss_R": -0.859,
+     "expectancy_R": 0.1979,
+     "t_stat": 0.49,
+     "profit_factor": 1.395,
+     "total_R": 2.37,
+     "best_R": 2.0
+    },
+    "account_100": {
+     "end_value": 101.48,
+     "min_value": 99.02
+    },
+    "by_exit": {
+     "closed below VWAP": 16,
+     "target": 7,
+     "end of day flatten (15": 2,
+     "stop": 2
+    }
+   },
+   "T3": {
+    "all": {
+     "n": 27,
+     "win_rate": 0.37,
+     "avg_win_R": 1.676,
+     "avg_loss_R": -0.795,
+     "expectancy_R": 0.1201,
+     "t_stat": 0.43,
+     "profit_factor": 1.24,
+     "total_R": 3.24,
+     "best_R": 3.0
+    },
+    "in_sample": {
+     "n": 15,
+     "win_rate": 0.333,
+     "avg_win_R": 1.403,
+     "avg_loss_R": -0.75,
+     "expectancy_R": -0.0324,
+     "t_stat": -0.1,
+     "profit_factor": 0.935,
+     "total_R": -0.49,
+     "best_R": 3.0
+    },
+    "out_of_sample": {
+     "n": 12,
+     "win_rate": 0.417,
+     "avg_win_R": 1.949,
+     "avg_loss_R": -0.859,
+     "expectancy_R": 0.3107,
+     "t_stat": 0.63,
+     "profit_factor": 1.62,
+     "total_R": 3.73,
+     "best_R": 3.0
+    },
+    "account_100": {
+     "end_value": 101.73,
+     "min_value": 98.41
+    },
+    "by_exit": {
+     "closed below VWAP": 18,
+     "end of day flatten (15": 3,
+     "stop": 2,
+     "target": 4
+    }
+   },
+   "T5": {
+    "all": {
+     "n": 27,
+     "win_rate": 0.37,
+     "avg_win_R": 1.704,
+     "avg_loss_R": -0.795,
+     "expectancy_R": 0.1304,
+     "t_stat": 0.44,
+     "profit_factor": 1.26,
+     "total_R": 3.52,
+     "best_R": 5.0
+    },
+    "in_sample": {
+     "n": 15,
+     "win_rate": 0.333,
+     "avg_win_R": 1.803,
+     "avg_loss_R": -0.75,
+     "expectancy_R": 0.101,
+     "t_stat": 0.24,
+     "profit_factor": 1.202,
+     "total_R": 1.51,
+     "best_R": 5.0
+    },
+    "out_of_sample": {
+     "n": 12,
+     "win_rate": 0.417,
+     "avg_win_R": 1.605,
+     "avg_loss_R": -0.859,
+     "expectancy_R": 0.1672,
+     "t_stat": 0.38,
+     "profit_factor": 1.334,
+     "total_R": 2.01,
+     "best_R": 3.21
+    },
+    "account_100": {
+     "end_value": 101.86,
+     "min_value": 98.41
+    },
+    "by_exit": {
+     "closed below VWAP": 18,
+     "end of day flatten (15": 6,
+     "stop": 2,
+     "target": 1
+    }
+   },
+   "HOLD": {
+    "all": {
+     "n": 27,
+     "win_rate": 0.37,
+     "avg_win_R": 1.743,
+     "avg_loss_R": -0.795,
+     "expectancy_R": 0.1448,
+     "t_stat": 0.47,
+     "profit_factor": 1.289,
+     "total_R": 3.91,
+     "best_R": 5.39
+    },
+    "in_sample": {
+     "n": 15,
+     "win_rate": 0.333,
+     "avg_win_R": 1.881,
+     "avg_loss_R": -0.75,
+     "expectancy_R": 0.1269,
+     "t_stat": 0.29,
+     "profit_factor": 1.254,
+     "total_R": 1.9,
+     "best_R": 5.39
+    },
+    "out_of_sample": {
+     "n": 12,
+     "win_rate": 0.417,
+     "avg_win_R": 1.605,
+     "avg_loss_R": -0.859,
+     "expectancy_R": 0.1672,
+     "t_stat": 0.38,
+     "profit_factor": 1.334,
+     "total_R": 2.01,
+     "best_R": 3.21
+    },
+    "account_100": {
+     "end_value": 102.06,
+     "min_value": 98.41
+    },
+    "by_exit": {
+     "closed below VWAP": 18,
+     "end of day flatten (15": 7,
+     "stop": 2
+    }
+   },
+   "BE_T3": {
+    "all": {
+     "n": 27,
+     "win_rate": 0.333,
+     "avg_win_R": 1.819,
+     "avg_loss_R": -0.756,
+     "expectancy_R": 0.1025,
+     "t_stat": 0.37,
+     "profit_factor": 1.203,
+     "total_R": 2.77,
+     "best_R": 3.0
+    },
+    "in_sample": {
+     "n": 15,
+     "win_rate": 0.333,
+     "avg_win_R": 1.403,
+     "avg_loss_R": -0.75,
+     "expectancy_R": -0.0324,
+     "t_stat": -0.1,
+     "profit_factor": 0.935,
+     "total_R": -0.49,
+     "best_R": 3.0
+    },
+    "out_of_sample": {
+     "n": 12,
+     "win_rate": 0.333,
+     "avg_win_R": 2.338,
+     "avg_loss_R": -0.763,
+     "expectancy_R": 0.271,
+     "t_stat": 0.55,
+     "profit_factor": 1.533,
+     "total_R": 3.25,
+     "best_R": 3.0
+    },
+    "account_100": {
+     "end_value": 101.49,
+     "min_value": 98.41
+    },
+    "by_exit": {
+     "closed below VWAP": 18,
+     "end of day flatten (15": 2,
+     "stop": 2,
+     "target": 4,
+     "trail/BE stop": 1
+    }
+   },
+   "TRAIL1": {
+    "all": {
+     "n": 27,
+     "win_rate": 0.37,
+     "avg_win_R": 1.499,
+     "avg_loss_R": -0.795,
+     "expectancy_R": 0.0544,
+     "t_stat": 0.22,
+     "profit_factor": 1.109,
+     "total_R": 1.47,
+     "best_R": 2.75
+    },
+    "in_sample": {
+     "n": 15,
+     "win_rate": 0.333,
+     "avg_win_R": 1.425,
+     "avg_loss_R": -0.75,
+     "expectancy_R": -0.025,
+     "t_stat": -0.08,
+     "profit_factor": 0.95,
+     "total_R": -0.38,
+     "best_R": 2.47
+    },
+    "out_of_sample": {
+     "n": 12,
+     "win_rate": 0.417,
+     "avg_win_R": 1.572,
+     "avg_loss_R": -0.859,
+     "expectancy_R": 0.1537,
+     "t_stat": 0.37,
+     "profit_factor": 1.307,
+     "total_R": 1.84,
+     "best_R": 2.75
+    },
+    "account_100": {
+     "end_value": 100.85,
+     "min_value": 98.73
+    },
+    "by_exit": {
+     "closed below VWAP": 16,
+     "trail/BE stop": 6,
+     "end of day flatten (15": 3,
+     "stop": 2
+    }
+   },
+   "TRAIL15": {
+    "all": {
+     "n": 27,
+     "win_rate": 0.333,
+     "avg_win_R": 1.767,
+     "avg_loss_R": -0.756,
+     "expectancy_R": 0.0852,
+     "t_stat": 0.29,
+     "profit_factor": 1.169,
+     "total_R": 2.3,
+     "best_R": 5.39
+    },
+    "in_sample": {
+     "n": 15,
+     "win_rate": 0.333,
+     "avg_win_R": 1.91,
+     "avg_loss_R": -0.75,
+     "expectancy_R": 0.1364,
+     "t_stat": 0.31,
+     "profit_factor": 1.273,
+     "total_R": 2.05,
+     "best_R": 5.39
+    },
+    "out_of_sample": {
+     "n": 12,
+     "win_rate": 0.333,
+     "avg_win_R": 1.589,
+     "avg_loss_R": -0.763,
+     "expectancy_R": 0.0212,
+     "t_stat": 0.06,
+     "profit_factor": 1.042,
+     "total_R": 0.25,
+     "best_R": 2.75
+    },
+    "account_100": {
+     "end_value": 101.25,
+     "min_value": 98.48
+    },
+    "by_exit": {
+     "closed below VWAP": 16,
+     "trail/BE stop": 5,
+     "end of day flatten (15": 4,
+     "stop": 2
+    }
+   },
+   "HALF": {
+    "all": {
+     "n": 27,
+     "win_rate": 0.37,
+     "avg_win_R": 1.579,
+     "avg_loss_R": -0.795,
+     "expectancy_R": 0.0841,
+     "t_stat": 0.34,
+     "profit_factor": 1.168,
+     "total_R": 2.27,
+     "best_R": 2.38
+    },
+    "in_sample": {
+     "n": 15,
+     "win_rate": 0.333,
+     "avg_win_R": 1.498,
+     "avg_loss_R": -0.75,
+     "expectancy_R": -0.001,
+     "t_stat": -0.0,
+     "profit_factor": 0.998,
+     "total_R": -0.01,
+     "best_R": 2.23
+    },
+    "out_of_sample": {
+     "n": 12,
+     "win_rate": 0.417,
+     "avg_win_R": 1.66,
+     "avg_loss_R": -0.859,
+     "expectancy_R": 0.1905,
+     "t_stat": 0.47,
+     "profit_factor": 1.38,
+     "total_R": 2.29,
+     "best_R": 2.38
+    },
+    "account_100": {
+     "end_value": 101.25,
+     "min_value": 98.87
+    },
+    "by_exit": {
+     "closed below VWAP": 16,
+     "trail/BE stop": 5,
+     "end of day flatten (15": 4,
+     "stop": 2
+    }
+   }
+  },
+  "PULLBACK_VWAP_V1": {
+   "T2": {
+    "all": {
+     "n": 215,
+     "win_rate": 0.279,
+     "avg_win_R": 1.807,
+     "avg_loss_R": -1.097,
+     "expectancy_R": -0.2867,
+     "t_stat": -3.12,
+     "profit_factor": 0.637,
+     "total_R": -61.65,
+     "best_R": 2.0
+    },
+    "in_sample": {
+     "n": 146,
+     "win_rate": 0.281,
+     "avg_win_R": 1.902,
+     "avg_loss_R": -1.102,
+     "expectancy_R": -0.2581,
+     "t_stat": -2.25,
+     "profit_factor": 0.674,
+     "total_R": -37.68,
+     "best_R": 2.0
+    },
+    "out_of_sample": {
+     "n": 69,
+     "win_rate": 0.275,
+     "avg_win_R": 1.6,
+     "avg_loss_R": -1.087,
+     "expectancy_R": -0.3474,
+     "t_stat": -2.26,
+     "profit_factor": 0.559,
+     "total_R": -23.97,
+     "best_R": 2.0
+    },
+    "account_100": {
+     "end_value": 77.42,
+     "min_value": 76.3
+    },
+    "by_exit": {
+     "target": 52,
+     "end of day flatten (15": 9,
+     "stop": 112,
+     "bearish engulfing below VWAP": 42
+    }
+   },
+   "T3": {
+    "all": {
+     "n": 201,
+     "win_rate": 0.199,
+     "avg_win_R": 2.274,
+     "avg_loss_R": -1.08,
+     "expectancy_R": -0.4127,
+     "t_stat": -4.03,
+     "profit_factor": 0.523,
+     "total_R": -82.95,
+     "best_R": 3.0
+    },
+    "in_sample": {
+     "n": 133,
+     "win_rate": 0.203,
+     "avg_win_R": 2.329,
+     "avg_loss_R": -1.085,
+     "expectancy_R": -0.3924,
+     "t_stat": -3.06,
+     "profit_factor": 0.546,
+     "total_R": -52.19,
+     "best_R": 3.0
+    },
+    "out_of_sample": {
+     "n": 68,
+     "win_rate": 0.191,
+     "avg_win_R": 2.162,
+     "avg_loss_R": -1.07,
+     "expectancy_R": -0.4524,
+     "t_stat": -2.66,
+     "profit_factor": 0.477,
+     "total_R": -30.76,
+     "best_R": 3.0
+    },
+    "account_100": {
+     "end_value": 76.17,
+     "min_value": 74.34
+    },
+    "by_exit": {
+     "target": 27,
+     "end of day flatten (15": 10,
+     "stop": 111,
+     "bearish engulfing below VWAP": 53
+    }
+   },
+   "T5": {
+    "all": {
+     "n": 187,
+     "win_rate": 0.182,
+     "avg_win_R": 1.967,
+     "avg_loss_R": -1.072,
+     "expectancy_R": -0.5194,
+     "t_stat": -5.01,
+     "profit_factor": 0.408,
+     "total_R": -97.13,
+     "best_R": 5.0
+    },
+    "in_sample": {
+     "n": 126,
+     "win_rate": 0.175,
+     "avg_win_R": 2.435,
+     "avg_loss_R": -1.075,
+     "expectancy_R": -0.4622,
+     "t_stat": -3.26,
+     "profit_factor": 0.479,
+     "total_R": -58.23,
+     "best_R": 5.0
+    },
+    "out_of_sample": {
+     "n": 61,
+     "win_rate": 0.197,
+     "avg_win_R": 1.11,
+     "avg_loss_R": -1.066,
+     "expectancy_R": -0.6378,
+     "t_stat": -5.12,
+     "profit_factor": 0.255,
+     "total_R": -38.9,
+     "best_R": 2.85
+    },
+    "account_100": {
+     "end_value": 75.33,
+     "min_value": 74.77
+    },
+    "by_exit": {
+     "end of day flatten (15": 20,
+     "target": 6,
+     "stop": 103,
+     "bearish engulfing below VWAP": 58
+    }
+   },
+   "HOLD": {
+    "all": {
+     "n": 183,
+     "win_rate": 0.18,
+     "avg_win_R": 2.023,
+     "avg_loss_R": -1.07,
+     "expectancy_R": -0.512,
+     "t_stat": -4.82,
+     "profit_factor": 0.416,
+     "total_R": -93.7,
+     "best_R": 6.32
+    },
+    "in_sample": {
+     "n": 122,
+     "win_rate": 0.172,
+     "avg_win_R": 2.545,
+     "avg_loss_R": -1.072,
+     "expectancy_R": -0.4492,
+     "t_stat": -3.06,
+     "profit_factor": 0.494,
+     "total_R": -54.8,
+     "best_R": 6.32
+    },
+    "out_of_sample": {
+     "n": 61,
+     "win_rate": 0.197,
+     "avg_win_R": 1.11,
+     "avg_loss_R": -1.066,
+     "expectancy_R": -0.6378,
+     "t_stat": -5.12,
+     "profit_factor": 0.255,
+     "total_R": -38.9,
+     "best_R": 2.85
+    },
+    "account_100": {
+     "end_value": 76.04,
+     "min_value": 75.48
+    },
+    "by_exit": {
+     "end of day flatten (15": 25,
+     "bearish engulfing below VWAP": 58,
+     "stop": 100
+    }
+   },
+   "BE_T3": {
+    "all": {
+     "n": 212,
+     "win_rate": 0.16,
+     "avg_win_R": 2.361,
+     "avg_loss_R": -0.902,
+     "expectancy_R": -0.3784,
+     "t_stat": -4.12,
+     "profit_factor": 0.5,
+     "total_R": -80.22,
+     "best_R": 3.0
+    },
+    "in_sample": {
+     "n": 142,
+     "win_rate": 0.155,
+     "avg_win_R": 2.373,
+     "avg_loss_R": -0.895,
+     "expectancy_R": -0.3885,
+     "t_stat": -3.49,
+     "profit_factor": 0.486,
+     "total_R": -55.16,
+     "best_R": 3.0
+    },
+    "out_of_sample": {
+     "n": 70,
+     "win_rate": 0.171,
+     "avg_win_R": 2.34,
+     "avg_loss_R": -0.916,
+     "expectancy_R": -0.358,
+     "t_stat": -2.19,
+     "profit_factor": 0.528,
+     "total_R": -25.06,
+     "best_R": 3.0
+    },
+    "account_100": {
+     "end_value": 75.06,
+     "min_value": 72.98
+    },
+    "by_exit": {
+     "trail/BE stop": 45,
+     "end of day flatten (15": 7,
+     "target": 24,
+     "bearish engulfing below VWAP": 33,
+     "stop": 103
+    }
+   },
+   "TRAIL1": {
+    "all": {
+     "n": 221,
+     "win_rate": 0.33,
+     "avg_win_R": 1.164,
+     "avg_loss_R": -1.067,
+     "expectancy_R": -0.3304,
+     "t_stat": -4.01,
+     "profit_factor": 0.538,
+     "total_R": -73.01,
+     "best_R": 4.64
+    },
+    "in_sample": {
+     "n": 151,
+     "win_rate": 0.311,
+     "avg_win_R": 1.234,
+     "avg_loss_R": -1.038,
+     "expectancy_R": -0.3309,
+     "t_stat": -3.26,
+     "profit_factor": 0.537,
+     "total_R": -49.96,
+     "best_R": 4.64
+    },
+    "out_of_sample": {
+     "n": 70,
+     "win_rate": 0.371,
+     "avg_win_R": 1.036,
+     "avg_loss_R": -1.136,
+     "expectancy_R": -0.3293,
+     "t_stat": -2.33,
+     "profit_factor": 0.539,
+     "total_R": -23.05,
+     "best_R": 3.26
+    },
+    "account_100": {
+     "end_value": 76.6,
+     "min_value": 74.54
+    },
+    "by_exit": {
+     "trail/BE stop": 81,
+     "end of day flatten (15": 4,
+     "stop": 107,
+     "bearish engulfing below VWAP": 29
+    }
+   },
+   "TRAIL15": {
+    "all": {
+     "n": 212,
+     "win_rate": 0.274,
+     "avg_win_R": 1.332,
+     "avg_loss_R": -1.002,
+     "expectancy_R": -0.3633,
+     "t_stat": -4.23,
+     "profit_factor": 0.501,
+     "total_R": -77.03,
+     "best_R": 5.93
+    },
+    "in_sample": {
+     "n": 144,
+     "win_rate": 0.257,
+     "avg_win_R": 1.484,
+     "avg_loss_R": -0.987,
+     "expectancy_R": -0.3521,
+     "t_stat": -3.24,
+     "profit_factor": 0.52,
+     "total_R": -50.7,
+     "best_R": 5.93
+    },
+    "out_of_sample": {
+     "n": 68,
+     "win_rate": 0.309,
+     "avg_win_R": 1.064,
+     "avg_loss_R": -1.036,
+     "expectancy_R": -0.3872,
+     "t_stat": -2.81,
+     "profit_factor": 0.459,
+     "total_R": -26.33,
+     "best_R": 3.19
+    },
+    "account_100": {
+     "end_value": 75.73,
+     "min_value": 73.98
+    },
+    "by_exit": {
+     "trail/BE stop": 75,
+     "end of day flatten (15": 6,
+     "bearish engulfing below VWAP": 31,
+     "stop": 100
+    }
+   },
+   "HALF": {
+    "all": {
+     "n": 205,
+     "win_rate": 0.278,
+     "avg_win_R": 1.758,
+     "avg_loss_R": -1.099,
+     "expectancy_R": -0.3049,
+     "t_stat": -3.24,
+     "profit_factor": 0.616,
+     "total_R": -62.5,
+     "best_R": 3.36
+    },
+    "in_sample": {
+     "n": 137,
+     "win_rate": 0.277,
+     "avg_win_R": 1.928,
+     "avg_loss_R": -1.105,
+     "expectancy_R": -0.2636,
+     "t_stat": -2.18,
+     "profit_factor": 0.67,
+     "total_R": -36.11,
+     "best_R": 3.36
+    },
+    "out_of_sample": {
+     "n": 68,
+     "win_rate": 0.279,
+     "avg_win_R": 1.419,
+     "avg_loss_R": -1.089,
+     "expectancy_R": -0.3881,
+     "t_stat": -2.64,
+     "profit_factor": 0.505,
+     "total_R": -26.39,
+     "best_R": 2.63
+    },
+    "account_100": {
+     "end_value": 77.15,
+     "min_value": 75.76
+    },
+    "by_exit": {
+     "trail/BE stop": 48,
+     "end of day flatten (15": 9,
+     "stop": 106,
+     "bearish engulfing below VWAP": 42
+    }
+   }
+  },
+  "MOMO_CONT_V1": {
+   "T2": {
+    "all": {
+     "n": 222,
+     "win_rate": 0.27,
+     "avg_win_R": 1.78,
+     "avg_loss_R": -1.039,
+     "expectancy_R": -0.2769,
+     "t_stat": -3.17,
+     "profit_factor": 0.635,
+     "total_R": -61.48,
+     "best_R": 2.0
+    },
+    "in_sample": {
+     "n": 150,
+     "win_rate": 0.233,
+     "avg_win_R": 1.788,
+     "avg_loss_R": -1.028,
+     "expectancy_R": -0.3708,
+     "t_stat": -3.66,
+     "profit_factor": 0.529,
+     "total_R": -55.63,
+     "best_R": 2.0
+    },
+    "out_of_sample": {
+     "n": 72,
+     "win_rate": 0.347,
+     "avg_win_R": 1.769,
+     "avg_loss_R": -1.065,
+     "expectancy_R": -0.0813,
+     "t_stat": -0.49,
+     "profit_factor": 0.883,
+     "total_R": -5.85,
+     "best_R": 2.0
+    },
+    "account_100": {
+     "end_value": 81.63,
+     "min_value": 80.16
+    },
+    "by_exit": {
+     "closed below VWAP": 28,
+     "stop": 125,
+     "target": 49,
+     "end of day flatten (15": 20
+    }
+   },
+   "T3": {
+    "all": {
+     "n": 206,
+     "win_rate": 0.228,
+     "avg_win_R": 2.147,
+     "avg_loss_R": -1.029,
+     "expectancy_R": -0.3048,
+     "t_stat": -3.02,
+     "profit_factor": 0.616,
+     "total_R": -62.79,
+     "best_R": 3.0
+    },
+    "in_sample": {
+     "n": 141,
+     "win_rate": 0.213,
+     "avg_win_R": 2.258,
+     "avg_loss_R": -1.029,
+     "expectancy_R": -0.3299,
+     "t_stat": -2.71,
+     "profit_factor": 0.593,
+     "total_R": -46.51,
+     "best_R": 3.0
+    },
+    "out_of_sample": {
+     "n": 65,
+     "win_rate": 0.262,
+     "avg_win_R": 1.95,
+     "avg_loss_R": -1.03,
+     "expectancy_R": -0.2505,
+     "t_stat": -1.38,
+     "profit_factor": 0.671,
+     "total_R": -16.28,
+     "best_R": 3.0
+    },
+    "account_100": {
+     "end_value": 79.64,
+     "min_value": 79.64
+    },
+    "by_exit": {
+     "closed below VWAP": 34,
+     "stop": 121,
+     "target": 26,
+     "end of day flatten (15": 25
+    }
+   },
+   "T5": {
+    "all": {
+     "n": 191,
+     "win_rate": 0.22,
+     "avg_win_R": 1.776,
+     "avg_loss_R": -1.014,
+     "expectancy_R": -0.4004,
+     "t_stat": -4.2,
+     "profit_factor": 0.494,
+     "total_R": -76.47,
+     "best_R": 5.0
+    },
+    "in_sample": {
+     "n": 129,
+     "win_rate": 0.202,
+     "avg_win_R": 1.781,
+     "avg_loss_R": -1.009,
+     "expectancy_R": -0.447,
+     "t_stat": -4.04,
+     "profit_factor": 0.445,
+     "total_R": -57.66,
+     "best_R": 5.0
+    },
+    "out_of_sample": {
+     "n": 62,
+     "win_rate": 0.258,
+     "avg_win_R": 1.769,
+     "avg_loss_R": -1.024,
+     "expectancy_R": -0.3035,
+     "t_stat": -1.66,
+     "profit_factor": 0.601,
+     "total_R": -18.82,
+     "best_R": 5.0
+    },
+    "account_100": {
+     "end_value": 74.69,
+     "min_value": 74.69
+    },
+    "by_exit": {
+     "closed below VWAP": 37,
+     "stop": 109,
+     "end of day flatten (15": 42,
+     "target": 3
+    }
+   },
+   "HOLD": {
+    "all": {
+     "n": 189,
+     "win_rate": 0.217,
+     "avg_win_R": 1.863,
+     "avg_loss_R": -1.015,
+     "expectancy_R": -0.3909,
+     "t_stat": -3.75,
+     "profit_factor": 0.508,
+     "total_R": -73.89,
+     "best_R": 9.65
+    },
+    "in_sample": {
+     "n": 127,
+     "win_rate": 0.197,
+     "avg_win_R": 1.743,
+     "avg_loss_R": -1.011,
+     "expectancy_R": -0.469,
+     "t_stat": -4.32,
+     "profit_factor": 0.423,
+     "total_R": -59.56,
+     "best_R": 4.38
+    },
+    "out_of_sample": {
+     "n": 62,
+     "win_rate": 0.258,
+     "avg_win_R": 2.049,
+     "avg_loss_R": -1.024,
+     "expectancy_R": -0.2311,
+     "t_stat": -1.02,
+     "profit_factor": 0.696,
+     "total_R": -14.33,
+     "best_R": 9.65
+    },
+    "account_100": {
+     "end_value": 74.89,
+     "min_value": 74.89
+    },
+    "by_exit": {
+     "closed below VWAP": 36,
+     "stop": 109,
+     "end of day flatten (15": 44
+    }
+   },
+   "BE_T3": {
+    "all": {
+     "n": 228,
+     "win_rate": 0.167,
+     "avg_win_R": 2.26,
+     "avg_loss_R": -0.796,
+     "expectancy_R": -0.2868,
+     "t_stat": -3.37,
+     "profit_factor": 0.568,
+     "total_R": -65.38,
+     "best_R": 3.0
+    },
+    "in_sample": {
+     "n": 154,
+     "win_rate": 0.169,
+     "avg_win_R": 2.367,
+     "avg_loss_R": -0.808,
+     "expectancy_R": -0.2718,
+     "t_stat": -2.56,
+     "profit_factor": 0.595,
+     "total_R": -41.86,
+     "best_R": 3.0
+    },
+    "out_of_sample": {
+     "n": 74,
+     "win_rate": 0.162,
+     "avg_win_R": 2.028,
+     "avg_loss_R": -0.772,
+     "expectancy_R": -0.3179,
+     "t_stat": -2.24,
+     "profit_factor": 0.509,
+     "total_R": -23.52,
+     "best_R": 3.0
+    },
+    "account_100": {
+     "end_value": 78.1,
+     "min_value": 78.1
+    },
+    "by_exit": {
+     "closed below VWAP": 17,
+     "stop": 112,
+     "trail/BE stop": 60,
+     "end of day flatten (15": 16,
+     "target": 23
+    }
+   },
+   "TRAIL1": {
+    "all": {
+     "n": 242,
+     "win_rate": 0.384,
+     "avg_win_R": 0.937,
+     "avg_loss_R": -0.986,
+     "expectancy_R": -0.2467,
+     "t_stat": -3.47,
+     "profit_factor": 0.593,
+     "total_R": -59.7,
+     "best_R": 4.0
+    },
+    "in_sample": {
+     "n": 161,
+     "win_rate": 0.373,
+     "avg_win_R": 0.99,
+     "avg_loss_R": -0.984,
+     "expectancy_R": -0.2482,
+     "t_stat": -2.74,
+     "profit_factor": 0.598,
+     "total_R": -39.95,
+     "best_R": 4.0
+    },
+    "out_of_sample": {
+     "n": 81,
+     "win_rate": 0.407,
+     "avg_win_R": 0.842,
+     "avg_loss_R": -0.99,
+     "expectancy_R": -0.2438,
+     "t_stat": -2.16,
+     "profit_factor": 0.584,
+     "total_R": -19.74,
+     "best_R": 2.22
+    },
+    "account_100": {
+     "end_value": 80.53,
+     "min_value": 80.05
+    },
+    "by_exit": {
+     "closed below VWAP": 16,
+     "stop": 113,
+     "trail/BE stop": 105,
+     "end of day flatten (15": 8
+    }
+   },
+   "TRAIL15": {
+    "all": {
+     "n": 223,
+     "win_rate": 0.247,
+     "avg_win_R": 1.25,
+     "avg_loss_R": -0.854,
+     "expectancy_R": -0.3353,
+     "t_stat": -4.33,
+     "profit_factor": 0.479,
+     "total_R": -74.77,
+     "best_R": 5.52
+    },
+    "in_sample": {
+     "n": 147,
+     "win_rate": 0.231,
+     "avg_win_R": 1.372,
+     "avg_loss_R": -0.843,
+     "expectancy_R": -0.331,
+     "t_stat": -3.57,
+     "profit_factor": 0.49,
+     "total_R": -48.65,
+     "best_R": 4.54
+    },
+    "out_of_sample": {
+     "n": 76,
+     "win_rate": 0.276,
+     "avg_win_R": 1.051,
+     "avg_loss_R": -0.876,
+     "expectancy_R": -0.3437,
+     "t_stat": -2.45,
+     "profit_factor": 0.458,
+     "total_R": -26.12,
+     "best_R": 5.52
+    },
+    "account_100": {
+     "end_value": 77.67,
+     "min_value": 77.61
+    },
+    "by_exit": {
+     "closed below VWAP": 14,
+     "stop": 107,
+     "trail/BE stop": 90,
+     "end of day flatten (15": 12
+    }
+   },
+   "HALF": {
+    "all": {
+     "n": 215,
+     "win_rate": 0.279,
+     "avg_win_R": 1.697,
+     "avg_loss_R": -1.043,
+     "expectancy_R": -0.2782,
+     "t_stat": -3.15,
+     "profit_factor": 0.63,
+     "total_R": -59.81,
+     "best_R": 4.01
+    },
+    "in_sample": {
+     "n": 146,
+     "win_rate": 0.247,
+     "avg_win_R": 1.707,
+     "avg_loss_R": -1.036,
+     "expectancy_R": -0.3594,
+     "t_stat": -3.49,
+     "profit_factor": 0.539,
+     "total_R": -52.47,
+     "best_R": 3.0
+    },
+    "out_of_sample": {
+     "n": 69,
+     "win_rate": 0.348,
+     "avg_win_R": 1.683,
+     "avg_loss_R": -1.061,
+     "expectancy_R": -0.1064,
+     "t_stat": -0.64,
+     "profit_factor": 0.846,
+     "total_R": -7.34,
+     "best_R": 4.01
+    },
+    "account_100": {
+     "end_value": 79.85,
+     "min_value": 78.63
+    },
+    "by_exit": {
+     "closed below VWAP": 28,
+     "stop": 120,
+     "trail/BE stop": 49,
+     "end of day flatten (15": 18
+    }
+   }
+  },
+  "GAPGO_PB_V1": {
+   "T2": {
+    "all": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "account_100": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "by_exit": {}
+   },
+   "T3": {
+    "all": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "account_100": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "by_exit": {}
+   },
+   "T5": {
+    "all": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "account_100": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "by_exit": {}
+   },
+   "HOLD": {
+    "all": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "account_100": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "by_exit": {}
+   },
+   "BE_T3": {
+    "all": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "account_100": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "by_exit": {}
+   },
+   "TRAIL1": {
+    "all": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "account_100": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "by_exit": {}
+   },
+   "TRAIL15": {
+    "all": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "account_100": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "by_exit": {}
+   },
+   "HALF": {
+    "all": {
+     "n": 0
+    },
+    "in_sample": {
+     "n": 0
+    },
+    "out_of_sample": {
+     "n": 0
+    },
+    "account_100": {
+     "end_value": 100.0,
+     "min_value": 100.0
+    },
+    "by_exit": {}
+   }
+  }
+ }
+}

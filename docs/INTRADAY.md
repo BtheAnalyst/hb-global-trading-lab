@@ -99,3 +99,21 @@ profit factor > 1.1, and the $100 cash-account simulation must end above $100) a
 **Result: none passes; none shows a reliable edge even before costs** (best: VWAP trend on ETFs, +0.06R gross,
 t = 1.0, which typical costs erase). The live engine keeps ORB15_V1 as its only paper-execution setup.
 Files: `research/strategy_lab_results_intraday_data.json`, `research/strategy_lab_results_etf_data.json`.
+
+### Exit-rule comparison (Nov 2, 2026) — `research/exit_lab.py`
+Same entries, stops and VWAP exit as live; only profit-taking changes. 170 stocks, May 5 – Oct 27 2026, stress costs.
+
+| ORB15_V1 exit | Trades | Win % | Avg R | t | $100 → |
+|---|---|---|---|---|---|
+| 2R target (live) | 27 | 37% | +0.10 | 0.41 | $101.48 |
+| 3R target | 27 | 37% | +0.12 | 0.43 | $101.73 |
+| 5R target | 27 | 37% | +0.13 | 0.44 | $101.86 |
+| Hold to 15:50 | 27 | 37% | +0.14 | 0.47 | $102.06 |
+| Breakeven at 1R, 3R target | 27 | 33% | +0.10 | 0.37 | $101.49 |
+| Trailing 1R | 27 | 37% | +0.05 | 0.22 | $100.85 |
+| Trailing 1.5R | 27 | 33% | +0.09 | 0.29 | $101.25 |
+| Half at 2R, trail rest | 27 | 37% | +0.08 | 0.34 | $101.25 |
+
+Differences are within noise (t < 0.5 on 27 trades). 16 of 27 trades exit on "closed below VWAP" before any
+target or trail matters. For PULLBACK_VWAP_V1 and MOMO_CONT_V1 every exit variant loses; wider targets lose more.
+No change made.
