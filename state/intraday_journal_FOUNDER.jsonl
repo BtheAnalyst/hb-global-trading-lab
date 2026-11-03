@@ -1487,3 +1487,16 @@
 {"t": "2026-11-03T16:26:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "MO", "m": 115, "reason": "relative volume 0.64 below 2.0"}
 {"t": "2026-11-03T16:26:11+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "WULF", "m": 115, "reason": "relative volume 0.94 below 1.5"}
 {"t": "2026-11-03T16:28:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CSX", "m": 117, "reason": "relative volume 1.01 below 1.5"}
+{"t": "2026-11-03T16:30:14+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GPK", "m": 119, "reason": "relative volume 0.19 below 1.5"}
+{"t": "2026-11-03T16:31:06+00:00", "date": "2026-11-03", "event": "wide_dropped", "watched_before": 128, "watched_now": 128}
+{"t": "2026-11-03T16:32:11+00:00", "date": "2026-11-03", "event": "signal", "setup": "PULLBACK_VWAP_V1", "symbol": "KDP", "m": 121, "ref": 35.035, "stop": 34.935, "target": 35.235, "rvol": 3.19, "why": "uptrend above VWAP, pullback touched VWAP 34.90, bullish engulfing, RVOL 3.2", "conditions": {"vwap": 34.90009842892127, "pattern": "bullish engulfing"}, "stale": false}
+{"t": "2026-11-03T16:34:11+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "EPD", "m": 123, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-03T16:36:11+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PBR", "m": 125, "reason": "relative volume 0.85 below 1.5"}
+{"t": "2026-11-03T16:37:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NLY", "m": 126, "reason": "relative volume 1.39 below 1.5"}
+{"t": "2026-11-03T16:37:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "S", "m": 126, "reason": "relative volume 0.72 below 1.5"}
+{"t": "2026-11-03T16:37:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SNAP", "m": 126, "reason": "relative volume 0.45 below 1.5"}
+{"t": "2026-11-03T16:38:09+00:00", "date": "2026-11-03", "event": "shadow_trade", "setup": "PULLBACK_VWAP_V1", "symbol": "KDP", "m": 121, "entry": 35.07, "exit": 34.9001, "risk": 0.135, "R": -1.2587, "how": "stop", "mins": 6, "rvol": 3.1874075187274578, "stop": 34.935, "exit_m": 127}
+{"t": "2026-11-03T16:38:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RBLX", "m": 127, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-03T16:38:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RIOT", "m": 127, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-03T16:38:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "U", "m": 127, "reason": "relative volume 0.67 below 1.5"}
+{"t": "2026-11-03T16:38:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SRAD", "m": 127, "reason": "relative volume 0.32 below 1.5"}
