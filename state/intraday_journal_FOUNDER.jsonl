@@ -1677,3 +1677,7 @@
 {"t": "2026-11-03T19:06:14+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "UBER", "m": 275, "reason": "relative volume 1.08 below 1.5"}
 {"t": "2026-11-03T19:07:13+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PINS", "m": 276, "reason": "relative volume 0.62 below 1.5"}
 {"t": "2026-11-03T19:08:12+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SCHW", "m": 277, "reason": "relative volume 0.56 below 1.5"}
+{"t": "2026-11-03T19:11:13+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "RIVN", "m": 280, "reason": "relative volume 1.15 below 1.5"}
+{"t": "2026-11-03T19:16:14+00:00", "date": "2026-11-03", "event": "shadow_trade", "setup": "ORB15_V1", "symbol": "OKE", "m": 57, "entry": 92.9879, "exit": 92.2527, "risk": 1.3662, "R": -0.5381, "how": "closed below VWAP", "mins": 228, "rvol": 2.4431063579081913, "stop": 91.62164999999999, "exit_m": 285}
+{"t": "2026-11-03T19:19:11+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CLF", "m": 288, "reason": "relative volume 0.66 below 1.5"}
+{"t": "2026-11-03T19:20:13+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SCHW", "m": 289, "reason": "relative volume 0.58 below 1.5"}
