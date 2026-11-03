@@ -1669,3 +1669,11 @@
 {"t": "2026-11-03T18:57:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SCHW", "m": 266, "reason": "relative volume 0.54 below 1.5"}
 {"t": "2026-11-03T18:58:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 267, "reason": "relative volume 0.96 below 1.5"}
 {"t": "2026-11-03T18:58:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "WMB", "m": 267, "reason": "stop too tight (0.20% < 0.25%): noise would stop it out"}
+{"t": "2026-11-03T18:59:10+00:00", "date": "2026-11-03", "event": "signal", "setup": "PULLBACK_VWAP_V1", "symbol": "KDP", "m": 268, "ref": 35.055, "stop": 34.95, "target": 35.265, "rvol": 3.02, "why": "uptrend above VWAP, pullback touched VWAP 34.93, hammer, RVOL 3.0", "conditions": {"vwap": 34.93495731272203, "pattern": "hammer"}, "stale": false}
+{"t": "2026-11-03T19:00:16+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CNP", "m": 269, "reason": "relative volume 0.75 below 1.5"}
+{"t": "2026-11-03T19:00:16+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PBR", "m": 269, "reason": "relative volume 0.85 below 1.5"}
+{"t": "2026-11-03T19:04:12+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HOOD", "m": 273, "reason": "relative volume 0.74 below 1.5"}
+{"t": "2026-11-03T19:06:13+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CLF", "m": 275, "reason": "relative volume 0.65 below 1.5"}
+{"t": "2026-11-03T19:06:14+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "UBER", "m": 275, "reason": "relative volume 1.08 below 1.5"}
+{"t": "2026-11-03T19:07:13+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PINS", "m": 276, "reason": "relative volume 0.62 below 1.5"}
+{"t": "2026-11-03T19:08:12+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SCHW", "m": 277, "reason": "relative volume 0.56 below 1.5"}
