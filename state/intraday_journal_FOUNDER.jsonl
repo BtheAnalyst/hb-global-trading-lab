@@ -1500,3 +1500,13 @@
 {"t": "2026-11-03T16:38:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RIOT", "m": 127, "reason": "continuation breakout volume not confirmed"}
 {"t": "2026-11-03T16:38:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "U", "m": 127, "reason": "relative volume 0.67 below 1.5"}
 {"t": "2026-11-03T16:38:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SRAD", "m": 127, "reason": "relative volume 0.32 below 1.5"}
+{"t": "2026-11-03T16:41:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CAG", "m": 130, "reason": "relative volume 1.09 below 1.5"}
+{"t": "2026-11-03T16:42:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "T", "m": 131, "reason": "relative volume 0.59 below 1.5"}
+{"t": "2026-11-03T16:44:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KMI", "m": 133, "reason": "relative volume 0.84 below 1.5"}
+{"t": "2026-11-03T16:47:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "OKE", "m": 136, "reason": "relative volume 1.45 below 1.5"}
+{"t": "2026-11-03T16:47:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PBR", "m": 136, "reason": "relative volume 0.86 below 1.5"}
+{"t": "2026-11-03T16:48:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "FE", "m": 137, "reason": "relative volume 0.81 below 1.5"}
+{"t": "2026-11-03T16:49:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "EXC", "m": 138, "reason": "stop too tight (0.10% < 0.25%): noise would stop it out"}
+{"t": "2026-11-03T16:50:11+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "EPD", "m": 139, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-03T16:50:11+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "GME", "m": 139, "reason": "relative volume 0.57 below 1.5"}
+{"t": "2026-11-03T16:50:12+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SNAP", "m": 139, "reason": "relative volume 0.43 below 1.5"}
