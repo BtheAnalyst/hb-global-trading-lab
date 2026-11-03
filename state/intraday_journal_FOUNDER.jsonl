@@ -1683,3 +1683,4 @@
 {"t": "2026-11-03T19:20:13+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SCHW", "m": 289, "reason": "relative volume 0.58 below 1.5"}
 {"t": "2026-11-03T19:23:11+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "UBER", "m": 292, "reason": "relative volume 1.16 below 1.5"}
 {"t": "2026-11-03T19:31:15+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "FE", "m": 300, "reason": "relative volume 0.85 below 1.5"}
+{"t": "2026-11-03T19:41:13+00:00", "date": "2026-11-03", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "RBLX", "m": 217, "entry": 45.7557, "exit": 45.4895, "risk": 0.2207, "R": -1.2063, "how": "stop", "mins": 93, "rvol": 1.7113315118985957, "stop": 45.535000000000004, "exit_m": 310}
