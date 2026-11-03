@@ -1580,3 +1580,11 @@
 {"t": "2026-11-03T17:39:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SO", "m": 188, "reason": "relative volume 1.1 below 1.5"}
 {"t": "2026-11-03T17:40:12+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PYPL", "m": 189, "reason": "relative volume 0.53 below 1.5"}
 {"t": "2026-11-03T17:40:12+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "VZ", "m": 189, "reason": "relative volume 0.46 below 1.5"}
+{"t": "2026-11-03T17:45:12+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SOFI", "m": 194, "reason": "relative volume 0.49 below 1.5"}
+{"t": "2026-11-03T17:46:12+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CIFR", "m": 195, "reason": "relative volume 1.19 below 1.5"}
+{"t": "2026-11-03T17:47:11+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CLSK", "m": 196, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-03T17:47:11+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KMI", "m": 196, "reason": "relative volume 0.82 below 1.5"}
+{"t": "2026-11-03T17:49:09+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "ASTS", "m": 198, "reason": "relative volume 0.5 below 1.5"}
+{"t": "2026-11-03T17:49:10+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PBR", "m": 198, "reason": "relative volume 0.84 below 1.5"}
+{"t": "2026-11-03T17:50:11+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RBLX", "m": 199, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-03T17:50:11+00:00", "date": "2026-11-03", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "WULF", "m": 199, "reason": "relative volume 0.97 below 1.5"}
