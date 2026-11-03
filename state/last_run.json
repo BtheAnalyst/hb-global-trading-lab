@@ -1,38 +1,13 @@
 {
- "at": "2026-11-03T15:31:53-05:00",
+ "at": "2026-11-03T16:08:35-05:00",
  "mode": "paper",
  "exit_code": 0,
  "problem": false,
  "notes": [
   {
    "level": "notice",
-   "title": "Data",
-   "message": "433 completed daily bars per ETF through 2026-11-02 (previous session 2026-11-02); missing values in last row: 0; ETFs not fractionable: none; refused by allowlist checks: none"
-  },
-  {
-   "level": "notice",
-   "title": "Quotes",
-   "message": "BIL 91.41/91.42 (0.01%); EEM 61.05/61.06 (0.02%); EFA 103.06/103.07 (0.01%); GLD 359.32/359.35 (0.01%); IWM 280.18/280.20 (0.01%); QQQ 685.27/685.30 (0.00%); SPY 754.15/754.18 (0.00%); TLT 81.21/81.22 (0.01%); VNQ 94.90/94.92 (0.02%); VTI 371.13/371.16 (0.01%)"
-  },
-  {
-   "level": "notice",
-   "title": "Paper account (not the Founder's capital)",
-   "message": "Alpaca paper cash $100,000.72, buying power $100,000.72, status ACTIVE. The bot sizes orders only from the Founder's own books; this balance is never used."
-  },
-  {
-   "level": "notice",
-   "title": "Engine pass",
-   "message": "A_vti: buy VTI $100.00 | credited the $100.00 monthly contribution (on the books; no real transfer) || B_90_10: sell QQQ $4.75, buy VTI $89.84, buy EFA $9.88 | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['QQQ', 'SPY'] -> ['SPY', 'EFA'] || C_80_20: sell QQQ $9.50, buy VTI $79.71, buy EFA $19.75 | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['QQQ', 'SPY'] -> ['SPY', 'EFA'] || D_70_30: sell QQQ $14.25, buy VTI $69.62, buy EFA $29.60 | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['QQQ', 'SPY'] -> ['SPY', 'EFA'] || A_vti_vault: buy VTI $100.00 | credited the $100.00 monthly contribution (on the books; no real transfer) || B_90_10_vault: sell QQQ $4.75, buy VTI $89.84, buy EFA $9.88 | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['QQQ', 'SPY'] -> ['SPY', 'EFA'] || C_80_20_vault: sell QQQ $9.50, buy VTI $79.71, buy EFA $19.75 | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['QQQ', 'SPY'] -> ['SPY', 'EFA'] || D_70_30_vault: sell QQQ $14.25, buy VTI $69.62, buy EFA $29.60 | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['QQQ', 'SPY'] -> ['SPY', 'EFA'] || FOUNDER: no orders | refused VTI: ETF allocation strategy frozen (Oct 28 directive): no new ETF orders; liquidation needs the founder's approval | credited the $100.00 monthly contribution (on the books; no real transfer); sleeve ['QQQ', 'SPY'] -> ['SPY', 'EFA']"
-  },
-  {
-   "level": "notice",
-   "title": "Founder ETF orders frozen",
-   "message": "buy VTI"
-  },
-  {
-   "level": "notice",
-   "title": "Reconciliation",
-   "message": "clean | broker positions none | Founder books: positions none, settled cash $100.12, contributed $200.00"
+   "title": "Market closed",
+   "message": "the market is not open right now: no orders, nothing changed"
   }
  ]
 }
