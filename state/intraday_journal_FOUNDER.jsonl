@@ -2203,3 +2203,13 @@
 {"t": "2026-11-04T18:55:11+00:00", "date": "2026-11-04", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "MARA", "m": 242, "entry": 6.9169, "exit": 6.8282, "risk": 0.0769, "R": -1.1539, "how": "stop", "mins": 22, "rvol": 1.900372186146708, "stop": 6.84, "exit_m": 264}
 {"t": "2026-11-04T18:55:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BEN", "m": 264, "reason": "relative volume 1.06 below 1.5"}
 {"t": "2026-11-04T18:55:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SCHW", "m": 264, "reason": "relative volume 1.31 below 1.5"}
+{"t": "2026-11-04T18:58:09+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BSX", "m": 267, "reason": "stop too tight (0.20% < 0.25%): noise would stop it out"}
+{"t": "2026-11-04T18:59:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KHC", "m": 268, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T18:59:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PPL", "m": 268, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T18:59:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "UBER", "m": 268, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T19:00:13+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AGNC", "m": 269, "reason": "relative volume 1.29 below 1.5"}
+{"t": "2026-11-04T19:00:14+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "LYFT", "m": 269, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T19:00:14+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PYPL", "m": 269, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T19:00:14+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "USB", "m": 269, "reason": "relative volume 0.91 below 1.5"}
+{"t": "2026-11-04T19:01:15+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GIS", "m": 270, "reason": "stop too tight (0.23% < 0.25%): noise would stop it out"}
+{"t": "2026-11-04T19:01:15+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KDP", "m": 270, "reason": "continuation breakout volume not confirmed"}
