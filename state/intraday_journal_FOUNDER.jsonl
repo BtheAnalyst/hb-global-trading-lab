@@ -1898,3 +1898,21 @@
 {"t": "2026-11-04T16:04:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "D", "m": 93, "reason": "breakout bar volume not confirmed"}
 {"t": "2026-11-04T16:04:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PYPL", "m": 93, "reason": "relative volume 1.28 below 1.5"}
 {"t": "2026-11-04T16:04:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SCHW", "m": 93, "reason": "relative volume 1.38 below 1.5"}
+{"t": "2026-11-04T16:09:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CRCT", "m": 98, "reason": "relative volume 0.46 below 1.5"}
+{"t": "2026-11-04T16:11:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BEN", "m": 100, "reason": "relative volume 1.05 below 1.5"}
+{"t": "2026-11-04T16:11:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "ING", "m": 100, "reason": "stop too tight (0.23% < 0.25%): noise would stop it out"}
+{"t": "2026-11-04T16:11:11+00:00", "date": "2026-11-04", "event": "signal", "setup": "PULLBACK_VWAP_V1", "symbol": "KGC", "m": 100, "ref": 21.275, "stop": 21.19, "target": 21.445, "rvol": 2.21, "why": "uptrend above VWAP, pullback touched VWAP 21.20, close above prior high, RVOL 2.2", "conditions": {"vwap": 21.201293250816946, "pattern": "close above prior high"}, "stale": false}
+{"t": "2026-11-04T16:12:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DKNG", "m": 101, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T16:13:09+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CHWY", "m": 102, "reason": "relative volume 1.36 below 1.5"}
+{"t": "2026-11-04T16:14:09+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GM", "m": 103, "reason": "relative volume 1.01 below 1.5"}
+{"t": "2026-11-04T16:14:09+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HPQ", "m": 103, "reason": "relative volume 1.03 below 1.5"}
+{"t": "2026-11-04T16:14:09+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "ANGI", "m": 103, "reason": "relative volume 0.31 below 1.5"}
+{"t": "2026-11-04T16:15:12+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "AGNC", "m": 104, "reason": "relative volume 1.36 below 2.0"}
+{"t": "2026-11-04T16:15:12+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AGNC", "m": 104, "reason": "relative volume 1.36 below 1.5"}
+{"t": "2026-11-04T16:15:12+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "NKE", "m": 104, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T16:15:12+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PINS", "m": 104, "reason": "relative volume 0.96 below 1.5"}
+{"t": "2026-11-04T16:16:12+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PYPL", "m": 105, "reason": "relative volume 1.27 below 1.5"}
+{"t": "2026-11-04T16:16:12+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DFH", "m": 105, "reason": "relative volume 0.05 below 1.5"}
+{"t": "2026-11-04T16:18:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KDP", "m": 107, "reason": "relative volume 1.39 below 1.5"}
+{"t": "2026-11-04T16:19:09+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CAG", "m": 108, "reason": "relative volume 1.11 below 1.5"}
+{"t": "2026-11-04T16:19:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "JD", "m": 108, "reason": "stop too tight (0.25% < 0.25%): noise would stop it out"}
