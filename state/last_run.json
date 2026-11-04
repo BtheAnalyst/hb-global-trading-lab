@@ -1,13 +1,38 @@
 {
- "at": "2026-11-03T16:08:35-05:00",
+ "at": "2026-11-04T15:51:19-05:00",
  "mode": "paper",
  "exit_code": 0,
  "problem": false,
  "notes": [
   {
    "level": "notice",
-   "title": "Market closed",
-   "message": "the market is not open right now: no orders, nothing changed"
+   "title": "Data",
+   "message": "433 completed daily bars per ETF through 2026-11-03 (previous session 2026-11-03); missing values in last row: 0; ETFs not fractionable: none; refused by allowlist checks: none"
+  },
+  {
+   "level": "notice",
+   "title": "Quotes",
+   "message": "BIL 91.42/91.43 (0.01%); EEM 61.63/61.64 (0.02%); EFA 105.68/105.69 (0.01%); GLD 371.90/371.94 (0.01%); IWM 283.86/283.88 (0.01%); QQQ 691.35/691.44 (0.01%); SPY 766.74/766.78 (0.01%); TLT 81.72/81.73 (0.01%); VNQ 98.08/98.10 (0.02%); VTI 376.87/376.98 (0.03%)"
+  },
+  {
+   "level": "notice",
+   "title": "Paper account (not the Founder's capital)",
+   "message": "Alpaca paper cash $100,000.96, buying power $100,000.96, status ACTIVE. The bot sizes orders only from the Founder's own books; this balance is never used."
+  },
+  {
+   "level": "notice",
+   "title": "Engine pass",
+   "message": "A_vti: no orders || B_90_10: buy SPY $5.00 || C_80_20: buy SPY $9.99 || D_70_30: buy SPY $14.96 || A_vti_vault: no orders || B_90_10_vault: buy SPY $5.00 || C_80_20_vault: buy SPY $9.99 || D_70_30_vault: buy SPY $14.96 || FOUNDER: no orders | refused VTI: ETF allocation strategy frozen (Oct 28 directive): no new ETF orders; liquidation needs the founder's approval"
+  },
+  {
+   "level": "notice",
+   "title": "Founder ETF orders frozen",
+   "message": "buy VTI"
+  },
+  {
+   "level": "notice",
+   "title": "Reconciliation",
+   "message": "clean | broker positions none | Founder books: positions none, settled cash $100.12, contributed $200.00"
   }
  ]
 }
