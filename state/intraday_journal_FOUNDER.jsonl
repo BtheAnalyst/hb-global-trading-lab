@@ -2107,3 +2107,21 @@
 {"t": "2026-11-04T17:50:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "MARA", "m": 199, "reason": "breakout bar closed weak"}
 {"t": "2026-11-04T17:50:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RBLX", "m": 199, "reason": "relative volume 0.67 below 1.5"}
 {"t": "2026-11-04T17:52:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "MO", "m": 201, "reason": "relative volume 0.72 below 1.5"}
+{"t": "2026-11-04T17:53:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DAL", "m": 202, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T17:53:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "M", "m": 202, "reason": "relative volume 0.81 below 1.5"}
+{"t": "2026-11-04T17:54:09+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "LYFT", "m": 203, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T17:54:09+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RIOT", "m": 203, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T17:54:09+00:00", "date": "2026-11-04", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "U", "m": 203, "ref": 42.24, "stop": 41.98, "target": 42.76, "rvol": 2.49, "why": "up 3.2% from open, 10-bar base 41.99-42.17 above VWAP, breakout close 42.24, RVOL 2.5", "conditions": {"base_high": 42.17, "base_low": 41.99, "move": 0.0323}, "stale": false}
+{"t": "2026-11-04T17:55:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AAL", "m": 204, "reason": "breakout bar closed weak"}
+{"t": "2026-11-04T17:55:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "LUV", "m": 204, "reason": "relative volume 1.17 below 1.5"}
+{"t": "2026-11-04T17:58:09+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BSX", "m": 207, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T17:58:09+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CCL", "m": 207, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T17:59:09+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SCHW", "m": 208, "reason": "relative volume 1.38 below 1.5"}
+{"t": "2026-11-04T18:00:13+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AG", "m": 209, "reason": "relative volume 1.47 below 1.5"}
+{"t": "2026-11-04T18:01:14+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HOOD", "m": 210, "reason": "relative volume 1.03 below 1.5"}
+{"t": "2026-11-04T18:01:14+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "NCLH", "m": 210, "reason": "relative volume 1.49 below 1.5"}
+{"t": "2026-11-04T18:02:12+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AEO", "m": 211, "reason": "relative volume 1.27 below 1.5"}
+{"t": "2026-11-04T18:02:12+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ALK", "m": 211, "reason": "relative volume 1.01 below 1.5"}
+{"t": "2026-11-04T18:02:13+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "EXC", "m": 211, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T18:02:13+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HPQ", "m": 211, "reason": "relative volume 1.36 below 1.5"}
+{"t": "2026-11-04T18:02:13+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PPL", "m": 211, "reason": "continuation breakout volume not confirmed"}
