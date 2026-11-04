@@ -2194,3 +2194,12 @@
 {"t": "2026-11-04T18:44:09+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KHC", "m": 253, "reason": "continuation breakout volume not confirmed"}
 {"t": "2026-11-04T18:45:12+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BBY", "m": 254, "reason": "continuation breakout volume not confirmed"}
 {"t": "2026-11-04T18:45:12+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PPL", "m": 254, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T18:47:11+00:00", "date": "2026-11-04", "event": "signal", "setup": "PULLBACK_VWAP_V1", "symbol": "MARA", "m": 256, "ref": 6.875, "stop": 6.845, "target": 6.935, "rvol": 1.84, "why": "uptrend above VWAP, pullback touched VWAP 6.85, bullish engulfing, RVOL 1.8", "conditions": {"vwap": 6.847971506435994, "pattern": "bullish engulfing"}, "stale": false}
+{"t": "2026-11-04T18:50:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HRL", "m": 259, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-04T18:51:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KSS", "m": 260, "reason": "relative volume 0.91 below 1.5"}
+{"t": "2026-11-04T18:52:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NU", "m": 261, "reason": "relative volume 0.85 below 1.5"}
+{"t": "2026-11-04T18:52:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 261, "reason": "relative volume 1.16 below 1.5"}
+{"t": "2026-11-04T18:54:10+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PCG", "m": 263, "reason": "relative volume 0.67 below 1.5"}
+{"t": "2026-11-04T18:55:11+00:00", "date": "2026-11-04", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "MARA", "m": 242, "entry": 6.9169, "exit": 6.8282, "risk": 0.0769, "R": -1.1539, "how": "stop", "mins": 22, "rvol": 1.900372186146708, "stop": 6.84, "exit_m": 264}
+{"t": "2026-11-04T18:55:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BEN", "m": 264, "reason": "relative volume 1.06 below 1.5"}
+{"t": "2026-11-04T18:55:11+00:00", "date": "2026-11-04", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SCHW", "m": 264, "reason": "relative volume 1.31 below 1.5"}
