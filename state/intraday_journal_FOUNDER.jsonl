@@ -2365,3 +2365,12 @@
 {"t": "2026-11-05T15:36:15+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "EPD", "m": 65, "reason": "relative volume 1.09 below 1.5"}
 {"t": "2026-11-05T15:37:14+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KR", "m": 66, "reason": "relative volume 0.89 below 1.5"}
 {"t": "2026-11-05T15:39:14+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "AEHL", "m": 68, "reason": "opening range 19.20% outside 0.4%-4%"}
+{"t": "2026-11-05T15:45:17+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "OXY", "m": 74, "reason": "relative volume 1.04 below 1.5"}
+{"t": "2026-11-05T15:46:16+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "OKE", "m": 75, "reason": "relative volume 1.07 below 1.5"}
+{"t": "2026-11-05T15:46:16+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SO", "m": 75, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-05T15:47:14+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "DOCU", "m": 76, "reason": "stop too tight (0.22% < 0.25%): noise would stop it out"}
+{"t": "2026-11-05T15:47:14+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ADMA", "m": 76, "reason": "relative volume 0.46 below 1.5"}
+{"t": "2026-11-05T15:47:14+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PTLO", "m": 76, "reason": "relative volume 0.19 below 1.5"}
+{"t": "2026-11-05T15:48:12+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KR", "m": 77, "reason": "relative volume 0.88 below 1.5"}
+{"t": "2026-11-05T15:49:13+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "APA", "m": 78, "reason": "relative volume 0.97 below 1.5"}
+{"t": "2026-11-05T15:49:13+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "DVN", "m": 78, "reason": "stop too tight (0.21% < 0.25%): noise would stop it out"}
