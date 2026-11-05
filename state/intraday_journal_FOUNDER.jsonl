@@ -2374,3 +2374,11 @@
 {"t": "2026-11-05T15:48:12+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KR", "m": 77, "reason": "relative volume 0.88 below 1.5"}
 {"t": "2026-11-05T15:49:13+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "APA", "m": 78, "reason": "relative volume 0.97 below 1.5"}
 {"t": "2026-11-05T15:49:13+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "DVN", "m": 78, "reason": "stop too tight (0.21% < 0.25%): noise would stop it out"}
+{"t": "2026-11-05T15:54:11+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "DKNG", "m": 83, "reason": "relative volume 1.39 below 1.5"}
+{"t": "2026-11-05T15:55:11+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CVS", "m": 84, "reason": "stop too tight (0.22% < 0.25%): noise would stop it out"}
+{"t": "2026-11-05T15:55:12+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PATH", "m": 84, "reason": "relative volume 1.09 below 1.5"}
+{"t": "2026-11-05T15:56:12+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "EPD", "m": 85, "reason": "relative volume 1.12 below 1.5"}
+{"t": "2026-11-05T15:56:12+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "OXY", "m": 85, "reason": "relative volume 1.0 below 1.5"}
+{"t": "2026-11-05T15:59:12+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GIS", "m": 88, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-05T15:59:12+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PTLO", "m": 88, "reason": "relative volume 0.2 below 1.5"}
+{"t": "2026-11-05T16:00:16+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SO", "m": 89, "reason": "continuation breakout volume not confirmed"}
