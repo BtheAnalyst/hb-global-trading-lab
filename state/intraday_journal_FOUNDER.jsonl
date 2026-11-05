@@ -2385,3 +2385,7 @@
 {"t": "2026-11-05T16:06:18+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KR", "m": 95, "reason": "relative volume 0.76 below 1.5"}
 {"t": "2026-11-05T16:09:14+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "OKE", "m": 98, "reason": "relative volume 1.23 below 1.5"}
 {"t": "2026-11-05T16:10:16+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "APA", "m": 99, "reason": "relative volume 1.26 below 1.5"}
+{"t": "2026-11-05T16:15:16+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ADMA", "m": 104, "reason": "relative volume 0.47 below 1.5"}
+{"t": "2026-11-05T16:20:16+00:00", "date": "2026-11-05", "event": "shadow_trade", "setup": "ORB15_V1", "symbol": "SO", "m": 36, "entry": 94.8447, "exit": 94.5953, "risk": 0.7322, "R": -0.3406, "how": "closed below VWAP", "mins": 73, "rvol": 2.6728997979351954, "stop": 94.11250000000001, "exit_m": 109}
+{"t": "2026-11-05T16:21:14+00:00", "date": "2026-11-05", "event": "shadow_trade", "setup": "PULLBACK_VWAP_V1", "symbol": "SO", "m": 39, "entry": 95.3202, "exit": 94.4654, "risk": 0.7602, "R": -1.1244, "how": "stop", "mins": 71, "rvol": 2.9454425027237954, "stop": 94.55999999999999, "exit_m": 110}
+{"t": "2026-11-05T16:21:15+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PTLO", "m": 110, "reason": "relative volume 0.2 below 1.5"}
