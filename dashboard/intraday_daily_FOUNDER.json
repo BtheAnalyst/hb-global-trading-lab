@@ -1,5 +1,5 @@
 {
- "date": "2026-11-04",
+ "date": "2026-11-05",
  "account": "FOUNDER",
  "label": "PAPER TRADING (FOUNDER account) - simulated, not real money",
  "mode": "paper",
@@ -8,131 +8,116 @@
  ],
  "scanned": 173,
  "eligible": 121,
- "signals": 48,
+ "signals": 14,
  "trades": [
   {
-   "date": "2026-11-04",
-   "symbol": "PPL",
+   "date": "2026-11-05",
+   "symbol": "CNP",
    "setup": "ORB15_V1",
-   "qty": 1.341212,
-   "entry": 35.58,
-   "exit": 35.77,
-   "stop": 35.2,
-   "target": 36.33,
-   "pnl": 0.2548,
-   "R": 0.5,
-   "how": "end of day flatten (15:50 ET)",
-   "entered": "2026-11-04T15:58:09.350030+00:00",
-   "exited": "2026-11-04T20:52:09.368915+00:00",
-   "why_in": "close 35.55 > OR high 35.50, RVOL 3.4, bar vol 3.2x, above VWAP",
+   "qty": 2.0,
+   "entry": 41.3,
+   "exit": 41.145,
+   "stop": 41.15,
+   "target": 41.59,
+   "pnl": -0.31,
+   "R": -1.033,
+   "how": "stop",
+   "entered": "2026-11-05T14:58:11.730612+00:00",
+   "exited": "2026-11-05T15:05:50.807648+00:00",
+   "why_in": "close 41.32 > OR high 41.31, RVOL 2.3, bar vol 1.8x, above VWAP",
    "conditions": {
-    "or_high": 35.5,
-    "or_low": 34.91,
-    "or_pct": 0.0166,
-    "vwap": 35.19650506913333
+    "or_high": 41.31,
+    "or_low": 40.995,
+    "or_pct": 0.0076,
+    "vwap": 41.06396644414776
    },
-   "rvol": 3.3529925982250206,
+   "rvol": 2.261100676035895,
    "entry_quote": [
-    35.57,
-    35.58,
-    0.398422
+    41.29,
+    41.3,
+    0.179441
    ],
-   "slippage_entry": -0.05
+   "slippage_entry": -0.06
   }
  ],
- "realized_pnl": 0.2548,
- "settled_cash": 52.8706,
- "unsettled_cash": 47.9752,
- "sleeve_equity": 100.8458,
+ "realized_pnl": -0.31,
+ "settled_cash": 18.2458,
+ "unsettled_cash": 82.29,
+ "sleeve_equity": 100.5358,
  "allocated": 100.0,
  "shadow": {
   "ORB15_V1": {
-   "trades": 1,
-   "R": 0.449,
+   "trades": 2,
+   "R": -1.548,
    "detail": [
     {
      "setup": "ORB15_V1",
-     "symbol": "PPL",
-     "m": 86,
-     "entry": 35.5805,
-     "exit": 35.7492,
-     "risk": 0.3755,
-     "R": 0.4491,
-     "how": "end of day flatten (15",
-     "mins": 294,
-     "rvol": 3.3529925982250206,
-     "stop": 35.205,
-     "exit_m": 380
+     "symbol": "CNP",
+     "m": 26,
+     "entry": 41.3513,
+     "exit": 41.1113,
+     "risk": 0.1988,
+     "R": -1.207,
+     "how": "stop",
+     "mins": 6,
+     "rvol": 2.261100676035895,
+     "stop": 41.1525,
+     "exit_m": 32
+    },
+    {
+     "setup": "ORB15_V1",
+     "symbol": "SO",
+     "m": 36,
+     "entry": 94.8447,
+     "exit": 94.5953,
+     "risk": 0.7322,
+     "R": -0.3406,
+     "how": "closed below VWAP",
+     "mins": 73,
+     "rvol": 2.6728997979351954,
+     "stop": 94.11250000000001,
+     "exit_m": 109
     }
    ]
   },
   "PULLBACK_VWAP_V1": {
    "trades": 2,
-   "R": -2.324,
+   "R": -2.397,
    "detail": [
     {
      "setup": "PULLBACK_VWAP_V1",
-     "symbol": "RIVN",
-     "m": 30,
-     "entry": 14.1792,
-     "exit": 14.0709,
-     "risk": 0.0942,
-     "R": -1.1496,
+     "symbol": "SO",
+     "m": 39,
+     "entry": 95.3202,
+     "exit": 94.4654,
+     "risk": 0.7602,
+     "R": -1.1244,
      "how": "stop",
-     "mins": 28,
-     "rvol": 2.507450031007431,
-     "stop": 14.085,
-     "exit_m": 58
+     "mins": 71,
+     "rvol": 2.9454425027237954,
+     "stop": 94.55999999999999,
+     "exit_m": 110
     },
     {
      "setup": "PULLBACK_VWAP_V1",
-     "symbol": "KGC",
-     "m": 100,
-     "entry": 21.3113,
-     "exit": 21.1688,
-     "risk": 0.1213,
-     "R": -1.1747,
+     "symbol": "IONQ",
+     "m": 135,
+     "entry": 26.2963,
+     "exit": 26.1738,
+     "risk": 0.0963,
+     "R": -1.2722,
      "how": "stop",
      "mins": 16,
-     "rvol": 2.210351127517044,
-     "stop": 21.189999999999998,
-     "exit_m": 116
+     "rvol": 1.5821070272889712,
+     "stop": 26.2,
+     "exit_m": 151
     }
    ]
   },
   "MOMO_CONT_V1": {
-   "trades": 2,
-   "R": -1.325,
-   "detail": [
-    {
-     "setup": "MOMO_CONT_V1",
-     "symbol": "DKNG",
-     "m": 32,
-     "entry": 23.4134,
-     "exit": 23.3616,
-     "risk": 0.3034,
-     "R": -0.1707,
-     "how": "closed below VWAP",
-     "mins": 207,
-     "rvol": 2.620954194895465,
-     "stop": 23.11,
-     "exit_m": 239
-    },
-    {
-     "setup": "MOMO_CONT_V1",
-     "symbol": "MARA",
-     "m": 242,
-     "entry": 6.9169,
-     "exit": 6.8282,
-     "risk": 0.0769,
-     "R": -1.1539,
-     "how": "stop",
-     "mins": 22,
-     "rvol": 1.900372186146708,
-     "stop": 6.84,
-     "exit_m": 264
-    }
-   ]
+   "trades": 0,
+   "R": 0,
+   "detail": []
   },
   "GAPGO_PB_V1": {
    "trades": 0,
@@ -142,17 +127,14 @@
  },
  "rejections": {
   "GAPGO_PB_V1: relative volume # below #": 3,
-  "ORB15_V1: opening range # outside ##": 11,
-  "ORB15_V1: relative volume # below #": 45,
-  "ORB15_V1: opening range incomplete": 26,
-  "ORB15_V1: breakout bar volume not confirmed": 7,
-  "PULLBACK_VWAP_V1: relative volume # below #": 35,
-  "MOMO_CONT_V1: relative volume # below #": 193,
-  "MOMO_CONT_V1: continuation breakout volume not confirmed": 104,
-  "PULLBACK_VWAP_V1: stop too tight": 18,
-  "MOMO_CONT_V1: breakout bar closed weak": 7,
-  "MOMO_CONT_V1: stop too wide": 1,
-  "MOMO_CONT_V1: stop too tight": 5
+  "ORB15_V1: opening range incomplete": 60,
+  "ORB15_V1: relative volume # below #": 27,
+  "ORB15_V1: opening range # outside ##": 5,
+  "PULLBACK_VWAP_V1: relative volume # below #": 25,
+  "ORB15_V1: entry refused: spread # too wide": 1,
+  "MOMO_CONT_V1: relative volume # below #": 22,
+  "PULLBACK_VWAP_V1: stop too tight": 9,
+  "MOMO_CONT_V1: continuation breakout volume not confirmed": 4
  },
  "halted": null,
  "kill_switch": false,
