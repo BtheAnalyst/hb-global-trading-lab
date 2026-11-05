@@ -25,14 +25,15 @@
   "realized": -0.30999999999998806,
   "errors": 0,
   "halted": null,
-  "signals": 2,
+  "signals": 5,
   "rejections": {
-   "GAPGO_PB_V1: relative volume # below #": 2,
+   "GAPGO_PB_V1: relative volume # below #": 3,
    "ORB15_V1: opening range incomplete": 60,
-   "ORB15_V1: relative volume # below #": 23,
+   "ORB15_V1: relative volume # below #": 24,
    "ORB15_V1: opening range # outside ##": 2,
-   "PULLBACK_VWAP_V1: relative volume # below #": 1,
-   "ORB15_V1: entry refused: spread # too wide": 1
+   "PULLBACK_VWAP_V1: relative volume # below #": 7,
+   "ORB15_V1: entry refused: spread # too wide": 1,
+   "MOMO_CONT_V1: relative volume # below #": 2
   },
   "setup_state": {
    "AA": {
@@ -126,10 +127,30 @@
     ]
    },
    "AES": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {},
+    "ORB15_V1": {
+     "or_sip": [
+      14.93,
+      14.91
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      14.93,
+      14.91
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      14.93,
+      14.91
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      14.93,
+      14.91
+     ]
+    },
     "or_sip": [
      14.93,
      14.91
@@ -297,7 +318,8 @@
      "or_sip": [
       45.52,
       44.5
-     ]
+     ],
+     "pb_last": 41
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -1016,7 +1038,8 @@
      "or_sip": [
       80.82,
       78.48
-     ]
+     ],
+     "orb_broken": true
     },
     "PULLBACK_VWAP_V1": {
      "or_sip": [
@@ -1236,7 +1259,8 @@
      "or_sip": [
       47.64,
       47.2
-     ]
+     ],
+     "pb_last": 42
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -1960,7 +1984,8 @@
      "or_sip": [
       31.75,
       31.5
-     ]
+     ],
+     "pb_last": 46
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -1997,7 +2022,8 @@
      "or_sip": [
       70.405,
       69.37
-     ]
+     ],
+     "mc_last": 35
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2011,10 +2037,30 @@
     ]
    },
    "KSS": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {},
+    "ORB15_V1": {
+     "or_sip": [
+      25.6,
+      25.03
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      25.6,
+      25.03
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      25.6,
+      25.03
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      25.6,
+      25.03
+     ]
+    },
     "or_sip": [
      25.6,
      25.03
@@ -2363,7 +2409,8 @@
      "or_sip": [
       90.06,
       88.98
-     ]
+     ],
+     "pb_last": 37
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -2877,7 +2924,8 @@
      "or_sip": [
       22.9144,
       21.74
-     ]
+     ],
+     "pb_last": 44
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -3028,7 +3076,8 @@
      "or_sip": [
       94.7,
       93.525
-     ]
+     ],
+     "pb_last": 38
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -3089,7 +3138,8 @@
      "or_sip": [
       22.11,
       21.965
-     ]
+     ],
+     "pb_last": 40
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -3330,7 +3380,8 @@
      "or_sip": [
       46.81,
       46.45
-     ]
+     ],
+     "pb_last": 37
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -3391,7 +3442,8 @@
      "or_sip": [
       68.84,
       66.94
-     ]
+     ],
+     "pb_last": 45
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -3527,14 +3579,16 @@
      "or_sip": [
       12.86,
       11.9
-     ]
+     ],
+     "mc_last": 38
     },
     "GAPGO_PB_V1": {
      "gap": 0.1393129770992365,
      "or_sip": [
       12.86,
       11.9
-     ]
+     ],
+     "gg_done": true
     },
     "or_sip": [
      12.86,
@@ -3997,137 +4051,137 @@
    }
   },
   "last_m": {
-   "AA": 36,
-   "AAL": 36,
-   "AEO": 36,
-   "AES": 31,
-   "AFRM": 36,
-   "AG": 36,
-   "AGNC": 36,
-   "ALK": 36,
-   "AMCR": 36,
-   "APA": 36,
-   "APLD": 36,
-   "ASTS": 36,
-   "BAC": 36,
-   "BBVA": 35,
-   "BMY": 36,
-   "BSX": 36,
-   "BTU": 36,
-   "CAG": 36,
-   "CCL": 36,
-   "CDE": 36,
-   "CFG": 36,
-   "CHWY": 36,
-   "CIFR": 36,
-   "CLF": 36,
-   "CLSK": 36,
-   "CMCSA": 36,
-   "CNP": 36,
-   "CORZ": 36,
-   "CSX": 36,
-   "CVS": 36,
-   "D": 36,
-   "DAL": 36,
-   "DKNG": 36,
-   "DOCU": 36,
-   "DVN": 36,
-   "EPD": 36,
-   "ERIC": 36,
-   "EXC": 36,
-   "F": 36,
-   "FCX": 36,
-   "FE": 36,
-   "FITB": 36,
-   "GIS": 36,
-   "GM": 36,
-   "GME": 36,
-   "HAL": 36,
-   "HBAN": 36,
-   "HL": 36,
-   "HOOD": 36,
-   "HPE": 36,
-   "HPQ": 36,
-   "HRL": 36,
-   "HUT": 36,
-   "ING": 36,
-   "INTC": 36,
-   "IONQ": 36,
-   "IREN": 36,
-   "ITUB": 36,
-   "JD": 36,
-   "JOBY": 36,
-   "KDP": 36,
-   "KEY": 36,
-   "KGC": 36,
-   "KHC": 36,
-   "KMI": 36,
-   "KR": 36,
-   "KSS": 34,
-   "LUV": 36,
-   "LYFT": 36,
-   "M": 36,
-   "MARA": 36,
-   "MO": 36,
-   "NCLH": 36,
-   "NEE": 36,
-   "NKE": 36,
-   "NLY": 36,
-   "NOK": 36,
-   "NU": 36,
-   "OKE": 35,
-   "ON": 36,
-   "OXY": 36,
-   "PATH": 36,
-   "PBR": 36,
-   "PCG": 36,
-   "PFE": 36,
-   "PINS": 36,
-   "PPL": 36,
-   "PYPL": 36,
-   "QBTS": 36,
-   "RBLX": 36,
-   "RF": 36,
-   "RGTI": 36,
-   "RIOT": 36,
-   "RIVN": 36,
-   "RKLB": 36,
-   "S": 36,
-   "SCHW": 36,
-   "SLB": 36,
-   "SMCI": 36,
-   "SNAP": 36,
-   "SO": 36,
-   "SOFI": 36,
-   "T": 36,
-   "TFC": 36,
-   "TSN": 36,
-   "U": 36,
-   "UBER": 36,
-   "USB": 36,
-   "VALE": 36,
-   "VFC": 36,
-   "VZ": 36,
-   "WFC": 36,
-   "WMB": 36,
-   "WULF": 36,
-   "ZM": 36,
-   "RUN": 36,
-   "ADMA": 36,
-   "VERX": 36,
-   "LYNX": 36,
-   "IVZ": 36,
-   "KO": 36,
-   "LEVI": 36,
-   "UAA": 36,
-   "BEN": 36,
-   "AEHL": 35,
-   "XERS": 36,
-   "ONT": 36,
-   "ARDT": 36,
-   "PTLO": 36,
-   "FUN": 36,
-   "EVMN": 36
+   "AA": 47,
+   "AAL": 47,
+   "AEO": 47,
+   "AES": 40,
+   "AFRM": 47,
+   "AG": 47,
+   "AGNC": 47,
+   "ALK": 46,
+   "AMCR": 47,
+   "APA": 47,
+   "APLD": 47,
+   "ASTS": 47,
+   "BAC": 47,
+   "BBVA": 47,
+   "BMY": 47,
+   "BSX": 47,
+   "BTU": 47,
+   "CAG": 47,
+   "CCL": 47,
+   "CDE": 47,
+   "CFG": 47,
+   "CHWY": 47,
+   "CIFR": 47,
+   "CLF": 47,
+   "CLSK": 47,
+   "CMCSA": 47,
+   "CNP": 47,
+   "CORZ": 47,
+   "CSX": 47,
+   "CVS": 47,
+   "D": 47,
+   "DAL": 47,
+   "DKNG": 47,
+   "DOCU": 47,
+   "DVN": 47,
+   "EPD": 47,
+   "ERIC": 47,
+   "EXC": 47,
+   "F": 47,
+   "FCX": 47,
+   "FE": 47,
+   "FITB": 47,
+   "GIS": 47,
+   "GM": 47,
+   "GME": 47,
+   "HAL": 47,
+   "HBAN": 47,
+   "HL": 47,
+   "HOOD": 47,
+   "HPE": 47,
+   "HPQ": 47,
+   "HRL": 47,
+   "HUT": 47,
+   "ING": 47,
+   "INTC": 47,
+   "IONQ": 47,
+   "IREN": 47,
+   "ITUB": 47,
+   "JD": 47,
+   "JOBY": 47,
+   "KDP": 47,
+   "KEY": 47,
+   "KGC": 47,
+   "KHC": 47,
+   "KMI": 47,
+   "KR": 47,
+   "KSS": 47,
+   "LUV": 47,
+   "LYFT": 47,
+   "M": 47,
+   "MARA": 47,
+   "MO": 47,
+   "NCLH": 47,
+   "NEE": 47,
+   "NKE": 47,
+   "NLY": 47,
+   "NOK": 47,
+   "NU": 47,
+   "OKE": 47,
+   "ON": 47,
+   "OXY": 47,
+   "PATH": 47,
+   "PBR": 47,
+   "PCG": 47,
+   "PFE": 47,
+   "PINS": 47,
+   "PPL": 47,
+   "PYPL": 47,
+   "QBTS": 47,
+   "RBLX": 47,
+   "RF": 47,
+   "RGTI": 47,
+   "RIOT": 47,
+   "RIVN": 47,
+   "RKLB": 47,
+   "S": 47,
+   "SCHW": 47,
+   "SLB": 47,
+   "SMCI": 47,
+   "SNAP": 47,
+   "SO": 47,
+   "SOFI": 47,
+   "T": 47,
+   "TFC": 47,
+   "TSN": 47,
+   "U": 47,
+   "UBER": 47,
+   "USB": 47,
+   "VALE": 47,
+   "VFC": 47,
+   "VZ": 47,
+   "WFC": 47,
+   "WMB": 47,
+   "WULF": 47,
+   "ZM": 47,
+   "RUN": 47,
+   "ADMA": 47,
+   "VERX": 46,
+   "LYNX": 46,
+   "IVZ": 47,
+   "KO": 47,
+   "LEVI": 47,
+   "UAA": 47,
+   "BEN": 47,
+   "AEHL": 46,
+   "XERS": 47,
+   "ONT": 47,
+   "ARDT": 46,
+   "PTLO": 47,
+   "FUN": 47,
+   "EVMN": 46
   },
   "scanned": 173,
   "eligible": 120,
@@ -4291,8 +4345,17 @@
    ]
   },
   "PULLBACK_VWAP_V1": {
-   "open": null,
-   "entries": 0,
+   "open": {
+    "symbol": "SO",
+    "setup": "PULLBACK_VWAP_V1",
+    "m": 39,
+    "ref": 95.16,
+    "stop": 94.55999999999999,
+    "target": 96.36000000000001,
+    "rvol": 2.9454425027237954,
+    "why": "uptrend above VWAP, pullback touched VWAP 94.52, close above prior high, RVOL 2.9"
+   },
+   "entries": 1,
    "day_R": 0.0,
    "busy_until": -1,
    "trades": []
