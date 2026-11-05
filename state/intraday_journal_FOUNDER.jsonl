@@ -2389,3 +2389,5 @@
 {"t": "2026-11-05T16:20:16+00:00", "date": "2026-11-05", "event": "shadow_trade", "setup": "ORB15_V1", "symbol": "SO", "m": 36, "entry": 94.8447, "exit": 94.5953, "risk": 0.7322, "R": -0.3406, "how": "closed below VWAP", "mins": 73, "rvol": 2.6728997979351954, "stop": 94.11250000000001, "exit_m": 109}
 {"t": "2026-11-05T16:21:14+00:00", "date": "2026-11-05", "event": "shadow_trade", "setup": "PULLBACK_VWAP_V1", "symbol": "SO", "m": 39, "entry": 95.3202, "exit": 94.4654, "risk": 0.7602, "R": -1.1244, "how": "stop", "mins": 71, "rvol": 2.9454425027237954, "stop": 94.55999999999999, "exit_m": 110}
 {"t": "2026-11-05T16:21:15+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PTLO", "m": 110, "reason": "relative volume 0.2 below 1.5"}
+{"t": "2026-11-05T16:27:12+00:00", "date": "2026-11-05", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AEHL", "m": 116, "reason": "relative volume 0.07 below 1.5"}
+{"t": "2026-11-05T16:31:06+00:00", "date": "2026-11-05", "event": "wide_dropped", "watched_before": 131, "watched_now": 131}
