@@ -2973,3 +2973,4 @@
 {"t": "2026-11-06T19:04:15+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BSX", "m": 273, "reason": "relative volume 0.44 below 1.5"}
 {"t": "2026-11-06T19:05:17+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PINS", "m": 274, "reason": "relative volume 0.68 below 1.5"}
 {"t": "2026-11-06T19:06:15+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KEY", "m": 275, "reason": "relative volume 1.0 below 1.5"}
+{"t": "2026-11-06T19:15:16+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HOOD", "m": 284, "reason": "relative volume 0.75 below 1.5"}
