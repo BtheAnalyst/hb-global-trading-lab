@@ -1,5 +1,5 @@
 {
- "at": "2026-11-06T15:28:59-05:00",
+ "at": "2026-11-06T15:57:24-05:00",
  "mode": "paper",
  "exit_code": 0,
  "problem": false,
@@ -12,7 +12,7 @@
   {
    "level": "notice",
    "title": "Quotes",
-   "message": "BIL 91.46/91.48 (0.02%); EEM 59.32/59.33 (0.02%); EFA 101.90/101.91 (0.01%); GLD 372.33/372.37 (0.01%); IWM 274.25/274.27 (0.01%); QQQ 658.94/658.98 (0.01%); SPY 737.97/738.00 (0.00%); TLT 81.96/81.97 (0.01%); VNQ 95.91/95.92 (0.01%); VTI 362.95/363.06 (0.03%)"
+   "message": "BIL 91.46/91.47 (0.01%); EEM 59.25/59.26 (0.02%); EFA 101.82/101.83 (0.01%); GLD 372.62/372.63 (0.00%); IWM 273.60/273.62 (0.01%); QQQ 656.27/656.30 (0.00%); SPY 735.51/735.52 (0.00%); TLT 81.92/81.93 (0.01%); VNQ 95.75/95.76 (0.01%); VTI 361.83/361.98 (0.04%)"
   },
   {
    "level": "notice",
@@ -22,12 +22,7 @@
   {
    "level": "notice",
    "title": "Engine pass",
-   "message": "A_vti: no orders || B_90_10: no orders || C_80_20: no orders || D_70_30: no orders || A_vti_vault: no orders || B_90_10_vault: no orders || C_80_20_vault: no orders || D_70_30_vault: no orders || FOUNDER: no orders | refused VTI: ETF allocation strategy frozen (Oct 28 directive): no new ETF orders; liquidation needs the founder's approval"
-  },
-  {
-   "level": "notice",
-   "title": "Founder ETF orders frozen",
-   "message": "buy VTI"
+   "message": "A_vti: no orders | already ran today: no second decision pass || B_90_10: no orders | already ran today: no second decision pass || C_80_20: no orders | already ran today: no second decision pass || D_70_30: no orders | already ran today: no second decision pass || A_vti_vault: no orders | already ran today: no second decision pass || B_90_10_vault: no orders | already ran today: no second decision pass || C_80_20_vault: no orders | already ran today: no second decision pass || D_70_30_vault: no orders | already ran today: no second decision pass || FOUNDER: no orders | already ran today: no second decision pass"
   },
   {
    "level": "notice",
