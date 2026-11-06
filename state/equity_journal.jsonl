@@ -106,3 +106,13 @@
 {"t": "2026-11-04", "pid": "D_70_30_vault", "event": "pass", "sleeve": ["SPY", "EFA"], "orders": 1, "refused": 0, "alerts": []}
 {"t": "2026-11-04", "pid": "FOUNDER", "event": "refused", "symbol": "VTI", "side": "buy", "reason": "ETF allocation strategy frozen (Oct 28 directive): no new ETF orders; liquidation needs the founder's approval"}
 {"t": "2026-11-04", "pid": "FOUNDER", "event": "pass", "sleeve": ["SPY", "EFA"], "orders": 0, "refused": 1, "alerts": []}
+{"t": "2026-11-06", "pid": "A_vti", "event": "pass", "sleeve": [], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-11-06", "pid": "B_90_10", "event": "pass", "sleeve": ["SPY", "EFA"], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-11-06", "pid": "C_80_20", "event": "pass", "sleeve": ["SPY", "EFA"], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-11-06", "pid": "D_70_30", "event": "pass", "sleeve": ["SPY", "EFA"], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-11-06", "pid": "A_vti_vault", "event": "pass", "sleeve": [], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-11-06", "pid": "B_90_10_vault", "event": "pass", "sleeve": ["SPY", "EFA"], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-11-06", "pid": "C_80_20_vault", "event": "pass", "sleeve": ["SPY", "EFA"], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-11-06", "pid": "D_70_30_vault", "event": "pass", "sleeve": ["SPY", "EFA"], "orders": 0, "refused": 0, "alerts": []}
+{"t": "2026-11-06", "pid": "FOUNDER", "event": "refused", "symbol": "VTI", "side": "buy", "reason": "ETF allocation strategy frozen (Oct 28 directive): no new ETF orders; liquidation needs the founder's approval"}
+{"t": "2026-11-06", "pid": "FOUNDER", "event": "pass", "sleeve": ["SPY", "EFA"], "orders": 0, "refused": 1, "alerts": []}
