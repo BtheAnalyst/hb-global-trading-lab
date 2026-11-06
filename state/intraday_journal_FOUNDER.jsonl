@@ -2965,3 +2965,11 @@
 {"t": "2026-11-06T18:56:14+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AA", "m": 265, "reason": "relative volume 0.35 below 1.5"}
 {"t": "2026-11-06T18:56:14+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BEN", "m": 265, "reason": "relative volume 0.94 below 1.5"}
 {"t": "2026-11-06T18:56:15+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "TSN", "m": 265, "reason": "relative volume 1.1 below 1.5"}
+{"t": "2026-11-06T18:58:13+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "EXC", "m": 267, "reason": "relative volume 1.05 below 1.5"}
+{"t": "2026-11-06T18:58:14+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "WMB", "m": 267, "reason": "relative volume 0.94 below 1.5"}
+{"t": "2026-11-06T18:59:14+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "FCX", "m": 268, "reason": "stop too tight (0.18% < 0.25%): noise would stop it out"}
+{"t": "2026-11-06T19:00:21+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CNP", "m": 269, "reason": "relative volume 1.42 below 1.5"}
+{"t": "2026-11-06T19:00:21+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "QBTS", "m": 269, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-06T19:04:15+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BSX", "m": 273, "reason": "relative volume 0.44 below 1.5"}
+{"t": "2026-11-06T19:05:17+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PINS", "m": 274, "reason": "relative volume 0.68 below 1.5"}
+{"t": "2026-11-06T19:06:15+00:00", "date": "2026-11-06", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KEY", "m": 275, "reason": "relative volume 1.0 below 1.5"}
