@@ -20,7 +20,7 @@
   "realized": 0.0,
   "errors": 0,
   "halted": null,
-  "signals": 8,
+  "signals": 9,
   "rejections": {
    "ORB15_V1: opening range incomplete": 35,
    "ORB15_V1: relative volume # below #": 74,
@@ -28,8 +28,8 @@
    "GAPGO_PB_V1: relative volume # below #": 1,
    "ORB15_V1: breakout bar volume not confirmed": 2,
    "PULLBACK_VWAP_V1: relative volume # below #": 58,
-   "MOMO_CONT_V1: relative volume # below #": 131,
-   "MOMO_CONT_V1: continuation breakout volume not confirmed": 15,
+   "MOMO_CONT_V1: relative volume # below #": 147,
+   "MOMO_CONT_V1: continuation breakout volume not confirmed": 18,
    "MOMO_CONT_V1: stop too wide": 1
   },
   "setup_state": {
@@ -115,7 +115,8 @@
      "or_sip": [
       21.3769,
       20.17
-     ]
+     ],
+     "mc_last": 120
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -589,7 +590,8 @@
      "or_sip": [
       43.78,
       43.04
-     ]
+     ],
+     "mc_last": 122
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -712,7 +714,7 @@
       16.45,
       16.0
      ],
-     "mc_last": 96
+     "mc_last": 124
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -871,7 +873,7 @@
       6.33,
       6.02
      ],
-     "mc_last": 92
+     "mc_last": 122
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -996,7 +998,7 @@
       96.965,
       94.97
      ],
-     "mc_last": 86
+     "mc_last": 127
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1152,7 +1154,7 @@
       18.59,
       17.74
      ],
-     "mc_last": 111
+     "mc_last": 123
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1436,7 +1438,7 @@
       88.74,
       87.09
      ],
-     "mc_last": 51
+     "mc_last": 117
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1532,7 +1534,7 @@
       15.8,
       15.64
      ],
-     "mc_last": 89
+     "mc_last": 109
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1789,7 +1791,7 @@
       33.35,
       32.0601
      ],
-     "mc_last": 79
+     "mc_last": 128
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2038,7 +2040,7 @@
       30.22,
       29.81
      ],
-     "mc_last": 112
+     "mc_last": 127
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2162,7 +2164,7 @@
       23.65,
       23.215
      ],
-     "mc_last": 85
+     "mc_last": 100
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2256,7 +2258,7 @@
       24.88,
       23.41
      ],
-     "mc_last": 73
+     "mc_last": 112
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2473,7 +2475,7 @@
       8.0199,
       7.89
      ],
-     "mc_last": 88
+     "mc_last": 122
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2567,7 +2569,7 @@
       66.51,
       64.0
      ],
-     "mc_last": 82
+     "mc_last": 118
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2848,7 +2850,7 @@
       10.86,
       10.47
      ],
-     "mc_last": 91
+     "mc_last": 127
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2943,7 +2945,7 @@
       12.04,
       11.67
      ],
-     "mc_last": 109
+     "mc_last": 122
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2975,7 +2977,7 @@
       17.34,
       16.75
      ],
-     "mc_last": 76
+     "mc_last": 123
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -3039,7 +3041,7 @@
       55.04,
       53.01
      ],
-     "mc_last": 115
+     "mc_last": 127
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -3939,7 +3941,7 @@
       21.2806,
       20.05
      ],
-     "mc_last": 62
+     "mc_last": 75
     },
     "GAPGO_PB_V1": {
      "gap": 0.15118912797281991,
@@ -3974,7 +3976,8 @@
      "or_sip": [
       14.38,
       13.0
-     ]
+     ],
+     "mc_last": 111
     },
     "GAPGO_PB_V1": {
      "gap": 0.07944307944307938,
@@ -3989,10 +3992,30 @@
     ]
    },
    "AEHL": {
-    "ORB15_V1": {},
-    "PULLBACK_VWAP_V1": {},
-    "MOMO_CONT_V1": {},
-    "GAPGO_PB_V1": {},
+    "ORB15_V1": {
+     "or_sip": [
+      14.9999,
+      12.8
+     ]
+    },
+    "PULLBACK_VWAP_V1": {
+     "or_sip": [
+      14.9999,
+      12.8
+     ]
+    },
+    "MOMO_CONT_V1": {
+     "or_sip": [
+      14.9999,
+      12.8
+     ]
+    },
+    "GAPGO_PB_V1": {
+     "or_sip": [
+      14.9999,
+      12.8
+     ]
+    },
     "or_sip": [
      14.9999,
      12.8
@@ -4030,133 +4053,133 @@
    }
   },
   "last_m": {
-   "AA": 120,
-   "AAL": 120,
-   "AEO": 120,
-   "AES": 120,
-   "AFRM": 120,
-   "AG": 120,
-   "AGNC": 119,
-   "ALK": 120,
-   "AMCR": 120,
-   "APA": 120,
-   "APLD": 120,
-   "ASTS": 120,
-   "BAC": 120,
-   "BBVA": 120,
-   "BBY": 120,
-   "BEN": 120,
-   "BMY": 120,
-   "BSX": 120,
-   "BTU": 118,
-   "CAG": 120,
-   "CCL": 120,
-   "CDE": 120,
-   "CFG": 120,
-   "CHWY": 120,
-   "CIFR": 120,
-   "CLF": 120,
-   "CLSK": 120,
-   "CMCSA": 120,
-   "CNP": 120,
-   "CORZ": 120,
-   "CSCO": 120,
-   "CSX": 120,
-   "CVS": 120,
-   "D": 120,
-   "DAL": 120,
-   "DKNG": 120,
-   "DVN": 120,
-   "ERIC": 120,
-   "EXC": 120,
-   "F": 120,
-   "FCX": 120,
-   "FE": 120,
-   "FITB": 120,
-   "GIS": 120,
-   "GM": 120,
-   "GME": 120,
-   "HAL": 120,
-   "HBAN": 120,
-   "HL": 120,
-   "HOOD": 120,
-   "HPE": 120,
-   "HPQ": 120,
-   "HUT": 120,
-   "ING": 120,
-   "INTC": 120,
-   "IONQ": 120,
-   "IREN": 120,
-   "ITUB": 118,
-   "JD": 120,
-   "JOBY": 120,
-   "KDP": 120,
-   "KEY": 120,
-   "KHC": 120,
-   "KMI": 120,
-   "KO": 120,
-   "KR": 120,
-   "KSS": 119,
-   "LEVI": 120,
-   "LUV": 120,
-   "LYFT": 120,
-   "M": 120,
-   "MARA": 120,
-   "MO": 120,
-   "NCLH": 120,
-   "NEE": 120,
-   "NKE": 120,
-   "NLY": 120,
-   "NOK": 120,
-   "NU": 120,
-   "OKE": 119,
-   "ON": 120,
-   "OXY": 120,
-   "PATH": 120,
-   "PBR": 119,
-   "PCG": 120,
-   "PFE": 120,
-   "PINS": 120,
-   "PPL": 120,
-   "PYPL": 120,
-   "QBTS": 120,
-   "RBLX": 120,
-   "RF": 120,
-   "RGTI": 120,
-   "RIOT": 120,
-   "RIVN": 120,
-   "RKLB": 120,
-   "S": 120,
-   "SCHW": 120,
-   "SLB": 120,
-   "SMCI": 120,
-   "SO": 120,
-   "SOFI": 120,
-   "T": 120,
-   "TFC": 120,
-   "U": 120,
-   "UAA": 120,
-   "UBER": 120,
-   "USB": 120,
-   "VALE": 120,
-   "VZ": 120,
-   "WFC": 120,
-   "WMB": 120,
-   "WULF": 120,
-   "ZM": 120,
-   "GFR": 120,
-   "DCTH": 119,
-   "EPD": 120,
-   "KGC": 120,
-   "TSN": 120,
-   "VFC": 120,
-   "DOCU": 120,
-   "IVZ": 120,
-   "HRL": 119,
-   "LINC": 120,
-   "VIR": 118,
-   "AEHL": 7,
-   "URBN": 114
+   "AA": 131,
+   "AAL": 131,
+   "AEO": 131,
+   "AES": 128,
+   "AFRM": 131,
+   "AG": 131,
+   "AGNC": 131,
+   "ALK": 131,
+   "AMCR": 130,
+   "APA": 131,
+   "APLD": 131,
+   "ASTS": 131,
+   "BAC": 131,
+   "BBVA": 131,
+   "BBY": 131,
+   "BEN": 131,
+   "BMY": 131,
+   "BSX": 131,
+   "BTU": 131,
+   "CAG": 130,
+   "CCL": 129,
+   "CDE": 131,
+   "CFG": 131,
+   "CHWY": 131,
+   "CIFR": 131,
+   "CLF": 131,
+   "CLSK": 131,
+   "CMCSA": 131,
+   "CNP": 130,
+   "CORZ": 131,
+   "CSCO": 131,
+   "CSX": 131,
+   "CVS": 131,
+   "D": 131,
+   "DAL": 131,
+   "DKNG": 131,
+   "DVN": 131,
+   "ERIC": 131,
+   "EXC": 131,
+   "F": 131,
+   "FCX": 131,
+   "FE": 131,
+   "FITB": 131,
+   "GIS": 131,
+   "GM": 131,
+   "GME": 131,
+   "HAL": 131,
+   "HBAN": 131,
+   "HL": 131,
+   "HOOD": 130,
+   "HPE": 131,
+   "HPQ": 131,
+   "HUT": 131,
+   "ING": 130,
+   "INTC": 131,
+   "IONQ": 131,
+   "IREN": 131,
+   "ITUB": 131,
+   "JD": 131,
+   "JOBY": 130,
+   "KDP": 131,
+   "KEY": 131,
+   "KHC": 131,
+   "KMI": 131,
+   "KO": 131,
+   "KR": 131,
+   "KSS": 131,
+   "LEVI": 131,
+   "LUV": 131,
+   "LYFT": 131,
+   "M": 130,
+   "MARA": 131,
+   "MO": 129,
+   "NCLH": 131,
+   "NEE": 131,
+   "NKE": 131,
+   "NLY": 131,
+   "NOK": 130,
+   "NU": 131,
+   "OKE": 131,
+   "ON": 130,
+   "OXY": 131,
+   "PATH": 131,
+   "PBR": 128,
+   "PCG": 131,
+   "PFE": 131,
+   "PINS": 131,
+   "PPL": 131,
+   "PYPL": 131,
+   "QBTS": 131,
+   "RBLX": 131,
+   "RF": 131,
+   "RGTI": 131,
+   "RIOT": 131,
+   "RIVN": 131,
+   "RKLB": 131,
+   "S": 131,
+   "SCHW": 131,
+   "SLB": 131,
+   "SMCI": 131,
+   "SO": 130,
+   "SOFI": 131,
+   "T": 131,
+   "TFC": 131,
+   "U": 131,
+   "UAA": 131,
+   "UBER": 131,
+   "USB": 131,
+   "VALE": 131,
+   "VZ": 131,
+   "WFC": 131,
+   "WMB": 131,
+   "WULF": 131,
+   "ZM": 128,
+   "GFR": 131,
+   "DCTH": 126,
+   "EPD": 131,
+   "KGC": 130,
+   "TSN": 129,
+   "VFC": 131,
+   "DOCU": 131,
+   "IVZ": 131,
+   "HRL": 131,
+   "LINC": 131,
+   "VIR": 131,
+   "AEHL": 125,
+   "URBN": 131
   },
   "scanned": 173,
   "eligible": 122,
