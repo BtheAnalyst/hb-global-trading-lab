@@ -3264,3 +3264,32 @@
 {"t": "2026-11-09T15:57:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HOOD", "m": 86, "reason": "relative volume 0.63 below 1.5"}
 {"t": "2026-11-09T15:58:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BTU", "m": 87, "reason": "relative volume 1.31 below 1.5"}
 {"t": "2026-11-09T15:58:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "WULF", "m": 87, "reason": "relative volume 0.89 below 1.5"}
+{"t": "2026-11-09T15:59:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KHC", "m": 88, "reason": "relative volume 1.02 below 1.5"}
+{"t": "2026-11-09T15:59:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "NOK", "m": 88, "reason": "relative volume 0.61 below 1.5"}
+{"t": "2026-11-09T15:59:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ON", "m": 88, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-09T16:00:13+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "AMCR", "m": 89, "reason": "relative volume 0.88 below 1.5"}
+{"t": "2026-11-09T16:00:13+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "FCX", "m": 89, "reason": "relative volume 1.06 below 1.5"}
+{"t": "2026-11-09T16:00:13+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HL", "m": 89, "reason": "relative volume 0.7 below 1.5"}
+{"t": "2026-11-09T16:00:13+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "MARA", "m": 89, "reason": "relative volume 0.61 below 1.5"}
+{"t": "2026-11-09T16:00:13+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RGTI", "m": 89, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-09T16:01:15+00:00", "date": "2026-11-09", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "ON", "m": 38, "entry": 67.5875, "exit": 69.0426, "risk": 0.7275, "R": 2.0, "how": "target", "mins": 52, "rvol": 1.7200523266679126, "stop": 66.86, "exit_m": 90}
+{"t": "2026-11-09T16:02:13+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ASTS", "m": 91, "reason": "stop too wide (3.33% > 1.50%)"}
+{"t": "2026-11-09T16:02:13+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "QBTS", "m": 91, "reason": "relative volume 1.14 below 1.5"}
+{"t": "2026-11-09T16:03:11+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "APLD", "m": 92, "reason": "relative volume 0.7 below 1.5"}
+{"t": "2026-11-09T16:03:11+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CIFR", "m": 92, "reason": "relative volume 0.81 below 1.5"}
+{"t": "2026-11-09T16:03:11+00:00", "date": "2026-11-09", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "CLSK", "m": 92, "ref": 6.92, "stop": 6.835, "target": 7.09, "rvol": 1.52, "why": "up 13.4% from open, 10-bar base 6.84-6.91 above VWAP, breakout close 6.92, RVOL 1.5", "conditions": {"base_high": 6.905, "base_low": 6.845, "move": 0.1338}, "stale": false}
+{"t": "2026-11-09T16:03:11+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CORZ", "m": 92, "reason": "relative volume 0.65 below 1.5"}
+{"t": "2026-11-09T16:03:11+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "HAL", "m": 92, "reason": "relative volume 1.17 below 2.0"}
+{"t": "2026-11-09T16:03:11+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HPE", "m": 92, "reason": "relative volume 0.5 below 1.5"}
+{"t": "2026-11-09T16:04:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "JOBY", "m": 93, "reason": "relative volume 1.4 below 1.5"}
+{"t": "2026-11-09T16:04:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NEE", "m": 93, "reason": "relative volume 0.55 below 1.5"}
+{"t": "2026-11-09T16:04:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PCG", "m": 93, "reason": "relative volume 0.96 below 1.5"}
+{"t": "2026-11-09T16:05:12+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HRL", "m": 94, "reason": "relative volume 0.97 below 1.5"}
+{"t": "2026-11-09T16:05:12+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "LINC", "m": 94, "reason": "relative volume 0.13 below 1.5"}
+{"t": "2026-11-09T16:06:11+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CLF", "m": 95, "reason": "relative volume 0.47 below 1.5"}
+{"t": "2026-11-09T16:06:11+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "S", "m": 95, "reason": "relative volume 0.69 below 1.5"}
+{"t": "2026-11-09T16:07:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CDE", "m": 96, "reason": "relative volume 1.22 below 1.5"}
+{"t": "2026-11-09T16:08:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "IVZ", "m": 97, "reason": "relative volume 1.41 below 1.5"}
+{"t": "2026-11-09T16:09:09+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HBAN", "m": 98, "reason": "relative volume 0.63 below 1.5"}
+{"t": "2026-11-09T16:09:09+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "OXY", "m": 98, "reason": "relative volume 0.75 below 1.5"}
+{"t": "2026-11-09T16:09:09+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "UBER", "m": 98, "reason": "relative volume 0.78 below 2.0"}
