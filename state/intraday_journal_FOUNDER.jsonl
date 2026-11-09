@@ -3620,3 +3620,4 @@
 {"t": "2026-11-09T19:12:11+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HL", "m": 281, "reason": "relative volume 0.79 below 1.5"}
 {"t": "2026-11-09T19:18:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "AAL", "m": 287, "reason": "relative volume 0.8 below 1.5"}
 {"t": "2026-11-09T19:29:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "APLD", "m": 298, "reason": "relative volume 0.68 below 1.5"}
+{"t": "2026-11-09T20:48:10+00:00", "date": "2026-11-09", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "UAA", "m": 111, "entry": 5.3804, "exit": 5.5111, "risk": 0.0654, "R": 2.0, "how": "target", "mins": 266, "rvol": 1.5292252669440662, "stop": 5.315, "exit_m": 377}
