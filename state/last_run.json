@@ -1,33 +1,13 @@
 {
- "at": "2026-11-06T15:57:24-05:00",
+ "at": "2026-11-09T18:28:46-05:00",
  "mode": "paper",
  "exit_code": 0,
  "problem": false,
  "notes": [
   {
    "level": "notice",
-   "title": "Data",
-   "message": "433 completed daily bars per ETF through 2026-11-05 (previous session 2026-11-05); missing values in last row: 0; ETFs not fractionable: none; refused by allowlist checks: none"
-  },
-  {
-   "level": "notice",
-   "title": "Quotes",
-   "message": "BIL 91.46/91.47 (0.01%); EEM 59.25/59.26 (0.02%); EFA 101.82/101.83 (0.01%); GLD 372.62/372.63 (0.00%); IWM 273.60/273.62 (0.01%); QQQ 656.27/656.30 (0.00%); SPY 735.51/735.52 (0.00%); TLT 81.92/81.93 (0.01%); VNQ 95.75/95.76 (0.01%); VTI 361.83/361.98 (0.04%)"
-  },
-  {
-   "level": "notice",
-   "title": "Paper account (not the Founder's capital)",
-   "message": "Alpaca paper cash $100,000.61, buying power $100,000.61, status ACTIVE. The bot sizes orders only from the Founder's own books; this balance is never used."
-  },
-  {
-   "level": "notice",
-   "title": "Engine pass",
-   "message": "A_vti: no orders | already ran today: no second decision pass || B_90_10: no orders | already ran today: no second decision pass || C_80_20: no orders | already ran today: no second decision pass || D_70_30: no orders | already ran today: no second decision pass || A_vti_vault: no orders | already ran today: no second decision pass || B_90_10_vault: no orders | already ran today: no second decision pass || C_80_20_vault: no orders | already ran today: no second decision pass || D_70_30_vault: no orders | already ran today: no second decision pass || FOUNDER: no orders | already ran today: no second decision pass"
-  },
-  {
-   "level": "notice",
-   "title": "Reconciliation",
-   "message": "clean | broker positions none | Founder books: positions none, settled cash $100.12, contributed $200.00"
+   "title": "Market closed",
+   "message": "the market is not open right now: no orders, nothing changed"
   }
  ]
 }
