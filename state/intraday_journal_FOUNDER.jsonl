@@ -3616,3 +3616,6 @@
 {"t": "2026-11-09T19:01:14+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "ASTS", "m": 270, "reason": "stop too tight (0.18% < 0.25%): noise would stop it out"}
 {"t": "2026-11-09T19:01:14+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CORZ", "m": 270, "reason": "relative volume 0.63 below 1.5"}
 {"t": "2026-11-09T19:01:15+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 270, "reason": "relative volume 0.53 below 1.5"}
+{"t": "2026-11-09T19:10:13+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SOFI", "m": 279, "reason": "relative volume 0.8 below 1.5"}
+{"t": "2026-11-09T19:12:11+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HL", "m": 281, "reason": "relative volume 0.79 below 1.5"}
+{"t": "2026-11-09T19:18:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "AAL", "m": 287, "reason": "relative volume 0.8 below 1.5"}
