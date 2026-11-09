@@ -3477,3 +3477,33 @@
 {"t": "2026-11-09T17:37:11+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PINS", "m": 186, "reason": "relative volume 0.49 below 1.5"}
 {"t": "2026-11-09T17:39:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "IVZ", "m": 188, "reason": "continuation breakout volume not confirmed"}
 {"t": "2026-11-09T17:40:11+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BSX", "m": 189, "reason": "relative volume 0.99 below 1.5"}
+{"t": "2026-11-09T17:43:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GME", "m": 192, "reason": "relative volume 0.97 below 1.5"}
+{"t": "2026-11-09T17:43:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RBLX", "m": 192, "reason": "relative volume 1.15 below 1.5"}
+{"t": "2026-11-09T17:45:11+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AAL", "m": 194, "reason": "relative volume 0.92 below 1.5"}
+{"t": "2026-11-09T17:46:12+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BTU", "m": 195, "reason": "relative volume 1.24 below 1.5"}
+{"t": "2026-11-09T17:46:12+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BTU", "m": 195, "reason": "relative volume 1.24 below 1.5"}
+{"t": "2026-11-09T17:46:13+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RGTI", "m": 195, "reason": "relative volume 1.38 below 1.5"}
+{"t": "2026-11-09T17:47:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ASTS", "m": 196, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-09T17:47:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CORZ", "m": 196, "reason": "relative volume 0.6 below 1.5"}
+{"t": "2026-11-09T17:47:10+00:00", "date": "2026-11-09", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "IREN", "m": 196, "ref": 21.92, "stop": 21.75, "target": 22.26, "rvol": 2.35, "why": "up 2.4% from open, 10-bar base 21.76-21.89 above VWAP, breakout close 21.92, RVOL 2.4", "conditions": {"base_high": 21.89, "base_low": 21.76, "move": 0.0239}, "stale": false}
+{"t": "2026-11-09T17:48:09+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CLSK", "m": 197, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-09T17:48:09+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "D", "m": 197, "reason": "relative volume 0.85 below 1.5"}
+{"t": "2026-11-09T17:48:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "INTC", "m": 197, "reason": "relative volume 0.74 below 1.5"}
+{"t": "2026-11-09T17:48:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "IONQ", "m": 197, "reason": "relative volume 1.0 below 1.5"}
+{"t": "2026-11-09T17:48:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "QBTS", "m": 197, "reason": "relative volume 1.16 below 1.5"}
+{"t": "2026-11-09T17:48:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RIOT", "m": 197, "reason": "relative volume 0.99 below 1.5"}
+{"t": "2026-11-09T17:48:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RKLB", "m": 197, "reason": "relative volume 1.18 below 1.5"}
+{"t": "2026-11-09T17:49:09+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AA", "m": 198, "reason": "relative volume 0.65 below 1.5"}
+{"t": "2026-11-09T17:49:09+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CIFR", "m": 198, "reason": "relative volume 0.75 below 1.5"}
+{"t": "2026-11-09T17:49:09+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DKNG", "m": 198, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-09T17:49:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KMI", "m": 198, "reason": "relative volume 0.92 below 1.5"}
+{"t": "2026-11-09T17:49:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "WMB", "m": 198, "reason": "relative volume 1.21 below 1.5"}
+{"t": "2026-11-09T17:50:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CFG", "m": 199, "reason": "relative volume 0.48 below 1.5"}
+{"t": "2026-11-09T17:50:10+00:00", "date": "2026-11-09", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "ON", "m": 199, "ref": 68.88, "stop": 68.6, "target": 69.44, "rvol": 1.53, "why": "up 7.1% from open, 10-bar base 68.61-68.86 above VWAP, breakout close 68.88, RVOL 1.5", "conditions": {"base_high": 68.86, "base_low": 68.61, "move": 0.0709}, "stale": false}
+{"t": "2026-11-09T17:50:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PINS", "m": 199, "reason": "relative volume 0.51 below 1.5"}
+{"t": "2026-11-09T17:51:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AEO", "m": 200, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-09T17:51:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CLF", "m": 200, "reason": "relative volume 0.52 below 1.5"}
+{"t": "2026-11-09T17:51:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "M", "m": 200, "reason": "relative volume 0.75 below 1.5"}
+{"t": "2026-11-09T17:51:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SOFI", "m": 200, "reason": "relative volume 0.75 below 1.5"}
+{"t": "2026-11-09T17:51:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "T", "m": 200, "reason": "relative volume 0.72 below 1.5"}
+{"t": "2026-11-09T17:52:10+00:00", "date": "2026-11-09", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SLB", "m": 201, "reason": "relative volume 0.7 below 1.5"}
