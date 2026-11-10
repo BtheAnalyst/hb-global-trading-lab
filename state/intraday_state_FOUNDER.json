@@ -22,8 +22,914 @@
   "halted": null,
   "signals": 0,
   "rejections": {},
-  "setup_state": {},
-  "last_m": {},
+  "setup_state": {
+   "AA": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "AAL": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "AEO": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "AES": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "AFRM": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "AG": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "AGNC": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "ALK": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "AMCR": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "APA": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "APLD": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "ASTS": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "BAC": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "BBVA": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "BEN": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "BMY": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "BSX": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "BTU": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CAG": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CCL": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CDE": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CFG": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CHWY": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CIFR": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CLF": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CLSK": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CMCSA": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CNP": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CORZ": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CSCO": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CSX": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "CVS": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "D": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "DAL": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "DKNG": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "DOCU": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "DVN": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "EPD": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "ERIC": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "EXC": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "F": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "FCX": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "FE": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "FITB": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "GIS": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "GM": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "GME": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "HAL": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "HBAN": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "HL": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "HOOD": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "HPE": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "HPQ": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "HRL": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "HUT": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "ING": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "INTC": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "IONQ": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "IREN": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "ITUB": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "IVZ": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "JD": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "JOBY": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "KDP": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "KEY": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "KGC": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "KHC": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "KMI": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "KO": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "KR": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "KSS": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "LEVI": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "LUV": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "LYFT": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "M": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "MARA": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "MO": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "NCLH": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "NEE": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "NKE": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "NLY": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "NOK": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "NU": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "OKE": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "ON": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "OXY": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "PATH": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "PBR": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "PCG": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "PFE": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "PINS": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "PPL": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "PYPL": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "QBTS": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "RBLX": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "RF": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "RGTI": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "RIOT": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "RIVN": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "RKLB": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "S": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "SCHW": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "SLB": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "SMCI": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "SNAP": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "SO": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "SOFI": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "T": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "TFC": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "TSN": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "U": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "UAA": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "UBER": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "USB": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "VALE": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "VFC": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "VZ": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "WFC": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "WMB": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "WULF": {
+    "ORB15_V1": {},
+    "PULLBACK_VWAP_V1": {},
+    "MOMO_CONT_V1": {},
+    "GAPGO_PB_V1": {}
+   },
+   "SECZ": {
+    "gap": 0.26255380200860845,
+    "ORB15_V1": {
+     "gap": 0.26255380200860845
+    },
+    "PULLBACK_VWAP_V1": {
+     "gap": 0.26255380200860845
+    },
+    "MOMO_CONT_V1": {
+     "gap": 0.26255380200860845
+    },
+    "GAPGO_PB_V1": {
+     "gap": 0.26255380200860845
+    }
+   },
+   "SENS": {
+    "gap": 0.2933673469387754,
+    "ORB15_V1": {
+     "gap": 0.2933673469387754
+    },
+    "PULLBACK_VWAP_V1": {
+     "gap": 0.2933673469387754
+    },
+    "MOMO_CONT_V1": {
+     "gap": 0.2933673469387754
+    },
+    "GAPGO_PB_V1": {
+     "gap": 0.2933673469387754
+    }
+   },
+   "QMCO": {
+    "gap": 0.14331959976456754,
+    "ORB15_V1": {
+     "gap": 0.14331959976456754
+    },
+    "PULLBACK_VWAP_V1": {
+     "gap": 0.14331959976456754
+    },
+    "MOMO_CONT_V1": {
+     "gap": 0.14331959976456754
+    },
+    "GAPGO_PB_V1": {
+     "gap": 0.14331959976456754
+    }
+   },
+   "CSQR": {
+    "gap": 0.12639161755075312,
+    "ORB15_V1": {
+     "gap": 0.12639161755075312
+    },
+    "PULLBACK_VWAP_V1": {
+     "gap": 0.12639161755075312
+    },
+    "MOMO_CONT_V1": {
+     "gap": 0.12639161755075312
+    },
+    "GAPGO_PB_V1": {
+     "gap": 0.12639161755075312
+    }
+   }
+  },
+  "last_m": {
+   "AA": 3,
+   "AAL": 3,
+   "AEO": 3,
+   "AES": 2,
+   "AFRM": 3,
+   "AG": 3,
+   "AGNC": 3,
+   "ALK": 2,
+   "AMCR": 3,
+   "APA": 3,
+   "APLD": 3,
+   "ASTS": 3,
+   "BAC": 3,
+   "BBVA": 2,
+   "BEN": 3,
+   "BMY": 3,
+   "BSX": 3,
+   "BTU": 1,
+   "CAG": 3,
+   "CCL": 3,
+   "CDE": 3,
+   "CFG": 3,
+   "CHWY": 3,
+   "CIFR": 3,
+   "CLF": 3,
+   "CLSK": 3,
+   "CMCSA": 3,
+   "CNP": 3,
+   "CORZ": 3,
+   "CSCO": 3,
+   "CSX": 3,
+   "CVS": 3,
+   "D": 3,
+   "DAL": 3,
+   "DKNG": 3,
+   "DOCU": 3,
+   "DVN": 3,
+   "EPD": 3,
+   "ERIC": 3,
+   "EXC": 3,
+   "F": 3,
+   "FCX": 3,
+   "FE": 3,
+   "FITB": 3,
+   "GIS": 3,
+   "GM": 3,
+   "GME": 3,
+   "HAL": 3,
+   "HBAN": 3,
+   "HL": 3,
+   "HOOD": 3,
+   "HPE": 3,
+   "HPQ": 3,
+   "HRL": 3,
+   "HUT": 3,
+   "ING": 3,
+   "INTC": 3,
+   "IONQ": 3,
+   "IREN": 3,
+   "ITUB": 2,
+   "IVZ": 3,
+   "JD": 3,
+   "JOBY": 3,
+   "KDP": 3,
+   "KEY": 3,
+   "KGC": 3,
+   "KHC": 3,
+   "KMI": 3,
+   "KO": 3,
+   "KR": 3,
+   "KSS": 3,
+   "LEVI": 3,
+   "LUV": 3,
+   "LYFT": 2,
+   "M": 3,
+   "MARA": 3,
+   "MO": 3,
+   "NCLH": 3,
+   "NEE": 3,
+   "NKE": 3,
+   "NLY": 3,
+   "NOK": 3,
+   "NU": 3,
+   "OKE": 2,
+   "ON": 3,
+   "OXY": 3,
+   "PATH": 3,
+   "PBR": 3,
+   "PCG": 2,
+   "PFE": 3,
+   "PINS": 3,
+   "PPL": 3,
+   "PYPL": 3,
+   "QBTS": 3,
+   "RBLX": 3,
+   "RF": 3,
+   "RGTI": 3,
+   "RIOT": 3,
+   "RIVN": 3,
+   "RKLB": 3,
+   "S": 3,
+   "SCHW": 3,
+   "SLB": 3,
+   "SMCI": 3,
+   "SNAP": 3,
+   "SO": 3,
+   "SOFI": 3,
+   "T": 3,
+   "TFC": 2,
+   "TSN": 3,
+   "U": 3,
+   "UAA": 2,
+   "UBER": 3,
+   "USB": 3,
+   "VALE": 3,
+   "VFC": 3,
+   "VZ": 3,
+   "WFC": 3,
+   "WMB": 3,
+   "WULF": 3,
+   "SECZ": 3,
+   "SENS": 3,
+   "QMCO": 3,
+   "CSQR": 3
+  },
   "scanned": 173,
   "eligible": 121,
   "released": 0
