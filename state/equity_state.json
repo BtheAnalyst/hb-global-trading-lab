@@ -1,17 +1,17 @@
 {
  "marks": {
-  "date": "2026-11-06",
+  "date": "2026-11-09",
   "px": {
-   "BIL": 91.46,
-   "EEM": 59.33,
-   "EFA": 101.89,
-   "GLD": 372.52,
-   "IWM": 273.67,
-   "QQQ": 656.1,
-   "SPY": 735.29,
-   "TLT": 81.92,
-   "VNQ": 95.73,
-   "VTI": 361.93
+   "BIL": 91.48,
+   "EEM": 61.03,
+   "EFA": 104.96,
+   "GLD": 379.53,
+   "IWM": 282.51,
+   "QQQ": 679.35,
+   "SPY": 752.69,
+   "TLT": 81.96,
+   "VNQ": 97.3,
+   "VTI": 370.9
   }
  },
  "portfolios": {
@@ -1602,6 +1602,114 @@
   },
   {
    "date": "2026-11-06",
+   "portfolio": "FOUNDER",
+   "wealth": 200.71,
+   "contributed": 200.0,
+   "trading": 200.65,
+   "vault": 0.05,
+   "realized": 0.17,
+   "unrealized": 0,
+   "net_gain": 0.71,
+   "return_pct": 0.0025
+  },
+  {
+   "date": "2026-11-09",
+   "portfolio": "A_vti",
+   "wealth": 198.02,
+   "contributed": 200.0,
+   "trading": 198.02,
+   "vault": 0.0,
+   "realized": 0.0,
+   "unrealized": -1.98,
+   "net_gain": -1.98,
+   "return_pct": -0.0206
+  },
+  {
+   "date": "2026-11-09",
+   "portfolio": "A_vti_vault",
+   "wealth": 198.02,
+   "contributed": 200.0,
+   "trading": 198.02,
+   "vault": 0.0,
+   "realized": 0.0,
+   "unrealized": -1.98,
+   "net_gain": -1.98,
+   "return_pct": -0.0206
+  },
+  {
+   "date": "2026-11-09",
+   "portfolio": "B_90_10",
+   "wealth": 197.95,
+   "contributed": 200.0,
+   "trading": 197.95,
+   "vault": 0.0,
+   "realized": -0.25,
+   "unrealized": -1.8,
+   "net_gain": -2.05,
+   "return_pct": -0.0219
+  },
+  {
+   "date": "2026-11-09",
+   "portfolio": "B_90_10_vault",
+   "wealth": 197.95,
+   "contributed": 200.0,
+   "trading": 197.95,
+   "vault": 0.0,
+   "realized": -0.25,
+   "unrealized": -1.8,
+   "net_gain": -2.05,
+   "return_pct": -0.0219
+  },
+  {
+   "date": "2026-11-09",
+   "portfolio": "C_80_20",
+   "wealth": 197.87,
+   "contributed": 200.0,
+   "trading": 197.87,
+   "vault": 0.0,
+   "realized": -0.5,
+   "unrealized": -1.63,
+   "net_gain": -2.13,
+   "return_pct": -0.0232
+  },
+  {
+   "date": "2026-11-09",
+   "portfolio": "C_80_20_vault",
+   "wealth": 197.87,
+   "contributed": 200.0,
+   "trading": 197.87,
+   "vault": 0.0,
+   "realized": -0.5,
+   "unrealized": -1.63,
+   "net_gain": -2.13,
+   "return_pct": -0.0232
+  },
+  {
+   "date": "2026-11-09",
+   "portfolio": "D_70_30",
+   "wealth": 197.79,
+   "contributed": 200.0,
+   "trading": 197.79,
+   "vault": 0.0,
+   "realized": -0.75,
+   "unrealized": -1.46,
+   "net_gain": -2.21,
+   "return_pct": -0.0246
+  },
+  {
+   "date": "2026-11-09",
+   "portfolio": "D_70_30_vault",
+   "wealth": 197.79,
+   "contributed": 200.0,
+   "trading": 197.79,
+   "vault": 0.0,
+   "realized": -0.75,
+   "unrealized": -1.46,
+   "net_gain": -2.21,
+   "return_pct": -0.0246
+  },
+  {
+   "date": "2026-11-09",
    "portfolio": "FOUNDER",
    "wealth": 200.71,
    "contributed": 200.0,
