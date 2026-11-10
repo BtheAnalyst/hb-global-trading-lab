@@ -3808,3 +3808,15 @@
 {"t": "2026-11-10T15:35:15+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SMX", "m": 64, "reason": "opening range incomplete (missing minutes)"}
 {"t": "2026-11-10T15:36:14+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "TSN", "m": 65, "reason": "relative volume 0.93 below 1.5"}
 {"t": "2026-11-10T15:37:13+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SMX", "m": 66, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-10T15:38:12+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "EXC", "m": 67, "reason": "relative volume 0.66 below 1.5"}
+{"t": "2026-11-10T15:38:13+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SMX", "m": 67, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-10T15:41:15+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CNP", "m": 70, "reason": "relative volume 0.25 below 1.5"}
+{"t": "2026-11-10T15:41:15+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "D", "m": 70, "reason": "relative volume 0.51 below 1.5"}
+{"t": "2026-11-10T15:42:13+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HPQ", "m": 71, "reason": "relative volume 1.2 below 1.5"}
+{"t": "2026-11-10T15:43:12+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "IONQ", "m": 72, "reason": "relative volume 0.67 below 1.5"}
+{"t": "2026-11-10T15:44:12+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "ZM", "m": 73, "reason": "relative volume 1.2 below 2.0"}
+{"t": "2026-11-10T15:45:15+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SMX", "m": 74, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-10T15:46:17+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "LEVI", "m": 75, "reason": "relative volume 0.39 below 1.5"}
+{"t": "2026-11-10T15:46:17+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "OKE", "m": 75, "reason": "relative volume 0.62 below 1.5"}
+{"t": "2026-11-10T15:48:13+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "LEVI", "m": 77, "reason": "relative volume 0.41 below 2.0"}
+{"t": "2026-11-10T15:48:13+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NU", "m": 77, "reason": "relative volume 0.7 below 1.5"}
