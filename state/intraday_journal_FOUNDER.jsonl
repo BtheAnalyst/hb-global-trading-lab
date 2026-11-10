@@ -3893,3 +3893,11 @@
 {"t": "2026-11-10T16:45:16+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "LEVI", "m": 134, "reason": "relative volume 0.49 below 1.5"}
 {"t": "2026-11-10T16:45:16+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "LYFT", "m": 134, "reason": "relative volume 0.6 below 1.5"}
 {"t": "2026-11-10T16:50:14+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CVS", "m": 139, "reason": "relative volume 0.86 below 1.5"}
+{"t": "2026-11-10T16:53:11+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "EPD", "m": 142, "reason": "relative volume 1.03 below 1.5"}
+{"t": "2026-11-10T16:54:10+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HAL", "m": 143, "reason": "relative volume 0.6 below 1.5"}
+{"t": "2026-11-10T16:54:10+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RKLB", "m": 143, "reason": "breakout bar closed weak"}
+{"t": "2026-11-10T16:56:12+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KMI", "m": 145, "reason": "relative volume 0.93 below 1.5"}
+{"t": "2026-11-10T16:58:10+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "VFC", "m": 147, "reason": "relative volume 0.59 below 1.5"}
+{"t": "2026-11-10T16:58:10+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "WMB", "m": 147, "reason": "relative volume 1.35 below 1.5"}
+{"t": "2026-11-10T17:01:16+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "APA", "m": 150, "reason": "relative volume 0.81 below 1.5"}
+{"t": "2026-11-10T17:03:14+00:00", "date": "2026-11-10", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NEE", "m": 152, "reason": "relative volume 0.72 below 1.5"}
