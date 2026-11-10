@@ -22,7 +22,11 @@
   "halted": null,
   "signals": 0,
   "rejections": {
-   "GAPGO_PB_V1: relative volume # below #": 1
+   "GAPGO_PB_V1: relative volume # below #": 2,
+   "ORB15_V1: opening range incomplete": 37,
+   "ORB15_V1: breakout bar volume not confirmed": 3,
+   "ORB15_V1: relative volume # below #": 23,
+   "ORB15_V1: opening range # outside ##": 5
   },
   "setup_state": {
    "AA": {
@@ -44,13 +48,17 @@
     "GAPGO_PB_V1": {}
    },
    "AES": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
    },
    "AFRM": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -80,7 +88,9 @@
     "GAPGO_PB_V1": {}
    },
    "APA": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -170,7 +180,9 @@
     "GAPGO_PB_V1": {}
    },
    "CLF": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -200,7 +212,9 @@
     "GAPGO_PB_V1": {}
    },
    "CSCO": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -212,7 +226,9 @@
     "GAPGO_PB_V1": {}
    },
    "CVS": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -242,19 +258,25 @@
     "GAPGO_PB_V1": {}
    },
    "DVN": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
    },
    "EPD": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
    },
    "ERIC": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -308,7 +330,9 @@
     "GAPGO_PB_V1": {}
    },
    "HAL": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -332,13 +356,17 @@
     "GAPGO_PB_V1": {}
    },
    "HPE": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
    },
    "HPQ": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -362,7 +390,9 @@
     "GAPGO_PB_V1": {}
    },
    "INTC": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -374,7 +404,9 @@
     "GAPGO_PB_V1": {}
    },
    "IREN": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -404,7 +436,9 @@
     "GAPGO_PB_V1": {}
    },
    "KDP": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -428,7 +462,9 @@
     "GAPGO_PB_V1": {}
    },
    "KMI": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -476,7 +512,9 @@
     "GAPGO_PB_V1": {}
    },
    "MARA": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -512,7 +550,9 @@
     "GAPGO_PB_V1": {}
    },
    "NOK": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -530,25 +570,33 @@
     "GAPGO_PB_V1": {}
    },
    "ON": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
    },
    "OXY": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
    },
    "PATH": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
    },
    "PBR": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -614,19 +662,25 @@
     "GAPGO_PB_V1": {}
    },
    "RIVN": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
    },
    "RKLB": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
    },
    "S": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -638,13 +692,17 @@
     "GAPGO_PB_V1": {}
    },
    "SLB": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
    },
    "SMCI": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -680,7 +738,9 @@
     "GAPGO_PB_V1": {}
    },
    "TSN": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -728,13 +788,17 @@
     "GAPGO_PB_V1": {}
    },
    "WFC": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
    },
    "WMB": {
-    "ORB15_V1": {},
+    "ORB15_V1": {
+     "orb_broken": true
+    },
     "PULLBACK_VWAP_V1": {},
     "MOMO_CONT_V1": {},
     "GAPGO_PB_V1": {}
@@ -794,7 +858,8 @@
    "CSQR": {
     "gap": 0.12639161755075312,
     "ORB15_V1": {
-     "gap": 0.12639161755075312
+     "gap": 0.12639161755075312,
+     "orb_broken": true
     },
     "PULLBACK_VWAP_V1": {
      "gap": 0.12639161755075312
@@ -803,7 +868,8 @@
      "gap": 0.12639161755075312
     },
     "GAPGO_PB_V1": {
-     "gap": 0.12639161755075312
+     "gap": 0.12639161755075312,
+     "gg_done": true
     }
    },
    "SMX": {
@@ -835,133 +901,133 @@
    }
   },
   "last_m": {
-   "AA": 13,
-   "AAL": 14,
-   "AEO": 13,
-   "AES": 13,
-   "AFRM": 13,
-   "AG": 14,
-   "AGNC": 14,
-   "ALK": 13,
-   "AMCR": 12,
-   "APA": 14,
-   "APLD": 14,
-   "ASTS": 14,
-   "BAC": 14,
-   "BBVA": 14,
-   "BEN": 14,
-   "BMY": 14,
-   "BSX": 14,
-   "BTU": 13,
-   "CAG": 14,
-   "CCL": 14,
-   "CDE": 14,
-   "CFG": 14,
-   "CHWY": 14,
-   "CIFR": 14,
-   "CLF": 14,
-   "CLSK": 14,
-   "CMCSA": 14,
-   "CNP": 14,
-   "CORZ": 14,
-   "CSCO": 14,
-   "CSX": 14,
-   "CVS": 14,
-   "D": 14,
-   "DAL": 14,
-   "DKNG": 14,
-   "DOCU": 11,
-   "DVN": 14,
-   "EPD": 14,
-   "ERIC": 10,
-   "EXC": 14,
-   "F": 14,
-   "FCX": 14,
-   "FE": 14,
-   "FITB": 13,
-   "GIS": 14,
-   "GM": 14,
-   "GME": 12,
-   "HAL": 14,
-   "HBAN": 14,
-   "HL": 14,
-   "HOOD": 14,
-   "HPE": 14,
-   "HPQ": 14,
-   "HRL": 14,
-   "HUT": 13,
-   "ING": 14,
-   "INTC": 14,
-   "IONQ": 14,
-   "IREN": 14,
-   "ITUB": 14,
-   "IVZ": 14,
-   "JD": 13,
-   "JOBY": 14,
-   "KDP": 14,
-   "KEY": 14,
-   "KGC": 14,
-   "KHC": 14,
-   "KMI": 14,
-   "KO": 14,
-   "KR": 14,
-   "KSS": 14,
-   "LEVI": 13,
-   "LUV": 14,
-   "LYFT": 14,
-   "M": 13,
-   "MARA": 14,
-   "MO": 14,
-   "NCLH": 14,
-   "NEE": 14,
-   "NKE": 14,
-   "NLY": 14,
-   "NOK": 14,
-   "NU": 14,
-   "OKE": 11,
-   "ON": 14,
-   "OXY": 14,
-   "PATH": 14,
-   "PBR": 14,
-   "PCG": 14,
-   "PFE": 14,
-   "PINS": 14,
-   "PPL": 14,
-   "PYPL": 14,
-   "QBTS": 14,
-   "RBLX": 14,
-   "RF": 14,
-   "RGTI": 14,
-   "RIOT": 14,
-   "RIVN": 14,
-   "RKLB": 14,
-   "S": 14,
-   "SCHW": 14,
-   "SLB": 14,
-   "SMCI": 14,
-   "SNAP": 14,
-   "SO": 14,
-   "SOFI": 14,
-   "T": 14,
-   "TFC": 14,
-   "TSN": 14,
-   "U": 14,
-   "UAA": 14,
-   "UBER": 14,
-   "USB": 14,
-   "VALE": 14,
-   "VFC": 14,
-   "VZ": 14,
-   "WFC": 14,
-   "WMB": 14,
-   "WULF": 14,
-   "SECZ": 14,
-   "SENS": 14,
-   "QMCO": 14,
-   "CSQR": 14,
-   "SMX": 14,
-   "ZM": 14,
-   "OPTX": 13
+   "AA": 25,
+   "AAL": 25,
+   "AEO": 25,
+   "AES": 25,
+   "AFRM": 25,
+   "AG": 25,
+   "AGNC": 25,
+   "ALK": 25,
+   "AMCR": 24,
+   "APA": 25,
+   "APLD": 25,
+   "ASTS": 25,
+   "BAC": 25,
+   "BBVA": 25,
+   "BEN": 25,
+   "BMY": 24,
+   "BSX": 25,
+   "BTU": 25,
+   "CAG": 25,
+   "CCL": 25,
+   "CDE": 25,
+   "CFG": 25,
+   "CHWY": 25,
+   "CIFR": 25,
+   "CLF": 25,
+   "CLSK": 25,
+   "CMCSA": 25,
+   "CNP": 25,
+   "CORZ": 25,
+   "CSCO": 25,
+   "CSX": 25,
+   "CVS": 25,
+   "D": 25,
+   "DAL": 23,
+   "DKNG": 25,
+   "DOCU": 23,
+   "DVN": 25,
+   "EPD": 25,
+   "ERIC": 25,
+   "EXC": 25,
+   "F": 25,
+   "FCX": 25,
+   "FE": 22,
+   "FITB": 25,
+   "GIS": 25,
+   "GM": 25,
+   "GME": 25,
+   "HAL": 22,
+   "HBAN": 25,
+   "HL": 25,
+   "HOOD": 25,
+   "HPE": 25,
+   "HPQ": 25,
+   "HRL": 25,
+   "HUT": 25,
+   "ING": 24,
+   "INTC": 25,
+   "IONQ": 25,
+   "IREN": 25,
+   "ITUB": 25,
+   "IVZ": 25,
+   "JD": 25,
+   "JOBY": 25,
+   "KDP": 25,
+   "KEY": 25,
+   "KGC": 25,
+   "KHC": 25,
+   "KMI": 25,
+   "KO": 25,
+   "KR": 25,
+   "KSS": 25,
+   "LEVI": 20,
+   "LUV": 25,
+   "LYFT": 25,
+   "M": 25,
+   "MARA": 25,
+   "MO": 25,
+   "NCLH": 25,
+   "NEE": 25,
+   "NKE": 25,
+   "NLY": 25,
+   "NOK": 25,
+   "NU": 25,
+   "OKE": 22,
+   "ON": 25,
+   "OXY": 25,
+   "PATH": 25,
+   "PBR": 25,
+   "PCG": 25,
+   "PFE": 25,
+   "PINS": 25,
+   "PPL": 25,
+   "PYPL": 25,
+   "QBTS": 25,
+   "RBLX": 25,
+   "RF": 25,
+   "RGTI": 25,
+   "RIOT": 25,
+   "RIVN": 25,
+   "RKLB": 25,
+   "S": 25,
+   "SCHW": 25,
+   "SLB": 25,
+   "SMCI": 25,
+   "SNAP": 25,
+   "SO": 25,
+   "SOFI": 25,
+   "T": 25,
+   "TFC": 24,
+   "TSN": 23,
+   "U": 25,
+   "UAA": 25,
+   "UBER": 25,
+   "USB": 25,
+   "VALE": 25,
+   "VFC": 25,
+   "VZ": 25,
+   "WFC": 25,
+   "WMB": 25,
+   "WULF": 25,
+   "SECZ": 25,
+   "SENS": 25,
+   "QMCO": 22,
+   "CSQR": 25,
+   "SMX": 21,
+   "ZM": 25,
+   "OPTX": 23
   },
   "scanned": 173,
   "eligible": 121,
