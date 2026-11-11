@@ -4430,3 +4430,12 @@
 {"t": "2026-11-11T18:00:15+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "USB", "m": 209, "reason": "relative volume 0.57 below 1.5"}
 {"t": "2026-11-11T18:01:17+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PYPL", "m": 210, "reason": "relative volume 0.46 below 1.5"}
 {"t": "2026-11-11T18:01:18+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "UBER", "m": 210, "reason": "relative volume 0.63 below 1.5"}
+{"t": "2026-11-11T18:06:14+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HRL", "m": 215, "reason": "relative volume 1.23 below 1.5"}
+{"t": "2026-11-11T18:08:11+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KR", "m": 217, "reason": "relative volume 0.21 below 1.5"}
+{"t": "2026-11-11T18:08:12+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SCHW", "m": 217, "reason": "relative volume 0.95 below 1.5"}
+{"t": "2026-11-11T18:09:12+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PFE", "m": 218, "reason": "relative volume 0.65 below 1.5"}
+{"t": "2026-11-11T18:10:12+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BAC", "m": 219, "reason": "relative volume 0.51 below 1.5"}
+{"t": "2026-11-11T18:11:12+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "ERIC", "m": 220, "reason": "relative volume 0.64 below 1.5"}
+{"t": "2026-11-11T18:11:13+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 220, "reason": "relative volume 0.44 below 1.5"}
+{"t": "2026-11-11T18:12:11+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HAL", "m": 221, "reason": "relative volume 0.53 below 1.5"}
+{"t": "2026-11-11T18:12:12+00:00", "date": "2026-11-11", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "ZM", "m": 221, "ref": 97.12, "stop": 96.775, "target": 97.81, "rvol": 2.34, "why": "up 5.2% from open, 10-bar base 96.78-97.10 above VWAP, breakout close 97.12, RVOL 2.3", "conditions": {"base_high": 97.1, "base_low": 96.785, "move": 0.0518}, "stale": false}
