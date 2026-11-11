@@ -4328,3 +4328,11 @@
 {"t": "2026-11-11T16:50:12+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ON", "m": 139, "reason": "relative volume 0.81 below 1.5"}
 {"t": "2026-11-11T16:51:12+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "MARA", "m": 140, "reason": "relative volume 1.04 below 1.5"}
 {"t": "2026-11-11T16:51:12+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ZM", "m": 140, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-11T16:53:10+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RBLX", "m": 142, "reason": "relative volume 0.8 below 1.5"}
+{"t": "2026-11-11T16:53:11+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "WFC", "m": 142, "reason": "relative volume 0.36 below 1.5"}
+{"t": "2026-11-11T16:55:12+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KEY", "m": 144, "reason": "relative volume 0.55 below 1.5"}
+{"t": "2026-11-11T16:58:10+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PBR", "m": 147, "reason": "relative volume 0.85 below 1.5"}
+{"t": "2026-11-11T16:59:09+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "S", "m": 148, "reason": "relative volume 0.84 below 1.5"}
+{"t": "2026-11-11T16:59:09+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SNAP", "m": 148, "reason": "relative volume 0.65 below 1.5"}
+{"t": "2026-11-11T16:59:09+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "VFC", "m": 148, "reason": "relative volume 0.42 below 1.5"}
+{"t": "2026-11-11T17:00:15+00:00", "date": "2026-11-11", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "VZ", "m": 149, "reason": "relative volume 0.42 below 1.5"}
