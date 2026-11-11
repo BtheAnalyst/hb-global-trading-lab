@@ -23,13 +23,13 @@
   "signals": 0,
   "rejections": {
    "ORB15_V1: opening range incomplete": 89,
-   "ORB15_V1: relative volume # below #": 57,
+   "ORB15_V1: relative volume # below #": 60,
    "ORB15_V1: breakout bar volume not confirmed": 2,
    "ORB15_V1: opening range # outside ##": 3,
-   "PULLBACK_VWAP_V1: relative volume # below #": 25,
-   "MOMO_CONT_V1: relative volume # below #": 10,
-   "MOMO_CONT_V1: continuation breakout volume not confirmed": 2,
-   "PULLBACK_VWAP_V1: stop too tight": 1
+   "PULLBACK_VWAP_V1: relative volume # below #": 29,
+   "MOMO_CONT_V1: relative volume # below #": 17,
+   "MOMO_CONT_V1: continuation breakout volume not confirmed": 4,
+   "PULLBACK_VWAP_V1: stop too tight": 2
   },
   "setup_state": {
    "AA": {
@@ -143,7 +143,7 @@
       67.3499,
       65.815
      ],
-     "mc_last": 40
+     "mc_last": 54
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -390,7 +390,7 @@
       44.88,
       43.8692
      ],
-     "mc_last": 60
+     "mc_last": 75
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -747,7 +747,8 @@
      "or_sip": [
       101.4,
       99.63
-     ]
+     ],
+     "orb_broken": true
     },
     "PULLBACK_VWAP_V1": {
      "or_sip": [
@@ -909,7 +910,7 @@
       19.73,
       19.0
      ],
-     "pb_last": 55
+     "pb_last": 73
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -1439,7 +1440,8 @@
      "or_sip": [
       29.25,
       28.4
-     ]
+     ],
+     "mc_last": 72
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1642,7 +1644,8 @@
      "or_sip": [
       28.58,
       27.81
-     ]
+     ],
+     "orb_broken": true
     },
     "PULLBACK_VWAP_V1": {
      "or_sip": [
@@ -1740,13 +1743,14 @@
       37.69,
       36.99
      ],
-     "pb_last": 30
+     "pb_last": 71
     },
     "MOMO_CONT_V1": {
      "or_sip": [
       37.69,
       36.99
-     ]
+     ],
+     "mc_last": 75
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1801,7 +1805,8 @@
      "or_sip": [
       24.15,
       23.77
-     ]
+     ],
+     "pb_last": 68
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -1863,7 +1868,7 @@
       96.615,
       95.65
      ],
-     "pb_last": 30
+     "pb_last": 72
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -2296,7 +2301,7 @@
       57.4,
       56.67
      ],
-     "pb_last": 61
+     "pb_last": 72
     },
     "MOMO_CONT_V1": {
      "or_sip": [
@@ -2365,7 +2370,7 @@
       17.885,
       17.55
      ],
-     "mc_last": 49
+     "mc_last": 66
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2732,7 +2737,7 @@
       66.9632,
       63.2
      ],
-     "mc_last": 57
+     "mc_last": 73
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2855,7 +2860,8 @@
      "or_sip": [
       29.8,
       29.17
-     ]
+     ],
+     "mc_last": 71
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -3270,7 +3276,8 @@
      "or_sip": [
       68.88,
       67.46
-     ]
+     ],
+     "orb_broken": true
     },
     "PULLBACK_VWAP_V1": {
      "or_sip": [
@@ -3343,7 +3350,8 @@
      "or_sip": [
       94.7,
       92.01
-     ]
+     ],
+     "mc_last": 56
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -3377,7 +3385,8 @@
      "or_sip": [
       10.55,
       9.18
-     ]
+     ],
+     "mc_last": 67
     },
     "GAPGO_PB_V1": {
      "gap": 0.23252858958068612,
@@ -3859,130 +3868,130 @@
    }
   },
   "last_m": {
-   "AA": 64,
-   "AAL": 65,
-   "AEO": 65,
-   "AFRM": 65,
-   "AG": 65,
-   "AGNC": 63,
-   "APA": 65,
-   "APLD": 65,
-   "ASTS": 65,
-   "BAC": 65,
-   "BEN": 65,
-   "BSX": 65,
-   "BTU": 65,
-   "CCL": 65,
-   "CDE": 65,
-   "CFG": 65,
-   "CHWY": 65,
-   "CIFR": 65,
-   "CLF": 65,
-   "CLSK": 65,
-   "CMCSA": 65,
-   "CNP": 65,
-   "CORZ": 65,
-   "CSCO": 65,
-   "CSX": 65,
-   "CVS": 65,
-   "D": 65,
-   "DAL": 64,
-   "DKNG": 65,
-   "DVN": 65,
-   "ERIC": 65,
-   "ET": 65,
-   "EXC": 65,
-   "F": 65,
-   "FCX": 65,
-   "FE": 65,
-   "FITB": 65,
-   "GIS": 65,
-   "GM": 63,
-   "GME": 64,
-   "HAL": 65,
-   "HBAN": 65,
-   "HL": 65,
-   "HOOD": 65,
-   "HPE": 65,
-   "HPQ": 65,
-   "HUT": 65,
-   "ING": 64,
-   "INTC": 65,
-   "IONQ": 65,
-   "IREN": 65,
-   "ITUB": 65,
-   "IVZ": 65,
-   "JD": 65,
-   "JOBY": 63,
-   "KDP": 65,
-   "KEY": 65,
-   "KHC": 65,
-   "KMI": 65,
-   "KO": 65,
-   "KSS": 65,
-   "LEVI": 65,
-   "LUV": 65,
-   "LYFT": 65,
-   "MARA": 65,
-   "MO": 65,
-   "NCLH": 65,
-   "NEE": 65,
-   "NKE": 65,
-   "NLY": 65,
-   "NOK": 65,
-   "NU": 65,
-   "ON": 65,
-   "OXY": 65,
-   "PATH": 65,
-   "PBR": 65,
-   "PCG": 65,
-   "PFE": 65,
-   "PINS": 65,
-   "PPL": 65,
-   "PYPL": 64,
-   "QBTS": 65,
-   "RBLX": 65,
-   "RF": 65,
-   "RGTI": 65,
-   "RIOT": 65,
-   "RIVN": 65,
-   "RKLB": 65,
-   "S": 65,
-   "SCHW": 65,
-   "SLB": 65,
-   "SMCI": 65,
-   "SNAP": 65,
-   "SOFI": 65,
-   "T": 65,
-   "TFC": 65,
-   "TSN": 65,
-   "U": 65,
-   "UAA": 63,
-   "UBER": 65,
-   "USB": 65,
-   "VALE": 65,
-   "VFC": 65,
-   "VZ": 65,
-   "WFC": 65,
-   "WMB": 65,
-   "WULF": 65,
-   "ZM": 64,
-   "FOSL": 65,
-   "AES": 60,
-   "BMY": 65,
-   "DOCU": 65,
-   "HRL": 65,
-   "KGC": 65,
-   "KR": 65,
-   "M": 65,
-   "ALK": 65,
-   "AMCR": 65,
-   "BBVA": 62,
-   "CAG": 65,
-   "EPD": 65,
-   "OKE": 62,
-   "RSKD": 65,
-   "SO": 65
+   "AA": 76,
+   "AAL": 76,
+   "AEO": 76,
+   "AFRM": 76,
+   "AG": 76,
+   "AGNC": 76,
+   "APA": 76,
+   "APLD": 76,
+   "ASTS": 76,
+   "BAC": 76,
+   "BEN": 76,
+   "BSX": 76,
+   "BTU": 76,
+   "CCL": 76,
+   "CDE": 76,
+   "CFG": 76,
+   "CHWY": 76,
+   "CIFR": 76,
+   "CLF": 76,
+   "CLSK": 76,
+   "CMCSA": 76,
+   "CNP": 76,
+   "CORZ": 76,
+   "CSCO": 76,
+   "CSX": 76,
+   "CVS": 76,
+   "D": 75,
+   "DAL": 75,
+   "DKNG": 76,
+   "DVN": 76,
+   "ERIC": 73,
+   "ET": 76,
+   "EXC": 76,
+   "F": 76,
+   "FCX": 75,
+   "FE": 75,
+   "FITB": 76,
+   "GIS": 76,
+   "GM": 67,
+   "GME": 76,
+   "HAL": 76,
+   "HBAN": 75,
+   "HL": 76,
+   "HOOD": 76,
+   "HPE": 76,
+   "HPQ": 76,
+   "HUT": 76,
+   "ING": 74,
+   "INTC": 76,
+   "IONQ": 76,
+   "IREN": 76,
+   "ITUB": 76,
+   "IVZ": 76,
+   "JD": 76,
+   "JOBY": 76,
+   "KDP": 76,
+   "KEY": 76,
+   "KHC": 76,
+   "KMI": 76,
+   "KO": 76,
+   "KSS": 76,
+   "LEVI": 75,
+   "LUV": 76,
+   "LYFT": 75,
+   "MARA": 76,
+   "MO": 76,
+   "NCLH": 76,
+   "NEE": 76,
+   "NKE": 76,
+   "NLY": 76,
+   "NOK": 76,
+   "NU": 76,
+   "ON": 76,
+   "OXY": 76,
+   "PATH": 75,
+   "PBR": 76,
+   "PCG": 76,
+   "PFE": 76,
+   "PINS": 76,
+   "PPL": 76,
+   "PYPL": 76,
+   "QBTS": 76,
+   "RBLX": 76,
+   "RF": 76,
+   "RGTI": 76,
+   "RIOT": 76,
+   "RIVN": 76,
+   "RKLB": 76,
+   "S": 76,
+   "SCHW": 76,
+   "SLB": 76,
+   "SMCI": 76,
+   "SNAP": 76,
+   "SOFI": 76,
+   "T": 76,
+   "TFC": 76,
+   "TSN": 76,
+   "U": 76,
+   "UAA": 76,
+   "UBER": 76,
+   "USB": 76,
+   "VALE": 76,
+   "VFC": 76,
+   "VZ": 76,
+   "WFC": 76,
+   "WMB": 76,
+   "WULF": 76,
+   "ZM": 75,
+   "FOSL": 76,
+   "AES": 75,
+   "BMY": 76,
+   "DOCU": 75,
+   "HRL": 76,
+   "KGC": 76,
+   "KR": 75,
+   "M": 76,
+   "ALK": 76,
+   "AMCR": 76,
+   "BBVA": 73,
+   "CAG": 76,
+   "EPD": 76,
+   "OKE": 73,
+   "RSKD": 76,
+   "SO": 75
   },
   "scanned": 173,
   "eligible": 122,
