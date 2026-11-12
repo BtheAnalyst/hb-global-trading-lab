@@ -4976,3 +4976,12 @@
 {"t": "2026-11-12T18:39:12+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BAC", "m": 248, "reason": "relative volume 0.64 below 1.5"}
 {"t": "2026-11-12T18:42:12+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CVS", "m": 251, "reason": "relative volume 1.42 below 1.5"}
 {"t": "2026-11-12T18:45:15+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "RF", "m": 254, "reason": "relative volume 0.5 below 1.5"}
+{"t": "2026-11-12T18:48:14+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "WMB", "m": 257, "reason": "relative volume 0.38 below 1.5"}
+{"t": "2026-11-12T18:49:12+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DVN", "m": 258, "reason": "relative volume 0.89 below 1.5"}
+{"t": "2026-11-12T18:50:14+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BTU", "m": 259, "reason": "relative volume 0.69 below 1.5"}
+{"t": "2026-11-12T18:50:14+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KMI", "m": 259, "reason": "relative volume 0.47 below 1.5"}
+{"t": "2026-11-12T18:51:09+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "OXY", "m": 260, "reason": "stop too tight (0.20% < 0.25%): noise would stop it out"}
+{"t": "2026-11-12T18:53:13+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "JD", "m": 262, "reason": "relative volume 1.37 below 1.5"}
+{"t": "2026-11-12T18:54:12+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PBR", "m": 263, "reason": "relative volume 0.96 below 1.5"}
+{"t": "2026-11-12T18:55:14+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "APA", "m": 264, "reason": "relative volume 0.65 below 1.5"}
+{"t": "2026-11-12T18:56:14+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "U", "m": 265, "reason": "relative volume 1.11 below 1.5"}
