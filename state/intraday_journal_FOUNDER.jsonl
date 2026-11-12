@@ -4940,3 +4940,6 @@
 {"t": "2026-11-12T17:59:11+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PBR", "m": 208, "reason": "relative volume 0.94 below 1.5"}
 {"t": "2026-11-12T18:00:17+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "APA", "m": 209, "reason": "relative volume 0.73 below 1.5"}
 {"t": "2026-11-12T18:00:18+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "RIVN", "m": 209, "reason": "relative volume 1.01 below 1.5"}
+{"t": "2026-11-12T18:04:14+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "IVZ", "m": 213, "reason": "relative volume 1.21 below 1.5"}
+{"t": "2026-11-12T18:11:14+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DVN", "m": 220, "reason": "relative volume 0.88 below 1.5"}
+{"t": "2026-11-12T18:13:12+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "OXY", "m": 222, "reason": "stop too tight (0.12% < 0.25%): noise would stop it out"}
