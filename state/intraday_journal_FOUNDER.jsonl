@@ -4932,3 +4932,11 @@
 {"t": "2026-11-12T17:51:14+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ON", "m": 200, "reason": "relative volume 0.59 below 1.5"}
 {"t": "2026-11-12T17:52:12+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "APLD", "m": 201, "reason": "relative volume 1.16 below 1.5"}
 {"t": "2026-11-12T17:52:12+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CIFR", "m": 201, "reason": "relative volume 0.94 below 1.5"}
+{"t": "2026-11-12T17:53:12+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AA", "m": 202, "reason": "relative volume 0.6 below 1.5"}
+{"t": "2026-11-12T17:54:12+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PINS", "m": 203, "reason": "relative volume 0.36 below 1.5"}
+{"t": "2026-11-12T17:57:08+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DVN", "m": 206, "reason": "relative volume 0.88 below 1.5"}
+{"t": "2026-11-12T17:57:08+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "OXY", "m": 206, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-12T17:59:11+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KMI", "m": 208, "reason": "relative volume 0.46 below 1.5"}
+{"t": "2026-11-12T17:59:11+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PBR", "m": 208, "reason": "relative volume 0.94 below 1.5"}
+{"t": "2026-11-12T18:00:17+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "APA", "m": 209, "reason": "relative volume 0.73 below 1.5"}
+{"t": "2026-11-12T18:00:18+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "RIVN", "m": 209, "reason": "relative volume 1.01 below 1.5"}
