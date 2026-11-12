@@ -4645,3 +4645,9 @@
 {"t": "2026-11-12T15:33:13+00:00", "date": "2026-11-12", "event": "shadow_trade", "setup": "PULLBACK_VWAP_V1", "symbol": "OXY", "m": 57, "entry": 58.038, "exit": 57.7672, "risk": 0.213, "R": -1.2715, "how": "stop", "mins": 5, "rvol": 1.6809638518796177, "stop": 57.825, "exit_m": 62}
 {"t": "2026-11-12T15:36:15+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "PPL", "m": 65, "reason": "relative volume 0.75 below 2.0"}
 {"t": "2026-11-12T15:36:15+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AVEX", "m": 65, "reason": "relative volume 0.07 below 1.5"}
+{"t": "2026-11-12T15:37:13+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "CTY", "m": 66, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-12T15:38:13+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HOOD", "m": 67, "reason": "relative volume 0.73 below 1.5"}
+{"t": "2026-11-12T15:40:12+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "MBGL", "m": 69, "reason": "relative volume 0.17 below 1.5"}
+{"t": "2026-11-12T15:41:14+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HPE", "m": 70, "reason": "relative volume 0.66 below 1.5"}
+{"t": "2026-11-12T15:41:14+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SMCI", "m": 70, "reason": "relative volume 1.21 below 1.5"}
+{"t": "2026-11-12T15:42:13+00:00", "date": "2026-11-12", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CLF", "m": 71, "reason": "relative volume 0.46 below 1.5"}
