@@ -1,5 +1,5 @@
 {
- "date": "2026-11-12",
+ "date": "2026-11-13",
  "account": "FOUNDER",
  "label": "PAPER TRADING (FOUNDER account) - simulated, not real money",
  "mode": "paper",
@@ -8,7 +8,7 @@
  ],
  "scanned": 173,
  "eligible": 121,
- "signals": 2,
+ "signals": 9,
  "trades": [],
  "realized_pnl": 0,
  "settled_cash": 100.5358,
@@ -22,43 +22,72 @@
    "detail": []
   },
   "PULLBACK_VWAP_V1": {
-   "trades": 2,
-   "R": -2.389,
+   "trades": 1,
+   "R": -1.287,
    "detail": [
     {
      "setup": "PULLBACK_VWAP_V1",
-     "symbol": "RGTI",
-     "m": 34,
-     "entry": 10.7407,
-     "exit": 10.6394,
-     "risk": 0.0907,
-     "R": -1.1174,
+     "symbol": "GME",
+     "m": 40,
+     "entry": 26.2512,
+     "exit": 26.1338,
+     "risk": 0.0912,
+     "R": -1.2868,
      "how": "stop",
-     "mins": 2,
-     "rvol": 1.506929862871647,
-     "stop": 10.65,
-     "exit_m": 36
-    },
-    {
-     "setup": "PULLBACK_VWAP_V1",
-     "symbol": "OXY",
-     "m": 57,
-     "entry": 58.038,
-     "exit": 57.7672,
-     "risk": 0.213,
-     "R": -1.2715,
-     "how": "stop",
-     "mins": 5,
-     "rvol": 1.6809638518796177,
-     "stop": 57.825,
-     "exit_m": 62
+     "mins": 8,
+     "rvol": 3.229236439051049,
+     "stop": 26.16,
+     "exit_m": 48
     }
    ]
   },
   "MOMO_CONT_V1": {
-   "trades": 0,
-   "R": 0,
-   "detail": []
+   "trades": 3,
+   "R": -0.404,
+   "detail": [
+    {
+     "setup": "MOMO_CONT_V1",
+     "symbol": "NU",
+     "m": 93,
+     "entry": 12.978,
+     "exit": 13.1939,
+     "risk": 0.108,
+     "R": 2.0,
+     "how": "target",
+     "mins": 53,
+     "rvol": 1.906188261759603,
+     "stop": 12.870000000000001,
+     "exit_m": 146
+    },
+    {
+     "setup": "MOMO_CONT_V1",
+     "symbol": "NU",
+     "m": 158,
+     "entry": 13.2582,
+     "exit": 13.1568,
+     "risk": 0.0882,
+     "R": -1.1492,
+     "how": "stop",
+     "mins": 14,
+     "rvol": 2.110449024124727,
+     "stop": 13.17,
+     "exit_m": 172
+    },
+    {
+     "setup": "MOMO_CONT_V1",
+     "symbol": "SO",
+     "m": 198,
+     "entry": 94.5845,
+     "exit": 94.1208,
+     "risk": 0.3695,
+     "R": -1.255,
+     "how": "stop",
+     "mins": 24,
+     "rvol": 2.7957074495496026,
+     "stop": 94.21499999999999,
+     "exit_m": 222
+    }
+   ]
   },
   "GAPGO_PB_V1": {
    "trades": 0,
@@ -67,13 +96,14 @@
   }
  },
  "rejections": {
-  "ORB15_V1: opening range incomplete": 128,
-  "ORB15_V1: opening range # outside ##": 11,
-  "ORB15_V1: relative volume # below #": 52,
-  "PULLBACK_VWAP_V1: relative volume # below #": 60,
-  "PULLBACK_VWAP_V1: stop too tight": 2,
-  "MOMO_CONT_V1: relative volume # below #": 181,
-  "MOMO_CONT_V1: continuation breakout volume not confirmed": 6,
+  "ORB15_V1: opening range incomplete": 55,
+  "ORB15_V1: relative volume # below #": 32,
+  "ORB15_V1: opening range # outside ##": 9,
+  "ORB15_V1: breakout bar volume not confirmed": 3,
+  "PULLBACK_VWAP_V1: relative volume # below #": 68,
+  "MOMO_CONT_V1: relative volume # below #": 51,
+  "MOMO_CONT_V1: continuation breakout volume not confirmed": 17,
+  "PULLBACK_VWAP_V1: stop too tight": 1,
   "MOMO_CONT_V1: stop too tight": 2
  },
  "halted": null,
