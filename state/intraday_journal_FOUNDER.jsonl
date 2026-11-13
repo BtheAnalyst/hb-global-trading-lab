@@ -5224,3 +5224,7 @@
 {"t": "2026-11-13T18:07:08+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "DVN", "m": 216, "reason": "relative volume 0.53 below 1.5"}
 {"t": "2026-11-13T18:09:08+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PFE", "m": 218, "reason": "relative volume 0.66 below 1.5"}
 {"t": "2026-11-13T18:13:08+00:00", "date": "2026-11-13", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "SO", "m": 198, "entry": 94.5845, "exit": 94.1208, "risk": 0.3695, "R": -1.255, "how": "stop", "mins": 24, "rvol": 2.7957074495496026, "stop": 94.21499999999999, "exit_m": 222}
+{"t": "2026-11-13T18:15:10+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KDP", "m": 224, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-13T18:16:09+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CORZ", "m": 225, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-13T18:16:10+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KHC", "m": 225, "reason": "relative volume 1.05 below 1.5"}
+{"t": "2026-11-13T18:17:07+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GIS", "m": 226, "reason": "relative volume 0.75 below 1.5"}
