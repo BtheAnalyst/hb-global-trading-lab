@@ -5256,3 +5256,4 @@
 {"t": "2026-11-13T18:57:07+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KEY", "m": 266, "reason": "relative volume 0.44 below 1.5"}
 {"t": "2026-11-13T19:00:10+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 269, "reason": "relative volume 1.12 below 1.5"}
 {"t": "2026-11-13T19:01:11+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "OKE", "m": 270, "reason": "relative volume 0.84 below 1.5"}
+{"t": "2026-11-13T19:17:08+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "TFC", "m": 286, "reason": "relative volume 0.55 below 1.5"}
