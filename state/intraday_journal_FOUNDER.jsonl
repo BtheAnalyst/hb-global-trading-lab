@@ -5186,3 +5186,10 @@
 {"t": "2026-11-13T17:08:07+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KR", "m": 157, "reason": "relative volume 0.49 below 1.5"}
 {"t": "2026-11-13T17:09:07+00:00", "date": "2026-11-13", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "NU", "m": 158, "ref": 13.24, "stop": 13.17, "target": 13.38, "rvol": 2.11, "why": "up 7.0% from open, 10-bar base 13.18-13.23 above VWAP, breakout close 13.24, RVOL 2.1", "conditions": {"base_high": 13.235, "base_low": 13.18, "move": 0.0704}, "stale": false}
 {"t": "2026-11-13T17:10:08+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "U", "m": 159, "reason": "relative volume 0.82 below 1.5"}
+{"t": "2026-11-13T17:13:07+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CMCSA", "m": 162, "reason": "relative volume 0.67 below 1.5"}
+{"t": "2026-11-13T17:13:07+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NEE", "m": 162, "reason": "relative volume 1.15 below 1.5"}
+{"t": "2026-11-13T17:20:08+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "IONQ", "m": 169, "reason": "relative volume 1.27 below 1.5"}
+{"t": "2026-11-13T17:21:08+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "TFC", "m": 170, "reason": "relative volume 0.44 below 1.5"}
+{"t": "2026-11-13T17:23:07+00:00", "date": "2026-11-13", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "NU", "m": 158, "entry": 13.2582, "exit": 13.1568, "risk": 0.0882, "R": -1.1492, "how": "stop", "mins": 14, "rvol": 2.110449024124727, "stop": 13.17, "exit_m": 172}
+{"t": "2026-11-13T17:23:07+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KEY", "m": 172, "reason": "relative volume 0.49 below 1.5"}
+{"t": "2026-11-13T17:23:08+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "USB", "m": 172, "reason": "relative volume 0.53 below 1.5"}
