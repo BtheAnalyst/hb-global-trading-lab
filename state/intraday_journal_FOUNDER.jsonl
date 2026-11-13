@@ -5207,3 +5207,10 @@
 {"t": "2026-11-13T17:37:08+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SO", "m": 186, "reason": "stop too tight (0.17% < 0.25%): noise would stop it out"}
 {"t": "2026-11-13T17:39:07+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KHC", "m": 188, "reason": "relative volume 1.03 below 1.5"}
 {"t": "2026-11-13T17:41:09+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "WMB", "m": 190, "reason": "relative volume 0.3 below 1.5"}
+{"t": "2026-11-13T17:43:07+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "D", "m": 192, "reason": "relative volume 0.55 below 1.5"}
+{"t": "2026-11-13T17:43:08+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "U", "m": 192, "reason": "relative volume 0.8 below 1.5"}
+{"t": "2026-11-13T17:44:07+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "JD", "m": 193, "reason": "relative volume 0.84 below 1.5"}
+{"t": "2026-11-13T17:48:08+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CORZ", "m": 197, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-13T17:48:08+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "USB", "m": 197, "reason": "relative volume 0.53 below 1.5"}
+{"t": "2026-11-13T17:49:07+00:00", "date": "2026-11-13", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GIS", "m": 198, "reason": "relative volume 0.75 below 1.5"}
+{"t": "2026-11-13T17:49:08+00:00", "date": "2026-11-13", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "SO", "m": 198, "ref": 94.49, "stop": 94.215, "target": 95.04, "rvol": 2.8, "why": "up 2.2% from open, 10-bar base 94.22-94.47 above VWAP, breakout close 94.49, RVOL 2.8", "conditions": {"base_high": 94.47, "base_low": 94.225, "move": 0.0216}, "stale": false}
