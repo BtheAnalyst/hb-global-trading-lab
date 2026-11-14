@@ -1402,5 +1402,113 @@
   "unrealized": 0,
   "net_gain": 0.71,
   "return_pct": 0.0025
+ },
+ {
+  "date": "2026-11-13",
+  "portfolio": "A_vti",
+  "wealth": 198.14,
+  "contributed": 200.0,
+  "trading": 198.14,
+  "vault": 0.0,
+  "realized": 0.0,
+  "unrealized": -1.86,
+  "net_gain": -1.86,
+  "return_pct": -0.0201
+ },
+ {
+  "date": "2026-11-13",
+  "portfolio": "A_vti_vault",
+  "wealth": 198.14,
+  "contributed": 200.0,
+  "trading": 198.14,
+  "vault": 0.0,
+  "realized": 0.0,
+  "unrealized": -1.86,
+  "net_gain": -1.86,
+  "return_pct": -0.0201
+ },
+ {
+  "date": "2026-11-13",
+  "portfolio": "B_90_10",
+  "wealth": 197.99,
+  "contributed": 200.0,
+  "trading": 197.99,
+  "vault": 0.0,
+  "realized": -0.25,
+  "unrealized": -1.76,
+  "net_gain": -2.01,
+  "return_pct": -0.0217
+ },
+ {
+  "date": "2026-11-13",
+  "portfolio": "B_90_10_vault",
+  "wealth": 197.99,
+  "contributed": 200.0,
+  "trading": 197.99,
+  "vault": 0.0,
+  "realized": -0.25,
+  "unrealized": -1.76,
+  "net_gain": -2.01,
+  "return_pct": -0.0217
+ },
+ {
+  "date": "2026-11-13",
+  "portfolio": "C_80_20",
+  "wealth": 197.85,
+  "contributed": 200.0,
+  "trading": 197.85,
+  "vault": 0.0,
+  "realized": -0.5,
+  "unrealized": -1.65,
+  "net_gain": -2.15,
+  "return_pct": -0.0233
+ },
+ {
+  "date": "2026-11-13",
+  "portfolio": "C_80_20_vault",
+  "wealth": 197.85,
+  "contributed": 200.0,
+  "trading": 197.85,
+  "vault": 0.0,
+  "realized": -0.5,
+  "unrealized": -1.65,
+  "net_gain": -2.15,
+  "return_pct": -0.0233
+ },
+ {
+  "date": "2026-11-13",
+  "portfolio": "D_70_30",
+  "wealth": 197.71,
+  "contributed": 200.0,
+  "trading": 197.71,
+  "vault": 0.0,
+  "realized": -0.75,
+  "unrealized": -1.54,
+  "net_gain": -2.29,
+  "return_pct": -0.025
+ },
+ {
+  "date": "2026-11-13",
+  "portfolio": "D_70_30_vault",
+  "wealth": 197.71,
+  "contributed": 200.0,
+  "trading": 197.71,
+  "vault": 0.0,
+  "realized": -0.75,
+  "unrealized": -1.54,
+  "net_gain": -2.29,
+  "return_pct": -0.025
+ },
+ {
+  "date": "2026-11-13",
+  "portfolio": "FOUNDER",
+  "wealth": 200.71,
+  "contributed": 200.0,
+  "trading": 200.65,
+  "vault": 0.05,
+  "realized": 0.17,
+  "unrealized": 0,
+  "net_gain": 0.71,
+  "return_pct": 0.0025
  }
 ]
