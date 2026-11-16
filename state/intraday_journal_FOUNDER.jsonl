@@ -5450,3 +5450,6 @@
 {"t": "2026-11-16T17:00:07+00:00", "date": "2026-11-16", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SCHW", "m": 149, "reason": "relative volume 1.05 below 1.5"}
 {"t": "2026-11-16T17:02:07+00:00", "date": "2026-11-16", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PCG", "m": 151, "reason": "relative volume 1.23 below 1.5"}
 {"t": "2026-11-16T17:02:07+00:00", "date": "2026-11-16", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RIVN", "m": 151, "reason": "relative volume 0.98 below 1.5"}
+{"t": "2026-11-16T17:13:07+00:00", "date": "2026-11-16", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PYPL", "m": 162, "reason": "relative volume 0.44 below 1.5"}
+{"t": "2026-11-16T17:14:07+00:00", "date": "2026-11-16", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RIVN", "m": 163, "reason": "relative volume 0.97 below 1.5"}
+{"t": "2026-11-16T17:16:07+00:00", "date": "2026-11-16", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "U", "m": 165, "reason": "relative volume 0.94 below 1.5"}
