@@ -5471,3 +5471,5 @@
 {"t": "2026-11-16T17:57:06+00:00", "date": "2026-11-16", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PCG", "m": 206, "reason": "relative volume 1.26 below 1.5"}
 {"t": "2026-11-16T18:00:07+00:00", "date": "2026-11-16", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SCHW", "m": 209, "reason": "relative volume 1.0 below 1.5"}
 {"t": "2026-11-16T18:03:07+00:00", "date": "2026-11-16", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PATH", "m": 212, "reason": "relative volume 1.1 below 1.5"}
+{"t": "2026-11-16T18:12:06+00:00", "date": "2026-11-16", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CMCSA", "m": 221, "reason": "relative volume 0.91 below 1.5"}
+{"t": "2026-11-16T18:13:06+00:00", "date": "2026-11-16", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SCHW", "m": 222, "reason": "relative volume 0.97 below 1.5"}
