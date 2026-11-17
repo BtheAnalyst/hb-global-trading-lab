@@ -5806,3 +5806,13 @@
 {"t": "2026-11-17T17:06:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CORZ", "m": 155, "reason": "relative volume 0.98 below 1.5"}
 {"t": "2026-11-17T17:07:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CORZ", "m": 156, "reason": "relative volume 0.98 below 1.5"}
 {"t": "2026-11-17T17:09:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "T", "m": 158, "reason": "relative volume 0.61 below 1.5"}
+{"t": "2026-11-17T17:17:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GM", "m": 166, "reason": "relative volume 0.53 below 1.5"}
+{"t": "2026-11-17T17:17:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "VZ", "m": 166, "reason": "relative volume 0.54 below 1.5"}
+{"t": "2026-11-17T17:18:06+00:00", "date": "2026-11-17", "event": "shadow_trade", "setup": "PULLBACK_VWAP_V1", "symbol": "S", "m": 145, "entry": 21.046, "exit": 21.2581, "risk": 0.106, "R": 2.0, "how": "target", "mins": 22, "rvol": 1.597625992194075, "stop": 20.939999999999998, "exit_m": 167}
+{"t": "2026-11-17T17:18:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SNAP", "m": 167, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-17T17:18:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "TSN", "m": 167, "reason": "relative volume 1.01 below 1.5"}
+{"t": "2026-11-17T17:18:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 167, "reason": "relative volume 1.16 below 1.5"}
+{"t": "2026-11-17T17:19:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SCZM", "m": 168, "reason": "relative volume 0.18 below 1.5"}
+{"t": "2026-11-17T17:20:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "D", "m": 169, "reason": "stop too tight (0.04% < 0.25%): noise would stop it out"}
+{"t": "2026-11-17T17:20:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RIOT", "m": 169, "reason": "relative volume 0.62 below 1.5"}
+{"t": "2026-11-17T17:20:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RMIX", "m": 169, "reason": "relative volume 0.14 below 1.5"}
