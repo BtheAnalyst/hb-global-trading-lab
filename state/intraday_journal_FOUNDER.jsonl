@@ -5828,3 +5828,5 @@
 {"t": "2026-11-17T17:38:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "AAL", "m": 187, "reason": "relative volume 0.87 below 1.5"}
 {"t": "2026-11-17T17:40:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "TSN", "m": 189, "reason": "relative volume 1.06 below 1.5"}
 {"t": "2026-11-17T17:41:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SOFI", "m": 190, "reason": "relative volume 1.39 below 1.5"}
+{"t": "2026-11-17T17:48:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KHC", "m": 197, "reason": "relative volume 1.11 below 1.5"}
+{"t": "2026-11-17T17:49:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "LUV", "m": 198, "reason": "relative volume 0.38 below 1.5"}
