@@ -5740,3 +5740,17 @@
 {"t": "2026-11-17T15:52:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SLS", "m": 81, "reason": "opening range incomplete (missing minutes)"}
 {"t": "2026-11-17T15:53:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GIS", "m": 82, "reason": "relative volume 0.61 below 1.5"}
 {"t": "2026-11-17T15:53:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SLS", "m": 82, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-17T15:54:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SLS", "m": 83, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-17T15:55:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SLS", "m": 84, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-17T15:56:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SLS", "m": 85, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-17T15:57:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "OKE", "m": 86, "reason": "relative volume 0.91 below 1.5"}
+{"t": "2026-11-17T15:57:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SLS", "m": 86, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-17T15:58:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CNP", "m": 87, "reason": "relative volume 0.53 below 1.5"}
+{"t": "2026-11-17T15:58:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PPL", "m": 87, "reason": "relative volume 1.03 below 1.5"}
+{"t": "2026-11-17T15:58:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SLS", "m": 87, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-17T15:59:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SLS", "m": 88, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-17T16:00:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SLS", "m": 89, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-17T16:01:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SLS", "m": 90, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-17T16:02:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SLS", "m": 91, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-17T16:03:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SLS", "m": 92, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-17T16:04:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SLS", "m": 93, "reason": "opening range incomplete (missing minutes)"}
