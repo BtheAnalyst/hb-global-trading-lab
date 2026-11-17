@@ -5849,3 +5849,4 @@
 {"t": "2026-11-17T18:54:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "ZM", "m": 263, "reason": "stop too tight (0.10% < 0.25%): noise would stop it out"}
 {"t": "2026-11-17T18:55:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KHC", "m": 264, "reason": "relative volume 1.28 below 1.5"}
 {"t": "2026-11-17T19:04:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "GME", "m": 273, "reason": "relative volume 0.86 below 1.5"}
+{"t": "2026-11-17T19:29:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CVS", "m": 298, "reason": "stop too tight (0.16% < 0.25%): noise would stop it out"}
