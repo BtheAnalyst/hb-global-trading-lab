@@ -5830,3 +5830,5 @@
 {"t": "2026-11-17T17:41:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SOFI", "m": 190, "reason": "relative volume 1.39 below 1.5"}
 {"t": "2026-11-17T17:48:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KHC", "m": 197, "reason": "relative volume 1.11 below 1.5"}
 {"t": "2026-11-17T17:49:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "LUV", "m": 198, "reason": "relative volume 0.38 below 1.5"}
+{"t": "2026-11-17T17:56:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NEE", "m": 205, "reason": "relative volume 0.94 below 1.5"}
+{"t": "2026-11-17T18:03:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "D", "m": 212, "reason": "stop too tight (0.04% < 0.25%): noise would stop it out"}
