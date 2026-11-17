@@ -5797,3 +5797,7 @@
 {"t": "2026-11-17T16:40:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CMCSA", "m": 129, "reason": "relative volume 0.85 below 1.5"}
 {"t": "2026-11-17T16:40:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KHC", "m": 129, "reason": "relative volume 1.04 below 1.5"}
 {"t": "2026-11-17T16:40:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "T", "m": 129, "reason": "relative volume 0.6 below 1.5"}
+{"t": "2026-11-17T16:52:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "T", "m": 141, "reason": "relative volume 0.59 below 1.5"}
+{"t": "2026-11-17T16:55:06+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CORZ", "m": 144, "reason": "relative volume 0.96 below 1.5"}
+{"t": "2026-11-17T16:55:07+00:00", "date": "2026-11-17", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "TSN", "m": 144, "reason": "relative volume 1.08 below 1.5"}
+{"t": "2026-11-17T16:56:06+00:00", "date": "2026-11-17", "event": "signal", "setup": "PULLBACK_VWAP_V1", "symbol": "S", "m": 145, "ref": 21.02, "stop": 20.94, "target": 21.18, "rvol": 1.6, "why": "uptrend above VWAP, pullback touched VWAP 20.93, close above prior high, RVOL 1.6", "conditions": {"vwap": 20.925364336293054, "pattern": "close above prior high"}, "stale": false}
