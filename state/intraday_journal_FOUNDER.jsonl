@@ -6011,3 +6011,4 @@
 {"t": "2026-11-19T18:20:07+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NEE", "m": 229, "reason": "relative volume 0.74 below 1.5"}
 {"t": "2026-11-19T18:22:07+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KMI", "m": 231, "reason": "relative volume 0.76 below 1.5"}
 {"t": "2026-11-19T18:25:07+00:00", "date": "2026-11-19", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "JD", "m": 234, "ref": 25.69, "stop": 25.605, "target": 25.86, "rvol": 3.72, "why": "up 2.2% from open, 10-bar base 25.61-25.66 above VWAP, breakout close 25.69, RVOL 3.7", "conditions": {"base_high": 25.665, "base_low": 25.615, "move": 0.0217}, "stale": false}
+{"t": "2026-11-19T18:35:07+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KR", "m": 244, "reason": "relative volume 1.03 below 1.5"}
