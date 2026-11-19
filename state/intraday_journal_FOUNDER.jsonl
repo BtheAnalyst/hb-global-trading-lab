@@ -5984,3 +5984,6 @@
 {"t": "2026-11-19T16:40:07+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HAL", "m": 129, "reason": "relative volume 1.04 below 1.5"}
 {"t": "2026-11-19T16:48:07+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "U", "m": 137, "reason": "relative volume 1.02 below 1.5"}
 {"t": "2026-11-19T16:50:06+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CAG", "m": 139, "reason": "relative volume 0.85 below 1.5"}
+{"t": "2026-11-19T17:01:07+00:00", "date": "2026-11-19", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "RBLX", "m": 92, "entry": 50.2302, "exit": 49.4006, "risk": 0.7702, "R": -1.0772, "how": "closed below VWAP", "mins": 58, "rvol": 2.027716975039479, "stop": 49.46, "exit_m": 150}
+{"t": "2026-11-19T17:01:07+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BMY", "m": 150, "reason": "relative volume 1.5 below 1.5"}
+{"t": "2026-11-19T17:01:07+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PFE", "m": 150, "reason": "stop too tight (0.14% < 0.25%): noise would stop it out"}
