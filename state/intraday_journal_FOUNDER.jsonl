@@ -5970,3 +5970,7 @@
 {"t": "2026-11-19T15:27:06+00:00", "date": "2026-11-19", "event": "shadow_trade", "setup": "PULLBACK_VWAP_V1", "symbol": "S", "m": 33, "entry": 24.975, "exit": 24.7552, "risk": 0.275, "R": -0.7992, "how": "bearish engulfing below VWAP", "mins": 23, "rvol": 1.9590829893398447, "stop": 24.7, "exit_m": 56}
 {"t": "2026-11-19T15:35:07+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NCLH", "m": 64, "reason": "relative volume 1.17 below 1.5"}
 {"t": "2026-11-19T15:35:07+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PCG", "m": 64, "reason": "relative volume 1.03 below 1.5"}
+{"t": "2026-11-19T15:43:07+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "HRL", "m": 72, "reason": "relative volume 0.85 below 1.5"}
+{"t": "2026-11-19T15:43:07+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KDP", "m": 72, "reason": "relative volume 0.46 below 1.5"}
+{"t": "2026-11-19T15:45:07+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "GIS", "m": 74, "reason": "relative volume 0.86 below 1.5"}
+{"t": "2026-11-19T15:45:07+00:00", "date": "2026-11-19", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KO", "m": 74, "reason": "stop too tight (0.08% < 0.25%): noise would stop it out"}
