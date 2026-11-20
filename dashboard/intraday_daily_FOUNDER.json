@@ -1,5 +1,5 @@
 {
- "date": "2026-11-19",
+ "date": "2026-11-20",
  "account": "FOUNDER",
  "label": "PAPER TRADING (FOUNDER account) - simulated, not real money",
  "mode": "paper",
@@ -7,8 +7,8 @@
   "ORB15_V1"
  ],
  "scanned": 173,
- "eligible": 121,
- "signals": 6,
+ "eligible": 122,
+ "signals": 8,
  "trades": [],
  "realized_pnl": 0,
  "settled_cash": 100.1358,
@@ -17,75 +17,90 @@
  "allocated": 100.0,
  "shadow": {
   "ORB15_V1": {
-   "trades": 0,
-   "R": 0,
-   "detail": []
+   "trades": 1,
+   "R": -0.587,
+   "detail": [
+    {
+     "setup": "ORB15_V1",
+     "symbol": "KR",
+     "m": 48,
+     "entry": 69.6396,
+     "exit": 69.3506,
+     "risk": 0.4921,
+     "R": -0.5873,
+     "how": "closed below VWAP",
+     "mins": 50,
+     "rvol": 2.3024000513637475,
+     "stop": 69.14750000000001,
+     "exit_m": 98
+    }
+   ]
   },
   "PULLBACK_VWAP_V1": {
    "trades": 2,
-   "R": -2.195,
+   "R": -2.862,
    "detail": [
     {
      "setup": "PULLBACK_VWAP_V1",
-     "symbol": "S",
-     "m": 33,
-     "entry": 24.975,
-     "exit": 24.7552,
-     "risk": 0.275,
-     "R": -0.7992,
-     "how": "bearish engulfing below VWAP",
-     "mins": 23,
-     "rvol": 1.9590829893398447,
-     "stop": 24.7,
-     "exit_m": 56
+     "symbol": "AA",
+     "m": 37,
+     "entry": 35.1751,
+     "exit": 34.8751,
+     "risk": 0.1851,
+     "R": -1.6207,
+     "how": "stop",
+     "mins": 8,
+     "rvol": 1.6115177022647011,
+     "stop": 34.99,
+     "exit_m": 45
     },
     {
      "setup": "PULLBACK_VWAP_V1",
-     "symbol": "HBAN",
-     "m": 212,
-     "entry": 14.7247,
-     "exit": 14.6553,
-     "risk": 0.0497,
-     "R": -1.3957,
+     "symbol": "AGNC",
+     "m": 57,
+     "entry": 7.998,
+     "exit": 7.957,
+     "risk": 0.033,
+     "R": -1.2414,
      "how": "stop",
-     "mins": 6,
-     "rvol": 2.446622726383916,
-     "stop": 14.675,
-     "exit_m": 218
+     "mins": 17,
+     "rvol": 1.9468489858778208,
+     "stop": 7.965,
+     "exit_m": 74
     }
    ]
   },
   "MOMO_CONT_V1": {
    "trades": 2,
-   "R": -2.345,
+   "R": -2.408,
    "detail": [
     {
      "setup": "MOMO_CONT_V1",
-     "symbol": "RBLX",
-     "m": 92,
-     "entry": 50.2302,
-     "exit": 49.4006,
-     "risk": 0.7702,
-     "R": -1.0772,
-     "how": "closed below VWAP",
-     "mins": 58,
-     "rvol": 2.027716975039479,
-     "stop": 49.46,
-     "exit_m": 150
+     "symbol": "AGNC",
+     "m": 37,
+     "entry": 8.0681,
+     "exit": 7.967,
+     "risk": 0.0931,
+     "R": -1.0857,
+     "how": "stop",
+     "mins": 18,
+     "rvol": 2.418065465151242,
+     "stop": 7.9750000000000005,
+     "exit_m": 55
     },
     {
      "setup": "MOMO_CONT_V1",
-     "symbol": "JD",
-     "m": 197,
-     "entry": 25.7107,
-     "exit": 25.5894,
-     "risk": 0.0957,
-     "R": -1.2677,
+     "symbol": "KHC",
+     "m": 64,
+     "entry": 25.7808,
+     "exit": 25.6343,
+     "risk": 0.1108,
+     "R": -1.322,
      "how": "stop",
-     "mins": 13,
-     "rvol": 3.7283331479712527,
-     "stop": 25.615,
-     "exit_m": 210
+     "mins": 24,
+     "rvol": 1.5383388942937657,
+     "stop": 25.669999999999998,
+     "exit_m": 88
     }
    ]
   },
@@ -96,15 +111,15 @@
   }
  },
  "rejections": {
-  "ORB15_V1: opening range incomplete": 60,
-  "ORB15_V1: relative volume # below #": 29,
-  "ORB15_V1: opening range # outside ##": 3,
-  "ORB15_V1: breakout bar volume not confirmed": 1,
-  "PULLBACK_VWAP_V1: relative volume # below #": 34,
-  "MOMO_CONT_V1: continuation breakout volume not confirmed": 7,
-  "MOMO_CONT_V1: relative volume # below #": 4,
-  "PULLBACK_VWAP_V1: stop too tight": 10,
-  "MOMO_CONT_V1: breakout bar closed weak": 1
+  "ORB15_V1: opening range incomplete": 37,
+  "ORB15_V1: opening range # outside ##": 5,
+  "ORB15_V1: relative volume # below #": 69,
+  "ORB15_V1: breakout bar volume not confirmed": 4,
+  "PULLBACK_VWAP_V1: relative volume # below #": 73,
+  "MOMO_CONT_V1: continuation breakout volume not confirmed": 6,
+  "MOMO_CONT_V1: relative volume # below #": 45,
+  "ORB15_V1: entry refused: spread # too wide": 1,
+  "PULLBACK_VWAP_V1: stop too tight": 5
  },
  "halted": null,
  "kill_switch": false,
