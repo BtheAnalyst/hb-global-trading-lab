@@ -6300,3 +6300,4 @@
 {"t": "2026-11-20T19:01:06+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "EXC", "m": 270, "reason": "relative volume 1.42 below 1.5"}
 {"t": "2026-11-20T19:03:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "OXY", "m": 272, "reason": "relative volume 0.76 below 1.5"}
 {"t": "2026-11-20T19:04:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PPL", "m": 273, "reason": "relative volume 0.78 below 1.5"}
+{"t": "2026-11-20T19:14:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "OXY", "m": 283, "reason": "relative volume 0.76 below 1.5"}
