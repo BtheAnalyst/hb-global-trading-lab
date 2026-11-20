@@ -6218,3 +6218,13 @@
 {"t": "2026-11-20T15:32:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KR", "m": 61, "reason": "stop too tight (0.09% < 0.25%): noise would stop it out"}
 {"t": "2026-11-20T15:35:07+00:00", "date": "2026-11-20", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "KHC", "m": 64, "ref": 25.755, "stop": 25.67, "target": 25.925, "rvol": 1.54, "why": "up 1.8% from open, 10-bar base 25.68-25.73 above VWAP, breakout close 25.75, RVOL 1.5", "conditions": {"base_high": 25.735, "base_low": 25.68, "move": 0.0176}, "stale": false}
 {"t": "2026-11-20T15:37:06+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "CVS", "m": 66, "reason": "relative volume 1.1 below 2.0"}
+{"t": "2026-11-20T15:38:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CAG", "m": 67, "reason": "relative volume 1.22 below 1.5"}
+{"t": "2026-11-20T15:38:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "T", "m": 67, "reason": "relative volume 0.94 below 1.5"}
+{"t": "2026-11-20T15:39:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GIS", "m": 68, "reason": "relative volume 1.09 below 1.5"}
+{"t": "2026-11-20T15:40:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KDP", "m": 69, "reason": "relative volume 0.68 below 1.5"}
+{"t": "2026-11-20T15:40:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "OXY", "m": 69, "reason": "relative volume 0.78 below 1.5"}
+{"t": "2026-11-20T15:41:06+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "APA", "m": 70, "reason": "relative volume 0.78 below 1.5"}
+{"t": "2026-11-20T15:43:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "SO", "m": 72, "reason": "relative volume 0.49 below 1.5"}
+{"t": "2026-11-20T15:45:06+00:00", "date": "2026-11-20", "event": "shadow_trade", "setup": "PULLBACK_VWAP_V1", "symbol": "AGNC", "m": 57, "entry": 7.998, "exit": 7.957, "risk": 0.033, "R": -1.2414, "how": "stop", "mins": 17, "rvol": 1.9468489858778208, "stop": 7.965, "exit_m": 74}
+{"t": "2026-11-20T15:45:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KR", "m": 74, "reason": "stop too tight (0.22% < 0.25%): noise would stop it out"}
+{"t": "2026-11-20T15:46:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "APA", "m": 75, "reason": "relative volume 0.76 below 1.5"}
