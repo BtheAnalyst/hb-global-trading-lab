@@ -6257,3 +6257,4 @@
 {"t": "2026-11-20T16:30:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CSX", "m": 119, "reason": "relative volume 1.2 below 1.5"}
 {"t": "2026-11-20T16:30:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "T", "m": 119, "reason": "relative volume 0.92 below 1.5"}
 {"t": "2026-11-20T16:31:06+00:00", "date": "2026-11-20", "event": "wide_dropped", "watched_before": 122, "watched_now": 122}
+{"t": "2026-11-20T16:41:07+00:00", "date": "2026-11-20", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CSX", "m": 130, "reason": "relative volume 1.18 below 1.5"}
