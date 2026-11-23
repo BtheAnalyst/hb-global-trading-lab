@@ -6526,3 +6526,5 @@
 {"t": "2026-11-23T18:25:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KDP", "m": 234, "reason": "relative volume 0.57 below 1.5"}
 {"t": "2026-11-23T18:35:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AFRM", "m": 244, "reason": "continuation breakout volume not confirmed"}
 {"t": "2026-11-23T18:35:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "LEVI", "m": 244, "reason": "relative volume 1.02 below 1.5"}
+{"t": "2026-11-23T18:42:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "INTC", "m": 251, "reason": "relative volume 1.01 below 1.5"}
+{"t": "2026-11-23T18:43:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "ERIC", "m": 252, "reason": "relative volume 0.51 below 1.5"}
