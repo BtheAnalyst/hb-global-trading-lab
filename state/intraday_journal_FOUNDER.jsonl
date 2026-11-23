@@ -6524,3 +6524,5 @@
 {"t": "2026-11-23T18:21:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ALK", "m": 230, "reason": "relative volume 1.32 below 1.5"}
 {"t": "2026-11-23T18:24:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AAL", "m": 233, "reason": "relative volume 1.26 below 1.5"}
 {"t": "2026-11-23T18:25:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KDP", "m": 234, "reason": "relative volume 0.57 below 1.5"}
+{"t": "2026-11-23T18:35:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AFRM", "m": 244, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-23T18:35:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "LEVI", "m": 244, "reason": "relative volume 1.02 below 1.5"}
