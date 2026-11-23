@@ -6404,3 +6404,21 @@
 {"t": "2026-11-23T15:26:08+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "LEVI", "m": 55, "reason": "relative volume 1.05 below 2.0"}
 {"t": "2026-11-23T15:26:08+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "ON", "m": 55, "reason": "breakout bar volume not confirmed"}
 {"t": "2026-11-23T15:26:08+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "SMCI", "m": 55, "reason": "opening range 4.21% outside 0.4%-4%"}
+{"t": "2026-11-23T15:28:06+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "AAL", "m": 57, "reason": "relative volume 1.13 below 2.0"}
+{"t": "2026-11-23T15:28:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "CCL", "m": 57, "reason": "relative volume 1.38 below 2.0"}
+{"t": "2026-11-23T15:29:06+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "ALK", "m": 58, "reason": "relative volume 0.79 below 2.0"}
+{"t": "2026-11-23T15:31:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "DAL", "m": 60, "reason": "relative volume 0.36 below 2.0"}
+{"t": "2026-11-23T15:31:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "HBAN", "m": 60, "reason": "relative volume 1.53 below 2.0"}
+{"t": "2026-11-23T15:31:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "ING", "m": 60, "reason": "relative volume 1.26 below 2.0"}
+{"t": "2026-11-23T15:31:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "LYFT", "m": 60, "reason": "relative volume 0.59 below 1.5"}
+{"t": "2026-11-23T15:32:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "CSX", "m": 61, "reason": "relative volume 0.69 below 2.0"}
+{"t": "2026-11-23T15:32:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CVS", "m": 61, "reason": "relative volume 1.12 below 1.5"}
+{"t": "2026-11-23T15:32:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "TFC", "m": 61, "reason": "relative volume 1.06 below 2.0"}
+{"t": "2026-11-23T15:34:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 63, "reason": "relative volume 0.81 below 1.5"}
+{"t": "2026-11-23T15:35:06+00:00", "date": "2026-11-23", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "AFRM", "m": 54, "entry": 59.4594, "exit": 58.8011, "risk": 0.5894, "R": -1.1168, "how": "closed below VWAP", "mins": 10, "rvol": 1.644000611021912, "stop": 58.870000000000005, "exit_m": 64}
+{"t": "2026-11-23T15:36:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "CSCO", "m": 65, "reason": "relative volume 1.51 below 2.0"}
+{"t": "2026-11-23T15:36:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "ITUB", "m": 65, "reason": "relative volume 0.66 below 1.5"}
+{"t": "2026-11-23T15:36:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "ON", "m": 65, "reason": "stop too tight (0.25% < 0.25%): noise would stop it out"}
+{"t": "2026-11-23T15:36:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PATH", "m": 65, "reason": "relative volume 0.99 below 1.5"}
+{"t": "2026-11-23T15:37:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CHWY", "m": 66, "reason": "relative volume 0.98 below 1.5"}
+{"t": "2026-11-23T15:37:07+00:00", "date": "2026-11-23", "event": "signal", "setup": "PULLBACK_VWAP_V1", "symbol": "FCX", "m": 66, "ref": 49.98, "stop": 49.84, "target": 50.26, "rvol": 1.77, "why": "uptrend above VWAP, pullback touched VWAP 49.83, hammer, RVOL 1.8", "conditions": {"vwap": 49.826400935910954, "pattern": "hammer"}, "stale": false}
