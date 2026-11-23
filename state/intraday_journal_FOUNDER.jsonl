@@ -6538,3 +6538,4 @@
 {"t": "2026-11-23T19:26:08+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "WFC", "m": 295, "reason": "relative volume 0.75 below 1.5"}
 {"t": "2026-11-23T19:27:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KO", "m": 296, "reason": "relative volume 1.39 below 1.5"}
 {"t": "2026-11-23T19:29:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CFG", "m": 298, "reason": "stop too tight (0.06% < 0.25%): noise would stop it out"}
+{"t": "2026-11-23T20:51:07+00:00", "date": "2026-11-23", "event": "shadow_trade", "setup": "PULLBACK_VWAP_V1", "symbol": "IVZ", "m": 36, "entry": 28.2682, "exit": 28.3566, "risk": 0.1982, "R": 0.4458, "how": "end of day flatten (15", "mins": 344, "rvol": 1.562493036919257, "stop": 28.069999999999997, "exit_m": 380}
