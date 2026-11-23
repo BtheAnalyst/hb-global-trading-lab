@@ -6506,3 +6506,7 @@
 {"t": "2026-11-23T17:34:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "F", "m": 183, "reason": "relative volume 1.16 below 1.5"}
 {"t": "2026-11-23T17:41:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NOK", "m": 190, "reason": "stop too tight (0.20% < 0.25%): noise would stop it out"}
 {"t": "2026-11-23T17:43:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "RIVN", "m": 192, "reason": "relative volume 1.17 below 1.5"}
+{"t": "2026-11-23T17:53:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "F", "m": 202, "reason": "relative volume 1.17 below 1.5"}
+{"t": "2026-11-23T17:54:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PATH", "m": 203, "reason": "relative volume 1.06 below 1.5"}
+{"t": "2026-11-23T17:56:07+00:00", "date": "2026-11-23", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ALK", "m": 205, "reason": "relative volume 1.31 below 1.5"}
+{"t": "2026-11-23T18:03:08+00:00", "date": "2026-11-23", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "ZM", "m": 212, "ref": 86.25, "stop": 85.865, "target": 87.02, "rvol": 2.22, "why": "up 1.9% from open, 10-bar base 85.88-86.16 above VWAP, breakout close 86.25, RVOL 2.2", "conditions": {"base_high": 86.155, "base_low": 85.875, "move": 0.0193}, "stale": false}
