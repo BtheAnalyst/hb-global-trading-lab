@@ -7079,3 +7079,5 @@
 {"t": "2026-11-24T19:01:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BMY", "m": 270, "reason": "relative volume 1.23 below 1.5"}
 {"t": "2026-11-24T19:01:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BSX", "m": 270, "reason": "relative volume 1.35 below 1.5"}
 {"t": "2026-11-24T19:01:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "M", "m": 270, "reason": "relative volume 0.98 below 1.5"}
+{"t": "2026-11-24T19:12:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "GIS", "m": 281, "reason": "relative volume 0.84 below 1.5"}
+{"t": "2026-11-24T19:20:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "KO", "m": 289, "reason": "relative volume 0.5 below 1.5"}
