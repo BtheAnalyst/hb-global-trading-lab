@@ -88,5 +88,10 @@
   "date": "2026-11-20",
   "portfolio": "FOUNDER",
   "balance": 0.05
+ },
+ {
+  "date": "2026-11-23",
+  "portfolio": "FOUNDER",
+  "balance": 0.05
  }
 ]
