@@ -1,5 +1,5 @@
 {
- "date": "2026-11-23",
+ "date": "2026-11-24",
  "account": "FOUNDER",
  "label": "PAPER TRADING (FOUNDER account) - simulated, not real money",
  "mode": "paper",
@@ -7,8 +7,8 @@
   "ORB15_V1"
  ],
  "scanned": 173,
- "eligible": 121,
- "signals": 5,
+ "eligible": 122,
+ "signals": 8,
  "trades": [],
  "realized_pnl": 0,
  "settled_cash": 100.1358,
@@ -22,56 +22,70 @@
    "detail": []
   },
   "PULLBACK_VWAP_V1": {
-   "trades": 1,
-   "R": 0.446,
+   "trades": 2,
+   "R": -2.639,
    "detail": [
     {
      "setup": "PULLBACK_VWAP_V1",
-     "symbol": "IVZ",
-     "m": 36,
-     "entry": 28.2682,
-     "exit": 28.3566,
-     "risk": 0.1982,
-     "R": 0.4458,
-     "how": "end of day flatten (15",
-     "mins": 344,
-     "rvol": 1.562493036919257,
-     "stop": 28.069999999999997,
-     "exit_m": 380
+     "symbol": "KSS",
+     "m": 31,
+     "entry": 24.044,
+     "exit": 23.6713,
+     "risk": 0.264,
+     "R": -1.4117,
+     "how": "stop",
+     "mins": 9,
+     "rvol": 2.672593248877034,
+     "stop": 23.779999999999998,
+     "exit_m": 40
+    },
+    {
+     "setup": "PULLBACK_VWAP_V1",
+     "symbol": "DVN",
+     "m": 42,
+     "entry": 41.4965,
+     "exit": 41.2737,
+     "risk": 0.1815,
+     "R": -1.2277,
+     "how": "stop",
+     "mins": 31,
+     "rvol": 2.0639868477177354,
+     "stop": 41.315000000000005,
+     "exit_m": 73
     }
    ]
   },
   "MOMO_CONT_V1": {
    "trades": 2,
-   "R": -2.321,
+   "R": 0.902,
    "detail": [
     {
      "setup": "MOMO_CONT_V1",
-     "symbol": "AFRM",
-     "m": 54,
-     "entry": 59.4594,
-     "exit": 58.8011,
-     "risk": 0.5894,
-     "R": -1.1168,
-     "how": "closed below VWAP",
-     "mins": 10,
-     "rvol": 1.644000611021912,
-     "stop": 58.870000000000005,
-     "exit_m": 64
+     "symbol": "KSS",
+     "m": 99,
+     "entry": 24.5245,
+     "exit": 25.2735,
+     "risk": 0.3745,
+     "R": 2.0,
+     "how": "target",
+     "mins": 64,
+     "rvol": 3.216190504503969,
+     "stop": 24.15,
+     "exit_m": 163
     },
     {
      "setup": "MOMO_CONT_V1",
-     "symbol": "ZM",
-     "m": 212,
-     "entry": 86.2862,
-     "exit": 85.7791,
-     "risk": 0.4212,
-     "R": -1.2039,
+     "symbol": "PINS",
+     "m": 191,
+     "entry": 19.1641,
+     "exit": 18.951,
+     "risk": 0.1941,
+     "R": -1.0977,
      "how": "stop",
-     "mins": 13,
-     "rvol": 2.2218578373260227,
-     "stop": 85.865,
-     "exit_m": 225
+     "mins": 37,
+     "rvol": 3.0856328931213066,
+     "stop": 18.97,
+     "exit_m": 228
     }
    ]
   },
@@ -82,14 +96,15 @@
   }
  },
  "rejections": {
-  "ORB15_V1: opening range incomplete": 35,
-  "ORB15_V1: relative volume # below #": 57,
-  "ORB15_V1: breakout bar volume not confirmed": 3,
-  "PULLBACK_VWAP_V1: relative volume # below #": 52,
-  "PULLBACK_VWAP_V1: stop too tight": 18,
-  "MOMO_CONT_V1: relative volume # below #": 44,
-  "ORB15_V1: opening range # outside ##": 1,
-  "MOMO_CONT_V1: continuation breakout volume not confirmed": 4
+  "GAPGO_PB_V1: relative volume # below #": 1,
+  "ORB15_V1: relative volume # below #": 78,
+  "ORB15_V1: opening range incomplete": 49,
+  "ORB15_V1: opening range # outside ##": 7,
+  "ORB15_V1: breakout bar volume not confirmed": 2,
+  "MOMO_CONT_V1: relative volume # below #": 273,
+  "PULLBACK_VWAP_V1: relative volume # below #": 79,
+  "MOMO_CONT_V1: continuation breakout volume not confirmed": 17,
+  "PULLBACK_VWAP_V1: stop too tight": 6
  },
  "halted": null,
  "kill_switch": false,
