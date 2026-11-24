@@ -6794,3 +6794,19 @@
 {"t": "2026-11-24T15:58:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "TSN", "m": 87, "reason": "relative volume 0.36 below 1.5"}
 {"t": "2026-11-24T15:59:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GIS", "m": 88, "reason": "relative volume 0.83 below 1.5"}
 {"t": "2026-11-24T15:59:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KR", "m": 88, "reason": "relative volume 0.95 below 1.5"}
+{"t": "2026-11-24T16:00:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "SO", "m": 89, "reason": "relative volume 0.43 below 1.5"}
+{"t": "2026-11-24T16:01:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "T", "m": 90, "reason": "relative volume 0.75 below 1.5"}
+{"t": "2026-11-24T16:04:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KO", "m": 93, "reason": "relative volume 0.49 below 1.5"}
+{"t": "2026-11-24T16:05:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CAG", "m": 94, "reason": "relative volume 0.82 below 1.5"}
+{"t": "2026-11-24T16:05:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CVS", "m": 94, "reason": "relative volume 0.85 below 1.5"}
+{"t": "2026-11-24T16:05:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KDP", "m": 94, "reason": "relative volume 0.46 below 1.5"}
+{"t": "2026-11-24T16:07:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "D", "m": 96, "reason": "relative volume 0.74 below 1.5"}
+{"t": "2026-11-24T16:07:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KHC", "m": 96, "reason": "relative volume 0.92 below 1.5"}
+{"t": "2026-11-24T16:08:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CMCSA", "m": 97, "reason": "relative volume 1.21 below 1.5"}
+{"t": "2026-11-24T16:09:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "BSX", "m": 98, "reason": "relative volume 1.39 below 1.5"}
+{"t": "2026-11-24T16:10:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AEO", "m": 99, "reason": "relative volume 1.16 below 1.5"}
+{"t": "2026-11-24T16:10:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CSX", "m": 99, "reason": "relative volume 0.93 below 1.5"}
+{"t": "2026-11-24T16:10:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "GIS", "m": 99, "reason": "relative volume 0.83 below 1.5"}
+{"t": "2026-11-24T16:10:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KR", "m": 99, "reason": "relative volume 0.91 below 1.5"}
+{"t": "2026-11-24T16:10:07+00:00", "date": "2026-11-24", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "KSS", "m": 99, "ref": 24.47, "stop": 24.15, "target": 25.11, "rvol": 3.22, "why": "up 9.0% from open, 10-bar base 24.16-24.31 above VWAP, breakout close 24.47, RVOL 3.2", "conditions": {"base_high": 24.31, "base_low": 24.16, "move": 0.0901}, "stale": false}
+{"t": "2026-11-24T16:10:07+00:00", "date": "2026-11-24", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "M", "m": 99, "reason": "relative volume 1.08 below 1.5"}
