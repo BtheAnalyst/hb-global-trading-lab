@@ -7397,3 +7397,11 @@
 {"t": "2026-11-25T16:34:07+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VALE", "m": 123, "reason": "continuation breakout volume not confirmed"}
 {"t": "2026-11-25T16:37:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "IVZ", "m": 126, "reason": "relative volume 0.72 below 1.5"}
 {"t": "2026-11-25T16:37:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "UBER", "m": 126, "reason": "relative volume 0.64 below 1.5"}
+{"t": "2026-11-25T16:41:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 130, "reason": "relative volume 1.11 below 1.5"}
+{"t": "2026-11-25T16:42:07+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "LYFT", "m": 131, "reason": "relative volume 0.96 below 1.5"}
+{"t": "2026-11-25T16:43:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DKNG", "m": 132, "reason": "relative volume 0.87 below 1.5"}
+{"t": "2026-11-25T16:46:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "NU", "m": 135, "reason": "relative volume 0.63 below 1.5"}
+{"t": "2026-11-25T16:46:06+00:00", "date": "2026-11-25", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "VALE", "m": 135, "ref": 9.57, "stop": 9.52, "target": 9.67, "rvol": 1.65, "why": "up 2.5% from open, 10-bar base 9.53-9.56 above VWAP, breakout close 9.57, RVOL 1.6", "conditions": {"base_high": 9.56, "base_low": 9.53, "move": 0.0252}, "stale": false}
+{"t": "2026-11-25T16:47:07+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "U", "m": 136, "reason": "relative volume 1.4 below 1.5"}
+{"t": "2026-11-25T16:48:06+00:00", "date": "2026-11-25", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "HPQ", "m": 111, "entry": 31.2512, "exit": 30.8791, "risk": 0.3412, "R": -1.0906, "how": "stop", "mins": 26, "rvol": 3.445864465685537, "stop": 30.91, "exit_m": 137}
+{"t": "2026-11-25T16:48:07+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "VZ", "m": 137, "reason": "relative volume 1.31 below 1.5"}
