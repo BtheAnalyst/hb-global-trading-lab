@@ -7892,3 +7892,4 @@
 {"t": "2026-11-25T19:01:07+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "FE", "m": 270, "reason": "relative volume 0.84 below 1.5"}
 {"t": "2026-11-25T19:01:08+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "PCG", "m": 270, "reason": "relative volume 0.76 below 1.5"}
 {"t": "2026-11-25T19:14:07+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "FE", "m": 283, "reason": "relative volume 0.85 below 1.5"}
+{"t": "2026-11-25T20:51:07+00:00", "date": "2026-11-25", "event": "shadow_trade", "setup": "MOMO_CONT_V1", "symbol": "PINS", "m": 166, "entry": 19.3894, "exit": 19.7702, "risk": 0.2744, "R": 1.3881, "how": "end of day flatten (15", "mins": 214, "rvol": 1.816828629262247, "stop": 19.115, "exit_m": 380}
