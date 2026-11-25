@@ -30,9 +30,9 @@
    "ORB15_V1: opening range incomplete": 96,
    "ORB15_V1: relative volume # below #": 71,
    "ORB15_V1: opening range # outside ##": 11,
-   "MOMO_CONT_V1: relative volume # below #": 280,
+   "MOMO_CONT_V1: relative volume # below #": 301,
    "PULLBACK_VWAP_V1: relative volume # below #": 71,
-   "MOMO_CONT_V1: continuation breakout volume not confirmed": 29,
+   "MOMO_CONT_V1: continuation breakout volume not confirmed": 32,
    "MOMO_CONT_V1: stop too wide": 1
   },
   "setup_state": {
@@ -213,7 +213,7 @@
       10.32,
       10.055
      ],
-     "mc_last": 200
+     "mc_last": 212
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -403,7 +403,7 @@
       82.5,
       81.06
      ],
-     "mc_last": 204
+     "mc_last": 215
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -785,7 +785,7 @@
       5.15,
       4.89
      ],
-     "mc_last": 199
+     "mc_last": 215
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1356,7 +1356,7 @@
       46.09,
       45.385
      ],
-     "mc_last": 202
+     "mc_last": 214
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1644,7 +1644,7 @@
       10.489,
       10.235
      ],
-     "mc_last": 204
+     "mc_last": 215
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1676,7 +1676,7 @@
       63.16,
       61.26
      ],
-     "mc_last": 204
+     "mc_last": 215
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1708,7 +1708,7 @@
       39.26,
       37.04
      ],
-     "mc_last": 201
+     "mc_last": 221
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1801,7 +1801,7 @@
       44.9,
       43.31
      ],
-     "mc_last": 173
+     "mc_last": 187
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1893,7 +1893,7 @@
       21.31,
       20.28
      ],
-     "mc_last": 203
+     "mc_last": 214
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1925,7 +1925,7 @@
       11.93,
       11.3429
      ],
-     "mc_last": 204
+     "mc_last": 215
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -1990,7 +1990,7 @@
       27.09,
       26.78
      ],
-     "mc_last": 204
+     "mc_last": 215
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2085,7 +2085,7 @@
       19.715,
       19.5961
      ],
-     "mc_last": 198
+     "mc_last": 209
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2118,7 +2118,7 @@
       17.23,
       16.94
      ],
-     "mc_last": 201
+     "mc_last": 212
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2183,7 +2183,7 @@
       30.87,
       30.63
      ],
-     "mc_last": 200
+     "mc_last": 213
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2595,7 +2595,7 @@
       7.0,
       6.89
      ],
-     "mc_last": 201
+     "mc_last": 213
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2628,7 +2628,7 @@
       11.765,
       11.57
      ],
-     "mc_last": 203
+     "mc_last": 218
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2849,7 +2849,7 @@
       18.37,
       18.05
      ],
-     "mc_last": 203
+     "mc_last": 214
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -2913,7 +2913,7 @@
       6.42,
       6.075
      ],
-     "mc_last": 200
+     "mc_last": 211
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -3009,7 +3009,7 @@
       7.21,
       6.87
      ],
-     "mc_last": 197
+     "mc_last": 208
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -3041,7 +3041,7 @@
       15.4328,
       14.885
      ],
-     "mc_last": 201
+     "mc_last": 218
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -3072,7 +3072,7 @@
       11.12,
       10.825
      ],
-     "mc_last": 197
+     "mc_last": 211
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -3103,7 +3103,7 @@
       43.9,
       42.41
      ],
-     "mc_last": 194
+     "mc_last": 206
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -3231,7 +3231,7 @@
       12.39,
       11.95
      ],
-     "mc_last": 201
+     "mc_last": 215
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -3360,7 +3360,7 @@
       47.06,
       44.96
      ],
-     "mc_last": 199
+     "mc_last": 214
     },
     "GAPGO_PB_V1": {
      "or_sip": [
@@ -3944,130 +3944,130 @@
    }
   },
   "last_m": {
-   "AA": 212,
-   "AAL": 212,
-   "AEO": 212,
+   "AA": 223,
+   "AAL": 223,
+   "AEO": 223,
    "AES": 210,
-   "AFRM": 212,
-   "AG": 212,
-   "AGNC": 212,
-   "ALK": 212,
-   "APA": 211,
-   "APLD": 212,
-   "ASTS": 212,
-   "BABA": 212,
-   "BAC": 212,
-   "BBVA": 212,
-   "BBY": 209,
-   "BEN": 212,
-   "BMY": 210,
-   "BSX": 212,
-   "BTU": 212,
-   "CAG": 212,
-   "CCL": 212,
-   "CDE": 212,
-   "CHWY": 212,
-   "CIFR": 212,
-   "CLF": 212,
-   "CLSK": 212,
-   "CMCSA": 212,
-   "CNP": 212,
-   "CORZ": 212,
-   "CSCO": 212,
-   "CSX": 212,
-   "CVS": 212,
-   "D": 212,
-   "DAL": 212,
-   "DKNG": 212,
-   "DOCU": 211,
-   "DVN": 212,
-   "EPD": 205,
-   "ERIC": 211,
-   "EXC": 212,
-   "F": 212,
-   "FCX": 212,
-   "FE": 212,
-   "FITB": 212,
-   "GIS": 212,
-   "GM": 211,
-   "GME": 212,
+   "AFRM": 223,
+   "AG": 223,
+   "AGNC": 223,
+   "ALK": 223,
+   "APA": 223,
+   "APLD": 223,
+   "ASTS": 223,
+   "BABA": 223,
+   "BAC": 223,
+   "BBVA": 223,
+   "BBY": 223,
+   "BEN": 222,
+   "BMY": 223,
+   "BSX": 223,
+   "BTU": 223,
+   "CAG": 223,
+   "CCL": 223,
+   "CDE": 223,
+   "CHWY": 223,
+   "CIFR": 223,
+   "CLF": 223,
+   "CLSK": 223,
+   "CMCSA": 222,
+   "CNP": 223,
+   "CORZ": 223,
+   "CSCO": 223,
+   "CSX": 223,
+   "CVS": 223,
+   "D": 223,
+   "DAL": 220,
+   "DKNG": 223,
+   "DOCU": 222,
+   "DVN": 223,
+   "EPD": 223,
+   "ERIC": 222,
+   "EXC": 223,
+   "F": 223,
+   "FCX": 223,
+   "FE": 223,
+   "FITB": 223,
+   "GIS": 223,
+   "GM": 223,
+   "GME": 223,
    "GOLD": 202,
-   "HAL": 212,
-   "HBAN": 212,
-   "HL": 212,
-   "HOOD": 212,
-   "HPE": 212,
-   "HPQ": 212,
-   "HRL": 212,
-   "HUT": 212,
-   "ING": 212,
-   "INTC": 212,
-   "IONQ": 212,
-   "IREN": 212,
-   "ITUB": 212,
-   "IVZ": 212,
-   "JD": 212,
-   "KDP": 212,
-   "KEY": 212,
-   "KGC": 212,
-   "KHC": 212,
-   "KMI": 212,
-   "KO": 212,
-   "KSS": 212,
-   "LEVI": 212,
-   "LUV": 212,
-   "LYFT": 212,
-   "M": 212,
-   "MARA": 211,
-   "MO": 212,
-   "NCLH": 212,
-   "NEE": 212,
-   "NKE": 212,
-   "NLY": 212,
-   "NOK": 212,
-   "NU": 212,
-   "ON": 212,
-   "OXY": 212,
-   "PATH": 212,
-   "PBR": 212,
-   "PCG": 212,
-   "PFE": 212,
-   "PINS": 212,
-   "PYPL": 210,
-   "QBTS": 212,
-   "RBLX": 212,
-   "RF": 212,
-   "RGTI": 212,
-   "RIOT": 212,
-   "RIVN": 212,
-   "RKLB": 212,
-   "S": 212,
-   "SCHW": 212,
-   "SMCI": 212,
-   "SOFI": 212,
-   "T": 212,
-   "TFC": 212,
-   "TSN": 210,
-   "U": 212,
-   "UBER": 212,
-   "URBN": 211,
-   "USB": 212,
-   "VALE": 212,
-   "VFC": 212,
-   "VZ": 212,
-   "WFC": 211,
-   "WULF": 212,
-   "ZM": 206,
+   "HAL": 223,
+   "HBAN": 223,
+   "HL": 223,
+   "HOOD": 223,
+   "HPE": 223,
+   "HPQ": 223,
+   "HRL": 223,
+   "HUT": 223,
+   "ING": 222,
+   "INTC": 223,
+   "IONQ": 223,
+   "IREN": 223,
+   "ITUB": 223,
+   "IVZ": 223,
+   "JD": 223,
+   "KDP": 223,
+   "KEY": 223,
+   "KGC": 223,
+   "KHC": 223,
+   "KMI": 223,
+   "KO": 223,
+   "KSS": 223,
+   "LEVI": 222,
+   "LUV": 223,
+   "LYFT": 223,
+   "M": 223,
+   "MARA": 223,
+   "MO": 222,
+   "NCLH": 223,
+   "NEE": 223,
+   "NKE": 223,
+   "NLY": 223,
+   "NOK": 223,
+   "NU": 222,
+   "ON": 223,
+   "OXY": 223,
+   "PATH": 223,
+   "PBR": 223,
+   "PCG": 223,
+   "PFE": 223,
+   "PINS": 223,
+   "PYPL": 223,
+   "QBTS": 223,
+   "RBLX": 223,
+   "RF": 223,
+   "RGTI": 223,
+   "RIOT": 223,
+   "RIVN": 223,
+   "RKLB": 222,
+   "S": 223,
+   "SCHW": 223,
+   "SMCI": 223,
+   "SOFI": 223,
+   "T": 223,
+   "TFC": 223,
+   "TSN": 222,
+   "U": 223,
+   "UBER": 223,
+   "URBN": 223,
+   "USB": 223,
+   "VALE": 223,
+   "VFC": 223,
+   "VZ": 223,
+   "WFC": 223,
+   "WULF": 223,
+   "ZM": 217,
    "BNAI": 173,
-   "CFG": 212,
-   "KR": 212,
-   "PPL": 211,
-   "SLB": 212,
-   "WMB": 212,
-   "AMCR": 210,
-   "SO": 212,
-   "OKE": 212,
-   "ET": 212
+   "CFG": 223,
+   "KR": 223,
+   "PPL": 223,
+   "SLB": 223,
+   "WMB": 223,
+   "AMCR": 223,
+   "SO": 223,
+   "OKE": 220,
+   "ET": 223
   },
   "scanned": 173,
   "eligible": 123,
