@@ -1,5 +1,5 @@
 {
- "date": "2026-11-24",
+ "date": "2026-11-25",
  "account": "FOUNDER",
  "label": "PAPER TRADING (FOUNDER account) - simulated, not real money",
  "mode": "paper",
@@ -7,85 +7,116 @@
   "ORB15_V1"
  ],
  "scanned": 173,
- "eligible": 122,
+ "eligible": 123,
  "signals": 8,
- "trades": [],
- "realized_pnl": 0,
- "settled_cash": 100.1358,
- "unsettled_cash": 0,
- "sleeve_equity": 100.1358,
+ "trades": [
+  {
+   "date": "2026-11-25",
+   "symbol": "RF",
+   "setup": "ORB15_V1",
+   "qty": 3.0,
+   "entry": 27.346667,
+   "exit": 27.23,
+   "stop": 27.21,
+   "target": 27.57,
+   "pnl": -0.35,
+   "R": -0.854,
+   "how": "closed below VWAP: momentum failed",
+   "entered": "2026-11-25T15:01:09.136829+00:00",
+   "exited": "2026-11-25T15:18:06.285401+00:00",
+   "why_in": "close 27.33 > OR high 27.29, RVOL 2.1, bar vol 3.1x, above VWAP",
+   "conditions": {
+    "or_high": 27.29,
+    "or_low": 27.13,
+    "or_pct": 0.0059,
+    "vwap": 27.231035317238312
+   },
+   "rvol": 2.1418978522028724,
+   "entry_quote": [
+    27.32,
+    27.33,
+    0.036313
+   ],
+   "slippage_entry": -0.0133
+  }
+ ],
+ "realized_pnl": -0.35,
+ "settled_cash": 18.0958,
+ "unsettled_cash": 81.69,
+ "sleeve_equity": 99.7858,
  "allocated": 100.0,
  "shadow": {
   "ORB15_V1": {
-   "trades": 0,
-   "R": 0,
-   "detail": []
+   "trades": 1,
+   "R": -0.983,
+   "detail": [
+    {
+     "setup": "ORB15_V1",
+     "symbol": "RF",
+     "m": 29,
+     "entry": 27.3673,
+     "exit": 27.2128,
+     "risk": 0.1573,
+     "R": -0.9825,
+     "how": "closed below VWAP",
+     "mins": 18,
+     "rvol": 2.1418978522028724,
+     "stop": 27.21,
+     "exit_m": 47
+    }
+   ]
   },
   "PULLBACK_VWAP_V1": {
-   "trades": 2,
-   "R": -2.639,
+   "trades": 1,
+   "R": -1.352,
    "detail": [
     {
      "setup": "PULLBACK_VWAP_V1",
-     "symbol": "KSS",
-     "m": 31,
-     "entry": 24.044,
-     "exit": 23.6713,
-     "risk": 0.264,
-     "R": -1.4117,
+     "symbol": "CHWY",
+     "m": 48,
+     "entry": 19.5946,
+     "exit": 19.5005,
+     "risk": 0.0696,
+     "R": -1.3524,
      "how": "stop",
-     "mins": 9,
-     "rvol": 2.672593248877034,
-     "stop": 23.779999999999998,
-     "exit_m": 40
-    },
-    {
-     "setup": "PULLBACK_VWAP_V1",
-     "symbol": "DVN",
-     "m": 42,
-     "entry": 41.4965,
-     "exit": 41.2737,
-     "risk": 0.1815,
-     "R": -1.2277,
-     "how": "stop",
-     "mins": 31,
-     "rvol": 2.0639868477177354,
-     "stop": 41.315000000000005,
-     "exit_m": 73
+     "mins": 7,
+     "rvol": 1.5858391691515592,
+     "stop": 19.525,
+     "exit_m": 55
     }
    ]
   },
   "MOMO_CONT_V1": {
    "trades": 2,
-   "R": 0.902,
+   "R": 0.297,
    "detail": [
     {
      "setup": "MOMO_CONT_V1",
-     "symbol": "KSS",
-     "m": 99,
-     "entry": 24.5245,
-     "exit": 25.2735,
-     "risk": 0.3745,
-     "R": 2.0,
-     "how": "target",
-     "mins": 64,
-     "rvol": 3.216190504503969,
-     "stop": 24.15,
-     "exit_m": 163
+     "symbol": "HPQ",
+     "m": 111,
+     "entry": 31.2512,
+     "exit": 30.8791,
+     "risk": 0.3412,
+     "R": -1.0906,
+     "how": "stop",
+     "mins": 26,
+     "rvol": 3.445864465685537,
+     "stop": 30.91,
+     "exit_m": 137
     },
     {
      "setup": "MOMO_CONT_V1",
      "symbol": "PINS",
-     "m": 191,
-     "entry": 19.1641,
-     "exit": 18.951,
-     "risk": 0.1941,
-     "R": -1.0977,
-     "how": "stop",
-     "mins": 37,
-     "rvol": 3.0856328931213066,
-     "stop": 18.97,
-     "exit_m": 228
+     "m": 166,
+     "entry": 19.3894,
+     "exit": 19.7702,
+     "risk": 0.2744,
+     "R": 1.3881,
+     "how": "end of day flatten (15",
+     "mins": 214,
+     "rvol": 1.816828629262247,
+     "stop": 19.115,
+     "exit_m": 380
     }
    ]
   },
@@ -96,15 +127,13 @@
   }
  },
  "rejections": {
-  "GAPGO_PB_V1: relative volume # below #": 1,
-  "ORB15_V1: relative volume # below #": 78,
-  "ORB15_V1: opening range incomplete": 49,
-  "ORB15_V1: opening range # outside ##": 7,
-  "ORB15_V1: breakout bar volume not confirmed": 2,
-  "MOMO_CONT_V1: relative volume # below #": 273,
-  "PULLBACK_VWAP_V1: relative volume # below #": 79,
-  "MOMO_CONT_V1: continuation breakout volume not confirmed": 17,
-  "PULLBACK_VWAP_V1: stop too tight": 6
+  "ORB15_V1: opening range incomplete": 96,
+  "ORB15_V1: relative volume # below #": 71,
+  "ORB15_V1: opening range # outside ##": 11,
+  "MOMO_CONT_V1: relative volume # below #": 475,
+  "PULLBACK_VWAP_V1: relative volume # below #": 75,
+  "MOMO_CONT_V1: continuation breakout volume not confirmed": 47,
+  "MOMO_CONT_V1: stop too wide": 3
  },
  "halted": null,
  "kill_switch": false,
