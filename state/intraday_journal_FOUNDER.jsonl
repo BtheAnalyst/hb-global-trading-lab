@@ -7369,3 +7369,24 @@
 {"t": "2026-11-25T16:16:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "BNAI", "m": 105, "reason": "opening range incomplete (missing minutes)"}
 {"t": "2026-11-25T16:17:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "NEE", "m": 106, "reason": "relative volume 0.54 below 1.5"}
 {"t": "2026-11-25T16:17:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "BNAI", "m": 106, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-25T16:18:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CHWY", "m": 107, "reason": "relative volume 1.06 below 1.5"}
+{"t": "2026-11-25T16:18:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "BNAI", "m": 107, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-25T16:20:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DKNG", "m": 109, "reason": "relative volume 0.91 below 1.5"}
+{"t": "2026-11-25T16:20:07+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 109, "reason": "relative volume 1.17 below 1.5"}
+{"t": "2026-11-25T16:21:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "LYFT", "m": 110, "reason": "relative volume 0.94 below 1.5"}
+{"t": "2026-11-25T16:21:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "BNAI", "m": 110, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-25T16:22:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CIFR", "m": 111, "reason": "relative volume 0.73 below 1.5"}
+{"t": "2026-11-25T16:22:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CVS", "m": 111, "reason": "relative volume 0.94 below 1.5"}
+{"t": "2026-11-25T16:22:06+00:00", "date": "2026-11-25", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "HPQ", "m": 111, "ref": 31.21, "stop": 30.91, "target": 31.81, "rvol": 3.45, "why": "up 4.0% from open, 10-bar base 30.92-31.20 above VWAP, breakout close 31.21, RVOL 3.4", "conditions": {"base_high": 31.205, "base_low": 30.92, "move": 0.0403}, "stale": false}
+{"t": "2026-11-25T16:22:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "MARA", "m": 111, "reason": "relative volume 1.01 below 1.5"}
+{"t": "2026-11-25T16:22:07+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "NKE", "m": 111, "reason": "relative volume 1.16 below 2.0"}
+{"t": "2026-11-25T16:22:07+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PATH", "m": 111, "reason": "relative volume 1.01 below 1.5"}
+{"t": "2026-11-25T16:24:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AMCR", "m": 113, "reason": "relative volume 1.44 below 1.5"}
+{"t": "2026-11-25T16:24:07+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "BNAI", "m": 113, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-25T16:25:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "KHC", "m": 114, "reason": "relative volume 0.81 below 1.5"}
+{"t": "2026-11-25T16:26:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "AFRM", "m": 115, "reason": "opening range 4.65% outside 0.4%-4%"}
+{"t": "2026-11-25T16:26:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HUT", "m": 115, "reason": "relative volume 0.85 below 1.5"}
+{"t": "2026-11-25T16:26:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "NU", "m": 115, "reason": "relative volume 0.67 below 1.5"}
+{"t": "2026-11-25T16:26:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "BNAI", "m": 115, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-25T16:28:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CAG", "m": 117, "reason": "relative volume 1.2 below 1.5"}
+{"t": "2026-11-25T16:28:06+00:00", "date": "2026-11-25", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "BNAI", "m": 117, "reason": "opening range incomplete (missing minutes)"}
