@@ -8148,3 +8148,22 @@
 {"t": "2026-11-27T16:18:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CLF", "m": 107, "reason": "relative volume 0.68 below 1.5"}
 {"t": "2026-11-27T16:21:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "OKE", "m": 110, "reason": "relative volume 1.78 below 2.0"}
 {"t": "2026-11-27T16:21:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RBLX", "m": 110, "reason": "relative volume 1.05 below 1.5"}
+{"t": "2026-11-27T16:23:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RGTI", "m": 112, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-27T16:24:06+00:00", "date": "2026-11-27", "event": "shadow_trade", "setup": "PULLBACK_VWAP_V1", "symbol": "AG", "m": 84, "entry": 11.9569, "exit": 12.0508, "risk": 0.0469, "R": 2.0, "how": "target", "mins": 29, "rvol": 1.5163918516721993, "stop": 11.91, "exit_m": 113}
+{"t": "2026-11-27T16:25:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "ASTS", "m": 114, "reason": "opening range 6.98% outside 0.4%-4%"}
+{"t": "2026-11-27T16:25:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "S", "m": 114, "reason": "relative volume 0.42 below 1.5"}
+{"t": "2026-11-27T16:26:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ON", "m": 115, "reason": "relative volume 0.51 below 1.5"}
+{"t": "2026-11-27T16:26:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "QBTS", "m": 115, "reason": "relative volume 1.25 below 1.5"}
+{"t": "2026-11-27T16:26:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "ORB15_V1", "symbol": "MPU", "m": 115, "reason": "opening range incomplete (missing minutes)"}
+{"t": "2026-11-27T16:27:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BSX", "m": 116, "reason": "relative volume 0.39 below 1.5"}
+{"t": "2026-11-27T16:28:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AEO", "m": 117, "reason": "relative volume 0.7 below 1.5"}
+{"t": "2026-11-27T16:29:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CVS", "m": 118, "reason": "relative volume 0.99 below 1.5"}
+{"t": "2026-11-27T16:29:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "IONQ", "m": 118, "reason": "relative volume 0.95 below 1.5"}
+{"t": "2026-11-27T16:29:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PYPL", "m": 118, "reason": "relative volume 0.85 below 1.5"}
+{"t": "2026-11-27T16:30:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "FITB", "m": 119, "reason": "relative volume 1.04 below 1.5"}
+{"t": "2026-11-27T16:30:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "MO", "m": 119, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-27T16:31:06+00:00", "date": "2026-11-27", "event": "wide_dropped", "watched_before": 126, "watched_now": 126}
+{"t": "2026-11-27T16:31:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "LUV", "m": 120, "reason": "relative volume 0.36 below 1.5"}
+{"t": "2026-11-27T16:31:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "USB", "m": 120, "reason": "relative volume 1.17 below 1.5"}
+{"t": "2026-11-27T16:32:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "HPQ", "m": 121, "reason": "relative volume 1.27 below 1.5"}
+{"t": "2026-11-27T16:32:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "RBLX", "m": 121, "reason": "relative volume 1.11 below 1.5"}
