@@ -8226,3 +8226,11 @@
 {"t": "2026-11-27T17:16:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BMY", "m": 165, "reason": "relative volume 0.48 below 1.5"}
 {"t": "2026-11-27T17:16:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "BSX", "m": 165, "reason": "relative volume 0.42 below 1.5"}
 {"t": "2026-11-27T17:16:06+00:00", "date": "2026-11-27", "event": "signal", "setup": "MOMO_CONT_V1", "symbol": "RGTI", "m": 165, "ref": 8.505, "stop": 8.455, "target": 8.605, "rvol": 1.55, "why": "up 2.7% from open, 10-bar base 8.46-8.50 above VWAP, breakout close 8.51, RVOL 1.5", "conditions": {"base_high": 8.5, "base_low": 8.465, "move": 0.0266}, "stale": false}
+{"t": "2026-11-27T17:18:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "LYFT", "m": 167, "reason": "relative volume 0.96 below 1.5"}
+{"t": "2026-11-27T17:20:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "CVS", "m": 169, "reason": "relative volume 1.02 below 1.5"}
+{"t": "2026-11-27T17:20:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "ON", "m": 169, "reason": "relative volume 0.56 below 1.5"}
+{"t": "2026-11-27T17:21:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "LUV", "m": 170, "reason": "relative volume 0.4 below 1.5"}
+{"t": "2026-11-27T17:22:07+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "VFC", "m": 171, "reason": "relative volume 0.7 below 1.5"}
+{"t": "2026-11-27T17:23:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DAL", "m": 172, "reason": "relative volume 0.33 below 1.5"}
+{"t": "2026-11-27T17:24:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CHWY", "m": 173, "reason": "relative volume 0.83 below 1.5"}
+{"t": "2026-11-27T17:26:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PYPL", "m": 175, "reason": "relative volume 0.93 below 1.5"}
