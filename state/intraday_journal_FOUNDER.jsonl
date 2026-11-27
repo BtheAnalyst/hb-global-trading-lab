@@ -8234,3 +8234,7 @@
 {"t": "2026-11-27T17:23:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DAL", "m": 172, "reason": "relative volume 0.33 below 1.5"}
 {"t": "2026-11-27T17:24:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "CHWY", "m": 173, "reason": "relative volume 0.83 below 1.5"}
 {"t": "2026-11-27T17:26:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "PYPL", "m": 175, "reason": "relative volume 0.93 below 1.5"}
+{"t": "2026-11-27T17:28:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "DKNG", "m": 177, "reason": "relative volume 0.44 below 1.5"}
+{"t": "2026-11-27T17:28:06+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "MO", "m": 177, "reason": "continuation breakout volume not confirmed"}
+{"t": "2026-11-27T17:28:07+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "PULLBACK_VWAP_V1", "symbol": "URBN", "m": 177, "reason": "relative volume 1.28 below 1.5"}
+{"t": "2026-11-27T17:30:07+00:00", "date": "2026-11-27", "event": "candidate_rejected", "setup": "MOMO_CONT_V1", "symbol": "AG", "m": 179, "reason": "continuation breakout volume not confirmed"}
